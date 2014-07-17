@@ -1,6 +1,5 @@
 # Ecstore BBC Developing Documentation
 ## 约定
-- a
-- b
-- c
+- [代码规范](agreement/convention.md)
+
 
