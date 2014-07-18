@@ -1,24 +1,10 @@
 # PHP 编码规范
 如果您是ecstore开发人员，请详细阅读以下规范，并严格遵守。这样在保证您代码可读性的同时还可以大大减少我们的工作量。
 ## 命名
-To smysql
-	'mysql' => array(
-		'read' => array(
-			'host' => '192.168.1.1',
-		),
-		'write' => array(
-			'host' => '196.168.1.2'
-		),
-		'driver'    => 'mysql',
-		'database'  => 'database',
-		'username'  => 'root',
-		'password'  => '',
-		'charset'   => 'utf8',
-		'collation' => 'utf8_unicode_ci',
-		'prefix'    => '',
-	),
-
 ### 文件命名
+包含任何 PHP 代码的任何文件应当以 ".php" 扩展名结尾，众所周知的视图脚本除外。
+ecos的文件命名的准则是，class名称与文件名关联。关联的方法是以包所在的目录为根目录，到类所在的文件，将目录分隔符改为下划线即为此类的名称。
+ecos的app目录下存放的是我们的主要代码，类命名时app则不需要加上
 ### 类命名
 ### 类的成员变量声明
 ### 类的构造函数命名
