@@ -1,6 +1,23 @@
 # PHP 编码规范
 如果您是ecstore开发人员，请详细阅读以下规范，并严格遵守。这样在保证您代码可读性的同时还可以大大减少我们的工作量。
 ## 命名
+To smysql
+	'mysql' => array(
+		'read' => array(
+			'host' => '192.168.1.1',
+		),
+		'write' => array(
+			'host' => '196.168.1.2'
+		),
+		'driver'    => 'mysql',
+		'database'  => 'database',
+		'username'  => 'root',
+		'password'  => '',
+		'charset'   => 'utf8',
+		'collation' => 'utf8_unicode_ci',
+		'prefix'    => '',
+	),
+
 ### 文件命名
 ### 类命名
 ### 类的成员变量声明
