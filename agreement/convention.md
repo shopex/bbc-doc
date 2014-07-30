@@ -7,6 +7,7 @@
 - [注释](#comment-agreement)
 - [代码布局](#code-topology-agreement)
 
+<a name="named-agreement"></a>
 ## 命名
 ### 文件命名
 > **Note:** 包含任何 PHP 代码的任何文件应扩展名应当为 ".php" 脚本除外。 ecos的文件命名的准则是，class名称与文件名关联。关联的方法是以包所在的目录为根目录，到类所在的文件，将目录分隔符改为下划线即为此类的名称。
@@ -18,6 +19,7 @@ ecos的app目录下存放的是我们的主要代码，类命名时app则不需�
 ### 函数(方法,接口)命名
 ### 变量命名
 ### 常量命名
+<a name="php-agreement"></a>
 ## PHP约定
 ### 文件编码
 ### 缩进
@@ -36,17 +38,20 @@ ecos的app目录下存放的是我们的主要代码，类命名时app则不需�
 ### 函数和方法的传址引用
 ### if/else/elseif语句
 ### switch 语句
+<a name="ecstore-agreement"></a>
 ## ECStore开发约定
 ### dump方法的使用
 ### 数据库操作
 ### POST、GET请求
 ### model和lib代码
+<a name="comment-agreement"></a>
 ## 注释
 ### 头部注释
 ### 引用文件和定义常量注释
 ### 类(接口)注释
 ### 函数(方法,接口)注释
 ### 程序行间注释
+<a name="code-topology-agreement"></a>
 ## 代码布局
 ### 类布局
 ### 空行使用
