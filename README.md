@@ -1,5 +1,6 @@
 # Ecstore BBC Developing Documentation
 ## 约定
-- [代码规范](agreement/convention.md)
+- [PHP编码规范](agreement/php-convention.md)
+- [LuckyMall编码规范](agreement/luckymall-convention.md)
 
 
