@@ -59,6 +59,13 @@
 
 <a name="compatible"></a>
 
+#### 清除安装时生成的配置文件
 
+> **todo** 需要增加命令行工具
+
+目前可使用以下方式:
+
+  cd config/
+  cat config/.gitignore | xargs -I % rm -rf ".%"
 
 
