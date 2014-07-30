@@ -1,4 +1,6 @@
 # 配置
+[aaaa](/agreement/luckymall-convention.md)
+[aaaa](agreement/luckymall-convention.md)
 
 - [简介](#introduction)
 - [增加新的配置项](#new-configuration-item)
