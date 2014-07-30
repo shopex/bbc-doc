@@ -26,7 +26,24 @@ ecos的app目录下存放的是我们的主要代码，类命名时app则不需�
     }
 
 ### 类的成员变量声明
+变量的声明必须在类的顶部，在方法的上方声明。
+不允许使用 var 声明，要用 private、 protected 或 public。 直接访问 public 变量是允许的但不鼓励。
 ### 类的构造函数命名
+不推荐使用与类名相同的名称写构造函数
+**推荐示范**
+    class desktop_email_smtp {
+          public function __construct($app)
+          {
+          }
+    }
+
+**不推荐示范**
+    class desktop_email_smtp {
+          public function desktop_email_smtp($app)
+          {
+          }
+    }
+
 ### 函数(方法,接口)命名
 ### 变量命名
 ### 常量命名
