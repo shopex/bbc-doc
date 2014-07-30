@@ -1,5 +1,12 @@
 # PHP 编码规范
 如果您是ecstore开发人员，请详细阅读以下规范，并严格遵守。这样在保证您代码可读性的同时还可以大大减少我们的工作量。
+
+- [命名](#named-agreement)
+- [PHP约定](#php-agreement)
+- [ECStore开发约定](#ecstore-agreement)
+- [注释](#comment-agreement)
+- [代码布局](#code-topology-agreement)
+
 ## 命名
 ### 文件命名
 > **Note:** 包含任何 PHP 代码的任何文件应扩展名应当为 ".php" 脚本除外。 ecos的文件命名的准则是，class名称与文件名关联。关联的方法是以包所在的目录为根目录，到类所在的文件，将目录分隔符改为下划线即为此类的名称。
