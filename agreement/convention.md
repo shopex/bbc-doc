@@ -47,11 +47,36 @@ ecos的app目录下存放的是我们的主要代码，类命名时app则不需�
     }
 
 ### 函数(方法,接口)命名
+**使用骆驼法则，首字母小写**
+
+    public function getList($cols='*', $filter=array(), $offset=0, $limit=-1, $orderby=null)
+    {
+    }
+
+private 和 protected 的规则与变量一样（改）
 ### 变量命名
+**使用骆驼法则，首字母小写**
+
+    protected $_callbackFunctions;
+
+**如为私有变量，请在变量名前方加上双下划线**
+
+    private $__adapter;
+
+**如为受保护变量，请在变量名前方加上下划线**
+
+    protected $_render = null;
+
 ### 常量命名
+所有字母大写。
+
+    define('DEBUG_JS',false)
+    
 <a name="php-agreement"></a>
 ## PHP约定
 ### 文件编码
+请调整您的编辑器文件编码为UTF-8，并关闭UTF-8 BOM的功能。
+请不要使用windows自带的记事本编辑项目文件。
 ### 缩进
 ### UNIX编码规范
 ### UNIX风格换行
