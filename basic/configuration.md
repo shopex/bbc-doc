@@ -2,10 +2,9 @@
 
 - [简介](#introduction)
 - [增加新的配置项](#new-configuration-item)
-- [历史兼容](#compatible)
 
 <a name="introduction"></a>
-## 简介
+## 咋玩
 
 所有关于LuckyMall的配置文件都放在`app/base/examples/config`目录里, 在安装后会挪到`config`目录里. 所有文件里的配置选项都有说明文档, 因此你可以轻松的查看这些文件, 并熟悉写配置项.
 
@@ -65,7 +64,7 @@
 
 目前可使用以下方式:
 
-  cd config/
-  cat config/.gitignore | xargs -I % rm -rf ".%"
+    cd config/
+    cat config/.gitignore | xargs -I % rm -rf ".%"
 
 
