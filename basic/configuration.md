@@ -1,10 +1,6 @@
 # 配置
 
 - [简介](#introduction)
-- [环境配置](#environment-configuration)
-- [Provider Configuration](#provider-configuration)
-- [Protecting Sensitive Configuration](#protecting-sensitive-configuration)
-- [维护模式](#maintenance-mode)
 
 <a name="introduction"></a>
 ## 简介
