@@ -14,31 +14,31 @@
 <table width="100%">
     <tr>
         <td>#</td>
-        <td>自身</td>
+        <td>本app</td>
         <td>系统级服务APP</td>
         <td>业务系统APP</td>
         <td>系统级服务APP</td>
     </tr>
     <tr>
-        <td>model</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>controller</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
         <td>lib</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>√</td>
+        <td>√</td>
+        <td>×</td>
+        <td>×</td>
+    </tr>
+    <tr>
+        <td>model</td>
+        <td>√</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+    </tr>
+    <tr>
+        <td>controller&view</td>
+        <td>√(后端)</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
 </table>
 
