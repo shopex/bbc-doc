@@ -11,12 +11,15 @@
 - [配置](/basic/configuration.md)
 - [配置详细说明](/basic/configuration-detail.md)
 - [通过composer引用第三方库](/basic/use-composer.md)
+- [目录结构](/basic/directory.md)
+
+** misc
 
 
 ## DONE
-- [目录结构变更]
 
 
 ## TODO
-- [异常处理机制:bryant](/todo/configuration.md)
-- [routing:bryant](/todo/configuration.md)
+- [LuckyMall浏览器兼容性说明:Z](/todo/browser-compatible.md)
+- [异常处理机制:B](/todo/configuration.md)
+- [routing:B](/todo/configuration.md)
