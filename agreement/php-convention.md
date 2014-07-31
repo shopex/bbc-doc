@@ -13,13 +13,14 @@
 ecos的文件命名的准则是，class名称与文件名关联。关联的方法是以包所在的目录为根目录，到类所在的文件，将目录分隔符改为下划线即为此类的名称。
 ecos的app目录下存放的是我们的主要代码，类命名时app则不需要加上
 
+- 文件名要小写
 - 控制器文件放在app下的controller文件夹下,类的命名时用'''ctl'''代替'''controller'''，如 ''app/b2c/controller/site/order.php'' 对应类名称 b2c_ctl_site_order
 - 模型层文件放在app下的model文件夹下,类的命名时用'''mdl'''代替'''model'''，如 ''app/b2c/model/orders.php'' 对应类名称 b2c_mdl_orders
 - 类库层文件放在app下的lib文件夹下,类的命名时用不用写'''lib'''，如 ''app/b2c/lib/order/delivery.php'' 对应类名称 b2c_order_delivery
 - 数据库定义文件 放在app下的dbschema文件夹下,命名时内部数组索引的值与文件名同名，如 ''app/b2c/dbschema/cart.php'' 对应文件内数组名称为 $db['cart']=array (
 
 ### 类命名
-使用骆驼加下划线法则，首字母小写。
+使用下划线法则，首字母小写。
 
     class b2c_ctl_site_order {
     }
@@ -56,7 +57,7 @@ private 和 protected 的规则与变量一样（改）
 ### 变量命名
 **使用骆驼法则，首字母小写**
 
-    protected $_callbackFunctions;
+    $callbackFunctions['brand_name'];
 
 **如为私有变量，请在变量名前方加上双下划线**
 
