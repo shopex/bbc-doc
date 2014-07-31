@@ -10,11 +10,11 @@ LuckyMall框架使用[Composer](http://getcomposer.org)（PHP包管理工具，�
 
 ## 安装composer库
 想要很好的掌控composer, 可以参考[composer中文文档](https://github.com/golaravel/composer-doc-cn).
-
+                        
 **注意事项**
 - 修改composer.json后, 需要执行
 
-  composer update
+    composer update
   
 - 跟新后会同时更新composer.lock文件和`vender`目录, 勿忘一并提交
 
