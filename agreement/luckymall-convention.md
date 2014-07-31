@@ -65,7 +65,7 @@
         <td>√</td>
         <td>√</td>
         <td>×</td>
-        <td>√</td>
+        <td>√(尽可能少)</td>
     </tr>
     <tr>
         <td>model</td>
