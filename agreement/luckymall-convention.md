@@ -13,7 +13,7 @@
 ### 系统级服务APP
 <table width="100%">
     <tr>
-        <td>#</td>
+        <td></td>
         <td>本app</td>
         <td>系统级服务APP</td>
         <td>业务系统APP</td>
