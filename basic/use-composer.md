@@ -1,4 +1,5 @@
 # 通过composer引用第三方库
+
 - [安装Composer](#install-composer)
 
 <a name="install-composer"></a>
@@ -10,14 +11,11 @@ LuckyMall框架使用[Composer](http://getcomposer.org)（PHP包管理工具，�
 ## 安装composer库
 想要很好的掌控composer, 可以参考[composer中文文档](https://github.com/golaravel/composer-doc-cn).
 
-### 简要修改流程
-- 修改 composer.json
-- 修改好后 composer update. 
+**注意事项**
+- 修改composer.json后, 需要执行
 
-
-
-
-### 修改composer.json
-
+  composer update
+  
+- 跟新后会同时更新composer.lock文件和`vender`目录, 勿忘一并提交
 
 
