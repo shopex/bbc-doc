@@ -13,7 +13,7 @@
 - [通过composer引用第三方库](/basic/use-composer.md)
 - [目录结构](/basic/directory.md)
 
-** misc
+## misc
 
 
 ## DONE
