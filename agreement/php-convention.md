@@ -59,13 +59,13 @@ private 和 protected 的规则与变量一样（改）
 
     $callbackFunctions['brand_name'];
 
-**如为私有变量，请在变量名前方加上双下划线**
-
-    private $__adapter;
-
 **如为受保护变量，请在变量名前方加上下划线**
 
     protected $_render = null;
+
+**如为私有变量，请在变量名前方加上双下划线**
+
+    private $__adapter;
 
 ### 常量命名
 所有字母大写。
