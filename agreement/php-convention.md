@@ -192,7 +192,7 @@ function和函数名之间只能有一个空格。
 传址在调用时是严格禁止的。
 **示例**
 
-    class Foo{
+    class Foo {
         public function bar(&$baz)
         {
         }
@@ -296,7 +296,7 @@ switch 语句应当有 default。
 	 * @license
 	 */
 
-     class base_setting{
+     class base_setting {
      }
 
 ### 函数(方法,接口)注释
