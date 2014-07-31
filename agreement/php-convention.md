@@ -122,8 +122,11 @@ private 和 protected 的规则与变量一样（改）
 	       !defined($const = '__TYPECHO_DB_NAME__') || 
 	       !defined($const = '__TYPECHO_DB_USER__') || 
 	       !defined($const = '__TYPECHO_DB_PASS__') ||
-	       !defined($const = '__TYPECHO_DB_CHAR__')) {
-	       } else {
+	       !defined($const = '__TYPECHO_DB_CHAR__'))
+	       {
+	       }
+	       else
+	       {
 	       }
 	   }
 	}   
