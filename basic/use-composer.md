@@ -16,6 +16,6 @@ LuckyMall框架使用[Composer](http://getcomposer.org)（PHP包管理工具，�
 
     composer update
   
-- 跟新后会同时更新composer.lock文件和`vender`目录, 勿忘一并提交
+- 跟新后会同时更新`composer.lock`文件和`vender`目录, 勿忘一并提交
 
 
