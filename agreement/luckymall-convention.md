@@ -55,7 +55,7 @@
 <table width="100%">
     <tr>
         <td></td>
-        <td>本app</td>
+        <td>本app(是否有/可调用)</td>
         <td>系统级服务APP</td>
         <td>业务系统APP</td>
         <td>基础业务服务APP</td>
@@ -91,7 +91,7 @@
 <table width="100%">
     <tr>
         <td></td>
-        <td>本app</td>
+        <td>本app(是否有/可调用)</td>
         <td>系统级服务APP</td>
         <td>业务系统APP</td>
         <td>基础业务服务APP</td>
