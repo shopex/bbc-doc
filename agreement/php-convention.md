@@ -21,7 +21,7 @@ ecos的app目录下存放的是我们的主要代码，类命名时app则不需�
 ### 类命名
 使用骆驼加下划线法则，首字母小写。
 
-    class b2c_ctl_site_order{
+    class b2c_ctl_site_order {
     }
 
 ### 类的成员变量声明
