@@ -119,6 +119,23 @@
     </tr>
 </table>
 
+## 异常处理规范
+###
+- LogicException
+-- BadFunctionCallException 
+-- BadMethodCallException
+-- DomainException
+-- InvalidArgumentException
+-- LengthException
+- RuntimeException
+-- OutOfBoundsException
+-- OutOfRangeException
+-- OverflowException
+-- RangeException
+- UnderflowException — The UnderflowException class
+-- UnexpectedValueException — The UnexpectedValueException class
+
+
 
 ## dump方法的使用
 开发中尽量避免使用dump获取数据(性能考虑)
