@@ -1,4 +1,4 @@
-```php
-public function a() {
-}
+```js
+function method() {
+alert("javascript"); }
 ```
