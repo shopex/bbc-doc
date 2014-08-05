@@ -122,7 +122,7 @@
 ## 异常处理规范
 ###
 - LogicException
--- BadFunctionCallException 
+  - BadFunctionCallException 
 -- BadMethodCallException
 -- DomainException
 -- InvalidArgumentException
