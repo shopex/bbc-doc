@@ -121,19 +121,20 @@
 
 ## 异常处理规范
 ###
-- LogicException
-  - BadFunctionCallException 
--- BadMethodCallException
--- DomainException
--- InvalidArgumentException
--- LengthException
-- RuntimeException
--- OutOfBoundsException
--- OutOfRangeException
--- OverflowException
--- RangeException
-- UnderflowException — The UnderflowException class
--- UnexpectedValueException — The UnexpectedValueException class
+- Exception
+	- LogicException
+	  - BadFunctionCallException 
+	  - BadMethodCallException
+      - DomainException
+      - InvalidArgumentException
+      - LengthException
+    - RuntimeException
+      - OutOfBoundsException
+      - OutOfRangeException
+      - OverflowException
+      - RangeException
+      - UnderflowException
+      - UnexpectedValueException
 
 
 
