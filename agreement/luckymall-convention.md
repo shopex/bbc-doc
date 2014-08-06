@@ -120,8 +120,7 @@
 </table>
 
 ## 异常处理规范
-### 业务逻辑代码的抛出用LogicException.
-### php SPL提供的异常处理类.
+** php SPL提供的异常处理类 **
 > - Exception
 > 	- LogicException
 > 	  - BadFunctionCallException 
@@ -136,8 +135,8 @@
 >       - RangeException
 >       - UnderflowException
 >       - UnexpectedValueException
-> 
 
+### 业务逻辑代码的抛出用LogicException
 
 ## dump方法的使用
 开发中尽量避免使用dump获取数据(性能考虑)
