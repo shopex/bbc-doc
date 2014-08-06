@@ -120,22 +120,23 @@
 </table>
 
 ## 异常处理规范
-###
-- Exception
-	- LogicException
-	  - BadFunctionCallException 
-	  - BadMethodCallException
-      - DomainException
-      - InvalidArgumentException
-      - LengthException
-    - RuntimeException
-      - OutOfBoundsException
-      - OutOfRangeException
-      - OverflowException
-      - RangeException
-      - UnderflowException
-      - UnexpectedValueException
-
+### 业务逻辑代码的抛出用LogicException.
+### php SPL提供的异常处理类.
+> - Exception
+> 	- LogicException
+> 	  - BadFunctionCallException 
+> 	  - BadMethodCallException
+>       - DomainException
+>       - InvalidArgumentException
+>       - LengthException
+>     - RuntimeException
+>       - OutOfBoundsException
+>       - OutOfRangeException
+>       - OverflowException
+>       - RangeException
+>       - UnderflowException
+>       - UnexpectedValueException
+> 
 
 
 ## dump方法的使用
