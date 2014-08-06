@@ -120,7 +120,7 @@
 </table>
 
 ## 异常处理规范
-** php SPL提供的异常处理类 **
+**php SPL提供的异常处理类**
 > - Exception
 > 	- LogicException
 > 	  - BadFunctionCallException 
