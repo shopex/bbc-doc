@@ -1,5 +1,13 @@
 # LuckyMall编码规范
 
+- [表结构规范](#table-agreement)
+- [app命名规则及开发规范](#app-name-agreement)
+- [异常处理规范](#exception-agreement)
+- [dump方法的使用](#dump-agreement)
+- [POST、GET请求](#request-agreement)
+- [model和lib代码](#model-lib-agreement)
+
+<a name="table-agreement"></a>
 ## 表结构规范
 **建表时如果表内需要定义一下字段, 需要遵照此命名规范:**
 - 最后修改时间 modified_time
@@ -8,7 +16,7 @@
 - 假删除     disabled
 
  
-
+<a name="app-name-agreement"></a>
 ## app命名规则及开发规范
 ### 系统级服务APP
 
@@ -119,6 +127,7 @@
     </tr>
 </table>
 
+<a name="exception-agreement"></a>
 ## 异常处理规范
 **php SPL提供的异常处理类**
 > - Exception
@@ -138,12 +147,11 @@
 
 ### 抛出错误规范
 - 底层错误抛出RuntimeException或继承RuntimeException的exception
+- 业务或逻辑代码代码需需要抛出LogicException或继承RuntimeException的exception
+- 禁止使用trigger_error抛出错误, 进行处理
+- 尽可能进准抛出SPL提供的具体错误处理类
 
-### 错误捕获处理
-
-### 禁止使用trigger_error抛出错误, 处理
-### 业务逻辑代码的抛出用LogicException
-
+<a name="dump-agreement"></a>
 ## dump方法的使用
 开发中尽量避免使用dump获取数据(性能考虑)
 
@@ -153,14 +161,15 @@
 ## 数据库操作
 避免直接写sql语句，尽量利用系统的dbeav(避免出错和安全考虑)
 
+<a name="request-agreement"></a>
 ## POST、GET请求
 禁止不检查过滤POST或者GET就直接插入数据库
 
 过滤掉非ecstore功能的非法尝试字段，不允许将传过来的值直接save方法保存
 
+<a name="model-lib-agreement"></a>
 ## model和lib代码
 业务逻辑代码避免放在model，做轻model层
 
 代码功能应当单一，避免过多业务逻辑判断，导致代码不能通用和后续升级代码困难
 
-<a name="comment-agreement"></a>
