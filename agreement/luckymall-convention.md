@@ -136,6 +136,12 @@
 >       - UnderflowException
 >       - UnexpectedValueException
 
+### 抛出错误规范
+- 底层错误抛出RuntimeException或继承RuntimeException的exception
+
+### 错误捕获处理
+
+### 禁止使用trigger_error抛出错误, 处理
 ### 业务逻辑代码的抛出用LogicException
 
 ## dump方法的使用

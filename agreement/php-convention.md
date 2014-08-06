@@ -39,7 +39,6 @@ ecos的app目录下存放的是我们的主要代码，类命名时app则不需�
     }
 
 **不推荐示范**
-
     class desktop_email_smtp {
           public function desktop_email_smtp($app)
           {

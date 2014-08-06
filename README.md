@@ -17,9 +17,10 @@
 
 
 ## DONE
-
+- [LuckyMall浏览器兼容性说明:Z](/tasks/browser-compatible.md)
 
 ## TODO
-- [LuckyMall浏览器兼容性说明:Z](/todo/browser-compatible.md)
-- [异常处理机制:B](/todo/configuration.md)
-- [routing:B](/todo/configuration.md)
+- [异常处理机制:B](/tasks/exception.md)
+
+
+- [routing:B](/tasks/configuration.md)
