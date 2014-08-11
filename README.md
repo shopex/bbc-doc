@@ -14,13 +14,16 @@
 - [目录结构](/basic/directory.md)
 
 ## misc
+- [系统依赖服务/组件](/deploy/dependence.md)
+
 
 
 ## DONE
 - [LuckyMall浏览器兼容性说明:Z](/tasks/browser-compatible.md)
+- [异常处理机制:B](/tasks/exception.md)
 
 ## TODO
-- [异常处理机制:B](/tasks/exception.md)
+
 
 
 - [routing:B](/tasks/configuration.md)

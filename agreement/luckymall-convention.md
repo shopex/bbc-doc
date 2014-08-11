@@ -151,6 +151,8 @@
 - 禁止使用trigger_error抛出错误, 进行处理
 - 尽可能进准抛出SPL提供的具体错误处理类
 
+> **注意** 系统中错误(error_reporting定义之错误)抛出会被base_exception_handler接管, 并抛出ErrorException 
+
 <a name="dump-agreement"></a>
 ## dump方法的使用
 开发中尽量避免使用dump获取数据(性能考虑)
