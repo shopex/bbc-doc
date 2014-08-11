@@ -21,6 +21,7 @@
 ## DONE
 - [LuckyMall浏览器兼容性说明:Z](/tasks/browser-compatible.md)
 - [异常处理机制:B](/tasks/exception.md)
+- [商家中心管理框架](/shop/basic.md)
 
 ## TODO
 
