@@ -38,4 +38,15 @@ router和ECStore后台一致
     public function page($view, $small=false, $app='topshop')
     {
     }
+    
+## object组件使用说明
 
+    object 参数列表
+        type="object" //必填
+        object="表名" //必填
+        select="radio or checkbox" //选填  默认为radio
+        multiple="true"   //当select为checkbox时，必填
+        filter=array() or string //表的查询条件 选填
+        app="appname" //选填  不填时  object的写法有变，如：goods@b2c
+        
+    <{input type="Object" name="testobject" object="specification" multiple="true" select="checkbox" value=$value}>
