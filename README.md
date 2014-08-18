@@ -11,8 +11,7 @@
 - [配置](/basic/configuration.md)
 - [配置详细说明](/basic/configuration-detail.md)
 - [通过composer引用第三方库](/basic/use-composer.md)
-- [请求](/basic/request.md)
-
+- [请求](/basic/requests.md)
 - [目录结构](/basic/directory.md)
 
 ## misc
