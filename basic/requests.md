@@ -2,17 +2,34 @@
 
 - [用户请求的详细信息](#request-information)
 
-> **注意**
-> request 类所返回的uri/url不排斥index.php
-> 因此如果想要去掉index.php 的场景需要
->
->     $url = kernel::removeIndex(request::url());
 
 
 <a name="request-information"></a>
 ## 用户请求的详细信息
 
 `Request` 类提供了许多 方法 用于获取关于请求的详细信息
+
+> **注意**
+> request 类所返回的uri/url不排斥index.php
+> 因此如果想要去掉index.php 的场景需要
+>
+>     $url = kernel::removeIndex(request::url());
+
+**获取站点完整路径**
+
+    kernel::base_url(1);
+
+> **示例**
+> http://localhost/mysite/index.php/about?a=1&b=2     returns 'http://localhost/mysite';
+    
+
+**获取站点相对路径**
+
+    kernel::base_url();
+
+> **示例**
+> http://localhost/mysite/index.php/about?a=1&b=2     returns '/mysite';
+
 
 **获取请求URI**
 
