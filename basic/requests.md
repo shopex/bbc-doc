@@ -2,6 +2,7 @@
 
 - [基本输入](#basic-input)
 - [用户请求的详细信息](#request-information)
+- [文件上传](#files)
 
 <a name="basic-input"></a>
 
@@ -40,6 +41,40 @@
 
 > **注意：** 有一些javascript库，比如 Backbone 会以json格式提交信息。 通过 `input::get` 来获取信息，使用上无差别。
 
+<a name="files"></a>
+
+## 文件上传
+
+**获取用户上传的文件**
+
+	$file = input::file('photo');
+
+**判断指定文件是否已经被上传**
+
+	if (input::hasFile('photo'))
+	{
+		//
+	}
+
+`file` 方法返回了一个 `Symfony\Component\HttpFoundation\File\UploadedFile` 类的实例, 该类继承自PHP的 `SplFileInfo` 类，并提供了大量操作该用户上传的文件的方法。
+
+**移动一个已上传的文件**
+
+	input::file('photo')->move($destinationPath);
+
+	input::file('photo')->move($destinationPath, $fileName);
+
+**获取一个已上传的文件在服务器的真实路径**
+
+	$path = input::file('photo')->getRealPath();
+
+**获取一个已上传的文件的大小**
+
+	$size = input::file('photo')->getSize();
+
+**获取一个已上传的文件的 MIME 类型**
+
+	$mime = input::file('photo')->getMimeType();
 
 <a name="request-information"></a>
 ## 用户请求的详细信息
