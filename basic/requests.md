@@ -98,11 +98,11 @@
 
 **获取请求头里的Content-Type信息**
 	
-    $value = request::getHeader('Content-Type');
+    $value = Request::header('Content-Type');
 
 **获取 $_SERVER 数组里指定的值**
 
-	$value = request::getServer('PATH_INFO');
+	$value = request::server('PATH_INFO');
 
 **判断是否是使用ajax请求**
 
