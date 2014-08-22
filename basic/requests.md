@@ -11,34 +11,34 @@
 
 **获取一个用户提交的值**
 
-  $name = Input::get('name');
+  $name = input::get('name');
 
 **为用户提交信息指定一个的默认返回值(如果用户未提交)**
 
-	$name = Input::get('name', 'Sally');
+	$name = input::get('name', 'Sally');
 
 **判断指定的提交信息是否存在**
 
-	if (Input::has('name'))
+	if (input::has('name'))
 	{
 		//
 	}
 
 **获取所有用户提交的信息**
 
-	$input = Input::all();
+	$input = input::all();
 
 **获取指定的信息，或者获取排除指定几个提交项之外的所有提交信息**
 
-	$input = Input::only('username', 'password');
+	$input = input::only('username', 'password');
 
-	$input = Input::except('credit_card');
+	$input = input::except('credit_card');
 
 如果提交的表单含有 "数组" 形式的输入，可以使用点符号访问数组：
 
-	$input = Input::get('products.0.name');
+	$input = input::get('products.0.name');
 
-> **注意：** 有一些javascript库，比如 Backbone 会以json格式提交信息。 通过 `Input::get` 来获取信息，使用上无差别。
+> **注意：** 有一些javascript库，比如 Backbone 会以json格式提交信息。 通过 `input::get` 来获取信息，使用上无差别。
 
 
 <a name="request-information"></a>
