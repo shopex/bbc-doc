@@ -105,7 +105,7 @@
 
 **获取请求URI**
 
-    $uri = Request::path();
+    $uri = request::path();
     
 > **示例**
 > http://localhost/mysite                        returns '/';
@@ -133,7 +133,7 @@
 
 **获取请求头里的Content-Type信息**
 	
-    $value = Request::header('Content-Type');
+    $value = request::header('Content-Type');
 
 **获取 $_SERVER 数组里指定的值**
 
@@ -155,9 +155,9 @@
 
 **检测请求的响应格式**
 
-`Request::format` 方法基于 HTTP 请求头的 Accept 信息返回客户端希望获取的响应格式:
+`request::format` 方法基于 HTTP 请求头的 Accept 信息返回客户端希望获取的响应格式:
 
-	if (Request::format() == 'json')
+	if (request::format() == 'json')
 	{
 		//
 	}
