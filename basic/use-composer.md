@@ -15,4 +15,6 @@ LuckyMall框架使用[Composer](http://getcomposer.org)（PHP包管理工具，�
 - 修改composer.json后, 需要执行`composer update`
 - 跟新后会同时更新`composer.lock`文件和`vender`目录, 勿忘一并提交
 
+## 寻觅有用的库
+到[packagist](packagist.org)寻找有用的库
 
