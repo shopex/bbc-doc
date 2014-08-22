@@ -1,7 +1,44 @@
 # 请求
 
+- [基本输入](#basic-input)
 - [用户请求的详细信息](#request-information)
 
+<a name="basic-input"></a>
+
+## 基本输入
+
+使用一种简单的方式来访问用户提交的信息。 你可以用统一的方式来访问用户提交的信息，而不用为用户提交信息的方式操心。
+
+**获取一个用户提交的值**
+
+  $name = Input::get('name');
+
+**为用户提交信息指定一个的默认返回值(如果用户未提交)**
+
+	$name = Input::get('name', 'Sally');
+
+**判断指定的提交信息是否存在**
+
+	if (Input::has('name'))
+	{
+		//
+	}
+
+**获取所有用户提交的信息**
+
+	$input = Input::all();
+
+**获取指定的信息，或者获取排除指定几个提交项之外的所有提交信息**
+
+	$input = Input::only('username', 'password');
+
+	$input = Input::except('credit_card');
+
+如果提交的表单含有 "数组" 形式的输入，可以使用点符号访问数组：
+
+	$input = Input::get('products.0.name');
+
+> **注意：** 有一些javascript库，比如 Backbone 会以json格式提交信息。 通过 `Input::get` 来获取信息，使用上无差别。
 
 
 <a name="request-information"></a>
@@ -10,7 +47,7 @@
 `Request` 类提供了许多 方法 用于获取关于请求的详细信息
 
 > **注意**
-> request 类所返回的uri/url不排斥index.php
+> request 类所返回的uri/url不排除index.php
 > 因此如果想要去掉index.php 的场景需要
 >
 >     $url = kernel::removeIndex(request::url());
@@ -81,3 +118,11 @@
     	//
     }
 
+**检测请求的响应格式**
+
+`Request::format` 方法基于 HTTP 请求头的 Accept 信息返回客户端希望获取的响应格式:
+
+	if (Request::format() == 'json')
+	{
+		//
+	}
