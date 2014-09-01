@@ -96,7 +96,7 @@
 
 	route::pattern('id', '[0-9]+');
 
-	Route::get('user/{id}', function($id)
+	route::get('user/{id}', function($id)
 	{
 		// Only called if {id} is numeric.
 	});
@@ -106,14 +106,14 @@
 
 重定向和生成URL时，使用命名路由会更方便。你可以为路由指定一个名字，如下所示：
 
-	Route::get('user/profile', array('as' => 'profile', function()
+	route::get('user/profile', array('as' => 'profile', function()
 	{
 		//
 	}));
 
 还可以为 controller action指定路由名称：
 
-	Route::get('user/profile', array('as' => 'profile', 'uses' => 'UserController@showProfile'));
+	route::get('user/profile', array('as' => 'profile', 'uses' => 'UserController@showProfile'));
   
 现在，你可以使用路由名称来创建URL和重定向：
 
@@ -123,21 +123,32 @@
 	
 可以使用`currentRouteName`方法来获取当前运行的路由名称:
 
-	$name = Route::currentRouteName();
+	$name = route::currentRouteName();
+
+同样可以使用路由器的controller action来创建URL和重定向:
+
+	$url = url::action('UserController@showProfile');
+
+	$redirect = redirect::action('UserController@showProfile');
+	
+可以使用`route::current()->getActionName()`方法来获取当前运行的路由名称:
+
+    route::current()->getActionName();    
+
 
 <a name="route-groups"></a>
 ## 路由组
 
 有时你可能需要为一组路由应用过滤器。使用路由组就可以避免单独为每个路由指定过滤器了：
 
-	Route::group(array('before' => 'auth'), function()
+	route::group(array('before' => 'auth'), function()
 	{
-		Route::get('/', function()
+		route::get('/', function()
 		{
 			// Has Auth Filter
 		});
 
-		Route::get('user/profile', function()
+		route::get('user/profile', function()
 		{
 			// Has Auth Filter
 		});
@@ -150,10 +161,10 @@ Laravel中的路由功能还支持通配符子域名，你可以在域名中指�
 
 **注册子域名路由**
 
-	Route::group(array('domain' => '{account}.myapp.com'), function()
+	route::group(array('domain' => '{account}.myapp.com'), function()
 	{
 
-		Route::get('user/{id}', function($account, $id)
+		route::get('user/{id}', function($account, $id)
 		{
 			//
 		});
@@ -166,10 +177,10 @@ Laravel中的路由功能还支持通配符子域名，你可以在域名中指�
 
 **为路由组设置前缀**
 
-	Route::group(array('prefix' => 'admin'), function()
+	route::group(array('prefix' => 'admin'), function()
 	{
 
-		Route::get('user', function()
+		route::get('user', function()
 		{
 			//
 		});
