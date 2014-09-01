@@ -12,7 +12,11 @@
 - [配置详细说明](/basic/configuration-detail.md)
 - [通过composer引用第三方库](/basic/use-composer.md)
 - [请求与输入](/basic/requests.md)
+- [路由](/basic/routing.md)
+- [Response](/basic/responses.md)
+- [Facades](/basic/facades.md)
 - [目录结构](/basic/directory.md)
+-
 
 ## misc
 - [系统依赖服务/组件](/deploy/dependence.md)
