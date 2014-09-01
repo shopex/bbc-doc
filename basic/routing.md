@@ -6,6 +6,7 @@
 - [路由组](#route-groups)
 - [子域名路由](#sub-domain-routing)
 - [路由前缀](#route-prefixing)
+- [视图url生成](#view-url)
 
 <a name="basic-routing"></a>
 ## 基本路由
@@ -119,7 +120,7 @@
 
 	$url = url::route('profile');
 
-	$redirect = Redirect::route('profile');
+	$redirect = redirect::route('profile');
 	
 可以使用`currentRouteName`方法来获取当前运行的路由名称:
 
@@ -186,3 +187,20 @@ Laravel中的路由功能还支持通配符子域名，你可以在域名中指�
 		});
 
 	});
+
+<a name="view-url"></a>    
+## 视图中URL生成
+
+我们将用个例子进行说明:
+
+	route::get('user/profile', array('as' => 'profile', 'uses' => 'UserController@showProfile'));
+    
+**根据action创建URL**
+    <{url action=UserController@showProfile}>
+    
+**根据路由创建URL**
+    <{url to=user/profile}>
+
+
+ **根据路由名称来创建URL**
+    <{url route=profile}>    
