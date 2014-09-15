@@ -179,4 +179,5 @@
 ## lib/data下类的方法命名和规范
 - 获取单条记录详细信息方法命名 get***Info($filter);
 - 获取多条记录信息方法命名 get***List($filter);
-- @param $filter array 包含fields:要获取的字段名，start:从什么位置开始，limit:每次取几条记录,order_by:根据什么排序,其他为其他fiter过滤字段 
+- @param $filter array 包含fields:要获取的字段名，start:从什么位置开始，limit:每次取几条记录,order_by:根据什么排序,其他为其他fliter过滤字段 
+- 所以此类方法获取信息，要根据传入的$filter组织数据，例如默认fields字段,默认排序字段，过滤非系统字段筛选
