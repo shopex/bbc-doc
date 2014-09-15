@@ -175,3 +175,8 @@
 
 代码功能应当单一，避免过多业务逻辑判断，导致代码不能通用和后续升级代码困难
 
+<a name="lib-data-agreement"></a>
+## lib/data下类的方法命名和规范
+- 获取单条记录详细信息方法命名 get***Info($filter);
+- 获取多条记录信息方法命名 get***List($filter);
+- @param $filter array 包含fields:要获取的字段名，start:从什么位置开始，limit:每次取几条记录,order_by:根据什么排序,其他为其他fiter过滤字段 
