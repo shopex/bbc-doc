@@ -1,0 +1,3 @@
+discount_fee参数主子订单有什么区别?
+trade.discount_fee是交易级别的优惠（常见的有满减等），order.discount_fee是针对单个商品的订单级别优惠（常见的有新品折扣之类）。
+因此两者是不同的。
