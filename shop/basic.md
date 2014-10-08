@@ -81,3 +81,32 @@ router和ECStore后台一致
                 'content' => array('name','goods_name','user_name','password',...),  //邮件或短信中需要包含的信息(变量的值)
                 'config' => array(shopname,entId,entpwd,sign), //一些系统信息作为配置项传值，或者用于开发测试
             );
+    
+    扩展发送项 以及 模板方法
+        在config/messenger.php文件中，在messenger的数组中增加需要的项，如：
+            msg=array(
+            'label' => '站内信',
+              'display' => true,
+              'iconclass' => 'sysiconBtn msg',
+              'name_show' => '发站内信',
+             'version' => '$ver$',
+              'updateUrl' => '',
+              'isHtml' => true,
+              'hasTitle' => true,
+              'maxtime' => 300,
+              'maxbodylength' => 300,
+              'allowMultiTarget' => false,
+              'targetSplit' => ',',
+              'dataname' => 'msg',
+              'debug' => false,
+              'class' => 'system_messenger_msg',  //发送的具体函数类 
+            ),
+        在config/messenger.php文件中，在actions的数组中增加需要的模板，如：
+            create-order=array(
+             'label' => '创建订单',
+              'email' => 'true',
+              'sms' => 'true',
+              'sendType' => 'notice',
+              'varmap' => '订单号<{$order_id}> 收货地址<{$receiver_address}>',
+              'view' =>'',  //模板html文件地址 
+            ),
