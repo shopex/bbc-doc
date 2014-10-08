@@ -50,3 +50,22 @@ router和ECStore后台一致
         app="appname" //选填  不填时  object的写法有变，如：goods@b2c
         
     <{input type="Object" name="testobject" object="specification" multiple="true" select="checkbox" value=$value}>
+    
+## 邮件短信发送调用说明
+    发送邮件短信分为直接发送和队列发送
+    直接发送调用方式
+        messenger::sendemail($tmpl,$params); //直接发送邮件
+        messenger::sendsms($tmpl,$params); //直接发送短信
+        
+    队列发送
+        messenger::send($tmpl,$params)  //通过队列发送邮件短信
+        
+    传送的参数说明
+        $tmpl: 需要发送的短信邮件的模板名称，如：account-signup(手机注册短信验证)
+        $params:类型-array、发送的内容、对象等等，如：
+            $params = array(
+                'email'=>'aa@ss.com',  //可以是多个用","隔开；可以是数组
+                'sms' => '13812344321',  //可以是多个用","隔开；可以是数组
+                'content' => array('name','goods_name','user_name','password',...),  //邮件或短信中需要包含的信息(变量的值)
+                'config' => array(shopname,entId,entpwd,sign), //一些系统信息作为配置项传值，或者用于开发测试
+            );
