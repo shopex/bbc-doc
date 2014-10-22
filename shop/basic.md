@@ -130,3 +130,15 @@ router和ECStore后台一致
 ## 会员中心左侧标签嵌套右侧页面方法
     $this->action_view  //此参数的作用是html页面文件名
     最终输出页面情调用 $this->output();
+    新增左侧菜单标签方法：
+        config/usermenu.php
+        
+        array(
+          'label' => '新的标签名称',
+          'items' => array(
+              array('label' => '新的子标签名称','action'=>'topc_ctl_member@tradeList'),
+        ),
+        
+        
+ 17     ),
+        
