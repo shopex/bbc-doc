@@ -110,3 +110,23 @@ router和ECStore后台一致
               'varmap' => '订单号<{$order_id}> 收货地址<{$receiver_address}>',
               'view' =>'',  //模板html文件地址 
             ),
+
+
+## pagers组件使用说明
+    pagers 参数
+        data=array(
+            'link'=>url::action('topc_ctl_list@index',$filter),    //翻页链接
+            'current'=>$current,      //起始页码  number
+            'total'=>$total,          //总页码   number
+            'token'=>$filter['pages'],  //随机数  赋值为time()
+        );必填
+        type='mini'; 选填
+        
+    html页面调用方式
+    <{pagers data=$pages}>
+    
+    注意：具体使用请仔细查看 topc_ctl_list@index
+    
+## 会员中心左侧标签嵌套右侧页面方法
+    $this->action_view  //此参数的作用是html页面文件名
+    最终输出页面情调用 $this->output();
