@@ -59,6 +59,10 @@ Response
 
     return redirect::back();
     
+**返回一个重定向至站外URL**
+
+    return redirect::away('http://www.shopex.cn');
+    
 <a name="special-responses"></a>
 ## 特殊Response
 
