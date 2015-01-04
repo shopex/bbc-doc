@@ -1,4 +1,4 @@
-# 基本介绍 
+# 基本介绍
 
 ## 配置
 
@@ -38,7 +38,7 @@ router和ECStore后台一致
     public function page($view, $small=false, $app='topshop')
     {
     }
-    
+
 ## object组件使用说明
 
     object 参数列表
@@ -59,30 +59,32 @@ router和ECStore后台一致
         multiple="true"                       //当select为checkbox时，必填
         filter=array() or string              //表的查询条件 选填
         app="appname"                         //选填  不填时  object的写法有变，如：goods@b2c
-        
+
     <{input type="Object" name="testobject" object="specification" multiple="true" select="checkbox" value=$value}>
-    
+
 ## 邮件短信发送调用说明
     发送邮件短信分为直接发送和队列发送
-    
+
     直接发送调用方式
-        messenger::sendemail($tmpl,$params); //直接发送邮件
-        messenger::sendsms($tmpl,$params); //直接发送短信
-        
+        messenger::sendEmail($sendTo,$tmpl,$content); //直接发送邮件
+        messenger::sendSms($to,$tmpl,$content); //直接发送短信
+
     队列发送调用方式
-        messenger::send($tmpl,$params)  //通过队列发送邮件短信
-        
+        messenger::send($sendTo,$tmpl,$content)  //通过队列发送邮件短信
+
     传送的参数说明
+        $sendTo: 邮件或短信的收信方，邮件短信一起发送时，此参数是数组，如：
+           array(
+            'sms' => ""; 电话号码用逗号隔开的字符集或数组
+            'email' => "";邮箱地址用逗号隔开的字符集或数组
+           );
         $tmpl: 需要发送的短信邮件的模板名称，如：account-signup(手机注册短信验证)
-        $params:类型-array、发送的内容、对象等等，如：
-            $params = array(
-                'email'=>'aa@ss.com',  //可以是多个用","隔开；可以是数组
-                'sms' => '13812344321',  //可以是多个用","隔开；可以是数组
-                'content' => array('name','goods_name','user_name','password',...),  //邮件或短信中需要包含的信息(变量的值)
-                'config' => array(shopname,entId,entpwd,sign), //一些系统信息作为配置项传值，或者用于开发测试
-            );
-    
-    扩展发送项 以及 模板方法
+        $content:类型-array、发送的内容、对象等等，如：
+        $content = array('name','goods_name','user_name','password',...),  //邮件或短信中需要包含的信息(变量的值)
+
+        邮件短信发送已经写了初始的测试用例，具体用法可参照使用
+
+        扩展发送项 以及 模板方法
         在config/messenger.php文件中，在messenger的数组中增加需要的项，如：
             msg=array(
             'label' => '站内信',
@@ -99,7 +101,7 @@ router和ECStore后台一致
               'targetSplit' => ',',
               'dataname' => 'msg',
               'debug' => false,
-              'class' => 'system_messenger_msg',  //发送的具体函数类 
+              'class' => 'system_messenger_msg',  //发送的具体函数类
             ),
         在config/messenger.php文件中，在actions的数组中增加需要的模板，如：
             create-order=array(
@@ -108,7 +110,7 @@ router和ECStore后台一致
               'sms' => 'true',
               'sendType' => 'notice',
               'varmap' => '订单号<{$order_id}> 收货地址<{$receiver_address}>',
-              'view' =>'',  //模板html文件地址 
+              'view' =>'',  //模板html文件地址
             ),
 
 
@@ -121,24 +123,24 @@ router和ECStore后台一致
             'token'=>$filter['pages'],  //随机数  赋值为time()
         );必填
         type='mini'; 选填
-        
+
     html页面调用方式
     <{pagers data=$pages}>
-    
+
     注意：具体使用请仔细查看 topc_ctl_list@index
-    
+
 ## 会员中心左侧标签嵌套右侧页面方法
     $this->action_view  //此参数的作用是html页面文件名
     最终输出页面情调用 $this->output();
     新增左侧菜单标签方法：
         config/usermenu.php
-        
+
         array(
           'label' => '新的标签名称',
           'items' => array(
               array('label' => '新的子标签名称','action'=>'topc_ctl_member@tradeList'),
         ),
-        
-        
+
+
  17     ),
-        
+
