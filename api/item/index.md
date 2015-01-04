@@ -20,12 +20,20 @@
 - [商品搜索接口](#search)
 - [获取单个商品信息](#itemInfo)
 
-<a name="introduction"></a>
+<a name="search"></a>
 ### 商品搜索接口
-
 接口文件存储目录 app/sysitem/lib/api/item/search.php
 
     public function search($params)
+    {
+        ......
+    }
+
+<a name="itemInfo"></a>
+### 获取单个商品信息接口
+接口文件存储目录 app/sysitem/lib/api/item/get.php
+
+    public function getItemInfo($params)
     {
         ......
     }
