@@ -1,0 +1,797 @@
+# B2B2C 前台样式及SCSS文件用例说明
+
+##前言
+
+前台样式框架首先为所有开发B2B2C的开发者而设计，让B2B2C的前端开发更快速、简单，所有开发者都能快速上手，并致力于推广到所有应用场景。
+
+**预处理脚本**
+你可以采用预编译的 SCSS 文件快速开发，也可以从源码定制自己需要的样式。
+
+**特性齐全**
+你能在这里找到关于 HTML 结构、HTML 和 CSS 组件、SCSS结构方面的所有详细文档。
+
+##使用
+
+此框架直接包含在B2B2C的项目的 head 里，使用时直接调用相关类和方法即可。
+
+    <{css src="stylesheets/layout.css" app="topc"}>
+    <{css src="stylesheets/theme.css" app="topc"}>
+
+##包含的内容
+
+###资源文件
+
+编译后的文件的目录结构及释义如下：
+
+    statics/
+    ├── stylesheets/                -包含所有的开发环境中的样式文件
+    │   ├── layout.css              -包含所有的系统级样式及组件的样式
+    │   ├── theme.css               -包含所有修饰性的样式，如颜色，边框，背景，字体大小等
+    │   ├── iconfonts.css           -包含所有字体图标的样式
+    │   └── datepicker.css          -包含一个时间选择组件的样式
+    └── fonts/                      -包含所有的字体图标
+        ├── iconfonts.eot
+        ├── iconfonts.svg
+        ├── iconfonts.ttf
+        └── iconfonts.woff
+
+这是最基本的 B2B2C 样式文件组织形式。并且在生产环境中会加入压缩版　*.min.css。 fonts 文件夹里的部分字体图标来自网络中现有的免费的图标字体，另一部分是由我们的设计师设计后加入的。
+
+###SCSS 源码
+
+    sass/
+    ├── base/                               -所有系统基本样式
+    │   ├── iconfonts/                      -字体图标样式
+    |   |   ├── _iconfonts-font.scss
+    |   |   ├── _iconfonts-icons.scss
+    |   |   ├── _iconfonts-variables.scss
+    |   |   ├── _iconfonts.scss
+    │   ├── _alert.scss                     -警告提示框
+    │   ├── _base.scss                      -所有系统基本样式的汇总
+    │   ├── _button.scss                    -系统图标样式
+    │   ├── _config.scss                    -系统配置文件
+    │   ├── _datepicker.scss                -时间选择器组件
+    │   ├── _form.scss                      -系统表单样式
+    │   ├── _global.scss                    -全局定义
+    │   ├── _grid.scss                      -栅格化定义
+    │   ├── _icons.scss                     -字体图标样式
+    │   ├── _message.scss                   -系统提示信息
+    │   ├── _pager.scss                     -翻页组件
+    │   ├── _popup.scss                     -弹层组件
+    │   ├── _system.scss                    -非可视化编辑区域
+    │   ├── _tables.scss                    -系统表格样式
+    │   ├── _tags.scss                      -文字标签样式
+    │   ├── _tips.scss                      -系统工具提示样式
+    │   └── _typography.scss                -字形排版
+    ├── layout/                             -所有系统布局样式
+    │   ├── _alumbs.scss                    -商品相册布局
+    │   ├── _brand.scss                     -品牌页布局
+    │   ├── _cart.scss                      -购物车页布局
+    │   ├── _gallery.scss                   -商品列表布局
+    │   ├── _member.scss                    -会员中心布局
+    │   ├── _mod.scss                       -模块化样式布局
+    │   ├── _order.scss                     -下单页布局
+    │   ├── _passport.scss                  -通行证/注册登录布局
+    │   ├── _password.scss                  -密码强度检测组件
+    │   ├── _product.scss                   -商品详情页组件
+    │   └── _stars.scss                     -对商品评分组件
+    ├── theme/                              -所有主题修饰性样式
+    │   ├── _brands.scss                    -品牌页修饰
+    │   ├── _cart.scss                      -购物车页修饰
+    │   ├── _common.scss                    -主题整体修饰性样式
+    │   ├── _config.scss                    -主题样式配置
+    │   ├── _gallery.scss                   -商品列表修饰
+    │   ├── _graphic.scss                   -图形化图片修饰
+    │   ├── _history.scss                   -浏览历史记录修饰
+    │   ├── _order.scss                     -下单页修饰
+    │   └── _passport.scss                  -通行证/注册登录修饰
+    ├── layout.scss                         -所有系统基本布局及组件样式
+    └── theme.scss                          -所有主题相关修饰性样式
+
+##编译 CSS 文件
+
+B2B2C使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要用到的环境如下：
+
+###安装 Ruby
+
+我们在安装 Ruby 之前，需要到 (http://rubyinstaller.org/downloads/) 根据自己的系统下载安装包(2.x以上)，如果是 Linux 或 Mac OS 系统，请到 https://www.ruby-lang.org/zh_cn/downloads/ 查看更多安装方式。
+
+安装完成后请到命令行下运行
+
+    ruby -v
+
+如果出现 Ruby 的版本信息就说明安装成功。
+
+###安装 SASS
+
+继续在命令行中运行：
+
+    gem install sass
+
+等待安装完成。或者安装 GUI 工具，具体信息请查看 (http://sass-lang.com/install)。
+
+###安装 Compass
+
+继续在命令行中运行：
+
+    gem install compass
+
+等待安装完成，或者安装GUI工具，具体信息请查看 (http://compass-style.org/install/)。
+
+##基本模板
+
+使用以下给出的这份超级简单的 HTML 模版，并且按照自己的需求进行增加或修改内容。
+
+    <!DOCTYPE html>
+    <html lang="zh-cn">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="renderer" content="webkit">
+      <title>B2B2C Template</title>
+
+      <link rel="stylesheet" href="statics/stylesheets/layout.css">
+      <link rel="stylesheet" href="statics/stylesheets/theme.css">
+
+      <script src="statics/scripts/lib/jquery.js"></script>
+      <script src="statics/scripts/tools.js"></script>
+    </head>
+    <body>
+      <h1>你好，世界！</h1>
+
+    </body>
+    </html>
+
+##全局 CSS 样式
+
+###排版与链接
+
+- 为了增强跨浏览器表现的一致性，设置了 `css reset`;
+- 设置 `html` 的背景为 `background: #FFFFFF`;
+- `body` 有默认的 `font-family`，`font-size`，`line-height`;
+- `a` 有默认的 `color` 并且不显示下划线;
+
+###布局容器
+
+`.wrap` 类用于固定宽度的容器。
+
+    <div class="wrap">
+      ...
+    </div>
+
+`.wrap-fluid` 类用于 100% 宽度，占据全部视口的容器。
+
+    <div class="wrap-fluid">
+      ...
+    </div>
+
+##栅格系统
+
+栅格系统是一套标准化的设计框架，用于通过一系列的行与列的组合来创建页面布局，能让页面中的元素相对规范化。综合各方面设计考虑，我们的栅格分为最多16列。B2B2C 前台的栅格系统如下：
+
+- 暂定两种宽度的容器 `.wrap` 和 `.wrap-lg`。
+- “行（row）”必须包含在 .wrap （固定宽度）或 .wrap-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。
+- 通过“行（row）”在水平方向创建一组“列（column）”。
+- 你的内容应当放置于“列（column）”内，并且，只有“列（column）”可以作为“行（row）”的直接子元素。
+- 类似 `.row` 和 `.col-4` 这种预定义的类，可以用来快速创建栅格布局。
+- 通过为“列（column）”设置 `padding` 属性，从而创建列与列之间的间隔（gutter）。通过为 `.row` 元素设置负值 `margin` 从而抵消掉为 `.wrap` 元素设置的 `padding`，也就间接为“行（row）”所包含的“列（column）”抵消掉了 `padding`。
+- 如果一“行（row）”中包含了的“列（column）”大于 16，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。
+- **注意：**如果一个元素中使用了多个类，预定义类 `.col-*` 必须放在首位，以免一部分样式应用不上。
+
+###栅格参数
+
+通过下表可以详细查看 B2B2C 的栅格系统是如何在多种屏幕设备上工作的。
+
+　| 中等屏幕 桌面显示器 | 大屏幕 大桌面显示器
+:------|:------------|:---------------
+.wrap 最大宽度 | 950px | 1190px
+类前缀 | .col- | .col-lg
+列数 | 16
+列宽 | 50 | 75
+间距 | 10px
+
+###实例：从堆叠到水平排列
+
+使用单一的一组 `.col-*` 栅格类，就可以创建一个基本的栅格系统，所有列（column）必须放在 `.row` 内。
+
+    <div class="row">
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+      <div class="col-1">.col-1</div>
+    </div>
+    <div class="row">
+      <div class="col-4">.col-4</div>
+      <div class="col-4">.col-4</div>
+      <div class="col-4">.col-4</div>
+      <div class="col-4">.col-4</div>
+    </div>
+    <div class="row">
+      <div class="col-4">.col-4</div>
+      <div class="col-8">.col-8</div>
+      <div class="col-4">.col-4</div>
+    </div>
+    <div class="row">
+      <div class="col-8">.col-8</div>
+      <div class="col-8">.col-8</div>
+    </div>
+
+###列偏移
+
+使用 `.offset-*` 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素增加了左侧的边距（margin）。例如，`.offset-4` 类将 `.col-4` 元素向右侧偏移了4个列（column）的宽度。
+
+    <div class="row">
+      <div class="col-5">.col-5</div>
+      <div class="col-5 offset-6">.col-5 .offset-6</div>
+    </div>
+    <div class="row">
+      <div class="col-4 offset-4">.col-4 .offset-4</div>
+      <div class="col-4 offset-4">.col-4 .offset-4</div>
+    </div>
+    <div class="row">
+      <div class="col-8 offset-4">.col-8 .offset-4</div>
+    </div>
+
+###嵌套列
+
+为了使用内置的栅格系统将内容再次嵌套，可以通过添加一个新的 .row 元素和一系列 .col-* 元素到已经存在的 .col-* 元素内。被嵌套的行（row）所包含的列（column）的个数不能超过 16。
+
+    <div class="row">
+      <div class="col-12">
+        .col-12
+        <div class="row">
+          <div class="col-8">
+            .col-8
+          </div>
+          <div class="col-4">
+            .col-4
+          </div>
+        </div>
+      </div>
+    </div>
+
+###SASS 变量
+
+通过变量来定义列数、槽（gutter）宽，我们使用这些变量生成预定义的栅格类。
+
+    //breakpoints
+    $wrap:      950px !default;
+    $wrap-lg:   1190px !default;
+    $wrap-md:   710px !default;
+    $wrap-sm:   640px !default;
+    $wrap-xs:   320px !default;
+
+    //grid
+    $grid-columns:    16 !default;
+    $grid-gutter:     10px !default;
+    $grid-gutter-lg:  10px !default;
+
+###SASS 扩展
+
+你可以用 scss 扩展这些预定义样式，以便生成更多复杂的布局，下面是一个例子：
+
+    .wrapper {
+        @include grid-container($wrap);
+        @include clear(fix);
+    }
+    .sidebar {
+        @include float(left);
+        @include grid-column-width(null, 4, $grid-span, $grid-gutter);
+    }
+    .content-main {
+        @include grid-column($grid-gutter);
+        @include grid-column-width(null, 12, $grid-span, $grid-gutter);
+    }
+
+    <div class="wrapper">
+      <div class="sidebar">sidebar</div>
+      <div class="content-main">content main</div>
+    </div>
+
+##排版
+
+###标题
+
+HTML 中的所有标题标签，`<h1>` 到 `<h6>` 均可使用。另外，还提供了 `.h1` 到 `.h6` 类，为的是给内联（inli sne）属性的文本赋予标题的样式。
+
+    <h1>h1. Bootstrap heading</h1>
+    <h2>h2. Bootstrap heading</h2>
+    <h3>h3. Bootstrap heading</h3>
+    <h4>h4. Bootstrap heading</h4>
+    <h5>h5. Bootstrap heading</h5>
+    <h6>h6. Bootstrap heading</h6>
+
+###页面主体
+
+B2B2C 全局字体大小为 12px，行高设置为 1.5。这些属性直接赋予 `<body>` 元素和所有段落元素。另外，`<p>` 元素还被设置了 1/2 行高 (9px) 的底部外边距。
+
+    <p>对段落的定义：1/2行高 (默认为9px) 的底部外边距 (margin) 属性。</p>
+
+###中心内容
+
+通过添加 .lead 类可以让段落突出显示。
+
+    <p class="lead">段落的突出显示，比普通文字显示要大一些，间距也更大，这样会比较显眼。</p>
+
+###内联文本元素
+
+####被标记的文本
+
+一般使用 `<mark>` 标签来标记文本，显示高亮效果，但是考虑到 IE 的兼容性，可以使用 `.mark` 类做区分。
+
+    对于需要<span class="mark">高亮</span>的文本使用 mark 标签或 .mark 类。
+
+####被删除的文本
+
+对于被删除的文本使用 `<del>` 标签。
+
+    <del>使用 del 标签来标记此段文本是被删除的。</del>
+
+####无用文本
+
+对于没用的文本使用 `<s>` 标签。
+
+    <s>这段文字用 s 标签表示为没用的文本。</s>
+
+####插入文本
+
+额外插入的文本使用 `<ins>` 标签。
+
+    <ins>用 ins 标签表示这段为额外插入文档内的文本。</ins>
+
+####带下划线的文本
+
+为文本添加下划线，使用 `<u>` 标签，一般表示专有名词或拼写错误的单词。
+
+    带下划线的文本表示此为<u>专用名词</u>，在 HTML5 中这是合法的。
+
+#####小号文本
+对于不需要强调的 inline 或 block 类型的文本，使用 `<small>` 标签包裹，其内的文本将被设置为父容器字体大小的 85%。
+
+你还可以为行内元素赋予 `.small` 类以代替任何 `<small>` 元素。
+
+    <small>小号文本可以包在 heading 标签中用来表示副标题。</small>
+
+#####着重
+
+通过 `<strong>` 标签增加 font-weight 值强调一段文本。
+
+    一般用 strong 标签来表示<strong>强调一段文本</strong>。
+
+#####斜体
+
+用 `<em>` 标签强调一段文本。
+
+    <em>此段文本也表示强调，但是语气没有 strong 那么重。</em>
+
+>在 HTML5 中可以放心使用 <b> 和 <i> 标签。<b> 用于高亮单词或短语，不带有任何着重的意味；而 <i> 标签主要用于发言、技术词汇等。
+
+###对齐
+
+通过文本对齐类，可以简单方便的将文字重新对齐。
+
+    <p class="text-left">左对齐文本。</p>
+    <p class="text-center">居中对齐文本。</p>
+    <p class="text-right">右对齐文本。</p>
+    <p class="text-justify">两端对齐</p>
+    <p class="text-nowrap">不折行文本</p>
+
+###引用
+
+在你的文档中引用其他来源的内容。
+
+####默认样式的引用
+
+将任何 HTML 元素包裹在 `<blockquote>` 中即可表现为引用样式。对于直接引用，我们建议用 `<p>` 标签。
+
+    <blockquote>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    </blockquote>
+
+###列表
+
+####无序列表
+
+排列顺序无关紧要的一列元素。
+
+    <ul>
+      <li>...</li>
+    </ul>
+
+####有序列表
+
+顺序至关重要的一组元素。
+
+    <ol>
+      <li>...</li>
+    </ol>
+
+####内联列表
+
+通过添加样式 `.list-inline`，将所有元素放置于同一行。
+
+    <ul class="list-inline">
+      <li>...</li>
+    </ul>
+
+####描述
+
+带有描述的短语列表。
+
+    <dl>
+      <dt>...</dt>
+      <dd>...</dd>
+    </dl>
+
+####水平排列的描述
+
+`.dl-horizontal` 可以让 `<dl>` 内的短语及其描述排在一行。通过 `text-overflow` 属性，水平排列的描述列表将会截断左侧太长的短语。
+
+    <dl class="dl-horizontal">
+      <dt>...</dt>
+      <dd>...</dd>
+    </dl>
+
+###代码
+
+####内联代码
+
+通过 `<code>` 标签包裹内联样式的代码片段。
+
+    例如： <code>&lt;code&gt;</code> 应该包裹内联样式的代码片段。
+
+####用户输入
+
+通过 `<kbd>` 标签标记用户通过键盘输入的内容。
+
+    如果要切换目录，请键入 <kbd>cd</kbd> 紧接着一个空格后面再加目录名。<br>
+    如果要更改设置，请键入 <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>。
+
+####代码块
+多行代码可以使用 `<pre>` 标签。为了正确的展示代码，注意将尖括号做转义处理。
+
+    <pre>&lt;p&gt;这里放多行代码块。&lt;/p&gt;</pre>
+
+####变量
+
+通过 `<var>` 标签标记变量。
+
+    <var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+
+####程序输出
+
+通过 `<samp>` 标签来标记程序输出的内容。
+
+    <samp>此段文本为程序输出的内容。</samp>
+
+##表格
+
+###基本实例
+
+为任意 `<table>` 标签添加 `.table` 类可以为其赋予基本的样式 — 少量的内补（padding）和水平方向的分隔线。之所以没有设计为默认样式，是考虑到表格元素使用的广泛性，有可能会为某些应用场景造成困扰。
+
+    <table class="table">
+      <thead>
+        ...
+      </thead>
+      <tbody>
+        ...
+      </tbody>
+    </table>
+
+###条纹状表格
+
+通过 `.table-striped` 类可以给 `<tbody>` 之内的每一行增加斑马条纹样式。
+
+> #####跨浏览器兼容性
+> 条纹状表格是依赖 :nth-child CSS 选择器实现的，而这一功能不被 IE 8 支持。
+
+    <table class="table table-striped">
+      ...
+    </table>
+
+###带边框的表格
+
+添加 `.table-bordered` 类为表格和其中的每个单元格增加边框。
+
+    <table class="table table-bordered">
+      ...
+    </table>
+
+###鼠标悬停
+
+通过添加 `.table-hover` 类可以让 `<tbody>` 中的每一行对鼠标悬停状态作出响应。
+
+    <table class="table table-hover">
+      ...
+    </table>
+
+###状态类
+
+通过这些状态类可以为行或单元格设置颜色。
+
+| Class | 描述
+|.selected | 当前被选中的行
+|.active | 鼠标悬停在行上时所设置的颜色
+|.success | 标识成功或积极的动作
+|.info | 标识普通的提示信息或动作
+|.warning | 标识警告或需要用户注意
+|.danger | 标识危险或潜在的带来负面影响的动作
+
+    <tr class="active">...</tr>
+    <tr class="success">...</tr>
+    <tr class="warning">...</tr>
+    <tr class="danger">...</tr>
+    <tr class="info">...</tr>
+
+##表单
+
+###基本实例
+
+- 单独的表单控件会被自动赋予一些全局样式。
+- 一个相关完整的表单项组以 `.form-row` 为类名，以获得整洁的排列。
+- 最后一项表单项组可以加 `.form-row-last` 类（可选），以去除底部的外边距。
+- 标题以 `label` 包裹，并设置 `.form-label` 类以使标题右对齐，为增大表单的焦点区域为 `label` 增加 `for` 属性，并以 `for_` 开头对应表单元素的 `id` 属性。
+- 紧接着 `.form-act` 元素，用以包裹表单元素。
+- 所有设置了 `.input-block` 类的 `<input>`、`<textarea>` 和 `<select>` 元素都将被默认设置宽度属性为 `width: 100%;`。
+
+根据以上原则，代码如下：
+
+    <form action="" method="post" role="form">
+      <div class="form-row">
+        <label for="for_input_email" class="form-label">电子邮件</label>
+        <span class="form-act">
+          <input type="email" class="input-xln" id="for_input_email" placeholder="请输入电子邮件">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_password" class="form-label">密码</label>
+        <span class="form-act">
+          <input type="password" class="input-xln" id="for_input_password" placeholder="请输入密码">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_file" class="form-label">上传文件</label>
+        <span class="form-act">
+          <input type="file" id="for_input_file" class="input-xln">
+          <span class="help-block">这里写帮助信息。</span>
+        </span>
+      </div>
+      <div class="form-row">
+        <label class="form-act">
+          <input type="checkbox"> 复选框
+        </label>
+      </div>
+      <div class="form-row">
+        <span class="form-act"><button type="submit" class="btn"><span><span>提交</span></span></button></span>
+      </div>
+    </form>
+
+###纵向表单
+
+纵向表单是指标题和表单控件之间分行显示，此模式只需要在 `form` 标签加类名 `.form-vertical` 即可，其它结构与基本实例保持一致。
+
+> #####一定要添加 label 标签
+> 不光是为了 seo 或者语义化的考虑，也是为了能让屏幕阅读器能够正确识别。对于不需要显示标题的表单项，你可以通过为 label 设置 `.hide` 类将其隐藏。
+
+    <form action="" method="post" role="form" class="form-vertical">
+      <div class="form-row">
+        <label for="for_input_email" class="form-label hide">电子邮件</label>
+        <span class="form-act">
+          <input type="email" class="input-xln" id="for_input_email" placeholder="请输入电子邮件">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_password" class="form-label hide">密码</label>
+        <span class="form-act">
+          <input type="password" class="input-xln" id="for_input_password" placeholder="请输入密码">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_file" class="form-label hide">上传文件</label>
+        <span class="form-act">
+          <input type="file" id="for_input_file" class="input-xln">
+          <span class="help-block">这里写帮助信息。</span>
+        </span>
+      </div>
+      <div class="form-row">
+        <span class="form-act checkbox">
+          <label><input type="checkbox"> 复选框</label>
+        </span>
+      </div>
+      <div class="form-row">
+        <span class="form-act">
+          <button type="submit" class="btn"><span><span>提交</span></span></button>
+        </span>
+      </div>
+    </form>
+
+###栅格化表单
+
+把基本表单与栅格布局结合在一起，创建出符合栅格化标准的表单，需要对类名做一些改变：
+
+    <form action="" method="post" role="form">
+      <div class="form-row row">
+        <label for="for_input_email" class="col-2">电子邮件</label>
+        <span class="col-5">
+          <input type="email" class="input-block" id="for_input_email" placeholder="请输入电子邮件">
+        </span>
+      </div>
+      <div class="form-row row">
+        <label for="for_input_password" class="col-2">密码</label>
+        <span class="col-5">
+          <input type="password" class="input-block" id="for_input_password" placeholder="请输入密码">
+        </span>
+      </div>
+      <div class="form-row row">
+        <label for="for_input_file" class="col-2">上传文件</label>
+        <span class="col-5">
+          <input type="file" id="for_input_file" class="input-block">
+          <span class="help-block">这里写帮助信息。</span>
+        </span>
+      </div>
+      <div class="form-row row">
+        <div class="offset-2 checkbox">
+          <label><input type="checkbox"> 复选框</label>
+        </div>
+      </div>
+      <div class="form-row row">
+        <div class="offset-2">
+          <button type="submit" class="btn"><span><span>提交</span></span></button>
+        </div>
+      </div>
+    </form>
+
+当然也可以只对输入框起效果，只需要改成：
+
+    <form action="" method="post" role="form">
+      <div class="form-row">
+        <label for="for_input_email" class="form-label">电子邮件</label>
+        <span class="form-act row input-row">
+          <input type="email" class="col-5" id="for_input_email" placeholder="请输入电子邮件">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_password" class="form-label">密码</label>
+        <span class="form-act row input-row">
+          <input type="password" class="col-5" id="for_input_password" placeholder="请输入密码">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_file" class="form-label">上传文件</label>
+        <span class="form-act row input-row">
+          <input type="file" id="for_input_file" class="col-5">
+        </span>
+      </div>
+      <div class="form-row">
+        <div class="form-act">
+          <button type="submit" class="btn"><span><span>提交</span></span></button>
+        </div>
+      </div>
+    </form>
+
+###被支持的控件
+
+表单布局实例中展示了其所支持的标准表单控件。
+
+####输入框
+
+包括大部分表单控件、文本域控件，还支持所有 HTML5 类型的输入控件。
+
+> #####必须添加类型声明
+> 只有正确设置了 type 属性的输入控件才能被赋予正确的样式。
+
+    <input type="text" class="input-xln" placeholder="请输入文字">
+
+####文本域
+
+支持多行文本的表单控件。可根据需要改变 `rows` 属性。
+
+    <textarea class="input-xln" rows="3"></textarea>
+
+####多选和单选框
+
+设置了 `disabled` 属性的单选或多选框都能被赋予合适的样式。对于一组多选或单选框可以用 `.radio`、`.radio-inline`、`.checkbox`、`.checkbox-inline` 类包裹。
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="option1">
+        选项1，请确认
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="option2" disabled>
+        选择2，禁止选取
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" value="option1" checked>
+        选项1，默认选择
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" value="option2">
+        选项2，请确认
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" value="option3" disabled>
+        选项3，禁止选取
+      </label>
+    </div>
+
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+    </label>
+    <br>
+    <label class="radio-inline">
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+    </label>
+
+####下拉列表（select）
+
+使用默认选项或添加 `multiple` 属性可以同时显示多个选项。
+
+    <select class="input-xln">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+    <select multiple class="input-xln">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+####输入框焦点
+
+我们将某些表单控件的默认 `outline` 样式移除，然后在 `:focus` 状态下改变 `border-color`。
+
+####被禁用的输入框
+
+为输入框设置 `disabled` 属性可以防止用户输入，并能对外观做一些修改，使其更直观。
+
+####只读输入框
+
+为输入框设置 `readonly` 属性可以禁止用户输入，并且输入框的样式也是禁用状态。
+
+####校验状态
+
+B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义了样式。使用时，添加 `.has-error` 或 `.has-success` 类到这些控件的父元素即可。任何包含在此元素之内的标题，输入框和信息提示都将接受这些校验状态的样式。
+
+
+
+
