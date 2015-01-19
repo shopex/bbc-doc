@@ -792,6 +792,213 @@ B2B2C 全局字体大小为 12px，行高设置为 1.5。这些属性直接赋�
 
 B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义了样式。使用时，添加 `.has-error` 或 `.has-success` 类到这些控件的父元素即可。任何包含在此元素之内的标题，输入框和信息提示都将接受这些校验状态的样式。
 
+    <div class="form-row has-success">
+      <label class="form-label" for="for_inputsuccess">输入正确</label>
+      <div class="form-act">
+        <input type="text" class="input-xln" id="for_inputsuccess">
+        <span class="icon-checkmark caution">通过</span>
+      </div>
+    </div>
+    <div class="form-row has-error">
+      <label class="form-label" for="for_inputerror">输入错误</label>
+      <div class="form-act">
+        <input type="text" class="input-xln caution-input" id="for_inputerror">
+        <span class="icon-alert caution">此项必填</span>
+      </div>
+    </div>
+
+    <div class="has-success">
+      <div class="checkbox-inline">
+        <label>
+          <input class="x-check" type="checkbox" id="for_checkboxsuccess" value="option1">
+          复选框验证通过
+        </label>
+      </div>
+      <span class="icon-checkmark caution">通过</span>
+    </div>
+    <div class="has-error">
+      <div class="checkbox-inline">
+        <label>
+          <input class="x-check" type="checkbox" id="for_checkboxerror" value="option1">
+          复选框验证失败
+        </label>
+      </div>
+      <span class="icon-alert caution">此项必填</span>
+    </div>
+
+####输入框图标
+
+在需要为输入框内添加图标时，常规做法是为其父元素添加 `.has-figure` 类并给相应的图标添加 `.form-act-figure` 类。
+
+    <div class="form-row">
+      <label class="form-label" for="for_input_user">输入邮箱</label>
+      <span class="form-act has-figure col-5">
+        <input type="text" class="input-block" id="for_input_user">
+        <i class="icon-user form-act-figure"></i>
+      </span>
+    </div>
+    <div class="form-row">
+      <label class="form-label" for="for_input_pass">输入密码</label>
+      <span class="form-act has-figure col-5">
+        <input type="text" class="input-block" id="for_input_lock">
+        <i class="icon-lock form-act-figure"></i>
+      </span>
+    </div>
+
+你还可以针对校验状态为输入框添加额外的图标。只需为其父元素添加 `.has-figure` 类并给相应的图标添加 `.form-act-figure` 类即可。
+
+    <div class="form-row has-error has-figure">
+      <label class="form-label" for="for_inputerror">输入错误</label>
+      <span class="form-act has-figure col-5">
+        <input type="text" class="input-block caution-input" id="for_inputerror">
+        <span class="icon-alert form-act-figure"></span>
+      </span>
+    </div>
+    <div class="form-row has-success has-figure">
+      <label class="form-label" for="for_inputsuccess">输入正确</label>
+      <span class="form-act has-figure col-5">
+        <input type="text" class="input-block" id="for_inputsuccess">
+        <span class="icon-checkmark-a form-act-figure"></span>
+      </span>
+    </div>
+
+####控件尺寸
+
+通过 `.input-ln` 类似的类可以为控件设置高度，通过 `.col-lg-*` 类似的类可以为控件设置宽度。
+
+#####高度尺寸
+
+创建大一些或小一些的表单控件以匹配按钮尺寸。
+
+    <input class="input-lg" type="text" placeholder=".input-lg">
+    <input type="text" placeholder="默认高度input">
+    <input class="input-sm" type="text" placeholder=".input-sm">
+
+    <select class="input-lg">...</select>
+    <select>...</select>
+    <select class="input-sm">...</select>
+
+#####调整列（column）尺寸
+
+用栅格系统中的列（column）包裹输入框或其任何父元素，都可很容易的为其设置宽度。
+
+    <div class="row input-row">
+      <input type="text" class="col-3" placeholder=".col-3">
+      <input type="text" class="col-4" placeholder=".col-4">
+      <input type="text" class="col-5" placeholder=".col-5">
+    </div>
+
+    <div class="wrap-lg row input-row">
+      <input type="text" class="col-lg-3" placeholder=".col-lg-3">
+      <div class="offset-8">
+        <input type="text" class="input-block" placeholder=".offset-8">
+      </div>
+    </div>
+
+#####调整输入框的长度
+
+为输入框加入 `.input-lg` 类似的类以调节输入框的宽度。
+
+
+
+####辅助文本
+
+针对表单控件的“块（block）”级辅助文本。
+
+    <span class="help-block">表单项的帮助提示信息</span>
+
+##按钮
+
+###预定义样式
+
+使用下面列出的类可以快速创建一个带有预定义样式的按钮。
+
+> #####跨浏览器展现
+> 虽然 `a` 链接也可以伪装成按钮的样子，但是从功能、语义化及跨浏览器展现角度考虑，强烈建议尽可能使用 `<button>` 元素来获得在各个浏览器上获得相匹配的绘制效果。
+
+    <!-- 默认按钮 -->
+    <button type="button" class="btn"><span><span>确定</span></span></button>
+    <a href="" class="btn"><span><span>查看</span></span></a>
+    <!-- 标准扁平式按钮 -->
+    <button type="button" class="btn btn-flat"><span><span>确定</span></span></button>
+    <a href="" class="btn btn-flat"><span><span>查看</span></span></a>
+    <!-- 加入少许立体效果的按钮 -->
+    <button type="button" class="btn btn-simple"><span><span>确定</span></span></button>
+    <a href="" class="btn btn-simple"><span><span>查看</span></span></a>
+    <!-- 占主要性的交互按钮 -->
+    <button type="button" class="btn btn-primary"><span><span>提交</span></span></button>
+    <a href="" class="btn btn-primary"><span><span>提交</span></span></a>
+    <!-- 表示成功或积极行为 -->
+    <button type="button" class="btn btn-success"><span><span>成功</span></span></button>
+    <a href="" class="btn btn-success"><span><span>成功</span></span></a>
+    <!-- 表示一般信息 -->
+    <button type="button" class="btn btn-info"><span><span>信息</span></span></button>
+    <a href="" class="btn btn-info"><span><span>信息</span></span></a>
+    <!-- 表示应谨慎采取这一行为 -->
+    <button type="button" class="btn btn-warning"><span><span>警告</span></span></button>
+    <a href="" class="btn btn-warning"><span><span>警告</span></span></a>
+    <!-- 表示危险或潜在的危险性动作 -->
+    <button type="button" class="btn btn-danger"><span><span>危险</span></span></button>
+    <a href="" class="btn btn-danger"><span><span>危险</span></span></a>
+    <!-- 表示信息或警告消息 -->
+    <button type="button" class="btn btn-caution"><span><span>到货通知</span></span></button>
+    <a href="" class="btn btn-caution"><span><span>到货通知</span></span></a>
+    <!-- 看起来像个链接，同时又保持按钮的行为 -->
+    <button type="button" class="btn btn-link"><span><span>继续</span></span></button>
+    <!-- 表示重要性比较高或表情比较强烈 -->
+    <button type="button" class="btn btn-import"><span><span>去付款</span></span></button>
+    <a href="" class="btn btn-import"><span><span>去付款</span></span></a>
+    <!-- 主要的交互按钮，重要性次之 -->
+    <button type="button" class="btn btn-major"><span><span>加入购物车</span></span></button>
+    <a href="" class="btn btn-major"><span><span>加入购物车</span></span></a>
+    <!-- 表示信息或警告消息 -->
+    <button type="button" class="btn btn-caution"><span><span>到货通知</span></span></button>
+    <a href="" class="btn btn-caution"><span><span>到货通知</span></span></a>
+
+###尺寸
+
+需要让按钮具有不同尺寸吗？使用 .btn-sm、.btn-lg 或 .btn-xl 可以获得不同尺寸的按钮。
+
+    <button type="button" class="btn btn-simple btn-sm"><span><span>清空购物车</span></span></button>
+    <a href="" class="btn btn-simple btn-sm"><span><span>继续购物</span></span></a>
+
+    <button type="button" class="btn btn-simple btn-lg"><span><span>清空购物车</span></span></button>
+    <a href="" class="btn btn-simple btn-lg"><span><span>继续购物</span></span></a>
+
+    <button type="button" class="btn btn-simple btn-xl"><span><span>清空购物车</span></span></button>
+    <a href="" class="btn btn-simple btn-xl"><span><span>继续购物</span></span></a>
+
+通过给按钮添加 .btn-block 类可以将其拉伸至父元素100%的宽度，而且按钮也变为了块级（block）元素。
+
+##圆角按钮
+
+如果觉得按钮的直角效果看起来不是那么舒服，可以添加 `.btn-rounded` 类来为按钮增加圆角效果。
+
+> 注：IE8 及以下浏览器不支持 CSS3 的圆角效果。
+
+    <button type="button" class="btn btn-simple btn-rounded"><span><span>清空购物车</span></span></button>
+    <a href="" class="btn btn-simple btn-rounded"><span><span>继续购物</span></span></a>
+
+###禁用状态
+
+通过为按钮的背景设置 opacity 属性就可以呈现出无法点击的效果。
+
+> #####跨浏览器兼容性
+> 如果为 `<button>` 元素添加 disabled 属性，Internet Explorer 9 及更低版本的浏览器将会把按钮中的文本绘制为灰色，并带有恶心的阴影，目前我们还没有解决办法。
+> #####链接的原始功能不受影响
+> Chrome 等高级别浏览器可以通过设置 pointer-events: none 来禁止 <a> 元素作为链接的原始功能，但是，Opera 18 及更低版本的浏览器并没有完全支持这一属性，同样，IE 11 也不支持。因此，为了安全起见，建议通过 JavaScript 代码来禁止链接的原始功能。
+
+    <button type="button" class="btn btn-simple" disabled><span><span>清空购物车</span></span></button>
+    <a href="" class="btn btn-simple disabled"><span><span>继续购物</span></span></a>
+    <button type="button" class="btn btn-primary" disabled><span><span>清空购物车</span></span></button>
+    <a href="" class="btn btn-primary disabled"><span><span>继续购物</span></span></a>
+
+##辅助类
+
+
+
+
+
 
 
 
