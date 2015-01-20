@@ -30,6 +30,7 @@
         <td>系统级服务APP</td>
         <td>业务系统APP</td>
         <td>基础业务服务APP</td>
+        <td>基础业务服务API</td>
     </tr>
     <tr>
         <td>lib</td>
@@ -67,6 +68,7 @@
         <td>系统级服务APP</td>
         <td>业务系统APP</td>
         <td>基础业务服务APP</td>
+        <td>基础业务服务API</td>
     </tr>
     <tr>
         <td>lib</td>
