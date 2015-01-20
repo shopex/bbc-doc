@@ -38,7 +38,7 @@
         <td>√</td>
         <td>×</td>
         <td>×</td>
-        <td>×</td>
+        <td></td>
     </tr>
     <tr>
         <td>model</td>
@@ -46,7 +46,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
-        <td>×</td>
+        <td></td>
     </tr>
     <tr>
         <td>controller&view</td>
@@ -54,7 +54,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
-        <td>×</td>
+        <td></td>
     </tr>
     <tr>
         <td>API</td>
@@ -62,7 +62,7 @@
         <td></td>
         <td></td>
         <td×</td>
-        <td>×</td>
+        <td></td>
     </tr>
 </table>
 
@@ -87,7 +87,7 @@
         <td>√</td>
         <td>×</td>
         <td>√</td>
-        <td>×</td>
+        <td></td>
     </tr>
     <tr>
         <td>model</td>
@@ -95,7 +95,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
-        <td>×</td>
+        <td></td>
     </tr>
     <tr>
         <td>controller&view</td>
@@ -103,7 +103,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
-        <td>×</td>
+        <td></td>
     </tr>
      <tr>
         <td>api</td>
@@ -111,7 +111,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
-        <td>×</td>
+        <td></td>
     </tr>
 </table>
 
@@ -135,7 +135,7 @@
         <td>√</td>
         <td>×</td>
         <td>√(尽可能少)</td>
-        <td>×</td>
+        <td></td>
     </tr>
     <tr>
         <td>model</td>
@@ -143,7 +143,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
-        <td>×</td>
+        <td></td>
     </tr>
     <tr>
         <td>controller&view</td>
@@ -151,7 +151,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
-        <td>×</td>
+        <td></td>
     </tr>
     <tr>
         <td>API</td>
@@ -159,7 +159,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
-        <td>×</td>
+        <td></td>
     </tr>
 </table>
 
