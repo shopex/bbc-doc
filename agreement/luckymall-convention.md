@@ -30,6 +30,7 @@
         <td>系统级服务APP</td>
         <td>业务系统APP</td>
         <td>基础业务服务APP</td>
+        <td>业务系统API</td>
         <td>基础业务服务API</td>
     </tr>
     <tr>
@@ -39,6 +40,7 @@
         <td>×</td>
         <td>×</td>
         <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>model</td>
@@ -46,6 +48,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
@@ -55,6 +58,7 @@
         <td>×</td>
         <td>×</td>
         <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>API</td>
@@ -62,6 +66,7 @@
         <td></td>
         <td></td>
         <td×</td>
+        <td></td>
         <td></td>
     </tr>
 </table>
@@ -79,6 +84,7 @@
         <td>系统级服务APP</td>
         <td>业务系统APP</td>
         <td>基础业务服务APP</td>
+        <td>业务系统API</td>
         <td>基础业务服务API</td>
     </tr>
     <tr>
@@ -88,6 +94,7 @@
         <td>×</td>
         <td>√</td>
         <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>model</td>
@@ -95,6 +102,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
@@ -104,9 +112,11 @@
         <td>×</td>
         <td>×</td>
         <td></td>
+        <td></td>
     </tr>
      <tr>
         <td>api</td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -127,6 +137,7 @@
         <td>系统级服务APP</td>
         <td>业务系统APP</td>
         <td>基础业务服务APP</td>
+        <td>业务系统API</td>
         <td>基础业务服务API</td>
     </tr>
     <tr>
@@ -136,6 +147,7 @@
         <td>×</td>
         <td>√(尽可能少)</td>
         <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>model</td>
@@ -143,6 +155,7 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
@@ -152,9 +165,11 @@
         <td>×</td>
         <td>×</td>
         <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>API</td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
