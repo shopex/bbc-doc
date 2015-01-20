@@ -55,9 +55,9 @@
     <tr>
         <td>API</td>
         <td>×</td>
-        <td></td>
-        <td></td>
-        <td×</td>
+        <td>√</td>
+        <td>√</td>
+        <td>√</td>
     </tr>
 </table>
 
@@ -99,9 +99,9 @@
      <tr>
         <td>api</td>
         <td>×</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>√</td>
+        <td>√</td>
+        <td>√</td>
     </tr>
 </table>
 
@@ -142,9 +142,9 @@
     <tr>
         <td>API</td>
         <td>×</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>√</td>
+        <td>√</td>
+        <td>√</td>
     </tr>
 </table>
 
