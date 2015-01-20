@@ -53,6 +53,13 @@
         <td>×</td>
         <td>×</td>
     </tr>
+    <tr>
+        <td>API</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td×</td>
+    </tr>
 </table>
 
 
@@ -91,6 +98,13 @@
         <td>×</td>
         <td>×</td>
     </tr>
+     <tr>
+        <td>api</td>
+        <td>√</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+    </tr>
 </table>
 
 ## 基础业务服务APP
@@ -105,6 +119,7 @@
         <td>系统级服务APP</td>
         <td>业务系统APP</td>
         <td>基础业务服务APP</td>
+        <td>基础业务服务API</td>
     </tr>
     <tr>
         <td>lib</td>
@@ -123,6 +138,13 @@
     <tr>
         <td>controller&view</td>
         <td>√(后端)</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+    </tr>
+    <tr>
+        <td>API</td>
+        <td>√</td>
         <td>×</td>
         <td>×</td>
         <td>×</td>
