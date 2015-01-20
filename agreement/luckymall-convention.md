@@ -107,10 +107,10 @@
     </tr>
      <tr>
         <td>api</td>
-        <td>√</td>
-        <td>×</td>
-        <td>×</td>
-        <td>×</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td></td>
     </tr>
 </table>
@@ -155,10 +155,10 @@
     </tr>
     <tr>
         <td>API</td>
-        <td>√</td>
-        <td>×</td>
-        <td>×</td>
-        <td>×</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td></td>
     </tr>
 </table>
