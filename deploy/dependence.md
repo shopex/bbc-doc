@@ -24,8 +24,7 @@ yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf 
 - php依赖库安装
 
 > libxml2 ———— 包含库和实用工具用于解析XML文件
-
-  > wget http://xmlsoft.org/sources/libxml2-2.9.0.tar.gz 
+> wget http://xmlsoft.org/sources/libxml2-2.9.0.tar.gz 
 > tar zxvf libxml2-2.9.0.tar.gz 
 > cd libxml2-2.9.0 
 > ./configure 
