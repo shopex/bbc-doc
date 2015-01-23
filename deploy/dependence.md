@@ -25,18 +25,63 @@ yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf 
    libxml2 ———— 包含库和实用工具用于解析XML文件
    
    wget http://xmlsoft.org/sources/libxml2-2.9.0.tar.gz 
+   
    tar zxvf libxml2-2.9.0.tar.gz 
+   
    cd libxml2-2.9.0 
+   
    ./configure 
+   
    make&&make install
 
    libmcrypt ———— 加密算法扩展库(支持DES, 3DES, RIJNDAEL, Twofish, IDEA, GOST, CAST-256, ARCFOUR, SERPENT, SAFER+等算法)
    wget ftp://mcrypt.hellug.gr/pub/crypto/mcrypt/libmcrypt/libmcrypt-2.5.7.tar.gz 
 
    tar zxvf libmcrypt-2.5.7.tar.gz 
+   
    cd libmcrypt-2.5.7 
+   
    ./configure 
+   
    make && make install
 
+#### MYSQL配置&安装
+1 安装
 
+      wget http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.12-linux-glibc2.5-x86_64.tar.gz/from/http://cdn.mysql.com/
+      tar zxvf mysql-5.6.12-linux-glibc2.5-x86_64.tar.gz -C /usr/local/webserver
+      mv mysql-5.6.12-linux-glibc2.5-x86_64 mysql
+
+2 配置
+
+      shell> groupadd mysql
+      shell> useradd -r -g mysql mysql
+      shell> cd /usr/local/webserver/mysql
+      shell> chown -R mysql .
+      shell> chgrp -R mysql .
+      shell> scripts/mysql_install_db --user=mysql
+      shell> chown -R root .
+      shell> chown -R mysql data
+      # Next command is optional
+      shell> cp support-files/my-default.cnf /etc/my.cnf
+      shell> bin/mysqld_safe --user=mysql 
+
+3 修改mysql.server脚本
+
+      将
+      basedir=
+      datadir=
+      改为
+      basedir=/usr/local/webserver/mysql
+      datadir=/usr/local/webserver/mysql/data
+
+4 配置启动脚本
+
+      cd /usr/local/webserver/mysql
+      cp support-files/mysql.server /etc/init.d/mysql
+
+5 启动mysql
+      service mysql start
+      service mysql stop
+      service mysql restart
 
