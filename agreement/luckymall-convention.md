@@ -52,6 +52,13 @@
         <td>×</td>
         <td>×</td>
     </tr>
+    <tr>
+        <td>API</td>
+        <td>×</td>
+        <td>√</td>
+        <td>√</td>
+        <td>√</td>
+    </tr>
 </table>
 
 
@@ -89,6 +96,13 @@
         <td>×</td>
         <td>×</td>
     </tr>
+     <tr>
+        <td>api</td>
+        <td>×</td>
+        <td>√</td>
+        <td>√</td>
+        <td>√</td>
+    </tr>
 </table>
 
 ## 基础业务服务APP
@@ -124,6 +138,13 @@
         <td>×</td>
         <td>×</td>
         <td>×</td>
+    </tr>
+    <tr>
+        <td>API</td>
+        <td>×</td>
+        <td>√</td>
+        <td>√</td>
+        <td>√</td>
     </tr>
 </table>
 
