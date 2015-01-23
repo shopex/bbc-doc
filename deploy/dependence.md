@@ -229,6 +229,6 @@ yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf 
           
 3 安装和配置的参考资料 
    
-      [安装 http://wiki.nginx.org/GettingStarted] 
-      [配置 http://blog.martinfjordvald.com/2010/07/nginx-primer/]
+      安装 http://wiki.nginx.org/GettingStarted
+      配置 http://blog.martinfjordvald.com/2010/07/nginx-primer/
 
