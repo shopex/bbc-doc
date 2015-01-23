@@ -23,17 +23,26 @@ yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf 
 
 #### php依赖库安装
    libxml2 ———— 包含库和实用工具用于解析XML文件
+   
    wget http://xmlsoft.org/sources/libxml2-2.9.0.tar.gz 
+   
    tar zxvf libxml2-2.9.0.tar.gz 
+   
    cd libxml2-2.9.0 
+   
    ./configure 
+   
    make&&make install
 
    libmcrypt ———— 加密算法扩展库(支持DES, 3DES, RIJNDAEL, Twofish, IDEA, GOST, CAST-256, ARCFOUR, SERPENT, SAFER+等算法)
    wget ftp://mcrypt.hellug.gr/pub/crypto/mcrypt/libmcrypt/libmcrypt-2.5.7.tar.gz 
+   
    tar zxvf libmcrypt-2.5.7.tar.gz 
+   
    cd libmcrypt-2.5.7 
+   
    ./configure 
+   
    make && make install
 
 
