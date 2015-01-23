@@ -522,3 +522,42 @@ yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf 
          
          esac
       
+      (2): 赋予脚本执行权限
+            cd /usr/local/webserver/php/etc && cp php-fpm.conf.default php-fpm.conf
+            chmod +x /etc/init.d/php-fpm
+            
+      (3): 设置开机启动
+            /sbin/chkconfig php-fpm on
+            
+      (4): 使用以下命令对php操作
+            service php-fpm start
+            service php-fpm stop
+            service php-fpm restart   
+   
+5 检查php+nginx是否配置成功 
+
+      在nginx.conf文件中我配置了我的php工作目录/www,在此目录下建立文件phpinfo.php，然后运行查看内容。文件内容如下:
+      <?php
+      phpinfo();
+
+6 解密工具 
+
+      (1) : 下载 ZendGuardLoader-php-5.4-linux-glibc23-x86_64.tar.gz http://www.zend.com/en/products/guard/downloads
+      
+      (2) : 安装
+            tar zxvf ZendGuardLoader-php-5.4-linux-glibc23-x86_64.tar.gz
+            cd ZendGuardLoader-php-5.4-linux-glibc23-x86_64/
+            cp php-5.4.x/ZendGuardLoader.so /usr/local/webserver/php/ext/
+            
+      (3) : 配置
+            打开php.ini，加入以下代码：
+
+            [Zend Guard]
+            ;/usr/local/webserver/php/ext/ZendGuardLoader.so  这个是你当时指定的zend的目录
+            zend_extension=/usr/local/webserver/php/ext/ZendGuardLoader.so
+            zend_loader.enable=1
+            zend_loader.disable_licensing=0
+            zend_loader.obfuscation_level_support=3
+            zend_loader.license_path=
+            
+      (4) : 重启nginx 和 php-fpm，打开phpinfo查看是否有ZendGuardLoader
