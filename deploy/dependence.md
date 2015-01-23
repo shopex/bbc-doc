@@ -1,4 +1,4 @@
-# 系统依赖服务/组件  linux单击部署
+# 系统依赖服务/组件
 
 - pecl mcrypt
 - composer
