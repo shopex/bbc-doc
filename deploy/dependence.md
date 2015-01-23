@@ -542,16 +542,15 @@ yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf 
 
 6 解密工具 
 
-      (1) : 下载 ZendGuardLoader-php-5.4-linux-glibc23-x86_64.tar.gz http://www.zend.com/en/products/guard/downloads
-      
-      (2) : 安装
+   下载 ZendGuardLoader-php-5.4-linux-glibc23-x86_64.tar.gz http://www.zend.com/en/products/guard/downloads
+ 
+      (1) : 安装
             tar zxvf ZendGuardLoader-php-5.4-linux-glibc23-x86_64.tar.gz
             cd ZendGuardLoader-php-5.4-linux-glibc23-x86_64/
             cp php-5.4.x/ZendGuardLoader.so /usr/local/webserver/php/ext/
             
-      (3) : 配置
+      (2) : 配置
             打开php.ini，加入以下代码：
-
             [Zend Guard]
             ;/usr/local/webserver/php/ext/ZendGuardLoader.so  这个是你当时指定的zend的目录
             zend_extension=/usr/local/webserver/php/ext/ZendGuardLoader.so
@@ -560,4 +559,4 @@ yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf 
             zend_loader.obfuscation_level_support=3
             zend_loader.license_path=
             
-      (4) : 重启nginx 和 php-fpm，打开phpinfo查看是否有ZendGuardLoader
+      (3) : 重启nginx 和 php-fpm，打开phpinfo查看是否有ZendGuardLoader
