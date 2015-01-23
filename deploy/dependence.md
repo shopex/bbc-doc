@@ -229,7 +229,296 @@ yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf 
           
 3 安装和配置的参考资料 
    
-   安装 http://wiki.nginx.org/GettingStarted
+   (1)安装 http://wiki.nginx.org/GettingStarted
    
-   配置 http://blog.martinfjordvald.com/2010/07/nginx-primer/
+   (2)配置 http://blog.martinfjordvald.com/2010/07/nginx-primer/
 
+#### PHP配置&安装
+1 软件来源
+   gd-2.0.35下载地址 http://dl.vmall.com/c0ua0omlgm
+   
+   freetype-2.3.5下载地址 http://dl.vmall.com/c0ua0omlgm
+
+2 安装
+
+      安装freetype库
+      tar zxvf freetype-2.3.5.tar.gz
+      cd freetype
+      ./configure --prefix=/usr/local/webserver/freetype/
+      make && make install
+
+
+      编译安装前的准备
+      提示：默认的php安装后gd不支持jpg，只支持gif、png、bmp。所以首先要安装gd库
+      
+      wget http://www.boutell.com/gd/http/gd-2.0.35.tar.gz
+      tar zxvf gd-2.0.33.tar.gz
+      cd gd-2.0.33
+      ./configure --prefix=/usr/local/webserver/gd2/
+      make && make install
+
+
+      tar zxvf php-5.4.33.tar.gz
+      cd php-5.4.33
+      ./configure --prefix=/usr/local/webserver/php --enable-fpm --with-mysql=/usr/local/webserver/mysql \
+      --with-mysqli=/usr/local/webserver/mysql/bin/mysql_config --with-config-file-path=/usr/local/webserver/php  \
+      --with-openssl --enable-mbstring --with-zlib --enable-xml --with-freetype-dir=/usr/local/webserver/freetype/ --with-gd=/usr/local/webserver/gd2/ --with-jpeg-dir  \
+      --enable-bcmath --with-mcrypt --with-iconv --enable-pcntl --enable-shmop --enable-simplexml --enable-ftp
+      make && make install
+      
+      cp php.ini-development /usr/local/webserver/php/php.ini
+
+3 配置 
+
+      (1):php(php.ini)
+      
+         将  ;date.timezone =
+         改为 date.timezone = prc
+         
+      (2):php+nginx（nginx.conf）
+      
+         user  www www;
+        worker_processes  1;
+        events {
+            worker_connections  1024;
+        }
+        http {
+            include       mime.types;
+            index  index.php index.html index.htm;
+            root   /data/www;
+      
+            default_type  application/octet-stream;
+            sendfile        on;
+            keepalive_timeout  65;
+            server {
+                listen       80;
+                server_name  192.168.51.67;
+                if ( $host ~* (.*)\.(.*)\.(.*)){
+                    set $domain $1;
+                }
+      
+                location ~ ^/(.*)/data/.*\.(php)?$
+                {
+                    return 404;
+                    deny all;
+                }
+      
+                location ~ ^/(.*)/public/.*\.(php)?$
+                {
+                    return 404;
+                    deny all;
+                }
+      
+                location ~ ^/(.*)/themes/.*\.(php)?$
+                {
+                    return 404;
+                    deny all;
+                }
+      
+                location ~ ^/(.*)/wap_themes/.*\.(php)?$
+                {
+                    return 404;
+                    deny all;
+                }
+      
+                #伪静态配置开始.....
+      
+                if ($request_uri ~ (.+?\.php)(|/.*)$ ){
+                    break;                                                                                                                                  
+                }
+      
+                location / {
+                    autoindex  on;
+                    send_timeout 1800;
+                    fastcgi_buffers 8 128k;
+                    fastcgi_intercept_errors on;
+                    #伪静态配置
+                    if ( !-e $request_filename ) {
+                        rewrite ^/(.*)$ /index.php/$1 last;
+                    }
+                }
+      
+                location ~ ^/shopadmin {
+                    rewrite  ^/(.*)$  /index.php/$1 last;
+                    break;
+                }
+      
+               #伪静态配置结束......
+      
+               error_page   500 502 503 504  /50x.html;
+               location = /50x.html {
+                   root   html;
+               }
+      
+               location ~ \.php {
+                   include        fastcgi_params;
+                   set $real_script_name $fastcgi_script_name;
+                   set $path_info "";
+                   set $real_script_name $fastcgi_script_name;
+                   if ($fastcgi_script_name ~ "^(.+\.php)(/.+)$") {
+                       set $real_script_name $1;
+                       set $path_info $2;
+                   }
+                   fastcgi_param SCRIPT_FILENAME $document_root$real_script_name;
+                   fastcgi_param SCRIPT_NAME $real_script_name;
+                   fastcgi_param PATH_INFO $path_info;
+                   fastcgi_pass   127.0.0.1:9000;
+                   fastcgi_index  index.php;
+               }
+      
+      
+         }
+      
+      }
+      
+      (3):php+pathinfo（php.ini）
+         
+         enable_dl = On
+         cgi.force_redirect = 0
+         cgi.fix_pathinfo=1
+         fastcgi.impersonate = 1
+         cgi.rfc2616_headers = 1
+         allow_url_fopen = On
+         
+4 配置php-fpm启动脚本
+      
+      (1):编写脚本（vi /etc/init.d/php-fpm ）
+      
+         #! /bin/sh
+         
+         ### BEGIN INIT INFO
+         # Provides:          php-fpm
+         # Required-Start:    $remote_fs $network
+         # Required-Stop:     $remote_fs $network
+         # Default-Start:     2 3 4 5
+         # Default-Stop:      0 1 6
+         # Short-Description: starts php-fpm
+         # Description:       starts the PHP FastCGI Process Manager daemon
+         ### END INIT INFO
+         
+         prefix=/usr/local/webserver/php
+         
+         php_fpm_BIN=${prefix}/sbin/php-fpm
+         php_fpm_CONF=${prefix}/etc/php-fpm.conf
+         php_fpm_PID=${prefix}/var/run/php-fpm.pid
+         
+         
+         php_opts="--fpm-config $php_fpm_CONF"
+         php_pid="--pid $php_fpm_PID"
+         
+         wait_for_pid () {
+                 try=0
+         
+                 while test $try -lt 35 ; do
+         
+                         case "$1" in
+                                 'created')
+                                 if [ -f "$2" ] ; then
+                                         try=''
+                                         break
+                                 fi
+                                 ;;
+         
+                                 'removed')
+                                 if [ ! -f "$2" ] ; then
+                                         try=''
+                                         break
+                                 fi
+                                 ;;
+                         esac
+         
+                         echo -n .
+                         try=`expr $try + 1`
+                         sleep 1
+         
+                 done
+         
+         }
+         
+         case "$1" in
+                 start)
+                         echo -n "Starting php-fpm "
+         
+                         $php_fpm_BIN $php_opts $php_pid
+         
+                         if [ "$?" != 0 ] ; then
+                                 echo " failed"
+                                 exit 1
+                         fi
+         
+                         wait_for_pid created $php_fpm_PID
+         
+                         if [ -n "$try" ] ; then
+                                 echo " failed"
+                                 exit 1
+                         else
+                                 echo " done"
+                         fi
+                 ;;
+         
+                 stop)
+                         echo -n "Gracefully shutting down php-fpm "
+         
+                         if [ ! -r $php_fpm_PID ] ; then
+                                 echo "warning, no pid file found - php-fpm is not running ?"
+                                 exit 1
+                         fi
+         
+                         kill -QUIT `cat $php_fpm_PID`
+         
+                         wait_for_pid removed $php_fpm_PID
+         
+                         if [ -n "$try" ] ; then
+                                 echo " failed. Use force-exit"
+                                 exit 1
+                         else
+                                 echo " done"
+                         fi
+                               ;;
+         
+                 force-quit)
+                         echo -n "Terminating php-fpm "
+         
+                         if [ ! -r $php_fpm_PID ] ; then
+                                 echo "warning, no pid file found - php-fpm is not running ?"
+                                 exit 1
+                         fi
+         
+                         kill -TERM `cat $php_fpm_PID`
+         
+                         wait_for_pid removed $php_fpm_PID
+         
+                         if [ -n "$try" ] ; then
+                                 echo " failed"
+                                 exit 1
+                         else
+                                 echo " done"
+                         fi
+                 ;;
+         
+                 restart)
+                         $0 stop
+                         $0 start
+                 ;;
+         
+                 reload)
+         
+                         echo -n "Reload service php-fpm "
+         
+                         if [ ! -r $php_fpm_PID ] ; then
+                                 echo "warning, no pid file found - php-fpm is not running ?"
+                                 exit 1
+                         fi
+         
+                         kill -USR2 `cat $php_fpm_PID`
+         
+                         echo " done"
+                 ;;
+         
+                 *)
+                         echo "Usage: $0 {start|stop|force-quit|restart|reload}"
+                         exit 1
+                 ;;
+         
+         esac
+      
