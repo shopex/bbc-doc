@@ -15,7 +15,6 @@ nginx1.5.1下载地址 http://192.168.51.67/nginx-1.5.1.tar.gz
 
 php5.4.33下载地址 http://php.net/get/php-5.4.36.tar.gz/from/a/mirror
 
-zendguardloader下载地址 http://192.168.51.67/zendguardloader-l64.tar.gz
 
 ####标准库安装————标准库是一些基本的底层库，有很多软件都是依附与这些底层库
 
