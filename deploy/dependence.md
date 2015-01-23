@@ -207,4 +207,28 @@ yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf 
                  echo $"Usage: $0 {start|stop|status|restart|condrestart|try-restart|reload|force-reload|configtest}"
                  exit 2
          esac
-       
+   (2) 修改nginx脚本权限
+      
+         chmod +x /etc/init.d/nginx
+         
+   (3) 添加到系统服务
+   
+         /sbin/chkconfig nginx on
+         
+   (4) 使用以下命令对nginx操作
+         
+          service nginx start
+          service nginx stop
+          service nginx restart
+          service nginx reload
+      
+          /etc/init.d/nginx start
+          /etc/init.d/nginx stop
+          /etc/init.d/nginx restart
+          /etc/init.d/nginx reload
+          
+3 安装和配置的参考资料 
+   
+      [安装 http://wiki.nginx.org/GettingStarted] 
+      [配置 http://blog.martinfjordvald.com/2010/07/nginx-primer/]
+
