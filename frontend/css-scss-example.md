@@ -900,15 +900,28 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
 
 #####调整输入框的长度
 
-为输入框加入 `.input-lg` 类似的类以调节输入框的宽度。
+为输入框加入 `.input-ln` 类似的类以调节输入框的长度。
 
+    <input type="text" class="input-xxst">
+    <input type="text" class="input-xst">
+    <input type="text" class="input-st">
+    <input type="text" class="input-me">
+    <input type="text" class="input-ln">
+    <input type="text" class="input-xln">
+    <input type="text" class="input-xxln">
 
-
-####辅助文本
+###辅助文本
 
 针对表单控件的“块（block）”级辅助文本。
 
     <span class="help-block">表单项的帮助提示信息</span>
+
+###输入框组
+
+针对一些特殊应用或组件，我们定义了输入框组合，以 `.input-comb` 包裹，加入 `.input-comb-addon` 额外元素然后放入内容。
+
+
+另外，还可以加入按钮，比如搜索框。
 
 ##按钮
 
