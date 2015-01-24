@@ -1428,14 +1428,100 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
 
 也可以在输入验证等信息提示框中使用，表明这是一个错误信息。
 
-    <div class="alert alert-danger" role="alert">
-      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-      <span class="sr-only">Error:</span>
-      Enter a valid email address
+    <div class="danger">
+      <i class="icon-alert"></i>
+      输入不正确，请重新填写。
     </div>
 
+##路径导航
 
+在一个带有层次的导航结构中标明当前页面的位置。各路径间的分隔符通过 CSS 的 `:before` 生成，无需再次添加。
 
+    <ol class="breadcrumb">
+      <li><a href="#">首页</a></li>
+      <li><a href="#">商品列表</a></li>
+      <li class="active">商品品牌</li>
+    </ol>
 
+##分页
+
+为 B2B2C 提供带有展示页码的分页组件，或者可以使用简单的翻页组件。
+
+###默认分页
+
+标准分页代码如下：
+
+    <div class="pager">
+      <span class="flip prev disabled">&lsaquo;</span>
+      <a href="#" class="flip">1</a>
+      <a href="#" class="flip">2</a>
+      <a href="#" class="flip active">3</a>
+      <span class="ellipsis">...</span>
+      <a href="#" class="flip">4</a>
+      <a href="#" class="flip">5</a>
+      <a href="#" class="flip next">&rsaquo;</a>
+    </div>
+
+###更小的分页
+
+加入 `.page-sm` 就会得到更小尺寸的分页。
+
+    <div class="pager pager-sm">
+      <span class="flip prev disabled">&lsaquo;</span>
+      <a href="#" class="flip">1</a>
+      <a href="#" class="flip">2</a>
+      <a href="#" class="flip active">3</a>
+      <span class="ellipsis">...</span>
+      <a href="#" class="flip">4</a>
+      <a href="#" class="flip">5</a>
+      <a href="#" class="flip next">&rsaquo;</a>
+    </div>
+
+##标签
+
+请看实例
+
+    <span class="label">新</span>
+    <span class="label label-disabled">新</span>
+    <span class="label label-primary">新</span>
+    <span class="label label-success">新</span>
+    <span class="label label-info">新</span>
+    <span class="label label-warning">新</span>
+    <span class="label label-danger">新</span>
+
+##指示
+
+给链接、导航等元素嵌套 `.point` 元素，可以很醒目的展示新的或未读的信息条目。
+
+      <span class="point">5</span>
+      <span class="point">10</span>
+      <span class="point">245</span>
+      <span class="point point-disabled">0</span>
+      <span class="point point-sm">5</span>
+      <span class="point point-sm">10</span>
+      <span class="point point-sm">245</span>
+
+##警告框
+
+警告框组件通过提供一些灵活的预定义消息，为常见的用户动作提供反馈消息。
+
+###实例
+
+将任意文本包裹在以下类中就能组成一个警告框，每个类分别代表不同的警告信息。
+
+      <div class="alert">alert提示提醒注意！</div>
+      <div class="info">info提示提醒注意！</div>
+      <div class="warning">warning提示提醒注意！</div>
+      <div class="danger">danger提示提醒注意！</div>
+      <div class="success">success提示提醒注意！</div>
+      <div class="error">error提示提醒注意！</div>
+
+也可以与字体图标组合，表达更丰富的意义。
+
+      <div class="alert"><span class="icon-alert"></span> alert提示提醒注意！</div>
+      <div class="info"><span class="icon-info"></span> info提示提醒注意！</div>
+      <div class="warning"><span class="icon-tip"></span> warning提示提醒注意！</div>
+      <div class="danger"><span class="icon-close-b"></span> danger提示提醒注意！</div>
+      <div class="success"><span class="icon-checkmark-c"></span> success提示提醒注意！</div>
 
 
