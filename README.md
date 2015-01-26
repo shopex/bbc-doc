@@ -22,7 +22,7 @@
 
 ## misc
 - [系统依赖服务/组件](/deploy/dependence.md)
-- [bbc的安装](/blob/bbc_install.md)
+- [bbc的安装](/blob/install_bbc.md)
 
 
 
