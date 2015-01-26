@@ -155,16 +155,17 @@
 > 	- LogicException
 > 	  - BadFunctionCallException 
 > 	  - BadMethodCallException
->       - DomainException
->       - InvalidArgumentException
->       - LengthException
->     - RuntimeException
->       - OutOfBoundsException
->       - OutOfRangeException
->       - OverflowException
->       - RangeException
->       - UnderflowException
->       - UnexpectedValueException
+>    - DomainException
+>    - InvalidArgumentException
+>    - LengthException
+>  - RuntimeException
+>    - OutOfBoundsException
+>    - OutOfRangeException
+>    - OverflowException
+>    - RangeException
+>    - UnderflowException
+>    - UnexpectedValueException
+>  - ErrorException
 
 ### 抛出错误规范
 - 底层错误抛出RuntimeException或继承RuntimeException的exception
