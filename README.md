@@ -16,6 +16,7 @@
 - [Response](/basic/responses.md)
 - [Facades](/basic/facades.md)
 - [目录结构](/basic/directory.md)
+- [prism调用](/basic/prism.md)
 
 ## 系统功能配置说明
 - [搜索配置文档和使用方法](/basic/search.md)
