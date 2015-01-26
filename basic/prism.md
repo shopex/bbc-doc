@@ -1,7 +1,7 @@
 # prism调用
 
-- prism概念[#concept]
-- 调用方式[#call-method]
+- prism概念([#concept])
+- 调用方式([#call-method])
 
 
 <a name="basic-input"></a>
@@ -15,6 +15,8 @@
 
 <a name="call-method"></a>
 ##调用方式
+
+如果遇到错误会throw Exception.
 
 ```php
 <?php
