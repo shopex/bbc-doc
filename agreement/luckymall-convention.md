@@ -153,18 +153,18 @@
 **php SPL提供的异常处理类**
 > - Exception
 > 	- LogicException
-> 	  - BadFunctionCallException 
-> 	  - BadMethodCallException
->    - DomainException
->    - InvalidArgumentException
->    - LengthException
+> 	 - BadFunctionCallException 
+> 	 - BadMethodCallException
+>   - DomainException
+>   - InvalidArgumentException
+>   - LengthException
 >  - RuntimeException
->    - OutOfBoundsException
->    - OutOfRangeException
->    - OverflowException
->    - RangeException
->    - UnderflowException
->    - UnexpectedValueException
+>   - OutOfBoundsException
+>   - OutOfRangeException
+>   - OverflowException
+>   - RangeException
+>   - UnderflowException
+>   - UnexpectedValueException
 >  - ErrorException
 
 ### 抛出错误规范
