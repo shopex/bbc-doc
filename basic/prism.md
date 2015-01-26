@@ -1,8 +1,9 @@
 # prism rpc
 
-- prism概念([#concept])
-- client端调用方式([#call-method])
-- server端API配置(#api-configuration)
+- [prism概念](#concept)
+- [client端调用方式](#call-method)
+- [server端API配置](#api-configuration)
+- [server端API开发方式](#server-api)
 
 <a name="basic-input"></a>
 ## prism概念
@@ -59,3 +60,7 @@ return array(
 );
 ```
 
+<a name="server-api"></a>
+# server端API开发方式
+
+API写到`app/[app name]/api`目录下.
