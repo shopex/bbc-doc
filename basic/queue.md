@@ -10,5 +10,5 @@
 
 在服务器上执行一下命令
 
-  cd b2b2c && ./script/queueserver/queue.sh
+    cd b2b2c && ./script/queueserver/queue.sh
 
