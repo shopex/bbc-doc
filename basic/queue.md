@@ -1,6 +1,7 @@
 # bbc队列消耗配置和使用
 
 - [swoole安装] (# install)
+- [bbc swoole 执行 queue 的使用] (# install)
 
 ## swoole安装
 [参照官方文档](http://wiki.swoole.com/wiki/page/6.html)
