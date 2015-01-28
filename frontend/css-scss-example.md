@@ -397,11 +397,15 @@ B2B2C 全局字体大小为 12px，行高设置为 1.5。这些属性直接赋�
 
 ####默认样式的引用
 
-将任何 HTML 元素包裹在 `<blockquote>` 中即可表现为引用样式。对于直接引用，我们建议用 `<p>` 标签。
+将任何 HTML 元素包裹在 `<blockquote>` 中即可表现为块级引用样式。对于直接引用，我们建议用 `<p>` 标签。
 
-    <blockquote>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    <blockquote cite="http://www.wwfchina.org/">
+      <p>据测算，2014年的地球超载日就是8月19日。从2000年开始，由于人类对自然资源需求量的不断增加，地球超载日已经从2000年的10月1日提前到了今年的8月19日。</p>
     </blockquote>
+
+对于行内引用样式，我们还有一个 `<q>` 标签可用。
+
+    <p>据测算，<q>2014年的地球超载日就是8月19日。</q>从2000年开始，由于人类对自然资源需求量的不断增加，地球超载日已经从2000年的10月1日提前到了今年的8月19日。</p>
 
 ###列表
 
