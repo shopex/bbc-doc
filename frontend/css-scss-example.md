@@ -835,37 +835,37 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
 
 ####输入框图标
 
-在需要为输入框内添加图标时，常规做法是为其父元素添加 `.has-figure` 类并给相应的图标添加 `.form-act-figure` 类。
+在需要为输入框内添加图标时，常规做法是为其父元素添加 `.has-figure` 类并给相应的图标添加 `.input-figure` 类。
 
     <div class="form-row">
       <label class="form-label" for="for_input_user">输入邮箱</label>
       <span class="form-act has-figure col-5">
         <input type="text" class="input-block" id="for_input_user">
-        <i class="icon-user form-act-figure"></i>
+        <i class="icon-user input-figure"></i>
       </span>
     </div>
     <div class="form-row">
       <label class="form-label" for="for_input_pass">输入密码</label>
       <span class="form-act has-figure col-5">
         <input type="text" class="input-block" id="for_input_lock">
-        <i class="icon-lock form-act-figure"></i>
+        <i class="icon-lock input-figure"></i>
       </span>
     </div>
 
-你还可以针对校验状态为输入框添加额外的图标。只需为其父元素添加 `.has-figure` 类并给相应的图标添加 `.form-act-figure` 类即可。
+你还可以针对校验状态为输入框添加额外的图标。只需为其父元素添加 `.has-figure` 类并给相应的图标添加 `.input-figure` 类即可。
 
     <div class="form-row has-error has-figure">
       <label class="form-label" for="for_inputerror">输入错误</label>
       <span class="form-act has-figure col-5">
         <input type="text" class="input-block caution-input" id="for_inputerror">
-        <span class="icon-alert form-act-figure"></span>
+        <span class="icon-alert input-figure"></span>
       </span>
     </div>
     <div class="form-row has-success has-figure">
       <label class="form-label" for="for_inputsuccess">输入正确</label>
       <span class="form-act has-figure col-5">
         <input type="text" class="input-block" id="for_inputsuccess">
-        <span class="icon-checkmark-a form-act-figure"></span>
+        <span class="icon-checkmark-a input-figure"></span>
       </span>
     </div>
 
