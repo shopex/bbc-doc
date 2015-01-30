@@ -50,33 +50,38 @@
     |   |   ├── _iconfonts-variables.scss
     |   |   ├── _iconfonts.scss
     │   ├── _alert.scss                     -警告提示框
+    │   ├── _auxiliary.scss                 -辅助性样式
     │   ├── _base.scss                      -所有系统基本样式的汇总
-    │   ├── _button.scss                    -系统图标样式
+    │   ├── _breadcrumb.scss                -面包屑导航
+    │   ├── _button.scss                    -系统按钮样式
     │   ├── _config.scss                    -系统配置文件
     │   ├── _datepicker.scss                -时间选择器组件
     │   ├── _form.scss                      -系统表单样式
     │   ├── _global.scss                    -全局定义
     │   ├── _grid.scss                      -栅格化定义
-    │   ├── _icons.scss                     -字体图标样式
+    │   ├── _labels.scss                    -文字标签样式
+    │   ├── _icons.scss                     -字体图标样式汇总
     │   ├── _message.scss                   -系统提示信息
-    │   ├── _pager.scss                     -翻页组件
-    │   ├── _popup.scss                     -弹层组件
+    │   ├── _mixin.scss                     -SCSS 预定义方法调用
+    │   ├── _pager.scss                     -翻页组件样式
+    │   ├── _points.scss                    -新信息提醒圆点
+    │   ├── _popup.scss                     -弹层组件样式
     │   ├── _system.scss                    -非可视化编辑区域
     │   ├── _tables.scss                    -系统表格样式
-    │   ├── _tags.scss                      -文字标签样式
     │   ├── _tips.scss                      -系统工具提示样式
-    │   └── _typography.scss                -字形排版
+    │   ├── _typography.scss                -字形排版
+    │   └── _uploader.scss                  -文件上传组件样式
     ├── layout/                             -所有系统布局样式
     │   ├── _alumbs.scss                    -商品相册布局
     │   ├── _brand.scss                     -品牌页布局
     │   ├── _cart.scss                      -购物车页布局
     │   ├── _gallery.scss                   -商品列表布局
+    │   ├── _items.scss                     -商品详情页组件
     │   ├── _member.scss                    -会员中心布局
     │   ├── _mod.scss                       -模块化样式布局
     │   ├── _order.scss                     -下单页布局
     │   ├── _passport.scss                  -通行证/注册登录布局
     │   ├── _password.scss                  -密码强度检测组件
-    │   ├── _product.scss                   -商品详情页组件
     │   └── _stars.scss                     -对商品评分组件
     ├── theme/                              -所有主题修饰性样式
     │   ├── _brands.scss                    -品牌页修饰
@@ -249,7 +254,7 @@ B2B2C使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要�
 
 ###嵌套列
 
-为了使用内置的栅格系统将内容再次嵌套，可以通过添加一个新的 .row 元素和一系列 .col-* 元素到已经存在的 .col-* 元素内。被嵌套的行（row）所包含的列（column）的个数不能超过 16。
+为了使用内置的栅格系统将内容再次嵌套，可以通过添加一个新的 `.row` 元素和一系列 `.col-*` 元素到已经存在的 `.col-*` 元素内。被嵌套的行（row）所包含的列（column）的个数不能超过 16。
 
     <div class="row">
       <div class="col-12">
@@ -283,7 +288,7 @@ B2B2C使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要�
 
 ###SASS 扩展
 
-你可以用 scss 扩展这些预定义样式，以便生成更多复杂的布局，下面是一个例子：
+你可以用 SCSS 扩展这些预定义样式，以便生成更多复杂的布局，下面是一个例子：
 
     .wrapper {
         @include grid-container($wrap);
@@ -307,14 +312,14 @@ B2B2C使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要�
 
 ###标题
 
-HTML 中的所有标题标签，`<h1>` 到 `<h6>` 均可使用。另外，还提供了 `.h1` 到 `.h6` 类，为的是给内联（inli sne）属性的文本赋予标题的样式。
+HTML 中的所有标题标签，`<h1>` 到 `<h6>` 均可使用。另外，还提供了 `.h1` 到 `.h6` 类，为的是给内联（inline）属性的文本赋予标题的样式。
 
-    <h1>h1. Bootstrap heading</h1>
-    <h2>h2. Bootstrap heading</h2>
-    <h3>h3. Bootstrap heading</h3>
-    <h4>h4. Bootstrap heading</h4>
-    <h5>h5. Bootstrap heading</h5>
-    <h6>h6. Bootstrap heading</h6>
+    <h1>h1. 一级标题</h1>
+    <h2>h2. 二级标题</h2>
+    <h3>h3. 三级标题</h3>
+    <h4>h4. 四级标题</h4>
+    <h5>h5. 五级标题</h5>
+    <h6>h6. 六级标题</h6>
 
 ###页面主体
 
@@ -324,7 +329,7 @@ B2B2C 全局字体大小为 12px，行高设置为 1.5。这些属性直接赋�
 
 ###中心内容
 
-通过添加 .lead 类可以让段落突出显示。
+通过添加 `.lead` 类可以让段落突出显示。
 
     <p class="lead">段落的突出显示，比普通文字显示要大一些，间距也更大，这样会比较显眼。</p>
 
