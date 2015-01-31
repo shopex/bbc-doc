@@ -47,10 +47,10 @@
     sass/
     ├── base/                               -所有系统基本样式
     │   ├── iconfonts/                      -字体图标样式
-    |   |   ├── _iconfonts-font.scss
-    |   |   ├── _iconfonts-icons.scss
-    |   |   ├── _iconfonts-variables.scss
-    |   |   ├── _iconfonts.scss
+    │   │   ├── _iconfonts-font.scss
+    │   │   ├── _iconfonts-icons.scss
+    │   │   ├── _iconfonts-variables.scss
+    │   │   ├── _iconfonts.scss
     │   ├── _alert.scss                     -警告提示框
     │   ├── _auxiliary.scss                 -辅助性样式
     │   ├── _base.scss                      -所有系统基本样式的汇总
@@ -193,12 +193,12 @@ B2B2C 使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要
 通过下表可以详细查看 B2B2C 的栅格系统是如何在多种屏幕设备上工作的。
 
 　| 中等屏幕 桌面显示器 | 大屏幕 大桌面显示器
-:------|:------------|:---------------
+--:|:-------:|:--------:
 .wrap 最大宽度 | 950px | 1190px
 类前缀 | .col- | .col-lg
-列数 | 16
+列数 | 16  | 16
 列宽 | 50 | 75
-间距 | 10px
+间距 | 10px | 10px
 
 ###实例：从堆叠到水平排列
 
@@ -538,7 +538,7 @@ B2B2C 全局字体大小为 12px，行高设置为 1.5。这些属性直接赋�
 通过这些状态类可以为行或单元格设置颜色。
 
 | Class | 描述 |
-|:------:|:------:|
+|:------:|:------|
 |.selected | 当前被选中的行 |
 |.active | 鼠标悬停在行上时所设置的颜色 |
 |.success | 标识成功或积极的动作 |
