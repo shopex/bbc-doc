@@ -878,7 +878,7 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
 
 ####控件尺寸
 
-通过 `.input-ln` 类似的类可以为控件设置高度，通过 `.col-lg-*` 类似的类可以为控件设置宽度。
+通过 `.input-lg` 类似的类可以为控件设置高度，通过 `.col-*` 或 `.input-ln` 类似的类可以为控件设置宽度（长度）。
 
 #####高度尺寸
 
@@ -1108,8 +1108,7 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
 
 目前为止总共收录了140多个字体图标，可以很方便地被用在各种需要 icon 的场景。
 
-<style>
-<!--
+<!--<style>
 @font-face{
   font-family:"iconfonts";
   src:url(fonts/iconfonts.eot?v=1.5.2);
@@ -1286,8 +1285,7 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
 #icons li {float: left;width: 12.5%;min-width: 100px;}
 #icons li .in {border-right: 1px solid #fff; border-bottom: 1px solid #fff; text-align: center; background-color: #f0f0f0;padding: 10px 0;}
 #icons li i {display: block;margin-bottom: 10px;}
--->
-</style>
+</style>-->
 <ul id="icons">
   <li><div class="in"><i class="icon-add"></i><span>icon-add</span></div></li>
   <li><div class="in"><i class="icon-alarm"></i><span>icon-alarm</span></div></li>
