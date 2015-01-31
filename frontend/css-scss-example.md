@@ -17,8 +17,10 @@
 
 此框架直接包含在 B2B2C 的项目的 head 里，使用时直接调用相关类和方法即可。
 
-    <{css src="stylesheets/layout.css" app="topc"}>
-    <{css src="stylesheets/theme.css" app="topc"}>
+```
+<{css src="stylesheets/layout.css" app="topc"}>
+<{css src="stylesheets/theme.css" app="topc"}>
+```
 
 ##包含的内容
 
