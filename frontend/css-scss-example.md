@@ -2,20 +2,20 @@
 
 ##前言
 
-前台样式框架首先为所有开发B2B2C的开发者而设计，让B2B2C的前端开发更快速、简单，所有开发者都能快速上手，并致力于推广到所有应用场景。
+前台样式框架首先为所有开发 B2B2C 的开发者而设计，让 B2B2C 的前端开发更快速、简单，所有开发者都能快速上手，并致力于推广到所有应用场景。
 
 **预处理脚本**
 你可以采用预编译的 SCSS 文件快速开发，也可以从源码定制自己需要的样式。
 
 **特性齐全**
-你能在这里找到关于 HTML 结构、HTML 和 CSS 组件、SCSS结构方面的所有详细文档。
+你能在这里找到关于 HTML 结构、HTML 和 CSS 组件、SCSS 结构方面的所有详细文档。
 
 **参考文档**
-为使此样式框架更标准更通过，在样式命名和用例上参考了著名的 bootstrap V3 框架，亦能让大家更快速的上手。但请注意，由于 bootstrap V3 不兼容 IE9 以下版本，并且 B2B2C 有其自身的使用场景，所以在样式表现上可能会有调整，请知悉。
+为使此样式框架更标准更通用，在样式命名和用例上参考了著名的 Bootstrap V3 框架，亦能让大家更快速的上手。但请注意，由于 Bootstrap V3 不兼容 IE9 以下版本，并且 B2B2C 有其自身的使用场景，所以在样式表现上可能会有调整，请知悉。
 
 ##使用
 
-此框架直接包含在B2B2C的项目的 head 里，使用时直接调用相关类和方法即可。
+此框架直接包含在 B2B2C 的项目的 head 里，使用时直接调用相关类和方法即可。
 
     <{css src="stylesheets/layout.css" app="topc"}>
     <{css src="stylesheets/theme.css" app="topc"}>
@@ -98,7 +98,7 @@
 
 ##编译 CSS 文件
 
-B2B2C使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要用到的环境如下：
+B2B2C 使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要用到的环境如下：
 
 ###安装 Ruby
 
@@ -178,13 +178,13 @@ B2B2C使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要�
 栅格系统是一套标准化的设计框架，用于通过一系列的行与列的组合来创建页面布局，能让页面中的元素相对规范化。综合各方面设计考虑，我们的栅格分为最多16列。B2B2C 前台的栅格系统如下：
 
 - 暂定两种宽度的容器 `.wrap` 和 `.wrap-lg`。
-- “行（row）”必须包含在 .wrap （固定宽度）或 .wrap-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。
+- “行（row）”必须包含在 `.wrap` （固定宽度）或 `.wrap-fluid` （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。
 - 通过“行（row）”在水平方向创建一组“列（column）”。
 - 你的内容应当放置于“列（column）”内，并且，只有“列（column）”可以作为“行（row）”的直接子元素。
 - 类似 `.row` 和 `.col-4` 这种预定义的类，可以用来快速创建栅格布局。
 - 通过为“列（column）”设置 `padding` 属性，从而创建列与列之间的间隔（gutter）。通过为 `.row` 元素设置负值 `margin` 从而抵消掉为 `.wrap` 元素设置的 `padding`，也就间接为“行（row）”所包含的“列（column）”抵消掉了 `padding`。
 - 如果一“行（row）”中包含了的“列（column）”大于 16，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。
-- **注意：**如果一个元素中使用了多个类，预定义类 `.col-*` 必须放在首位，以免一部分样式应用不上。
+- **注意：**如果一个元素中使用了多个类，预定义类 `.col-*` 必须放在首位，否则一部分样式应用不上。
 
 ###栅格参数
 
@@ -366,6 +366,7 @@ B2B2C 全局字体大小为 12px，行高设置为 1.5。这些属性直接赋�
     带下划线的文本表示此为<u>专用名词</u>，在 HTML5 中这是合法的。
 
 #####小号文本
+
 对于不需要强调的 inline 或 block 类型的文本，使用 `<small>` 标签包裹，其内的文本将被设置为父容器字体大小的 85%。
 
 你还可以为行内元素赋予 `.small` 类以代替任何 `<small>` 元素。
@@ -534,13 +535,14 @@ B2B2C 全局字体大小为 12px，行高设置为 1.5。这些属性直接赋�
 
 通过这些状态类可以为行或单元格设置颜色。
 
-| Class | 描述
-|.selected | 当前被选中的行
-|.active | 鼠标悬停在行上时所设置的颜色
-|.success | 标识成功或积极的动作
-|.info | 标识普通的提示信息或动作
-|.warning | 标识警告或需要用户注意
-|.danger | 标识危险或潜在的带来负面影响的动作
+| Class | 描述 |
+|:------:|:------:|
+|.selected | 当前被选中的行 |
+|.active | 鼠标悬停在行上时所设置的颜色 |
+|.success | 标识成功或积极的动作 |
+|.info | 标识普通的提示信息或动作 |
+|.warning | 标识警告或需要用户注意 |
+|.danger | 标识危险或潜在的带来负面影响的动作 |
 
     <tr class="active">...</tr>
     <tr class="success">...</tr>
@@ -1107,6 +1109,7 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
 目前为止总共收录了140多个字体图标，可以很方便地被用在各种需要 icon 的场景。
 
 <style>
+<!--
 @font-face{
   font-family:"iconfonts";
   src:url(fonts/iconfonts.eot?v=1.5.2);
@@ -1283,6 +1286,7 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
 #icons li {float: left;width: 12.5%;min-width: 100px;}
 #icons li .in {border-right: 1px solid #fff; border-bottom: 1px solid #fff; text-align: center; background-color: #f0f0f0;padding: 10px 0;}
 #icons li i {display: block;margin-bottom: 10px;}
+-->
 </style>
 <ul id="icons">
   <li><div class="in"><i class="icon-add"></i><span>icon-add</span></div></li>
@@ -1545,5 +1549,4 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
       <div class="warning"><span class="icon-tip"></span> warning提示提醒注意！</div>
       <div class="danger"><span class="icon-close-b"></span> danger提示提醒注意！</div>
       <div class="success"><span class="icon-checkmark-c"></span> success提示提醒注意！</div>
-
 
