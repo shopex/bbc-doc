@@ -1126,7 +1126,7 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
 
 ###尺寸
 
-需要让按钮具有不同尺寸吗？使用 .btn-sm、.btn-lg 或 .btn-xl 可以获得不同尺寸的按钮。
+需要让按钮具有不同尺寸吗？使用 `.btn-sm`、`.btn-lg` 或 `.btn-xl` 可以获得不同尺寸的按钮。
 
 ```html
 <button type="button" class="btn btn-simple btn-sm"><span><span>清空购物车</span></span></button>
@@ -1731,4 +1731,3 @@ B2B2C 对表单控件的校验状态，如 error 和 success 状态，都定义�
 <div class="danger"><span class="icon-close-b"></span> danger提示提醒注意！</div>
 <div class="success"><span class="icon-checkmark-c"></span> success提示提醒注意！</div>
 ```
-
