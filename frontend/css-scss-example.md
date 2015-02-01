@@ -108,7 +108,7 @@ B2B2C 使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要
 
 安装完成后请到命令行下运行
 
-```bash
+```shell
 ruby -v
 ```
 
@@ -118,7 +118,7 @@ ruby -v
 
 继续在命令行中运行：
 
-```bash
+```shell
 gem install sass
 ```
 
@@ -128,7 +128,7 @@ gem install sass
 
 继续在命令行中运行：
 
-```bash
+```shell
 gem install compass
 ```
 
@@ -173,15 +173,19 @@ gem install compass
 
 `.wrap` 类用于固定宽度的容器。
 
-    <div class="wrap">
-      ...
-    </div>
+```html
+<div class="wrap">
+  ...
+</div>
+```
 
 `.wrap-fluid` 类用于 100% 宽度，占据全部视口的容器。
 
-    <div class="wrap-fluid">
-      ...
-    </div>
+```html
+<div class="wrap-fluid">
+  ...
+</div>
+```
 
 ##栅格系统
 
@@ -212,111 +216,121 @@ gem install compass
 
 使用单一的一组 `.col-*` 栅格类，就可以创建一个基本的栅格系统，所有列（column）必须放在 `.row` 内。
 
-    <div class="row">
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-      <div class="col-1">.col-1</div>
-    </div>
-    <div class="row">
-      <div class="col-4">.col-4</div>
-      <div class="col-4">.col-4</div>
-      <div class="col-4">.col-4</div>
-      <div class="col-4">.col-4</div>
-    </div>
-    <div class="row">
-      <div class="col-4">.col-4</div>
-      <div class="col-8">.col-8</div>
-      <div class="col-4">.col-4</div>
-    </div>
-    <div class="row">
-      <div class="col-8">.col-8</div>
-      <div class="col-8">.col-8</div>
-    </div>
+```html
+<div class="row">
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+  <div class="col-1">.col-1</div>
+</div>
+<div class="row">
+  <div class="col-4">.col-4</div>
+  <div class="col-4">.col-4</div>
+  <div class="col-4">.col-4</div>
+  <div class="col-4">.col-4</div>
+</div>
+<div class="row">
+  <div class="col-4">.col-4</div>
+  <div class="col-8">.col-8</div>
+  <div class="col-4">.col-4</div>
+</div>
+<div class="row">
+  <div class="col-8">.col-8</div>
+  <div class="col-8">.col-8</div>
+</div>
+```
 
 ###列偏移
 
 使用 `.offset-*` 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素增加了左侧的边距（margin）。例如，`.offset-4` 类将 `.col-4` 元素向右侧偏移了4个列（column）的宽度。
 
-    <div class="row">
-      <div class="col-5">.col-5</div>
-      <div class="col-5 offset-6">.col-5 .offset-6</div>
-    </div>
-    <div class="row">
-      <div class="col-4 offset-4">.col-4 .offset-4</div>
-      <div class="col-4 offset-4">.col-4 .offset-4</div>
-    </div>
-    <div class="row">
-      <div class="col-8 offset-4">.col-8 .offset-4</div>
-    </div>
+```html
+<div class="row">
+  <div class="col-5">.col-5</div>
+  <div class="col-5 offset-6">.col-5 .offset-6</div>
+</div>
+<div class="row">
+  <div class="col-4 offset-4">.col-4 .offset-4</div>
+  <div class="col-4 offset-4">.col-4 .offset-4</div>
+</div>
+<div class="row">
+  <div class="col-8 offset-4">.col-8 .offset-4</div>
+</div>
+```
 
 ###嵌套列
 
 为了使用内置的栅格系统将内容再次嵌套，可以通过添加一个新的 `.row` 元素和一系列 `.col-*` 元素到已经存在的 `.col-*` 元素内。被嵌套的行（row）所包含的列（column）的个数不能超过 16。
 
+```html
+<div class="row">
+  <div class="col-12">
+    .col-12
     <div class="row">
-      <div class="col-12">
-        .col-12
-        <div class="row">
-          <div class="col-8">
-            .col-8
-          </div>
-          <div class="col-4">
-            .col-4
-          </div>
-        </div>
+      <div class="col-8">
+        .col-8
+      </div>
+      <div class="col-4">
+        .col-4
       </div>
     </div>
+  </div>
+</div>
+```
 
 ###SASS 变量
 
 通过变量来定义列数、槽（gutter）宽，我们使用这些变量生成预定义的栅格类。
 
-    //breakpoints
-    $wrap:      950px !default;
-    $wrap-lg:   1190px !default;
-    $wrap-md:   710px !default;
-    $wrap-sm:   640px !default;
-    $wrap-xs:   320px !default;
+```sass
+//breakpoints
+$wrap:      950px !default;
+$wrap-lg:   1190px !default;
+$wrap-md:   710px !default;
+$wrap-sm:   640px !default;
+$wrap-xs:   320px !default;
 
-    //grid
-    $grid-columns:    16 !default;
-    $grid-gutter:     10px !default;
-    $grid-gutter-lg:  10px !default;
+//grid
+$grid-columns:    16 !default;
+$grid-gutter:     10px !default;
+$grid-gutter-lg:  10px !default;
+```
 
 ###SASS 扩展
 
 你可以用 SCSS 扩展这些预定义样式，以便生成更多复杂的布局，下面是一个例子：
 
-    .wrapper {
-        @include grid-container($wrap);
-        @include clear(fix);
-    }
-    .sidebar {
-        @include float(left);
-        @include grid-column-width(null, 4, $grid-span, $grid-gutter);
-    }
-    .content-main {
-        @include grid-column($grid-gutter);
-        @include grid-column-width(null, 12, $grid-span, $grid-gutter);
-    }
+```css
+.wrapper {
+    @include grid-container($wrap);
+    @include clear(fix);
+}
+.sidebar {
+    @include float(left);
+    @include grid-column-width(null, 4, $grid-span, $grid-gutter);
+}
+.content-main {
+    @include grid-column($grid-gutter);
+    @include grid-column-width(null, 12, $grid-span, $grid-gutter);
+}
 
-    <div class="wrapper">
-      <div class="sidebar">sidebar</div>
-      <div class="content-main">content main</div>
-    </div>
+<div class="wrapper">
+  <div class="sidebar">sidebar</div>
+  <div class="content-main">content main</div>
+</div>
+```
 
 ##排版
 
