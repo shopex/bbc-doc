@@ -108,7 +108,9 @@ B2B2C 使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要
 
 安装完成后请到命令行下运行
 
-    ruby -v
+```bash
+ruby -v
+```
 
 如果出现 Ruby 的版本信息就说明安装成功。
 
@@ -116,7 +118,9 @@ B2B2C 使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要
 
 继续在命令行中运行：
 
-    gem install sass
+```bash
+gem install sass
+```
 
 等待安装完成。或者安装 GUI 工具，具体信息请查看 (http://sass-lang.com/install)。
 
@@ -124,7 +128,9 @@ B2B2C 使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要
 
 继续在命令行中运行：
 
-    gem install compass
+```bash
+gem install compass
+```
 
 等待安装完成，或者安装GUI工具，具体信息请查看 (http://compass-style.org/install/)。
 
@@ -132,25 +138,27 @@ B2B2C 使用 SASS 做为 CSS 预处理器，在生成最终文件之前，需要
 
 使用以下给出的这份超级简单的 HTML 模版，并且按照自己的需求进行增加或修改内容。
 
-    <!DOCTYPE html>
-    <html lang="zh-cn">
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="renderer" content="webkit">
-      <title>B2B2C Template</title>
+```html
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <title>B2B2C Template</title>
 
-      <link rel="stylesheet" href="statics/stylesheets/layout.css">
-      <link rel="stylesheet" href="statics/stylesheets/theme.css">
+  <link rel="stylesheet" href="statics/stylesheets/layout.css">
+  <link rel="stylesheet" href="statics/stylesheets/theme.css">
 
-      <script src="statics/scripts/lib/jquery.js"></script>
-      <script src="statics/scripts/tools.js"></script>
-    </head>
-    <body>
-      <h1>你好，世界！</h1>
+  <script src="statics/scripts/lib/jquery.js"></script>
+  <script src="statics/scripts/tools.js"></script>
+</head>
+<body>
+  <h1>你好，世界！</h1>
 
-    </body>
-    </html>
+</body>
+</html>
+```
 
 ##全局 CSS 样式
 
