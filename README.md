@@ -5,6 +5,8 @@
 ## 约定
 - [PHP编码规范](/agreement/php-convention.md)
 - [LuckyMall编码规范](/agreement/luckymall-convention.md)
+- [商派页面开发规范](/frontend/shopex-develop-standards.md)
+- [前端编码规范](/frontend/frontend-coding-standards.md)
 
 
 ## 基础
@@ -20,6 +22,8 @@
 
 ## 系统功能配置说明
 - [搜索配置文档和使用方法](/basic/search.md)
+- [前台样式用例说明](/frontend/styles-example.md)
+- [前台脚本调用说明](/frontend/scripts-calling.md)
 
 ## misc
 - [系统依赖服务/组件](/deploy/dependence.md)
