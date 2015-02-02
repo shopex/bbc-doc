@@ -1,14 +1,8 @@
-
-
-
-
-#商派页面开发规范(草案)
-V0.24(修订)
+#商派页面开发规范
+v0.24(修订)
 
 #####商派 UED部
 于2014.12
-
-
 
 ##前    言
 
@@ -25,7 +19,7 @@ V0.24(修订)
 - 商派 UED 团队必须严格遵守和执行本规范。
 - 本规范通用标准范围
 
-    本规范包括：文件及文件夹排放、命名标准，界面UI制作标准，HTML页面制作标准，CSS代码制作标准，Javascript（以下简称JS）编码标准，Flash制作及AS编码标准，PHP smarty标签写作标准，服务器端标准。
+    本规范包括：页面类型标准、文件及文件夹排放、命名标准，UI/UE制作标准，HTML页面制作标准，CSS代码制作标准，Javascript（以下简称JS）编码标准，服务器端标准。
 
 - 本规范理论上适用于各条产品线。
 
@@ -73,7 +67,7 @@ V0.24(修订)
 
 1.  设计稿切图工具选择：制作前应根据设计师源文件，选择适合切图的工具，PSD 文件选择 Photoshop，PNG 文件选择 Fireworks。
 2.  设计稿页面导出文件设置：页面切图应导出 .png 、 .gif 或 .jpg 。png 图片一般用 png-8 位格式图片。若 png-8 影响图片质量或其中有半透明的效果，请为 ie6 单独定义背景：
-`_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop, src=’img/bg.png’);` 或引用其它 js 效果库改善 png-24 位图片的显示效果。
+`_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop, src='img/bg.png');` 或引用其它 js 效果库改善 png-24 位图片的显示效果。
 3.  一致性原则：按钮图片切图后，应保证按钮图片背景的透明性以及和整体页面的融合性，确保与设计稿一致。
 4.  一些非重复性的背景图和 icon 可根据实际情况合并成 css sprites 。
 5.  可循环重复使用的背景图片不应切割成大图。
@@ -86,7 +80,7 @@ V0.24(修订)
 
 所有的文件命名要求只能包含：小写字母、数字、下划线。有特殊要求的除外。
 
-###四、UI/UE 界面制作标准(设计类)（预留）
+###四、UI/UE 界面制作标准（设计类）（另有单独文档说明）
 
 ###五、HTML 结构制作标准（代码类）
 
@@ -115,10 +109,11 @@ V0.24(修订)
     `table` 只允许嵌套 `thead`, `tfoot`, `tbody` 以及 `tr` 标签，`tr` 只允许嵌套 `td`，`th` 标签，`td` 标签里可以有任意标签存在，如以下几种情况都是错误的：
 
         <table>
-        <input type=”hidden”>
-        <tr><td>
-        </tr>
+          <input type="hidden">
+          <tr><td>
+          </tr>
         </table>
+
         <ul>
           <li>
           <div></div>
@@ -177,7 +172,7 @@ CSS按照层级不同，分为公用级>产品级>页面级三部分，三者之
         .selector1,
         .selector2,
         .selector3 { property:value; property:value; }
-  　　   #selector4{ property: value; }
+        #selector4 { property: value; }
 
 11. 注释的格式：
 
@@ -514,17 +509,17 @@ IE6、IE7可以安装IE developetoolbar V2/IE webdeveloper。Microsoft有script 
 8.  不要在影响性能的关键函数中使用 try-catch-finally。由于此函数比较特殊，且是在运行时动态创建动态销毁，有些浏览器对其的处理并不高效。把 catch 语句放在关键循环中将极大影响性能。如果可能，应在脚本中不频繁被调用的地方进行异常处理，或通过检查某种动作是否被支持来避免使用。
 9.  注意隐式对象转换。如果代码中常调用 literal 值的方法，你应考虑首先创建对象。因为每次调用 literal 值的方法时，都会隐式的用相同的值创建新的对象。同样的情况适用于字符串拼接。最好不要把两个string合并后赋于变量，而应该依次与变量合并。这在大部分浏览器中都更快，而且消耗更少的内存。如：
 
-        var x = ‘<html>’ + ‘<head>’ + ‘<title>document</title>’ + ‘</head>’ + ‘<body>’…;
+        var x = '<html>' + '<head>' + '<title>document</title>' + '</head>' + '<body>'…;
 
     慢于
 
-        var x = ‘’;
-        x = ‘<html>’;
-        x += ‘<head>’;
-        x += ‘<title>document</title>’;
-        x += ‘</head>’;
-        x += ‘<body>’;
-        x += ‘…’
+        var x = '';
+        x = '<html>';
+        x += '<head>';
+        x += '<title>document</title>';
+        x += '</head>';
+        x += '<body>';
+        x += '…'
 
 10. 在关键函数中避免 for-in。for-in 常被误用，特别是简单的 for 循环更合适时。for-in 循环需要脚本引擎创建所有可枚举的属性列表，然后检查是否存在重复。因此for 循环无疑会更高效。
 11. 基本运算符比函数调用更快。典型的应用包括push方法，及Math对象的方法。其效率低于直接赋值和运算。
@@ -574,11 +569,7 @@ IE6、IE7可以安装IE developetoolbar V2/IE webdeveloper。Microsoft有script 
 
     这样 + + 不会被误认为是 ++。
 
-###八、Flash 交互制作标准（代码类）- 关于 AS3
-
-###九、PHP smarty模板标签制作标准
-
-###十、服务器端设置
+###八、服务器端设置
 
 1.  使用CDN。
 2.  添加周期头，指定过期时间。
