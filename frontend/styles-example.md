@@ -140,7 +140,7 @@ gem install compass
 
 在书写 css 或 scss 时，有一些工具可以帮你更好的完成：
 
-比如IDE推荐 Sublime Text, Vim, WebStorm 等，尤其前两者谓之“神器”。有很多文档中都有介绍，如 [http://zh.lucida.me/blog/sublime-text-complete-guide/](Sublime Text 全程指南)，[http://docs.sublimetext.tw/](Sublime Text 手冊)，[http://lucifr.com/2011/08/31/sublime-text-2-tricks-and-tips/](Sublime Text 2 入门及技巧)，[http://www.daqianduan.com/4820.html](Sublime Text 使用介绍、全套快捷键及插件推荐)。[http://coolshell.cn/articles/5426.html](简明 Vim 练级攻略)，[http://mturing.com/wiki/wikihtml/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html](Vim学习笔记)，以及[https://github.com/cz848/portable-vimrc](我的Vim配置文件) 等等，以及相关插件Emmet(zencoding)，Tag，各种snippets等。查错工具(http://csslint.net/）等。
+比如IDE推荐 Sublime Text, Vim, WebStorm 等，尤其前两者谓之“神器”。有很多文档中都有介绍，如 [Sublime Text 全程指南](http://zh.lucida.me/blog/sublime-text-complete-guide/)，[Sublime Text 手冊](http://docs.sublimetext.tw/)，[Sublime Text 2 入门及技巧](http://lucifr.com/2011/08/31/sublime-text-2-tricks-and-tips/)，[Sublime Text 使用介绍、全套快捷键及插件推荐](http://www.daqianduan.com/4820.html)。[简明 Vim 练级攻略](http://coolshell.cn/articles/5426.html)，[Vim学习笔记](http://mturing.com/wiki/wikihtml/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html)，以及 [我的Vim配置文件](https://github.com/cz848/portable-vimrc) 等等，以及相关插件Emmet(zencoding)，Tag，各种snippets等。查错工具（http://csslint.net/）等。
 
 ##基本模板
 
