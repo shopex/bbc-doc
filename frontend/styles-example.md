@@ -28,17 +28,19 @@
 
 编译后的文件的目录结构及释义如下：
 
-    statics/
-    ├── stylesheets/                -包含所有的开发环境中的样式文件
-    │   ├── layout.css              -包含所有的系统级样式及组件的样式
-    │   ├── theme.css               -包含所有修饰性的样式，如颜色，边框，背景，字体大小等
-    │   ├── iconfonts.css           -包含所有字体图标的样式
-    │   └── datepicker.css          -包含一个时间选择组件的样式
-    └── fonts/                      -包含所有的字体图标
-        ├── iconfonts.eot
-        ├── iconfonts.svg
-        ├── iconfonts.ttf
-        └── iconfonts.woff
+    app/
+    └── topc/
+        └── statics/
+            ├── stylesheets/                -包含所有的开发环境中的样式文件
+            │   ├── layout.css              -包含所有的系统级样式及组件的样式
+            │   ├── theme.css               -包含所有修饰性的样式，如颜色，边框，背景，字体大小等
+            │   ├── iconfonts.css           -包含所有字体图标的样式
+            │   └── datepicker.css          -包含一个时间选择组件的样式
+            └── fonts/                      -包含所有的字体图标
+                ├── iconfonts.eot
+                ├── iconfonts.svg
+                ├── iconfonts.ttf
+                └── iconfonts.woff
 
 这是最基本的 B2B2C 样式文件组织形式。并且在生产环境中会加入压缩版　*.min.css。 fonts 文件夹里的部分字体图标来自网络中现有的免费的图标字体，另一部分是由我们的设计师设计后加入的。
 
@@ -122,7 +124,7 @@ ruby -v
 gem install sass
 ```
 
-等待安装完成。或者安装 GUI 工具，具体信息请查看 (http://sass-lang.com/install)。
+等待安装完成。或者安装 GUI 工具，具体信息请查看（http://sass-lang.com/install/）。
 
 ###安装 Compass
 
@@ -132,7 +134,13 @@ gem install sass
 gem install compass
 ```
 
-等待安装完成，或者安装GUI工具，具体信息请查看 (http://compass-style.org/install/)。
+等待安装完成，或者安装GUI工具，具体信息请查看（http://compass-style.org/install/）。
+
+##工具
+
+在书写 css 或 scss 时，有一些工具可以帮你更好的完成：
+
+比如IDE推荐 Sublime Text, Vim, WebStorm 等，尤其前两者谓之“神器”。有很多文档中都有介绍，如 (http://zh.lucida.me/blog/sublime-text-complete-guide/)[Sublime Text 全程指南]，(http://docs.sublimetext.tw/)[Sublime Text 手冊]，(http://lucifr.com/2011/08/31/sublime-text-2-tricks-and-tips/)[Sublime Text 2 入门及技巧]，(http://www.daqianduan.com/4820.html)[Sublime Text 使用介绍、全套快捷键及插件推荐]。(http://coolshell.cn/articles/5426.html)[简明 Vim 练级攻略]，(http://mturing.com/wiki/wikihtml/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html)[Vim学习笔记]，以及(https://github.com/cz848/portable-vimrc)[我的Vim配置文件] 等等，以及相关插件Emmet(zencoding)，Tag，各种snippets等。查错工具(http://csslint.net/）等。
 
 ##基本模板
 
