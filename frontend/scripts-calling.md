@@ -79,9 +79,9 @@ evalScripts(string, content, execScript)
 解析文本中js代码，并可以立即执行
 
 **参数：**
-string：要解析的字符串
-content：解析后的字符串插入到此dom元素
-execScript：是否立即执行JS代码
+- string：要解析的字符串
+- content：解析后的字符串插入到此dom元素
+- execScript：是否立即执行JS代码
 
 **返回值：**
 (String)解析后的字符串(html代码)
@@ -95,8 +95,8 @@ maxZindex(scope, increase)
 获取页面所有元素中最大的z-index是多少
 
 **参数：**
-scope：查找范围的dom元素
-increase：增量
+- scope：查找范围的dom元素
+- increase：增量
 
 **返回值：**
 (Number)最终计算的结果
