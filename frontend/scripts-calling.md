@@ -332,8 +332,11 @@ log(...)
 
 可以将选项通过 data 属性或 JavaScript 代码传递。对于 data 属性，需要将参数名称放到 `data-dialog-` 之后，例如 `data-dialog-modal="true"`。
 
-
-
+名称 | 类型 | 默认值 | 描述
+----|----|----|----
+width|Number|0|对话框外框宽度，默认自适应
+height|Number|0|对话框外框高度，默认自适应
+modal|boolean|false|对话框下方的全屏遮罩
 
 
 
