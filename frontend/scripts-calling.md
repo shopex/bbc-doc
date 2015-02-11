@@ -101,6 +101,21 @@ maxZindex(scope, increase)
 **返回值：**
 (Number)最终计算的结果
 
+###获取配置项
+
+**函数：**
+dataOptions(element, prefix)
+
+**作用：**
+从元素的 `data-attrs` 属性中组织出配置项，以JSON方式输出。
+
+**参数：**
+- element: 要获取的目标dom元素
+- prefix: 必需，前缀，在 `data-` 后面、要获取的配置项名前面。
+
+**返回值：**
+(JSON)最终配置项
+
 ###倒计时时钟
 
 **函数：**
@@ -261,5 +276,65 @@ log(...)
 无
 
 ##弹框组件 _dialog.js_
+
+此弹框组件包含几个应用：弹层对话框/遮罩层/消息提示框。下面先来看下弹层对话框的应用。
+
+###对话框
+
+####基本结构
+
+以下对话框包含了对话框容器、头部和正文部分。
+
+    <div class="dialog" data-module="dialog" tabindex="1">
+      <div class="dialog-body">
+        <div class="dialog-header">
+          <h2>提示</h2>
+          <span><button type="button" class="dialog-btn-close" title="关闭"><i>×</i></button></span>
+        </div>
+        <div class="dialog-content">
+          <p>当我们提供两个，的所有属性都添加个参数提供数被省略。在这种情况下这样，我们可以加新的功能。这对于插件开新函数时是很有用的。请记住，目标对象将被修改，并且将通回。然而，如果我们想保留原对象，我们可以通过传递一个空对象作</p>
+        </div>
+      </div>
+    </div>
+
+####具体行为
+
+一般情况下，通过点击行为弹出对话框，需要 JavaScript 脚本添加事件，如果需要遮罩层遮住下面的内容，需要增加 modal 参数：
+
+    <button class="btn" id="btn_dialog"><span><span>对话框1</span></span></button>
+    <div id="dialog" style="display:none">
+      <p>当我们提供两个，的所有属性都添加个参数提供数被省略。在这种情况下这样，我们可以加新的功能。这对于插件开新函数时是很有用的。请记住，目标对象将被修改，并且将通回。然而，如果我们想保留原对象，我们可以通过传递一个空对象作</p>
+    </div>
+
+    $('#btn_dialog').click(function (e) {
+        $('#dialog').dialog({
+            width: 500,
+            modal: true
+        });
+    });
+
+或者如果是调用一个外部地址或内容为异步加载进来的，还可以使用：
+
+    $.dialog(url, {
+        modal: true,
+        async: 'ajax'
+    });
+
+还可以通过 data 属性调用对话框组件，不需写 JavaScript 代码，只需要通过在一个起控制器作用的元素（例如：按钮/链接）上添加 `data-toggle="dialog"` 属性，同时加入 `data-target="#foo"` 属性，或者链接的 `href="#foo"` 属性，用于指向被控制的对话框。
+
+      <button type="button" class="btn btn-lg" data-toggle="dialog" data-target="#one_dialog"><span><span>打开对话框</span></span></button>
+
+      <div id="one_dialog">
+        <p>我只是一段文字。</p>
+      </div>
+
+####参数
+
+可以将选项通过 data 属性或 JavaScript 代码传递。对于 data 属性，需要将参数名称放到 `data-dialog-` 之后，例如 `data-dialog-modal="true"`。
+
+
+
+
+
 
 
