@@ -29,7 +29,7 @@ B2B2C 产品​所有 JavaScript（以下简称JS） 组件和接口都依赖于
 
 ##工具
 
-相当多的针对JS的工具在这里同样适用，常用的有：jslint(jshint)，chrome 开发者工具，Dash(Mac平台)，JSON editor。
+相当多的针对JS的工具在这里同样适用，常用的有：jslint(jshint)，chrome 开发者工具，Dash(Mac平台文档工具)，JSON editor。
 
 
 
@@ -64,8 +64,8 @@ substitute(string, object)
 以json直接量替换字符串中的 {xx} 部分，可看做一个简单的html模板
 
 **参数：**
-string：要被替换的字符串
-object：对应的json直接量
+- string：要被替换的字符串
+- object：对应的json直接量
 
 **返回值：**
 (String)被替换后的字符串
@@ -110,11 +110,11 @@ countdown(element, options)
 通用倒计时，包括倒计时所在容器，倒数秒数，显示方式，回调。
 
 **参数：**
-element: 要显示的位置的dom元素
-options: 配置参数，包含以下参数：
-    start：倒计时的秒数
-    secondOnly：显示方式（是否只显示秒）
-    callback：倒计时完成后的回调
+- element: 要显示的位置的dom元素
+- options: 配置参数，包含以下参数：
+    - start：倒计时的秒数
+    - secondOnly：显示方式（是否只显示秒）
+    - callback：倒计时完成后的回调
 
 **返回值：**
 无
@@ -147,7 +147,7 @@ type：获取哪一部分样式，可以为padding,margin或border
 **返回值：**
 (JSON)根据type计算出的最终结果
 
-###双dom9点定位
+###dom 9点定位
 
 **函数：**
 $.fn.position(options)
@@ -156,10 +156,10 @@ $.fn.position(options)
 根据9个方位由一个dom定位到另一个dom上的位置
 
 **参数：**
-options：配置项的JSON直接量，包括：
-    relative：要定位到的元素，默认为body
-    x：定位的x轴的位置，默认为中心
-    y：定位到y轴的位置，默认为中心
+- options：配置项的JSON直接量，包括：
+    - relative：要定位到的元素，默认为body
+    - x：定位dom的x轴的位置，默认为中心
+    - y：定位dom的y轴的位置，默认为中心
 
 **返回值：**
 (DOM)自身
@@ -174,8 +174,8 @@ Array.some(fn, thisArg)
 some 不会改变原有数组。
 
 **参数：**
-fn：要对每个数组元素执行的回调函数，此函数可以有三个参数：当前元素，当前元素的索引和当前的数组对象。
-thisArg：在执行回调函数时定义的this对象。如果没有定义或者为null，那么将会使用全局对象。
+- fn：要对每个数组元素执行的回调函数，此函数可以有三个参数：当前元素，当前元素的索引和当前的数组对象。
+- thisArg：在执行回调函数时定义的this对象。如果没有定义或者为null，那么将会使用全局对象。
 
 **返回值：**
 (Boolean)根据执行结果返回true或false
@@ -208,8 +208,8 @@ Array.every(fn, thisArg)
 every 不会改变原有数组。
 
 **参数：**
-fn：要对每个数组元素执行的回调函数，此函数可以有三个参数：当前元素，当前元素的索引和当前的数组对象。
-thisArg：在执行回调函数时定义的this对象。如果没有定义或者为null，那么将会使用全局对象。
+- fn：要对每个数组元素执行的回调函数，此函数可以有三个参数：当前元素，当前元素的索引和当前的数组对象。
+- thisArg：在执行回调函数时定义的this对象。如果没有定义或者为null，那么将会使用全局对象。
 
 **返回值：**
 (Boolean)根据执行结果返回true或false
@@ -241,8 +241,8 @@ new Class(o, props)
 创建类似面向对象编程的函数
 
 **参数：**
-o：JSON对象，包含所有Class的方法，如果含有 `init` 方法就直接执行。
-props：JSON对象，为此对象添加其它公有方法。
+- o：JSON对象，包含所有Class的方法，如果含有 `init` 方法就直接执行。
+- props：JSON对象，为此对象添加其它公有方法。
 
 **返回值：**
 
@@ -259,5 +259,7 @@ log(...)
 
 **返回值：**
 无
+
+##弹框组件 _dialog.js_
 
 
