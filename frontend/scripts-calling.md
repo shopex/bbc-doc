@@ -397,7 +397,7 @@ width|Number|0|遮罩区的宽度
 height|Number|0|遮罩区的高度
 zIndex|Number|null|遮罩的层级
 position|Boolean|false|是否需要对遮罩定位（默认以中心点定位）
-resize|false|是否需要根据窗口缩放自动适应大小
+resize|Boolean|false|是否需要根据窗口缩放自动适应大小
 
 ####方法
 
