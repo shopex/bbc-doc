@@ -279,7 +279,7 @@ log(...)
 
 此弹框组件包含几个应用：弹层对话框/遮罩层/消息提示框。下面先来看下弹层对话框的应用。
 
-###对话框
+###对话框 Dialog
 
 ####基本结构
 
@@ -334,9 +334,84 @@ log(...)
 
 名称 | 类型 | 默认值 | 描述
 ----|----|----|----
-width|Number|0|对话框外框宽度，默认自适应
-height|Number|0|对话框外框高度，默认自适应
-modal|boolean|false|对话框下方的全屏遮罩
+target|String or dom|null|弹出框内容元素，接受url或jquery对象
+width|Number|0/auto|对话框外框宽度，默认自适应
+height|Number|0/auto|对话框外框高度，默认自适应
+type|String|null|弹框类型:nohead,notitle,noclose,或模板字串
+title|String|'提示'|弹出框标题
+load|Function|null|弹出框载入时触发事件
+show|Function|null|弹出框显示时触发事件
+close|Function|null|弹出框关闭时触发事件
+autoHide|Number/Boolean|false|是否在几秒后自动消失
+modal|Boolean/JSON|false|弹框是否出现遮罩，及遮罩的显示参数，参数含义请查看 Mask 一节。
+position|JSON|(a JSON)|弹出框的定位，默认定位到屏幕中央，更多参数含义请直接查看 `$.fn.position` 函数
+useIframeShim|Boolean|false|是否使用iframe遮盖，以便解决某些情况下 flash 层级问题。
+async|Boolean/String|false|异步加载内容的方式
+frameTpl|String|(html)|用iframe方式调用的模板
+ajaxTpl|String|(html)|用ajax方式调用时的loading模板
+asyncOptions|JSON|(a JSON)|异步请求时的参数，具体参数含义请参照 `jQuery.ajax`，同样支持 ajax 的事件
+component|JSON|(a JSON)|弹出框的构成组件的class名，包括框容器，内容，头部，正文，关闭按钮
+
+####方法
+
+######setHeight(el)
+根据 el 或 this.container(框容器) 的高重新设置 this.content(内容区) 的高，一般在重新获取内容并且高度发生变化后使用。
+
+#####position(options)
+根据 options 参数重新定位弹出框
+
+####衍生实例
+
+#####$.dialog.alert(msg, options)
+弹出一个类似系统 alert 效果的对话框，分别传入消息文本和弹出框参数
+
+#####$.dialog.confirm(msg, fn, options)
+弹出一个类似系统 confirm 效果的对话框，分别传入消息文本，回调和弹出框参数。
+
+#####$.dialog.image(url, options)
+弹出一个图片预览对话框，分别传入图片地址和弹出框参数
+
+#####$.dialog.ajax(url, options)
+Dialog 的 async 参数为 'ajax' 的快捷方式，分别传入异步调用的地址和弹出框参数。
+
+#####$.dialog.iframe(url, options)
+Dialog 的 async 参数为 'iframe' 的快捷方式，分别传入调用 iframe 的src和弹出框参数。
+
+###遮罩 Mask
+
+在页面上置放一个层，使页面上相应区域不可操作。一般用于对话框，也可以单独使用，如某块区域 loading 时可以在等待时用遮罩使整块区域不可做其他操作。
+
+####实例
+
+用于全屏遮盖的实例，只需要
+
+    var mask = new Mask();
+
+####参数
+
+名称 | 类型 | 默认值 | 描述
+----|----|----|----
+class|String|'mask'|用于遮罩的默认样式名
+target|dom|document.body|遮罩的区域（范围）
+width|Number|0|遮罩区的宽度
+height|Number|0|遮罩区的高度
+zIndex|Number|null|遮罩的层级
+position|Boolean|false|是否需要对遮罩定位（默认以中心点定位）
+resize|false|是否需要根据窗口缩放自动适应大小
+
+####方法
+
+#####setSize()
+设定遮罩层的大小。
+
+#####position()
+对遮罩层重新定位
+
+####toggle()
+根据遮罩层当前状态显示/隐藏遮罩层
+
+
+
 
 
 
