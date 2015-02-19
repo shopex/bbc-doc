@@ -407,8 +407,50 @@ resize|Boolean|false|是否需要根据窗口缩放自动适应大小
 #####position()
 对遮罩层重新定位
 
-####toggle()
+#####toggle()
 根据遮罩层当前状态显示/隐藏遮罩层
+
+###消息提示框
+
+用于页面成功/错误消息提示，形式为弹层，具体样式由另外的样式文件定义。
+
+####实例
+
+最简单的调用方式：
+
+    Message('一般操作提示信息');
+
+如果需要在3秒后消失，并且消失后刷新当前页面：
+
+    Message('提示：出错，请重试！', 'error', 3, function() {
+        location.reload();
+    });
+
+####参数
+
+名称 | 类型 | 默认值 | 描述
+----|----|----|----
+msg|String|null|要显示的消息
+type|String|'show'|要显示消息的类型
+delay|Number|3|自动隐藏消息框的时间
+callback|Function|nil|隐藏消息框后的回调函数
+
+####方法
+
+#####show(msg, delay, callback)
+消息的类型为 'show' 时的简写，参数意思同上。
+
+    Message.show('show message');
+
+#####error(msg, delay, callback)
+消息的类型为 'error' 时的简写，参数意思同上。
+
+#####success(msg, delay, callback)
+消息的类型为 'success' 时的简写，参数意思同上。
+
+#####hide(type)
+直接隐藏显示出来的消息提示框。type 意义同上。
+
 
 
 
