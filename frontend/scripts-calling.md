@@ -320,7 +320,7 @@ log(...)
         async: 'ajax'
     });
 
-还可以通过 data 属性调用对话框组件，不需写 JavaScript 代码，只需要通过在一个起控制器作用的元素（例如：按钮/链接）上添加 `data-toggle="dialog"` 属性，同时加入 `data-target="#foo"` 属性，或者链接的 `href="#foo"` 属性，用于指向被控制的对话框。
+还可以通过 data 属性调用对话框组件，不需写 JS 代码，只需要通过在一个起控制器作用的元素（例如：按钮/链接）上添加 `data-toggle="dialog"` 属性，同时加入 `data-target="#foo"` 属性，或者链接的 `href="#foo"` 属性，用于指向被控制的对话框。
 
       <button type="button" class="btn btn-lg" data-toggle="dialog" data-target="#one_dialog"><span><span>打开对话框</span></span></button>
 
@@ -330,7 +330,7 @@ log(...)
 
 ####参数
 
-可以将选项通过 data 属性或 JavaScript 代码传递。对于 data 属性，需要将参数名称放到 `data-dialog-` 之后，例如 `data-dialog-modal="true"`。
+可以将选项通过 data 属性或 JS 代码传递。对于 data 属性，需要将参数名称放到 `data-dialog-` 之后，例如 `data-dialog-modal="true"`。
 
 名称 | 类型 | 默认值 | 描述
 ----|----|----|----
@@ -450,6 +450,124 @@ callback|Function|nil|隐藏消息框后的回调函数
 
 #####hide(type)
 直接隐藏显示出来的消息提示框。type 意义同上。
+
+##可切换组件 _switchable.js_
+
+可切换组件广泛应用于网页的特效中，很多效果都可以用可切换组件用不同的参数及样式组合实现。这里不可能列出所有的情况，只能给出一些用法和实例，更多的实例待各位慢慢研究和发掘了。
+
+###实例
+
+####标签切换组件（Tabs）
+
+    <div id="demo1" class="section" data-toggle="switchable" data-switchable-config="{&quot;events&quot;:&quot;click&quot;}">
+      <ul class="switchable-triggersList">
+        <li class="">标题 A</li>
+        <li class="active">标题 B</li>
+        <li class="">标题 C</li>
+        <li class="">标题 D</li>
+        <li class="">标题 E</li>
+      </ul>
+      <div class="switchable-content">
+        <div style="display: none;">标题 A内容</div>
+        <div style="display: block;">index = 1</div>
+        <div style="display: none;">index = 2</div>
+        <div style="display: none;">内容 D</div>
+        <div style="display: none;">index = 4</div>
+      </div>
+    </div>
+
+这是一个标准的标签切换组件，用于多内容在一块区域中切换显示/隐藏。
+
+####广告幻灯片（Slider）
+
+广告幻灯片大多用于广告或商品图片的轮播，可以支持渐隐渐显，左右滚动，上下滚动几种形式。Slider 比 Tabs 多了几项参数。
+
+    <div id="demo2" class="section loading" data-toggle="switchable" data-switchable-config="{&quot;effect&quot;: &quot;scrollx&quot;, &quot;autoplay&quot;: true, &quot;interval&quot;: 2, &quot;events&quot;: &quot;click&quot;, &quot;circle&quot;: true}">
+      <ol class="switchable-content">
+        <li><a href="#" target="_blank"><img src="img/slider-img1.jpg"></a></li>
+        <li style="display:none;"><a href="#" target="_blank"><img src="img/slider-img2.jpg"></a></li>
+        <li style="display:none;"><a href="#" target="_blank"><img src="img/slider-img3.jpg"></a></li>
+        <li style="display:none;"><a href="#" target="_blank"><img src="img/slider-img4.jpg"></a></li>
+        <li style="display:none;"><a href="#" target="_blank"><img src="img/slider-img5.jpg"></a></li>
+      </ol>
+      <ul class="switchable-triggersList">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+
+####图片文字广告
+
+    <div id="demo3" class="section" data-toggle="switchable" data-switchable-config='{"effect": "fade", "duration": 0.8, "delay": 0.1, "autoplay": true}'>
+      <div class="switchable-content">
+        <p class="active"><a target="_blank" href="#"><img src="img/59e5194738d5a71869d9109b457d554a.jpg"></a></p>
+        <p><a target="_blank" href="#"><img src="img/75ecf47c041778f4271b2a8fe978322e.jpg"></a></p>
+        <p><a target="_blank" href="#"><img src="img/414cc9a743bc5923189535b59c00c10e.jpg"></a></p>
+        <p><a target="_blank" href="#"><img src="img/501bb0c35d1f300a1fb78b28cd1e5929.jpg"></a></p>
+        <p><a target="_blank" href="#"><img src="img/63e32154522a7fb6a89b78cd4f9b0876.jpg"></a></p>
+        <p><a target="_blank" href="#"><img src="img/ec26c2d603459f73d1a46713ce88abce.jpg"></a></p>
+      </div>
+
+      <ul class="switchable-triggersList">
+        <li class="active"><a target="_blank" href="#">新品限时抢</a></li>
+        <li><a target="_blank" href="#">夏日冰凉价</a></li>
+        <li><a target="_blank" href="#">父亲节特惠</a></li>
+        <li><a target="_blank" href="#">T恤99两件</a></li>
+        <li><a target="_blank" href="#">父亲节礼物</a></li>
+        <li><a target="_blank" href="#">千件秒杀</a></li>
+      </ul>
+    </div>
+
+
+###用法
+
+通过 JS 应用可切换组件：
+
+    $('#demo1').switchable(options);
+
+###参数
+
+可以通过 `data` 属性或 JS 传递参数。对于 `data` 属性，将参数名附着到 `data-switchable-` 后面，例如 `data-switchable-*=""`。
+
+名称 | 类型 | 默认值 | 描述
+----|----|----|----
+type|Number|0|获取 triggers 和 panels 的方式，是通过 navCls 和 contentCls 还是通过 triggerCls 和 panelCls
+navCls|String|switchable-triggersList|通过此类获取触发条件的容器
+contentCls|String|switchable-content|通过此类获取显示内容的容器，但不是具体的内容面板
+triggerCls|String|switchable-trigger|通过此类获取具体的触发条件，此情况下，一般触发条件不在同一个容器
+panelCls|String|switchable-panel|通过此类获取具体的显示内容面板，此情况下，一般内容面板不在同一个容器
+hasTriggers|Boolean|true|是否需要触发点
+activeIndex|Number|0|初始时被激活的索引
+activeCls|String|active|被激活时的css样式名
+events|Array Events|['click', 'hover']|触发条件事件响应数组，目前支持click和hover
+hasFlips|Boolean|false|是否有翻页按钮
+backward|dom|.prev|向后翻页按钮的dom节点
+forward|dom|.next|向前翻页按钮的dom节点
+step|Number|1|一次切换的内容面板数
+delay|Number|0.1|延迟执行切换的时间间隔（秒）
+viewSize|Array|[]|一般自动设置，除非自己需要控制，显示内容面板的[宽, 高]
+autoplay|Boolean|false|是否自动播放
+interval|Number|3|自动播放间隔时间（秒）
+pauseOnHover|Boolean|true|鼠标悬停在容器上是否暂停自动播放
+effect|String/Function|none|过渡特效，默认为直接显示/隐藏，也可以直接传入特效函数
+duration|Number|0.5|动画的时长（秒）
+easing|String|linear|缓动函数，默认为线性缓动（jQuery本身只提供 linear 和 swing 两种缓动函数，更多的效果请看 [jQuery easing 插件](http://gsgd.co.uk/sandbox/jquery/easing/)
+circle|Boolean|false|是否循环播放​
+lazyload|Boolean|false|是否延迟加载
+lazyDataType|String|data-src|延迟加载的类型，支持图片延迟加载，及文本数据和脚本延迟加载
+
+###事件
+
+注：这些事件也是以参数的形式写在 options 里面的。
+
+事件类型|事件描述
+----|----
+onBeforeSwitch|在切换到下一个标签页前触发
+onAfterSwitch|在切换到下一个标签页后触发
+
 
 
 
