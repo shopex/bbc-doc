@@ -521,6 +521,161 @@ callback|Function|nil|隐藏消息框后的回调函数
       </ul>
     </div>
 
+这种方式使得图片广告可以带上标题/描述。
+
+####图片轮播浏览（图片延迟加载）
+
+初始的时候第2，3页面的图片并没有加载，只是翻动到当前页的时候才会加载此页的所有图片，控制的参数为 `lazyload: true`。
+
+    <div id="demo4" class="section scrollable" data-toggle="switchable" data-switchable-config='{
+      "effect": "scrollx",
+      "step": 5,
+      "viewSize": [680],
+      "lazyload": true,
+      "circle": true,
+      "hasFlips": true
+      }'>
+      <span class="prev">&lsaquo; 上一页</span>
+      <span class="next">下一页 &rsaquo;</span>
+      <div class="scroller">
+        <div class="switchable-content">
+          <!-- 1-5 -->
+          <img src="img/imgview1.jpg" />
+          <img src="img/imgview2.jpg" />
+          <img src="img/imgview3.jpg" />
+          <img src="img/imgview4.jpg" />
+          <img src="img/imgview5.jpg" />
+          <!-- 5-10 -->
+          <img data-src="img/imgview6.jpg" />
+          <img data-src="img/imgview7.jpg" />
+          <img data-src="img/imgview8.jpg" />
+          <img data-src="img/imgview9.jpg" />
+          <img data-src="img/imgview10.jpg" />
+          <!-- 10-15 -->
+          <img data-src="img/imgview11.jpg" />
+          <img data-src="img/imgview12.jpg" />
+          <img data-src="img/imgview13.jpg" />
+          <img data-src="img/imgview14.jpg" />
+          <img data-src="img/imgview15.jpg" />
+        </div>
+        <ul class="switchable-triggersList">
+          <li class="active">&bull;</li>
+          <li>&bull;</li>
+          <li>&bull;</li>
+        </ul>
+      </div>
+    </div>
+
+####跑马灯文字广告
+
+此为无缝滚动文字广告，需要配置参数中加入：`circle: true`
+
+    <div id="demo5" class="scroll-news" data-toggle="switchable" data-switchable-config='{
+      "hasTriggers": false,
+      "autoplay": true,
+      "effect": "scrolly",
+      "circle": true
+      }'>
+      <ul class="news-items switchable-content">
+        <li><a href="#" target="_blank">“一分钱”轻松体验shopex网购流程</a></li>
+        <li><a href="#" target="_blank">开通网银，支付宝为您一路护航</a></li>
+        <li><a href="#" target="_blank">新手买家？帮助教程带您走进淘宝</a></li>
+        <li><a href="#" target="_blank">尽情挥洒你的创意，共建shopex联盟</a></li>
+        <li><a href="#" target="_blank">认准标识，精选实力卖家任您选择</a></li>
+        <li><a href="#" target="_blank">收藏</a> + <a href="#" target="_blank">购物车</a>，逛街看店更便捷</li>
+      </ul>
+    </div>
+
+####缩略图配文字描述广告
+
+此例结构稍显复杂，触发点为缩略图，并且连带标题和描述一起切换，需要用到事件回调。
+
+    <div id="slideFocus" data-toggle="switchable">
+      <div class="content">
+        <div class="pic loading">
+          <ul class="switchable-content">
+            <li><a href="#"><img src="img/compleximg1.jpg"/></a></li>
+            <li><a href="#"><img src="img/compleximg2.jpg"/></a></li>
+            <li><a href="#"><img src="img/compleximg3.jpg"/></a></li>
+            <li><a href="#"><img src="img/compleximg4.jpg"/></a></li>
+            <li><a href="#"><img src="img/compleximg5.jpg"/></a></li>
+            <li><a href="#"><img src="img/compleximg6.jpg"/></a></li>
+          </ul>
+        </div>
+        <div class="txt">
+          <ul class="desc-list">
+            <li style="display: block">
+              <h4><a title="《神话》热播 第05集21:10分上线" target="_blank" href="#">《神话》热播 第05集21:10分上线</a></h4>
+              <p>秦代的刑场上，一个身着奇装异服的年轻人从天而降，众将士议论纷纷，不敢近前，不知是叛贼来劫法场，还是神仙妖孽下凡……</p>
+            </li>
+            <li style="display: none">
+              <h4><a target="_blank" href="#">2010年第一场强降雪飘落京城</a></h4>
+              <p>继昨日凌晨降下新年首场小雪，今日首场强降雪飘落京城，据气象台预计雪后北京将降温至-16℃，这也将创下近40年来的最低温记录。</p>
+            </li>
+            <li style="display: none">
+              <h4><a target="_blank" href="#">娱乐圈丑闻 导演张一白吸毒被抓</a></h4>
+              <p>正拍摄《杜拉拉升职记》的导演张一白因吸毒被抓，据传是其捧红的徐静蕾“告密”，衣食无忧、事业有成的明星，为何屡屡曝出吸毒丑闻？</p>
+            </li>
+            <li style="display: none">
+              <h4><a target="_blank" href="#">詹姆斯-卡梅隆传奇巨制《阿凡达》</a></h4>
+              <p>曾因《泰坦尼克号》创造过票房记录的好莱坞导演詹姆斯-卡梅隆，经过了14年的酝酿，耗资4亿美元拍制的科幻巨献《阿凡达》将于4日在中国上映！</p>
+            </li>
+            <li style="display: none">
+              <h4><a target="_blank" href="#">2009年大学生十大杯具事件</a></h4>
+              <p>从70岁老教授潜规则艺校女生，到上海贫困女硕士自杀，09年发生在大学生身上的是非真是多得来令人惊诧，除了心酸就只有“杯具”了。</p>
+            </li>
+            <li style="display: none">
+              <h4><a target="_blank" href="#">尚周刊 第三期</a></h4>
+              <p>全新《尚周刊》在新年里与大家新鲜见面。简约是本周最IN的街头风！闪亮派对妆是每个潮女必备美妆术！想了解更多时尚资讯来《尚周刊》！</p>
+            </li>
+          </ul>
+          <ul class="switchable-triggersList">
+            <li class="active"><img src="img/compleximg-thumbs1.jpg"/></li>
+            <li><img src="img/compleximg-thumbs2.jpg"/></li>
+            <li><img src="img/compleximg-thumbs3.jpg"/></li>
+            <li><img src="img/compleximg-thumbs4.jpg"/></li>
+            <li><img src="img/compleximg-thumbs5.jpg"/></li>
+            <li><img src="img/compleximg-thumbs6.jpg"/></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    $('#slideFocus').data('switchableConfig', {
+        autoplay: true,
+        effect: 'scrollx',
+        circle: true,
+        onBeforeSwitch: function(e, toIndex) {
+            $('.desc-list li').each(function(index, value) {
+                value.style.display = index == toIndex ? '' : 'none';
+            });
+        }
+    });
+
+####手风琴折叠效果
+
+这里只需要一个参数：`type: 1`，其它都是通过样式控制其展示方式
+
+    <div id="accordion1" class="section" data-toggle="switchable" data-switchable-config='{"type":1}'>
+      <div class="switchable-trigger active"><span>标题A</span></div>
+      <div class="switchable-panel">
+        支持鼠标滑过和点击触点两种方式
+      </div>
+      <div class="switchable-trigger"><span>标题B</span></div>
+      <div class="switchable-panel" style="display:none;">
+        内容B<br/>内容B<br/>内容B
+      </div>
+      <div class="switchable-trigger"><span>标题C</span></div>
+      <div class="switchable-panel" style="display:none;">
+        内容C<br/>内容C<br/>内容C<br/>内容C<br/>内容C
+      </div>
+      <div class="switchable-trigger"><span>标题D</span></div>
+      <div class="switchable-panel" style="display:none;">
+        内容D<br/>内容D<br/>内容D
+      </div>
+    </div>
+
+更多的实例等待你去完成……
 
 ###用法
 
@@ -568,8 +723,51 @@ lazyDataType|String|data-src|延迟加载的类型，支持图片延迟加载，
 onBeforeSwitch|在切换到下一个标签页前触发
 onAfterSwitch|在切换到下一个标签页后触发
 
+##文件/图片上传组件 _uploader.js_
 
+###实例和用法
 
+此组件为用 ajax 上传文件，为了兼容 IE8 + 利用了 iframe 作为容器。用 JS 方式这样调用：
+
+    $().AjaxFileUpload(options);
+
+此时需要一个 dom 元素里面放入一个 file 控件。
+
+在 _uploader.js_ 末尾引用了一个实例，封装了一个多图片上传组件，此组件基本结构如下：
+
+    <form method="post" action="" enctype="multipart/form-data">
+      <div class="images-uploader">
+        <div class="handle img-thumbnail action-upload">
+          <input type="file" name="images[]" multiple accept="image/*" data-size="2048000" data-max="5" data-remote="upload_images.php" class="action-file-input">
+          <span class="icon-add"></span>
+        </div>
+      </div>
+    </form>
+
+此即为
+
+    $('.images-uploader').AjaxFileUpload(options);
+
+的实例，并且加入onComplete事件以处理上传成功后的后继动作（显示图片，加入可删除图片的操作方式）。
+
+###参数
+
+同样支持两种方式传递参数：在 file 控件上写 `data-` 属性以及 JS 方式传入参数。
+
+名称 | 类型 | 默认值 | 对应的 data 属性 | 描述
+----|----|----|----|----
+url|String|upload.php|data-remote|一个文件地址，作用是对上传文件进行处理并返回处理后的结果。
+size|Number|null|data-size|文件大小上传限制（字节数）
+type|String|null|data-accept|文件类型上传限制（暂未实现）
+limit|Number|0|data-max|文件上传数量限制
+
+###事件
+
+事件类型|事件参数|事件描述
+----|----|----
+onChange|文件名称/上传组件容器|在 file 控件的值被更改后触发
+onSubmit|文件名称/上传组件容器|在文件被上传时触发
+onComplete|文件名称/上传组件容器|在文件被上传成功后触发
 
 
 
