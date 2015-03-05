@@ -31,7 +31,7 @@ B2B2C 产品​所有 JavaScript（以下简称JS） 组件和接口都依赖于
 
 相当多的针对JS的工具在这里同样适用，常用的有：jslint(jshint)，chrome 开发者工具，Dash(Mac平台文档工具)，JSON editor。
 
-
+**下面首先介绍一下在 site 中定义的 JS 接口调用说明。**
 
 ##工具类函数 _tools.js_
 
@@ -354,7 +354,7 @@ component|JSON|(a JSON)|弹出框的构成组件的class名，包括框容器，
 
 ####方法
 
-######setHeight(el)
+#####setHeight(el)
 根据 el 或 this.container(框容器) 的高重新设置 this.content(内容区) 的高，一般在重新获取内容并且高度发生变化后使用。
 
 #####position(options)
@@ -768,6 +768,274 @@ limit|Number|0|data-max|文件上传数量限制
 onChange|文件名称/上传组件容器|在 file 控件的值被更改后触发
 onSubmit|文件名称/上传组件容器|在文件被上传时触发
 onComplete|文件名称/上传组件容器|在文件被上传成功后触发
+
+**以下再介绍下在 topc 中定义的 JS接口调用说明。**
+
+##通用函数库 _main.js_
+
+###商品价格格式化 _priceControl 对象_
+
+此对象内置几个方法/属性，用于转换商品价格/货币单位。调用方式：
+
+    priceControl.xxx();
+
+####spec
+
+此属性包含以下几个属性：
+-decimals: 2，小数位数。
+-dec_point: '.'，小数位分隔符。
+-thousands_sep: ''，千分位分隔符。
+-sign: '\uffe5'，货币符号。
+
+####format(num, force)
+
+**作用：**
+对传入的数字进行格式化
+
+**参数：**
+-num：要格式化的数值（或字符串形式的数值）
+-force：是否需要给货币符号单独加样式
+
+**返回值：**
+(String)根据spec格式化后的价格
+
+####number(format)
+
+**作用：**
+把传入的参数转换成数值。
+
+**参数：**
+-format：可以是String,Number,或者是表单元素，或者是任何包含数值的容器。
+
+**返回值：**
+(Number)转换后的数值
+
+####calc(calc, n1, n2, noformat)
+
+**作用：**
+计算两个商品价格的值。
+
+**参数：**
+-calc：加(add)或减(diff)。
+-n1：必须，可以是数值，或者可以被number方法转换成数值。
+-n2：同n1。
+-noformat：是返回数值，还是返回被format方法格式化后的价格结果。
+
+**返回值：**
+(String/Number)计算后的结果（价格或数值）。
+
+####add(n1, n2, flag) / diff(n1, n2, flag)
+分别是calc('add', ...) 和 calc('diff', ...)的快捷方法。
+
+###更新购物车数量
+
+**函数：**
+updateCartNumber
+
+**作用：**
+更新购物车里的商品数量/种类
+
+**参数：**
+-content：要更新的dom 元素
+
+**返回值：**
+无
+
+##多级地区选择组件 _area_select.js_
+
+###实例
+
+    <div id="area"></div>
+
+    $('#area').multiSelect({
+        dataUrl: 'public/app/ectools/statics/js/area.json'
+    });
+
+###参数
+
+名称 | 类型 | 默认值 | 描述
+----|----|----|----
+dataUrl|String|data.json|地区数据源文件，以json直接量方式保存
+level|Number|3|选择地区的层级，默认到区县
+name|String|area[]|选择地区表单的名称
+initData|String|null|初始地区数据，以逗号分隔的id
+
+##日期选择组件 _datepicker.js_
+
+一般的日期选择组件，像一个日历一样，可选取需要的日期，也可手动输入。
+
+###实例
+
+普遍采用的单个日期选择框的实例如下：
+
+    <div class="input-comb date" data-toggle="datepicker">
+      <input type="date" class="input-ln">
+      <span class="input-comb-addon"><i class="icon-calendar"></i></span>
+    </div>
+
+如果需要调用一个日期范围，比如开始日期和结束日期，那么需要多一点代码如下：
+
+    <div class="input-daterange" data-toggle="datepicker">
+      <input type="date" value="2014-04-05">
+      <span class="add-on">to</span>
+      <input type="date" value="2014-04-09">
+    </div>
+
+###用法
+
+可以通过 data 属性调用日期选择组件，只需要通过在一个容器元素上添加 `data-toggle="datepicker"` 属性，并在里面加入一个 input 表单元素即可。如果因为某种原因需要将此功能关闭，即解除以 `data-api` 为命名空间并绑定在文档上的事件，可以下面这样：
+
+    $(document).off('.datepicker.data-api');
+
+除此之外，也可以使用 JS 方式调用。
+
+    $('.datepicker').datepicker(options);
+
+###参数
+
+同样支持两种方式传递参数：在 date 容器上写 `data-date-` 属性以及 JS 方式传入参数。例如：startDate 用 data- 属性表示就是 data-date-start-date，format 就是 data-date-format，daysOfWeekDisabled 就是 data-date-days-of-week-disabled。
+
+名称 | 类型 | 默认值 | 描述
+----|----|----|----
+autoclose|Boolean|false|选中日期后是否马上关闭日期选择器
+beforeShowDay|Function(Date)|$.noop|传入一个日期，返回以下几个结果：underfined/Boolean(日期是否能被选取)/String（用于添加在此日期单元的样式名）/JSON（以上几种形式组合）
+calendarWeeks|Boolean|false|是否在左侧显示周数
+clearBtn|Boolean|false|是否显示“清除”按钮。
+daysOfWeekDisabled|String/Array|''|一周中的第几天不能被选择，值从0到6代表周日到周六。
+endDate|Date|不限|能选择到的最大日期
+forceParse|Boolean|true|是否把用户输入的值强制解析为正确的日期格式。
+format|String|yyyy-mm-dd|正确的日期格式
+inputs|Array|无|使用范围日期选择时，可用的输入框元素。
+keyboardNavigation|Boolean|true|是否可以使用快捷键。
+minViewMode|String|0|可用的最小视图，用0表示天，1表示月，2表示年。
+multidate|Boolean/Number|false|是否可填入多个日期。如果是数字，表示总共可以填写的日期的数量。分隔符以multidateSeparator给出。
+multidateSeparator|String|,|以什么符号分隔填入的多个日期。
+orientation|String|auto|允许选择组件的弹出框的位置固定在什么地方。可选择的值有 left, right, top, bottom 几种方向或方向的组合。
+startDate|Date|不限|能选择到的最小日期
+startView|Number/String|0|打开组件时默认所在的视图是哪个。用0表示月，1表示年，2表示10年。
+todayBtn|Boolean|false|是否显示“今天”按钮
+todayHighlight|Boolean|true|是否高亮“今天”的日期。
+weekStart|Number|1|一星期开始的日期，0-6表示周日到周六。
+
+###方法
+
+方法以如下形式调用，第一个参数为方法名，后面的为方法的参数。
+
+    $('.datepicker').datepicker('method', arg1, arg2);
+
+####remove()
+删除此组件，对应的事件，对象以及生成的html结构。
+
+####show()
+显示此组件。
+
+####hide()
+隐藏此组件。
+
+####update(date)
+用给定的日期或当前的输入值更新组件。
+
+####setDate(date)
+为组件设定给定的日期。
+
+####setUTCDate(date)
+为组件设定给定的UTC日期。
+
+####setDates(date...)
+为组件设定给定的一组日期，用于多日期选择。
+
+####setUTCDates(date...)
+为组件设定给定的一组UTC日期。
+
+####getDate()
+返回当前选定的日期，如果是多日期选择，返回最后选定的日期。
+
+####getUTCDate()
+返回当前选定日期的UTC格式。
+
+####getDates()
+返回当前选定的一组日期，用于多日期选择。
+
+####getUTCDates()
+返回当前选定的一组日期的UTC格式。
+
+####setStartDate(date)
+为组件设定最小可选择日期。
+
+####setEndDate(date)
+为组件设定最大可选择日期。
+
+####setDaysOfWeekDisabled(String/Array)
+设定一周中有哪些天是被禁止选择的。
+
+###事件
+
+此组件中的事件在使用时，类似一般的事件函数的用法，使用如下形式：
+
+    $'.datepicker').datepicker()
+        .on(event, function(e) {
+            // e 包含此事件中的扩展属性
+        });
+
+事件类型|事件描述
+----|----
+show|当日期选择器弹出框显示时触发此事件。
+hide|当日期选择器弹出框隐藏时触发此事件。
+clearDate|当输入的日期被清除时（或按下“清除”按钮）触发此事件。
+changeDate|当日期更改时触发此事件。
+changeYear|当视图从十年视图变成年视图时触发此事件。
+changeMonth|当视图从年视图变成月视图时触发此事件。
+
+###快捷键导航
+
+用快捷键导航时，当前选择的日期会聚焦，就像鼠标触发的效果，而当日期被清除或弹框隐藏时同样会失焦。
+
+####上，下，左，右光标键
+
+左/右键控制前后翻动一天，上/下键控制前后翻动一星期。
+
+加入 shift 键后，上/左控制向前翻动一个月，下/右控制向后翻动一个月。
+
+加入 ctrl/shift+ctrl 键后，上/右控制向前翻动一年，下/右控制向后翻动一年。
+
+####回车键
+
+当日期选择器可见时，回车切换当前聚焦的日期，不可见时，为正常的表单行为。
+
+当日期被选中时，则clearDate事件会被触发，否则触发changeDate事件。如果autoclose为true，则按下回车将会同时隐藏选择器。
+
+####逃逸(Escape)键
+
+逃逸键将取消选择或隐藏选择器。
+
+##本地存储 _localstorage.js_
+
+本地存储将用于用户的个人浏览历史记录。因为IE8 不支持 html5 的本地存储机制，而且每个浏览器支持的情况不同，故在此封装了一个叫 BrowserStore 的类，并开放了一些方法以统一处理浏览器兼容性问题。
+
+###用法
+
+有两种调用方法：
+
+    var storage = new BrowserStore();
+    storage.get('history');
+
+    browserStore.get('history');
+
+###方法
+
+####set(key, value)
+以 key 为键值存储 value，可以是 String 或是以 String 方式表示的 JSON 字符串。
+
+####get(key, callback)
+获取以 key 为键值存储的数据，然后以获取的值为参数调用 callback 函数。
+
+####remove(key)
+删除以 key 为键值存储的数据。
+
+####clear()
+清除此次本地存储的所有数据。
+
+
 
 
 
