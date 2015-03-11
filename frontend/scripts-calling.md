@@ -1040,7 +1040,51 @@ changeMonth|当视图从年视图变成月视图时触发此事件。
 ####clear()
 清除此次本地存储的所有数据。
 
+##工具提示 _tips.js_
 
+此工具提示主要用于表单验证提醒。
+
+###实例
+
+    <div class="form-row">
+      <label for="for_input_email" class="form-label">电子邮件</label>
+      <span class="form-act row input-row has-error">
+        <input type="email" class="col-5" id="for_input_email" placeholder="请输入电子邮件" required>
+        <span class="icon-alert caution">此项必填</span>
+      </span>
+    </div>
+
+###用法
+
+    var tips = new Tips(options);
+
+###参数
+
+同样支持两种方式传递参数：在 date 容器上写 `data-date-` 属性以及 JS 方式传入参数。例如：startDate 用 data- 属性表示就是 data-date-start-date，format 就是 data-date-format，daysOfWeekDisabled 就是 data-date-days-of-week-disabled。
+
+名称 | 类型 | 默认值 | 描述
+----|----|----|----
+form|String|inline|Tips 的形态，是 inline 还是 block，会影响到 Tips 的标签名。
+target|String/dom|'.form-row'|要插入的父元素
+type|String|error|Tips 的类型，可以是 error 或 success。
+class|String|caution|预置样式名。
+
+###事件
+
+事件类型|事件描述
+----|----
+onShow|当工具提示框显示时触发此事件。
+onHide|当工具提示框隐藏时触发此事件。
+
+###方法
+
+####success(msg, options)
+在提示成功消息时调用。包括以下参数：
+- msg:成功消息语
+- options:配置选项，参数同 Tips 的配置选项
+
+####error(msg, options)
+在提示失败/错误消息时调用。参数意义同上。
 
 
 
