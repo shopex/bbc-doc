@@ -165,7 +165,7 @@ type：获取哪一部分样式，可以为padding,margin或border
 ###dom 9点定位
 
 **函数：**
-$.fn.position(options)
+$.fn.locate(options)
 
 **作用：**
 根据9个方位由一个dom定位到另一个dom上的位置
@@ -344,7 +344,7 @@ show|Function|null|弹出框显示时触发事件
 close|Function|null|弹出框关闭时触发事件
 autoHide|Number/Boolean|false|是否在几秒后自动消失
 modal|Boolean/JSON|false|弹框是否出现遮罩，及遮罩的显示参数，参数含义请查看 Mask 一节。
-position|JSON|(a JSON)|弹出框的定位，默认定位到屏幕中央，更多参数含义请直接查看 `$.fn.position` 函数
+locate|JSON|(a JSON)|弹出框的定位，默认定位到屏幕中央，更多参数含义请直接查看 `$.fn.locate` 函数
 useIframeShim|Boolean|false|是否使用iframe遮盖，以便解决某些情况下 flash 层级问题。
 async|Boolean/String|false|异步加载内容的方式
 frameTpl|String|(html)|用iframe方式调用的模板
@@ -357,7 +357,7 @@ component|JSON|(a JSON)|弹出框的构成组件的class名，包括框容器，
 #####setHeight(el)
 根据 el 或 this.container(框容器) 的高重新设置 this.content(内容区) 的高，一般在重新获取内容并且高度发生变化后使用。
 
-#####position(options)
+#####locate(options)
 根据 options 参数重新定位弹出框
 
 ####衍生实例
@@ -396,7 +396,7 @@ target|dom|document.body|遮罩的区域（范围）
 width|Number|0|遮罩区的宽度
 height|Number|0|遮罩区的高度
 zIndex|Number|null|遮罩的层级
-position|Boolean|false|是否需要对遮罩定位（默认以中心点定位）
+locate|Boolean|false|是否需要对遮罩定位（默认以中心点定位）
 resize|Boolean|false|是否需要根据窗口缩放自动适应大小
 
 ####方法
@@ -404,7 +404,7 @@ resize|Boolean|false|是否需要根据窗口缩放自动适应大小
 #####setSize()
 设定遮罩层的大小。
 
-#####position()
+#####locate()
 对遮罩层重新定位
 
 #####toggle()
@@ -1085,6 +1085,103 @@ onHide|当工具提示框隐藏时触发此事件。
 
 ####error(msg, options)
 在提示失败/错误消息时调用。参数意义同上。
+
+##表单验证 _validate.js_
+
+表单验证包括两个方面，一是通过对所有的 form 表单提交事件进行统一拦截，然后根据不同的验证类型验证后进行统一化的提示信息，一是对提交事件进行处理，默认基于 ajax 方式进行异步提交，以在本页面输出后端返回的提交结果（是成功还是失败，失败了会有失败原因），当然还可以选择同步方式提交。所以表单验证是需要前后端结合更加紧密的工作形式。
+
+###实例
+
+    <form action="" method="post" role="form" data-validate-group=".form-act">
+      <div class="form-row">
+        <label for="for_input_uname" class="form-label">用户名</label>
+        <span class="form-act row input-row">
+          <input type="text" class="col-5" id="for_input_uname" placeholder="请输入用户名" required data-validate="alphanumber">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_email" class="form-label">电子邮件</label>
+        <span class="form-act row input-row">
+          <input type="email" class="col-5" id="for_input_email" placeholder="请输入电子邮件" required>
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_password" class="form-label">密码</label>
+        <span class="form-act row input-row">
+          <input type="password" class="col-5" id="for_input_password" name="password" placeholder="请输入密码" required>
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_npassword" class="form-label">确认密码</label>
+        <span class="form-act row input-row">
+          <input type="password" class="col-5" id="for_input_npassword" placeholder="请再次输入密码" required data-equalto="password">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_age" class="form-label">年龄</label>
+        <span class="form-act row input-row">
+          <input type="number" class="col-5" id="for_input_age" data-validate="posint">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_contact" class="form-label">联系方式</label>
+        <span class="form-act row input-row">
+          <input type="tel" class="col-5" id="for_input_contact">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_address" class="form-label">详细地址</label>
+        <span class="form-act row input-row">
+          <input type="text" class="col-5" id="for_input_address" minlength="10">
+        </span>
+      </div>
+      <div class="form-row">
+        <label for="for_input_zip" class="form-label">邮编</label>
+        <span class="form-act row input-row">
+          <input type="text" class="col-5" id="for_input_zip" maxlength="6" required data-validate="zip">
+        </span>
+      </div>
+      <div class="form-row">
+        <div class="form-act">
+          <button type="submit" class="btn"><span><span>提交</span></span></button>
+        </div>
+      </div>
+    </form>
+
+###用法
+
+由于是 JS 做了统一事件拦截，所以几乎完全不用写 JS 就可以完成自动验证。如果因为某种原因需要手动调用验证，只需要如下方式书写：
+
+    $('#validate_form').validation(options);
+
+###参数
+
+同样支持两种方式传递参数：在 date 容器上写 `data-validate-` 属性以及 JS 方式传入参数。像以上实例中 `data-validate-group=".form-act"` 就是以 data- 方式传递参数。
+
+名称 | 类型 | 默认值 | 描述
+----|----|----|----
+range|String|-|要验证表单元素的范围，是自身还是容器里所有的表单元素。
+group|String|.form-row|要插入的验证提示信息的父元素。
+tips|JSON|form:inline,class:caution|验证提示信息的配置参数，见工具提示一节。
+
+###验证类型
+
+一个验证器包含两部分----验证不通过提示消息和验证函数，下面列出内建的验证器能验证出的数据类型
+
+名称 | 默认提示消息 | 描述
+----|----|----
+required|此项必填|必要性验证，检查值是否为空
+minlength|输入不正确，至少x个字符|检查值的长度是否大于x
+maxlength|输入不正确，最多x个字符|检查值的长度是否小于x
+number|请填写数值|检查值的类型是否为数值型
+digits|只能填写数字|检查值是否是0-9组成的数字`
+posint|请填写正整数|检查值是否为正整数（大于0的整数）
+positive|请填写大于0的数值|检查值是否大于0
+natural|请填写大于等于0的整数|检查值是否为大于等于0的整数（原自然数）
+nonneg|请填写大于等于0的数值|检查值是否大于等于0
+alpha|只能填写英文字母|检查值是否全是英文字母
+alphanumber|请填写英文字母或者数字|检查值是否为英文字母和数字组成
+
 
 
 
