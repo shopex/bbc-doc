@@ -28,7 +28,7 @@
 ## misc
 - [系统依赖服务/组件](/deploy/dependence.md)
 - [bbc的安装](/install_bbc.md)
-
+- [prism相关](/deploy/prism/prism.md)
 
 
 ## DONE
