@@ -107,17 +107,17 @@ localhost:8080/admin/
 <a name="prism-init"></a>
 ## prism初始化
 * 获取prism的api添加权限
-** 在prism前台注册开发者用户
-** 后台审核通过
-** 在prism前台登陆，并申请成为api提供者
-** 在后台审核api提供者
+ - 在prism前台注册开发者用户
+ - 后台审核通过
+ - 在prism前台登陆，并申请成为api提供者
+ - 在后台审核api提供者
 * 添加接口
-** 使用之前具有api提供者身份的账号登陆前台
-** 在“我提供的Api”页面中添加新的api
-** 在后台审核api上线
-** 在前台创建app
-** 在后台给app分配对应的api
-** 在前台给app创建key，使用key即可调用prism对应的app包含的api
+ - 使用之前具有api提供者身份的账号登陆前台
+ - 在“我提供的Api”页面中添加新的api
+ - 在后台审核api上线
+ - 在前台创建app
+ - 在后台给app分配对应的api
+ - 在前台给app创建key，使用key即可调用prism对应的app包含的api
 
 
 
