@@ -2,7 +2,9 @@
 
 - [prism依赖](#prism-depend)
 - [mongodb安装](#mongodb-install)
+- [rabbitmq安装](#rabbitmq-install)
 - [prism安装](#prism-install)
+- [prism初始化](#prism-init)
 
 <a name="prism-depend"></a>
 ## prism依赖
@@ -25,6 +27,25 @@ mongodb启动方法:
 ```
 mongod --config /usr/local/etc/mongod.conf
 ```
+
+
+<a name="rabbit-install"></a>
+## rabbitmq安装
+mac下通过brew安装(2.4.12)：
+
+```
+brew install rabbitmq
+```
+
+启动rabbitmq
+
+```
+sudo /usr/local/Cellar/rabbitmq/3.4.4/sbin/rabbitmq-server
+```
+
+打开http://localhost:15672/ 进入rabbitmq后台，输入用户名:guest，密码:guest登陆后台。
+在admin页面下右侧栏选择“virtual host”，新建名为prism的vhost。
+
 
 <a name="prism-install"></a>
 ## prism安装
@@ -83,9 +104,20 @@ localhost:8080/admin/
 
 
 
-
-
-
+<a name="prism-init"></a>
+## prism初始化
+* 获取prism的api添加权限
+** 在prism前台注册开发者用户
+** 后台审核通过
+** 在prism前台登陆，并申请成为api提供者
+** 在后台审核api提供者
+* 添加接口
+** 使用之前具有api提供者身份的账号登陆前台
+** 在“我提供的Api”页面中添加新的api
+** 在后台审核api上线
+** 在前台创建app
+** 在后台给app分配对应的api
+** 在前台给app创建key，使用key即可调用prism对应的app包含的api
 
 
 
