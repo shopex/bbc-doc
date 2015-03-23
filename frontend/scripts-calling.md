@@ -1166,7 +1166,7 @@ tips|JSON|form:inline,class:caution|验证提示信息的配置参数，见工�
 
 ###验证类型
 
-一个验证器包含两部分----验证不通过提示消息和验证函数，下面列出内建的验证器能验证出的数据类型
+一个验证器包含两部分----验证不通过提示消息和验证函数，下面列出内建的验证器能验证出的数据类型，所有区域性格式以中国为准。
 
 名称 | 默认提示消息 | 描述
 ----|----|----
@@ -1174,17 +1174,142 @@ required|此项必填|必要性验证，检查值是否为空
 minlength|输入不正确，至少x个字符|检查值的长度是否大于x
 maxlength|输入不正确，最多x个字符|检查值的长度是否小于x
 number|请填写数值|检查值的类型是否为数值型
-digits|只能填写数字|检查值是否是0-9组成的数字`
+digits|只能填写数字|检查值是否是0-9组成的数字
 posint|请填写正整数|检查值是否为正整数（大于0的整数）
 positive|请填写大于0的数值|检查值是否大于0
 natural|请填写大于等于0的整数|检查值是否为大于等于0的整数（原自然数）
 nonneg|请填写大于等于0的数值|检查值是否大于等于0
 alpha|只能填写英文字母|检查值是否全是英文字母
 alphanumber|请填写英文字母或者数字|检查值是否为英文字母和数字组成
+alphanumcn|请填写英文字母、中文或数字|检查值是否为英文字母、中文或数字组成
+uncnchar|不能填写中文字符|检查值是否含有中文
+date|请填写日期，格式yyyy-mm-dd|检查值是否为正确的日期格式
+email|请填写正确的email地址|检查值是否为正确的邮件格式
+emaillist|请填写正确的email地址，以","或";"分隔|检查值是否为逗号或分号分隔的邮件地址列表
+mobile|请填写正确的手机号码|检查值是否为正确的手机格式
+landline|请填写正确的座机号码|检查值是否为正确的座机格式
+tel|请填写正确的固话或手机号码|检查值是否为正确的手机或固话格式
+zip|请填写正确的邮编|检查值是否为正确的邮编格式
+url|请填写正确的网址|检查值是否为正确的url（包含ip）
+area|请选择完整的地区|检查值是否选择了完整的地区
+equalto|两次填写不一致|检查两个输入框填写的值是否一致（如密码验证）
+oneoftwo|请至少填写一项|检查两个输入框至少有一个有值
+onerequired|请至少选择一项|检查多个选项至少选择其中一个
 
+###自定义验证类型
 
+除了上述预定义的验证类型外，还可以自定义，有两种方式可以做到：一是用 html5 中定义的 pattern 属性定义正则匹配，验证器会提取其值并转换成完整匹配，所以 pattern 中不要加入前后的 ^ 和 $；一是用 JS 扩展 validatorMap，加入自定义的验证器名称和验证函数，如下就为一个 JS 自定义验证类型的例子：
 
+    $.extend(validatorMap, {
+        'custom_valid_name': ['自定义提示信息', function(element, value, type, parent) {
+            //验证体
+            //...
 
+            return result;
+        }]
+    });
 
+###验证过程
 
+首先，在 document.body 一级对 click 事件进行了统一拦截，并匹配到点击的 form 区域，然后根据不同的验证类型进行统一的验证提示，如果通过则**异步**提交到后台进行处理，如果有正确/错误消息，则用 JSON 方式抛出消息提示，然后再用 callback 回调进行下一步操作。如果是非 form 区域，想要验证其中的表单是否符合要求，也可以通过 JS 调用 validator 方法实现。再或者如果是 a 链接，并且其 rel 属性为 _request，也可以被拦截变成异步方式提交，只是默认提交方式为 get。
 
+##表单事务处理 _formplus.js_
+
+包含表单填写/密码检测/表单元素兼容性的相关处理，分别定义并统一处理。
+
+###密码强度检测组件
+
+**函数：**
+passwordStrength
+
+**作用：**
+在页面中填写密码时检测强度。
+
+**参数：**
+
+- value: 要检测的值
+- key: 检测控件的dom
+- className: 检测控件的初始样式名
+
+**返回值：**
+无
+
+####实例
+
+    <div class="form-row">
+      <label for="for_input_password" class="col-2">密码</label>
+      <span class="col-5">
+        <input type="password" class="input-block auto-password-check-handle" id="for_input_password" placeholder="请输入密码">
+        <span class="password-check password-weak">
+          <q>安全程度</q>
+          <span class="progress">
+            <em class="weak">弱</em><em class="good">中</em><em class="strong">强</em>
+          </span>
+        </span>
+      </span>
+    </div>
+
+由于此事件由系统统一处理，所以无需额外再写 JS。
+
+###更换验证码
+
+**函数：**
+changeVerify
+
+**作用：**
+点击验证码图片或特定元素即更换验证码
+
+**参数：**
+
+- element: 要更换验证码的元素
+- hasEvent: 是否事先绑定 click 事件
+
+**返回值：**
+无
+
+**实例：**
+
+    <div class="form-row verify-code">
+      <label class="form-label"><em>*</em>验证码</label>
+      <span class="form-act">
+        <input type="text" class="verify-input input-st" name="verifycode" id="iptlogin" required="" size="4" maxlength="4">
+        <img align="absmiddle" class="auto-change-verify-handle" id="membervocde" src="vcode.html" alt="验证码" width="70" height="35">
+        <span class="inline auto-change-verify-handle">看不清？<a href="javascript:void(0);">换一张</a></span>
+      </span>
+    </div>
+
+此事件也是由系统统一处理的，所以直接写html结构就可以了。
+
+###全选/不选
+
+**函数：**
+checkAll
+
+**作用：**
+全部选中所有的选择框
+
+**参数：**
+
+- el: 事件源复选框，点击此元素触发全选动作
+- elements: 需要被全部选择的复选框
+
+**返回值：**
+无
+
+###兼容IE8+的占位符
+
+**对象：**
+Placeholder
+
+**作用：**
+页面加载时初始化所有带 placeholder 属性的输入框，为不支持 placeholder 的浏览器添加支持
+
+**参数：**
+无
+
+**返回值：**
+无
+
+**实例：**
+
+    <input type="text" name="" id="" placeholder="it's placeholder">
