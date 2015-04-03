@@ -11,6 +11,12 @@
   - 创建API
   - 创建应用
   - 以ecstore做后端的连接
+- [prism client](/deploy/prism/client.md)
+  - 初始化
+  - 请求
+- [prism server](/deploy/prism/server.md)
+  - with-router
+  - without-router
 - [prism Oauth](/deploy/prism/oauth.md)
   - mysql设置
   - oauth通用方法
