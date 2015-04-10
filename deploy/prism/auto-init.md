@@ -9,7 +9,7 @@
 需要定义好如下参数
 ```
     //prism的地址
-    $configPrismUrl = 'http://192.168.51.70/';
+    $configPrismUrl = 'http://prismhost/';
     //prism的admin用户的key和secret
     $configAdminKey = '6loq33ns';
     $configAdminSecret = '5xh25gevid6ufzfykvwv';
