@@ -418,8 +418,9 @@ IE6、IE7 可以安装IE developetoolbar V2/IE webdeveloper。Microsoft 有 scri
         .panel-footer {}
 
 9.  虽然每个选择器的各种样式可以层叠，但是加样式时必须要考虑尽可能的少影响到已有样式，尽量用各标签的默认样式，也不要重置并不存在的样式，使得重用性很差。举个简单的例子， h1-h6 默认的加粗样式不要用样式去除，以免下次要用时再用加粗样式覆盖回来。
-10. 有时可以借助继承关系来少加样式。
-11. 对于需要同时改变状态的一组元素，不要为每一个元素加样式，而是应该在父元素上加样式类统一处理。
+10. 可以借助原本的继承关系来少加样式，当需要重写样式时，用选择器的权重关系覆盖而不要用 !important。
+11. 尽量不要使用 !important 打乱原有 CSS 继承关系，除非此样式功能单一并且你确信此样式不会被其它样式应用，更多时候需要合理使用选择器的权重以避免不希望有的样式覆盖。更多权重方面的文章可以参考 [http://www.w3cplus.com/css/css-specificity-things-you-should-know.html]。
+12. 对于需要同时改变状态的一组元素，不要为每一个元素加样式，而是应该在父元素上加样式类统一处理。
         .parent-class .a.active {}
         .parent-class .b.active {}
         .parent-class .c.active {}
@@ -427,12 +428,11 @@ IE6、IE7 可以安装IE developetoolbar V2/IE webdeveloper。Microsoft 有 scri
         .parent-class.active .a {}
         .parent-class.active .b {}
         .parent-class.active .c {}
-11. 尽量不要使用 !important 打乱原有 CSS 继承关系，除非此样式功能单一并且你确信此样式不会被其它样式应用，更多时候需要合理使用选择器以避免不希望有的样式覆盖。更多权重方面的文章可以参考 [http://www.w3cplus.com/css/css-specificity-things-you-should-know.html]。
-12.  如果你想展现不同状态的链接样式，一定要记住 link-visited-hover-active 的顺序，或者简写为LVHA。
-13. CSS 不要直接拿 div 标签当做选择器写样式，应该为其加类名。因为 div 属于无任何特殊意义的标签，使用范围特别广，所以应特别注意对 div 应用样式。
-14. 不要写用不到的样式，应定期排查样式表中的样式，以免样式表越来越臃肿。
-15. 虽然 ID 选择器效率最高，但是在此我们规定在样式表中不用 ID 作为选择器，因为其权重很高，应留给用户去使用，以及更多的留给 JS 接口。
-16. 任何时候不要用 html 和 body 选择器作为父选择器，除非用于 IE6 和 IE7 浏览器的css hack。
+13.  如果你想展现不同状态的链接样式，一定要记住 link-visited-hover-active 的顺序，或者简写为LVHA。
+14. CSS 不要直接拿 div 标签当做选择器写样式，应该为其加类名。因为 div 属于无任何特殊意义的标签，使用范围特别广，所以应特别注意对 div 应用样式。
+15. 不要写用不到的样式，应定期排查样式表中的样式，以免样式表越来越臃肿。
+16. 虽然 ID 选择器效率最高，但是在此我们规定在样式表中不用 ID 作为选择器，因为其权重很高，应留给用户去使用，以及更多的留给 JS 接口。
+17. 任何时候不要用 html 和 body 选择器作为父选择器，除非用于 IE6 和 IE7 浏览器的css hack。
 
 ###七、Javascript 脚本制作标准（代码类）
 
