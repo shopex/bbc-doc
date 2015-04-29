@@ -1,5 +1,5 @@
 # LuckyMall 开发文档
-## 序q言
+## 序言
 - [简介](/preface/introduction.md)
 
 ## 约定
