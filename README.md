@@ -8,6 +8,9 @@
 - [商派页面开发规范](/frontend/shopex-develop-standards.md)
 - [前端编码规范](/frontend/frontend-coding-standards.md)
 
+## ECOS3.0基本原则
+- [简要说明](/principles/summarize.md)
+- [目录结构](/principles/folder-structure.md)
 
 ## 基础
 - [配置](/basic/configuration.md)
