@@ -1,19 +1,11 @@
 Ecos目录结构
 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-
 下表中, 左侧列黑体字代表目录 普通字代表文件
 
-|| 文件/目录名 | 作用 ||
-
+| 文件/目录名    | 作用           |
+| ------------- |:-------------:|
 | index.php | web访问入口文件 |
-
 | .htaccess | apache支持的目录配置文件, 作用是让Ecos支持url rewrite, 可参考[Apache重写指南 http://www.myembed.com/online/Apache2.2_chinese_manual/misc/rewriteguide.html] |
 | licence.txt | ShopEx的软件授权协议 |
 | readme.txt | Ecos简要说明 |
