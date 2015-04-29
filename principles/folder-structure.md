@@ -1,6 +1,12 @@
 Ecos目录结构
 
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 
 下表中, 左侧列黑体字代表目录 普通字代表文件
 
