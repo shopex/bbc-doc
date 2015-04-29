@@ -29,7 +29,6 @@
 - [系统依赖服务/组件](/deploy/dependence.md)
 - [linux下安装](/install/linux_bbc_install.md)
 - [windows下安装](/install/windows_bbc_install.md)
-- [bbc的安装](/install_bbc.md)
 - [prism相关](/deploy/prism/index.md)
 
 
