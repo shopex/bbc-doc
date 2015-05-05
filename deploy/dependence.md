@@ -3,7 +3,8 @@
 - pecl mcrypt
 - composer
 - gettext
-- php > 5.4
+- php = 5.4
+- mysqli
 - mysql > 5.6.10
 - gd > 2.0.35
 

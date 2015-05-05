@@ -8,6 +8,9 @@
 - [商派页面开发规范](/frontend/shopex-develop-standards.md)
 - [前端编码规范](/frontend/frontend-coding-standards.md)
 
+## ECOS3.0基本原则
+- [简要说明](/principles/summarize.md)
+- [目录结构](/principles/folder-structure.md)
 
 ## 基础
 - [配置](/basic/configuration.md)
@@ -25,11 +28,14 @@
 - [前台样式用例说明](/frontend/styles-example.md)
 - [前台脚本调用说明](/frontend/scripts-calling.md)
 
-## misc
+## 安装 
 - [系统依赖服务/组件](/deploy/dependence.md)
-- [bbc的安装](/install_bbc.md)
-- [prism相关](/deploy/prism/index.md)
+- [安装FAQ](/install/faq_bbc_install.md)
+- [linux下安装](/install/linux_bbc_install.md)
+- [windows下安装](/install/windows_bbc_install.md)
 
+## misc
+- [prism相关](/deploy/prism/index.md)
 
 ## DONE
 - [LuckyMall浏览器兼容性说明:Z](/tasks/browser-compatible.md)

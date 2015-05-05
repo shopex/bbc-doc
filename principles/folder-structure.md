@@ -1,0 +1,73 @@
+Ecos目录结构
+
+
+下表中, 左侧列黑体字代表目录 普通字代表文件
+
+| *文件/目录名*  | *作用*         |
+| ------------- |:-------------:|
+| index.php | web访问入口文件 |
+| .htaccess | apache支持的目录配置文件, 作用是让Ecos支持url rewrite, 可参考[Apache重写指南 http://www.myembed.com/online/Apache2.2_chinese_manual/misc/rewriteguide.html] |
+| licence.txt | ShopEx的软件授权协议 |
+| readme.txt | Ecos简要说明 |
+| **app** | 系统里的所有app都在放置在这个目录下, 每个app单独目录存放 |
+| **app/{$app_name}** | {$app_name}代表一个具体的app, 例如:base |
+| **app/{$app_name}/api** | {$app_name}的api文件存放目录 |
+| **app/{$app_name}/dbschema** | {$app_name}的数据库表定义文件 |
+| **app/{$app_name}/docs** | {$app_name}的帮助文件, 格式为t2t. 如果安装了desktop app和dev app则会在后台桌面上看到所有系统里app所提供的帮助文件 |
+| **app/{$app_name}/lib** | {$app_name}的library库 |
+| **app/{$app_name}/model** | {$app_name}的model文件 |
+| **app/{$app_name}/controller** | {$app_name}的控制器文件 |
+| **app/{$app_name}/testcase** | {$app_name}的测试用例 |
+| **app/{$app_name}/xmlschema** | {$app_name}所支持的xml的定义文件, 文件格式为xsd |
+| app/{$app_name}/app.xml | {$app_name}的app定义文件, 文件定义:app/base/xmlschema/app.xsd |
+| app/{$app_name}/services.xml | {$app_name}的service定义文件, 文件定义:app/base/xmlschema/services.xsd |
+| app/{$app_name}/icon.png | {$app_name}的图标, 当系统应用setup app进行安装时, 可以在安装过程中看到 | 
+| app/{$app_name}/desktop.xml | {$app_name}的后台配置文件, 文件定义:app/desktop/xmlschema/desktop.xsd |
+| app/{$app_name}/services.xml | {$app_name}的service box及service配置文件, 文件定义:app/base/xmlschema/services.xsd |
+| app/{$app_name}/task.php | {$app_name}本app的应用维护程序, 所包含的全部是回调函数. 包含pre_install/post_install/pre_update/post_update等  |
+| app/{$app_name}/setting.php | {$app_name}所提供的初始化setting数据 |
+| **bootstrap** | - |
+| **config** | 存放系统的配置文件 |
+| **config/production** | 生产环境的数据库,app配置文件 |
+| config/apis.php | 系统api配置文件 | 
+| config/app.php | - | 
+| config/cache.php | 缓存配置文件 | 
+| config/compatible.php | - | 
+| config/database.php | 数据库配置文件 | 
+| config/deploy.xml | 系统部署配置文件, 如果系统想通过setup app进行安装, 需要配置此文件. 文件定义:app/base/xmlschema/deploy.xsd |
+| config/desktop.php | - | 
+| config/install.lock.php | 安装锁定文件. 如果系统开始安装任何app则生成此文件. 如果系统依赖于setup app进行安装, 当发现有install.lock.php则拒绝安装, 除非手动删除此文件. 例如:Ecstore |
+| config/kvstore.php | kv配置文件 | 
+| config/link.php | - | 
+| config/log.php | 日志配置文件 | 
+| config/messenger.php | 邮件短信配置文件 | 
+| config/queue.php | 队列配置文件 | 
+| config/search.php | 搜索配置文件 | 
+| config/session.php | session配置文件 | 
+| config/shop.php | 商家管理平台的菜单，链接配置 | 
+| config/sitemenu.php | 商城前台菜单配置 | 
+| config/storager.php | - | 
+| config/swoolequeue.php | - | 
+| config/sysconf.php | - | 
+| config/theme.php | 模板配置文件 | 
+| config/tradeCancelReason.php | 订单取消原因文件 | 
+| config/usermenu.php | 会员中心菜单文件 | 
+| config/certi.php | ShopEx证书 |
+| **custom** | 二次开发目录 |
+| **data** | 数据目录 |
+| **demo** | 演示数据 |
+| **misc** | - |
+| **public** | 公用文件目录 |
+| **public/app/{$app_name}/lang** | {$app_name}的多语言包 |
+| **public/app/{$app_name}/statics** | {$app_name}的多语言包 |
+| **public/files** | {$app_name}的多语言包 |
+| **public/images** | {$app_name}的多语言包 |
+| **script** | 系统的队列脚本存放目录 |
+| **themes** | 模板目录 |
+| **vendor** | composer插件库 |
+
+
+
+
+
+
