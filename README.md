@@ -28,11 +28,12 @@
 - [前台样式用例说明](/frontend/styles-example.md)
 - [前台脚本调用说明](/frontend/scripts-calling.md)
 
-## 安装 
+## 安装
 - [系统依赖服务/组件](/deploy/dependence.md)
 - [安装FAQ](/install/faq_bbc_install.md)
 - [linux下安装](/install/linux_bbc_install.md)
 - [windows下安装](/install/windows_bbc_install.md)
+- [vagrant部署](/deplay/vagrant/index.md)
 
 ## misc
 - [prism相关](/deploy/prism/index.md)
