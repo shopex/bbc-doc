@@ -33,7 +33,7 @@
 - [安装FAQ](/install/faq_bbc_install.md)
 - [linux下安装](/install/linux_bbc_install.md)
 - [windows下安装](/install/windows_bbc_install.md)
-- [vagrant部署](/deploy/vagrant/index.md)
+- [vagrant部署](/install/vagrant/index.md)
 
 ## misc
 - [prism相关](/deploy/prism/index.md)
