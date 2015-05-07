@@ -32,21 +32,21 @@ BBC Vagrant 是基于VirtualBox创建的虚拟机，并通过Vagrant进行打包
 
 - 下载box文件。
 
-- 执行vagrant box add ecstore/centos65 $name.box。
+- 执行vagrant box add bbc/centos65 $name.box。
 
-    vagrant box add ecstore/centos65 $name.box
+      vagrant box add bbc/centos65 $name.box
 
 - 进入工作目录（workspace）(cd workspacedir)(比如:cd ~/code/)。
 
-    cd workspacedir
+      cd workspacedir
 
-- 执行vagrant init ecstore/centos65。
+- 执行vagrant init bbc/centos65。
 
-    vagrant init ecstore/centos65
+      vagrant init bbc/centos65
 
 - 执行vagrant up。
 
-    vagrant up
+      vagrant up
 
 - 在工作目录(workspace)解压bbc开发包，用浏览器打开127.0.0.1:8000即可。
 
