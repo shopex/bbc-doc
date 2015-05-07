@@ -10,7 +10,7 @@
 ## 下载地址
 VirtualBox https://www.virtualbox.org/wiki/Downloads
 
-Vagrant http://www.vagrantup.com/downloads.html
+Vagrant https://www.vagrantup.com/downloads.html
 
 BOX包 http://122.144.135.218/commerce_b2b2c-lnmp-with-prism-0.0.2.box
 
