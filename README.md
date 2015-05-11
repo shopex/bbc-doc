@@ -11,6 +11,7 @@
 ## ECOS3.0基本原则
 - [简要说明](/principles/summarize.md)
 - [目录结构](/principles/folder-structure.md)
+- [BBC的app说明](/principles/app-desc.md)
 
 ## 基础
 - [配置](/basic/configuration.md)
