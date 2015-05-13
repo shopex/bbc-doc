@@ -303,30 +303,7 @@ _仅当_ 其它指定的字段都不存在的时候，验证此规则的值必�
 
 验证此规则的值的大小必须与给定的 _value_ 相同。对于字符串，_value_ 代表字符的个数；对于数字，_value_ 代表它的整数值，对于文件，_value_ 代表文件以KB为单位的大小。
 
-<a name="rule-unique"></a>
-#### unique:_table_,_column_,_except_,_idColumn_
 
-验证此规则的值必须在给定的数据库的表中唯一。如果 `column` 没有被指定，将使用该字段的名字。
-
-**Unique 规则的基础使用**
-
-	'email' => 'unique:users'
-
-**指定列名**
-
-	'email' => 'unique:users,email_address'
-
-**强制忽略一个给定的 ID**
-
-	'email' => 'unique:users,email_address,10'
-
-**添加额外的where语句**
-
-你还可以指定更多条件，这些条件将被添加到查询的"where"语句中：
-
-	'email' => 'unique:users,email_address,NULL,id,account_id,1'
-
-在上面的规则中，只有`account_id` 为 `1` 的行才会被包含到unique检查中。
 
 <a name="rule-url"></a>
 #### url
@@ -356,4 +333,5 @@ _仅当_ 其它指定的字段都不存在的时候，验证此规则的值必�
 	{
 		return $input->games >= 100;
 	});
+
 
