@@ -5,7 +5,8 @@
 ```
 $validator = validator::make(
     array('name' => 'Dayle'),
-    array('name' => 'required|min:5')
+    array('name' => 'required|min:5'),
+    array('name' => '对name字段的中文表示，比如：用户名')
 );
 ```
 上文中通过 make 这个方法来的第一个参数来设定所需要被验证的数据名称，第二个参数设定该数据可被接受的规则。
@@ -15,7 +16,8 @@ $validator = validator::make(
 ```
 $validator = validator::make(
     array('name' => 'Dayle'),
-    array('name' => array('required', 'min:5'))
+    array('name' => array('required', 'min:5'))，
+    array('name' => '对name字段的中文表示，比如：用户名')
 );
 ```
 ##验证多个字段
@@ -30,6 +32,11 @@ $validator = validator::make(
         'name' => 'required',
         'password' => 'required|min:8',
         'email' => 'required|email|unique:users'
+    )
+    array(
+        'name' => '比如：用户名',
+        'password' => '比如：用户密码',
+        'email' => '比如：用户邮箱'
     )
 );
 ```
