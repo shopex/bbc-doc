@@ -39,6 +39,7 @@
 
 ## misc
 - [prism相关](/deploy/prism/index.md)
+- [统计相关](/deploy/sysstat.md)
 
 ## DONE
 - [LuckyMall浏览器兼容性说明:Z](/tasks/browser-compatible.md)
