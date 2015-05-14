@@ -16,7 +16,7 @@ $validator = validator::make(
 ```
 $validator = validator::make(
     array('name' => 'Dayle'),
-    array('name' => array('required', 'min:5'))，
+    array('name' => array('required', 'min:5')),
     array('name' => '对name字段的中文表示，比如：用户名')
 );
 ```
