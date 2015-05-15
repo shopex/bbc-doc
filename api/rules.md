@@ -2,27 +2,28 @@
 
 ## 文件位置
 - 文件统一放在如下位置：
-'''
+```
   app/{$app_name}/app/
-'''
+```
 
 ## API注册
 - 注册文件
-'''
+```
   config/apis.php
-'''
+```
 
 - 注册格式
-'''
+```
     'api的method' => ['uses' => '调用哪个类@哪个方法', 'version'=>['支持的版本号']],
-'''
-'''
+```
+```
     'item.search' => ['uses' => 'sysitem_api_item_search@getList', 'version'=>['v1']],
-'''
+```
 
 ## API开发
 - CLASS格式
-'''
+
+```
 class sysitem_api_item_get{
 
     public $apiDescription = '获取单个商品的详细信息';
@@ -48,9 +49,9 @@ class sysitem_api_item_get{
     {
         return $result;
     }
-'''
+```
 
-'''
+```
 class sysitem_api_item_get{
 
     /**
@@ -78,5 +79,5 @@ class sysitem_api_item_get{
     {
         return $result;
     }
+```
 
-'''
