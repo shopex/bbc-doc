@@ -4,12 +4,6 @@
 - [重定向](#redirects)
 - [特殊响应](#special-responses)
 - [响应宏](#response-macros)
-```php
-route::get('/', function()
-{
-    return 'Hello World';
-});
-```
 
 <a name="basic-responses"></a>
 ## 基本Response
