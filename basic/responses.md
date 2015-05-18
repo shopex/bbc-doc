@@ -1,8 +1,9 @@
-Response
+视图(view)与响应(response)
 
-- [基本Response](#basic-responses)
+- [基本响应](#basic-responses)
 - [重定向](#redirects)
-- [特殊Response](#special-responses)
+- [特殊响应](#special-responses)
+- [响应宏](#response-macros)
 
 <a name="basic-responses"></a>
 ## 基本Response
@@ -25,7 +26,7 @@ Response
 	return $response;
 
 <a name="redirects"></a>
-## 重定向
+## 重定向跳转
 
 **返回一个重定向**
 
@@ -81,3 +82,18 @@ Response
 	return response::download($pathToFile, $status, $headers);
 
 > **注意：** Symfony HttpFoundation 用于处理文件下载，要求下载的文件的文件名只包含 ASCII 字符。    
+
+## 响应宏
+
+如果您想要自定义可以在很多路由和控制器重复使用的响应，可以使用`response::macro`方法：
+
+	response::macro('caps', function($value)
+	{
+	    return response::make(strtoupper($value));
+	});
+
+`macro`方法第一个参数为宏名称，第二个参数为闭合函数。闭合函数会在 Response 调用宏名称的时候被执行：
+
+	return response::caps('foo');
+
+    

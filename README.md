@@ -21,9 +21,9 @@
 - [路由](/basic/routing.md)
 - [Response](/basic/responses.md)
 - [Facades](/basic/facades.md)
-- [目录结构](/basic/directory.md)
 - [prism调用](/basic/prism.md)
 - [validator验证](/basic/validator.md)
+- [数据库](/basic/database/readme.md)
 
 ## 系统功能配置说明
 - [搜索配置文档和使用方法](/basic/search.md)
