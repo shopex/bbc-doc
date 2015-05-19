@@ -1,6 +1,8 @@
 # 数据表定义
 
 - [简介](#introduction)
+- [dbal类型](#dabl-types)
+- [内置预定义类型](#buildin-types)
 - [表结构定义](#table-define)
 - [finder定义](#finder-define)
 
@@ -65,16 +67,17 @@ return array (
 );
 ```
 
-<a name="table-define"></a>
-## 表结构定义
+<a name="dbal-types"></a>
+## DBAL类型
 
 #### DBAL类型属性
+
+下表是dbal类型与mysqll类型的对应表, 其中notnull和required属性是所有dbal类型天生具备的.
+
 <table width="100%">
     <tr>
         <th>doctrine类型</th>
         <th>默认mysql类型</td>
-        <th>notnull</th>
-        <th>default</th>
         <th>length</th>
         <th>precision</th>
         <th>scale</th>
@@ -86,7 +89,6 @@ return array (
         <td>array</td>
         <td>text</td>
         <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>        
         <td></td>
@@ -97,8 +99,6 @@ return array (
     <tr>
         <td>array_simple</td>
         <td>text</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>        
         <td></td>
@@ -109,8 +109,6 @@ return array (
     <tr>
         <td>json_array</td>
         <td>text</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>        
         <td></td>
@@ -121,13 +119,9 @@ return array (
     <tr>
         <td>bigint</td>
         <td>bigint</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
     </tr>
     <tr>
@@ -139,14 +133,10 @@ return array (
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
-        <td></td>
     </tr>
     <tr>
         <td>datetime</td>
         <td>datetime</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -157,8 +147,6 @@ return array (
     <tr>
         <td>datetimez</td>
         <td>datetime</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -169,8 +157,6 @@ return array (
     <tr>
         <td>date</td>
         <td>date</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -181,8 +167,6 @@ return array (
     <tr>
         <td>time</td>
         <td>time</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -193,11 +177,7 @@ return array (
     <tr>
         <td>decimal</td>
         <td>numeric(10,0)</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -205,20 +185,14 @@ return array (
     <tr>
         <td>integer</td>
         <td>int</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
     </tr>
     <tr>
         <td>object</td>
         <td>text</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -229,21 +203,15 @@ return array (
     <tr>
         <td>smallint</td>
         <td>smallint</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
     </tr>
     <tr>
         <td>string</td>
         <td>varchar(255)</td>
         <td>true</td>
-        <td>true</td>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -253,8 +221,6 @@ return array (
     <tr>
         <td>text</td>
         <td>longtext</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -266,8 +232,6 @@ return array (
         <td>binary</td>
         <td>varbinary(255)</td>
         <td>true</td>
-        <td>true</td>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -277,8 +241,6 @@ return array (
     <tr>
         <td>blob</td>
         <td>longblob</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -289,8 +251,6 @@ return array (
     <tr>
         <td>float</td>
         <td>double precision</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -301,8 +261,6 @@ return array (
     <tr>
         <td>guid</td>
         <td>char(36)</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -313,8 +271,6 @@ return array (
     <tr>
         <td>text</td>
         <td>longtext</td>
-        <td>true</td>
-        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -324,30 +280,24 @@ return array (
     </tr>    
 </table>
 
+<a name="buildin-types"></a>
+## 内置预定义类型
 
-#### ECOS预定义类型属性
-
+<a name="table-define"></a>
+## 表结构定义
 #### 字段定义
 
+```php
+return array(
+    'bigint' => array(
+        'type' => 
+    )
+    
+```
+#### 所以定义
 
-## 
-- 
-- [表字段定义]
+<a name="finder-define"></a>
+## finder定义
 
-  
-- [desktop finder定义]
-- [索引定义]
-- [其他属性定义]
-- [内置数据类型] 
-
-## 数据类型定义
-- 描述表结构
-- 定义**desktop app finder**的呈现属性
-- 其他属性
-
-
-## 内置数据类型定义
-
-## 索引定义
 
 
