@@ -1,7 +1,7 @@
 # 数据表定义
 
 - [简介](#introduction)
-- [dbal类型](#dabl-types)
+- [DBAL类型](#dabl-types)
 - [内置预定义类型](#buildin-types)
 - [表结构定义](#table-define)
 - [finder定义](#finder-define)
@@ -69,8 +69,6 @@ return array (
 
 <a name="dbal-types"></a>
 ## DBAL类型
-
-#### DBAL类型属性
 
 下表是dbal类型与mysqll类型的对应表, 其中notnull和required属性是所有dbal类型天生具备的.
 
@@ -283,9 +281,80 @@ return array (
 <a name="buildin-types"></a>
 ## 内置预定义类型
 
+<table width="100%">
+    <tr>
+        <th>buildin type</th>
+        <th>DBAL type</td>
+        <th>options</th>
+    </tr>
+    <tr>
+        <td>bool</td>
+        <td>boolean</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>money</td>
+        <td>decimal</td>
+        <td>['precision' => 20, 'scale' = 3]</td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td>string</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>time</td>
+        <td>integer</td>
+        <td>['unsigned' => 'true']</td>
+    </tr>
+    <tr>
+        <td>region</td>
+        <td>string</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td>string</td>
+        <td>['length' => 32]</td>
+    </tr>
+    <tr>
+        <td>number</td>
+        <td>integer</td>
+        <td>['unsigned'  => true]</td>
+    </tr>
+    <tr>
+        <td>float</td>
+        <td>float</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>gender</td>
+        <td>string</td>
+        <td>['length' => 6]</td>
+    </tr>
+    <tr>
+        <td>ipaddr</td>
+        <td>string</td>
+        <td>['length' => 20]</td>
+    </tr>
+    <tr>
+        <td>serialize</td>
+        <td>text</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>last_modify</td>
+        <td>integer</td>
+        <td>['unsigned' => true]</td>
+    </tr>
+</table>
+
+
 <a name="table-define"></a>
 ## 表结构定义
 #### 字段定义
+
+每个字段需要指定`type`, type支持两种方式**DBAL类型**/**内置预定义类型**, 可参照上文的两张对应表. 对于**DBAL类型**需要根据不同的类型, 定义对应的属性. 例如, `decimal`类型对应着precision和scale属性. 对于**内置预定义类型**, 是直接对应着**DBAL**类型. 例如: number
 
 ```php
 return array(
@@ -294,7 +363,7 @@ return array(
     )
     
 ```
-#### 所以定义
+#### 索引定义
 
 <a name="finder-define"></a>
 ## finder定义
