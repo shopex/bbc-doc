@@ -23,7 +23,9 @@
 - [Facades](/basic/facades.md)
 - [prism调用](/basic/prism.md)
 - [validator验证](/basic/validator.md)
-- [数据库](/basic/database/readme.md)
+- [数据库]
+  - [基本用法](/basic/database/basic.md)
+  - [数据类型](/basic/database/types.md)
 
 ## 系统功能配置说明
 - [搜索配置文档和使用方法](/basic/search.md)
