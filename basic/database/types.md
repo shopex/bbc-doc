@@ -74,7 +74,7 @@ return array (
 
 |sldkf|lskdfkd|lskdjflksd|
 <table>
-  <col width="5%" />
+  <col align="right" />
   
     <tr>
         <th>doctrine类型</th>
