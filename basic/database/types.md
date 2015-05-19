@@ -70,6 +70,8 @@ return array (
 
 #### DBAL类型属性
 <table>
+  <colgroup width="10%"></colgroup>
+  <colgroup width="10%"></colgroup>
     <tr>
         <th>doctrine类型</th>
         <th>默认mysql类型</td>
