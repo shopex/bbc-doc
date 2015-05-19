@@ -69,6 +69,10 @@ return array (
 ## 表结构定义
 
 #### DBAL类型属性
+|abc|def|hijklkjlk|
+|---|---|---------|
+
+|sldkf|lskdfkd|lskdjflksd|
 <table>
   <colgroup width="10%"></colgroup>
   <colgroup width="10%"></colgroup>
