@@ -71,7 +71,7 @@ return array (
 ## DBAL类型
 
 下表是dbal类型与mysqll类型的对应表, 其中notnull和required属性是所有dbal类型天生具备的.
-
+ 
 <table width="100%">
     <tr>
         <th>doctrine类型</th>
@@ -86,202 +86,202 @@ return array (
     <tr>
         <td>array</td>
         <td>text</td>
-        <td>true</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>√</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>array_simple</td>
         <td>text</td>
-        <td></td>
-        <td></td>        
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>        
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>json_array</td>
         <td>text</td>
-        <td></td>
-        <td></td>        
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>        
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>bigint</td>
         <td>bigint</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>true</td>
-        <td>true</td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>√</td>
+        <td>√</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>boolean</td>
         <td>tinyint(1)</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>datetime</td>
         <td>datetime</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>datetimez</td>
         <td>datetime</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>date</td>
         <td>date</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>time</td>
         <td>time</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>decimal</td>
         <td>numeric(10,0)</td>
-        <td></td>
-        <td>true</td>
-        <td>true</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>√</td>
+        <td>√</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>    
     <tr>
         <td>integer</td>
         <td>int</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>true</td>
-        <td>true</td>
-        <td></td>        
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>√</td>
+        <td>√</td>
+        <td>×</td>        
     </tr>
     <tr>
         <td>object</td>
         <td>text</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>smallint</td>
         <td>smallint</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>true</td>
-        <td>true</td>
-        <td></td>        
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>√</td>
+        <td>√</td>
+        <td>×</td>        
     </tr>
     <tr>
         <td>string</td>
         <td>varchar(255)</td>
-        <td>true</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>true</td>
+        <td>√</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>√</td>
     </tr>
     <tr>
         <td>text</td>
         <td>longtext</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>binary</td>
         <td>varbinary(255)</td>
-        <td>true</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>true</td>
+        <td>√</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>√</td>
     </tr>
     <tr>
         <td>blob</td>
         <td>longblob</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>float</td>
         <td>double precision</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>guid</td>
         <td>char(36)</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>
     <tr>
         <td>text</td>
         <td>longtext</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
+        <td>×</td>
     </tr>    
 </table>
 
