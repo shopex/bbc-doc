@@ -74,8 +74,8 @@ return array (
 
 |sldkf|lskdfkd|lskdjflksd|
 <table>
-  <colgroup width="10%"></colgroup>
-  <colgroup width="10%"></colgroup>
+  <col width="5%" />
+  
     <tr>
         <th>doctrine类型</th>
         <th>默认mysql类型</td>
