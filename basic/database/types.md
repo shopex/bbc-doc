@@ -69,16 +69,12 @@ return array (
 ## 表结构定义
 
 #### DBAL类型属性
-|abc|def|hijklkjlk|
-|---|---|---------|
-
-|sldkf|lskdfkd|lskdjflksd|
 <table>
   <col align="right" />
   
     <tr>
-        <th>doctrine类型</th>
-        <th>默认mysql类型</td>
+        <th>doctrine</th>
+        <th>mysql</td>
         <th>notnull</th>
         <th>default</th>
         <th>length</th>
