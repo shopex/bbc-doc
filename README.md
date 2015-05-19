@@ -24,7 +24,7 @@
 - [prism调用](/basic/prism.md)
 - [validator验证](/basic/validator.md)
 - [数据库]
-  - [基本用法](/basic/database/basic.md)
+  - 基本用法
   - [数据类型](/basic/database/types.md)
 
 ## 系统功能配置说明
