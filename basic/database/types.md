@@ -69,7 +69,7 @@ return array (
 ## 表结构定义
 
 #### DBAL类型属性
-<table width="100%"  style="font-family:'宋体'; font-size:5px;">
+<table>
     <tr>
         <th>doctrine类型</th>
         <th>默认mysql类型</td>
