@@ -88,7 +88,6 @@ return array (
         <td>text</td>
         <td>true</td>
         <td></td>
-        <td></td>        
         <td></td>
         <td></td>
         <td></td>
@@ -120,6 +119,8 @@ return array (
         <td></td>
         <td></td>
         <td></td>
+        <td>true</td>
+        <td>true</td>
         <td></td>
     </tr>
     <tr>
@@ -176,6 +177,8 @@ return array (
         <td>decimal</td>
         <td>numeric(10,0)</td>
         <td></td>
+        <td>true</td>
+        <td>true</td>
         <td></td>
         <td></td>
         <td></td>
@@ -186,7 +189,9 @@ return array (
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>true</td>
+        <td>true</td>
+        <td></td>        
     </tr>
     <tr>
         <td>object</td>
@@ -204,7 +209,9 @@ return array (
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>true</td>
+        <td>true</td>
+        <td></td>        
     </tr>
     <tr>
         <td>string</td>
