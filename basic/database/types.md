@@ -285,6 +285,8 @@ return array (
     </tr>    
 </table>
 
+[doctrine dbal tpes文档](http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/types.html)有详细说明
+
 <a name="buildin-types"></a>
 ## 内置预定义类型
 
@@ -361,15 +363,60 @@ return array (
 ## 表结构定义
 #### 字段定义
 
-每个字段需要指定`type`, type支持两种方式**DBAL类型**/**内置预定义类型**, 可参照上文的两张对应表. 对于**DBAL类型**需要根据不同的类型, 定义对应的属性. 例如, `decimal`类型对应着precision和scale属性. 对于**内置预定义类型**, 是直接对应着**DBAL**类型. 例如: number
+每个字段需要指定`type`(类型), 类型支持两种方式**DBAL类型**/**内置预定义类型**, 可参照上文的两张对应表.
 
+对于**DBAL类型**需要根据具体类型, 定义对应的选项. 例如, `decimal`类型对应着precision和scale选项. 如果不填,默认分别为10和0.
+
+对于**内置预定义类型**, 是直接对应着**DBAL**类型. 但与**DBAL类型**的设置不同, 不需要填写额外的选项, 因为**内置预定义类型**已经预设了选项. 例如: `money`类型对应着**DBAL类型**的`decimal`, `precision`为20, `scale`为3, 如果对应着mysql的类型为`numeric(10,0)`.
+
+
+以下是**DBAL类型**:decimal的例子 
+```php
+return 
+    'weight => array(
+        'type' => 'decimal',
+        'precision' => 20,
+        'scale => 2,
+        'required => true,
+        'default' => 0,
+    ),
+```
+
+以下是**DBAL类型**:inte的例子 
 ```php
 return array(
-    'bigint' => array(
-        'type' => 
-    )
-    
+    'id => array(
+        'type' => 'bigint,
+    ),
 ```
+
+以下是**DBAL类型**:bigint的例子 
+```php
+return array(
+    'id => array(
+        'type' => 'bigint',
+        'autoincrement => true,
+    ),
+```
+
+以下是**DBAL类型**:bigint的例子 
+```php
+return array(
+    'id => array(
+        'type' => 'bigint',
+        'autoincrement => true,
+    ),
+```
+
+以下是**内置预定义类型**:money
+```php
+return array(
+    'price' => array(
+        'type' => 'money'
+    ),
+```
+
+
 #### 索引定义
 
 <a name="finder-define"></a>
