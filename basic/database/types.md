@@ -69,6 +69,7 @@ return array (
 ## 表结构定义
 
 #### DBAL类型属性
+<div style="overflow-x:scroll;overflow-y:hidden;">
 <table>
   <col align="right" />
   
@@ -325,7 +326,7 @@ return array (
         <td></td>
     </tr>    
 </table>
-
+</div>
 
 #### ECOS预定义类型属性
 
