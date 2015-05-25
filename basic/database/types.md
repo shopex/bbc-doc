@@ -457,11 +457,69 @@ return array(
         'comment' => app::get('systrade')->_('子订单状态'),
     ),
 );    
-
+```
 #### 索引定义
+- 主键定义
+
+当只有一个主键的时候
+```php
+return  array(
+    'columns' => array(
+        'cart_id' => array(
+            'type' => 'number',
+            //'pkey' => true,
+            'autoincrement' => true,
+            'required' => true,
+        ),
+    ),
+    'prmary' => 'cart_id'
+
+```
+当有多主键的时候
+```php
+return array (
+    'columns' =>
+    array (
+        'id' =>
+        array (
+            'type' => 'number',
+            'required' => true,
+        ),
+        'index_name' =>
+        array (
+            'type' => 'string',
+            'length' => 50,
+            'required' => true,
+        ),
+        //...
+    ),
+    'primary' => ['id', 'index_name'],
+    'index' => array(
+        'ind_last_modify' => ['columns' => ['last_modify']],
+    ),
+    'version' => '$Rev: 40918 $',
+);
+```
+> **注意:** 建议使用一个自增主键. 如果当有多主键的时候, 可以设置一个自增主键, 同时将多键作为`unique key`. 如果使用多主键在使用finder时会出现诡异问题.
+
+- 索引定义
 
 <a name="finder-define"></a>
+return array (
+    'columns' => array (
+        //...
+        'last_modify' =>
+        array (
+            'type' => 'last_modify',
+        ),
+        //...
+    ),
+
+    'index' => array(   //索引名称
+        'ind_last_modify' => [
+            'columns' => ['last_modify'], // 需要建立索引的字段名
+            'prefix' => 'unique' // 目前只支持unqiue, 或者不填写
+         ],
+    ),
+
 ## finder定义
-
-
-
