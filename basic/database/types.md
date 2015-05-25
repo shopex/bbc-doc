@@ -473,7 +473,7 @@ return  array(
         ),
     ),
     'prmary' => 'cart_id'
-
+);
 ```
 当有多主键的时候
 ```php
@@ -505,6 +505,7 @@ return array (
 - 索引定义
 
 <a name="finder-define"></a>
+```php
 return array (
     'columns' => array (
         //...
@@ -521,5 +522,6 @@ return array (
             'prefix' => 'unique' // 目前只支持unqiue, 或者不填写
          ],
     ),
-
+);
+```
 ## finder定义
