@@ -370,6 +370,7 @@ return array (
 
 ###### `DBAL类型`需要根据具体类型, 定义对应的选项. 例如, `decimal`类型对应着precision和scale选项. 如果不填,默认分别为10和0.
 -----
+=====
 以下是**DBAL类型**:decimal的例子 
 ```php
 return array(
