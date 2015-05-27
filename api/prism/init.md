@@ -53,7 +53,15 @@
 <a name="setup-steps"></a>
 ## prism初始化操作步骤
 
-  * 填写完成后先保存参数
+填写好配置文件中的设置以后，命令行提供以下3条命令
+```
+system:prism init                     //初始化api信息到prism
+system:prism forceinit               // 强制初始化api信息到prism（慎用）。如果系统因为之前同步过一次数据，prism上数据清空导致无法初始化，请执行此命令
+system:prism update                  // 更新prism上的API数据
+```
 
-  * 然后执行初始化
+执行system:prism init即可自动初始化
+
+当api更新以后，执行system:prism update，prism也会更新
+
 
