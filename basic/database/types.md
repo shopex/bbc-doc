@@ -10,7 +10,7 @@
 
 <a name="introduction"></a>
 
-## [简介]
+## 简介
 通过dbschema配置文件, 定义数据库
 
 - 描述表结构, 生成对应的实体表
@@ -72,7 +72,7 @@ return array (
 <a name="dbal-types"></a>
 ## DBAL类型
 
-下表是dbal类型与mysqll类型的对应表, 其中`notnull`和`required`还有`comment`属性是所有dbal类型天生具备的.
+下表是dbal类型与mysqll类型的对应表, 其中`required`和`comment`属性是所有dbal类型天生具备的.
  
 <table width="100%">
     <tr>
@@ -287,7 +287,7 @@ return array (
     </tr>    
 </table>
 
-[doctrine dbal tpes文档](http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/types.html)有详细说明
+[doctrine dbal types文档](http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/types.html)有详细说明
 
 <a name="buildin-types"></a>
 ## 内置预定义类型
@@ -421,7 +421,6 @@ return array(
     ),
 );    
 ```
-
 
 #### 表关联类型, 按照关联表对应字段的类型建立本字段. 例如, `商品表(sysitem_item)`存在`类目ID(cat_id)`, 那么在设置这个字段类型时最好的方式是指定跟`syscategory`表的`cat_id`一样就行了
 
