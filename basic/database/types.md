@@ -12,13 +12,12 @@
 ## [简介]
 通过dbschema配置文件, 定义数据库
 
-  - 描述表结构, 生成对应的实体表
-  - 定义**desktop finder**的属性
+- 描述表结构, 生成对应的实体表
+- 定义**desktop finder**的属性
 
 dbschema文件存放在各自app下的`dbschema`目录, 例如: `app/{$appId}/dbschema/{$name}.php`, 表名: `{$appId}_($name}`
 
-以下是`base_kvstore`表的定义(由以上规则可知dbschema文件所在位置: `app/base/dbschema/kvsore.php`):
-
+以下是`base_kvstore`表的定义(由以上规则可知dbschema文件所在位置, `app/base/dbschema/kvsore.php`)
 ```php
 return array (
     'columns' => 
@@ -370,7 +369,7 @@ return array (
 **DBAL类型**/**内置预定义类型**可参照上文的两张对应表.
 
 ###### `DBAL类型`需要根据具体类型, 定义对应的选项. 例如, `decimal`类型对应着precision和scale选项. 如果不填,默认分别为10和0.
-
+-----
 以下是**DBAL类型**:decimal的例子 
 ```php
 return array(
@@ -413,7 +412,7 @@ return array(
 ```
 
 
-1. **内置预定义类型**, 是直接对应着**DBAL**类型. 但与**DBAL类型**的设置不同, 不需要填写额外的选项, 因为**内置预定义类型**已经预设了选项. 例如: `money`类型对应着**DBAL类型**的`decimal`, `precision`为20, `scale`为3, 如果对应着mysql的类型为`numeric(10,0)`
+##### **内置预定义类型**, 是直接对应着**DBAL**类型. 但与**DBAL类型**的设置不同, 不需要填写额外的选项, 因为**内置预定义类型**已经预设了选项. 例如: `money`类型对应着**DBAL类型**的`decimal`, `precision`为20, `scale`为3, 如果对应着mysql的类型为`numeric(10,0)`
 
 以下是**内置预定义类型**:money
 ```php
