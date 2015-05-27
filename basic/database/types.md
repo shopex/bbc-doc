@@ -5,8 +5,10 @@
 - [内置预定义类型](#buildin-types)
 - [表结构定义](#table-define)
 - [finder定义](#finder-define)
+- [其他定义](#others-define)
 
 <a name="introduction"></a>
+
 ## [简介]
 通过dbschema配置文件, 定义数据库
 
@@ -70,7 +72,7 @@ return array (
 <a name="dbal-types"></a>
 ## DBAL类型
 
-下表是dbal类型与mysqll类型的对应表, 其中`notnull`和`required`属性是所有dbal类型天生具备的.
+下表是dbal类型与mysqll类型的对应表, 其中`notnull`和`required`还有`comment`属性是所有dbal类型天生具备的.
  
 <table width="100%">
     <tr>
@@ -367,7 +369,7 @@ return array (
 
 **DBAL类型**/**内置预定义类型**可参照上文的两张对应表.
 
-- **DBAL类型**需要根据具体类型, 定义对应的选项. 例如, `decimal`类型对应着precision和scale选项. 如果不填,默认分别为10和0.
+###### `DBAL类型`需要根据具体类型, 定义对应的选项. 例如, `decimal`类型对应着precision和scale选项. 如果不填,默认分别为10和0.
 
 以下是**DBAL类型**:decimal的例子 
 ```php
@@ -411,7 +413,7 @@ return array(
 ```
 
 
-- **内置预定义类型**, 是直接对应着**DBAL**类型. 但与**DBAL类型**的设置不同, 不需要填写额外的选项, 因为**内置预定义类型**已经预设了选项. 例如: `money`类型对应着**DBAL类型**的`decimal`, `precision`为20, `scale`为3, 如果对应着mysql的类型为`numeric(10,0)`
+###### **内置预定义类型**, 是直接对应着**DBAL**类型. 但与**DBAL类型**的设置不同, 不需要填写额外的选项, 因为**内置预定义类型**已经预设了选项. 例如: `money`类型对应着**DBAL类型**的`decimal`, `precision`为20, `scale`为3, 如果对应着mysql的类型为`numeric(10,0)`
 
 以下是**内置预定义类型**:money
 ```php
@@ -423,7 +425,7 @@ return array(
 ```
 
 
-- **表关联类型**, 按照关联表对应字段的类型建立本字段. 例如, `商品表(sysitem_item)`存在`类目ID(cat_id)`, 那么在设置这个字段类型时最好的方式是指定跟`syscategory`表的`cat_id`一样就行了
+###### **表关联类型**, 按照关联表对应字段的类型建立本字段. 例如, `商品表(sysitem_item)`存在`类目ID(cat_id)`, 那么在设置这个字段类型时最好的方式是指定跟`syscategory`表的`cat_id`一样就行了
 
 以下是**表关联类型**的例子, `sysitem_item`的`cat_id`关联`syscategory_cat的`cat_id`
 ```php
@@ -524,4 +526,186 @@ return array (
     ),
 );
 ```
+
 ## finder定义
+用dbschema来定义desktop列表
+
+#### label定义
+
+定义在`desktop finder`中列的名称
+
+```php
+return array (
+    'columns' => array (
+        'app_id' => array (
+            'label' => app::get('base')->_('程序目录'),
+        ),
+    ),
+);
+?>
+```
+#### width定义
+定义在`desktop finder`中列的初始宽度
+```php
+return array (
+    'columns' => array (
+        'app_id' => array (
+            'label' => app::get('base')->_('程序目录'),
+            'width => 150,
+        ),
+    ),
+);
+```
+
+
+
+#### in_list定义
+定义在`desktop finder`配置列表项中是否可以勾选显示, 默认值为false.
+```php
+return array (
+    'columns' => array (
+        'app_id' => array (
+            'label' => app::get('base')->_('程序目录'),
+            'width => 150,
+            'in_list' => true,
+        ),
+    ),
+);
+```
+
+#### default_in_list定义
+定义在`desktop finder`列表中初始安装的情况下, 对应列是否默认显示在列表中, 默认值为false.
+```php
+return array (
+    'columns' => array (
+        'app_id' => array (
+            'label' => app::get('base')->_('程序目录'),
+            'width => 150,
+            'in_list' => true,
+        ),
+    ),
+);
+```
+
+
+
+#### filterdefault定义
+默认在desktop高级筛选(搜素), 中是否默认显示, 默认为false. 如果有相关搜索项配置(filtertype), 按配置显示
+
+```php
+return array (
+    'columns' => array (
+        'app_id' => array (
+            'label' => app::get('base')->_('程序目录'),
+            'width => 150,
+            'in_list' => true,
+            'filterdefault' => true,
+        ),
+    ),
+);
+```
+
+'filtertype' => 'normal' // normal按type的来生成过滤  custom 按dbschema中设定的filtercustom 设置过滤
+
+#### filtertype, filtercustom定义
+```php
+return array (
+    'columns' => array (
+        'name' => array (
+            'type' => 'string',
+            'required' => true,
+            'label' => app::get('b2c')->_('商品名称'),
+            'is_title' => true,
+            'filtertype' => 'custom',
+            'filterdefault' => true,
+            'filtercustom' =>
+            array (
+                'has' => app::get('b2c')->_('包含'),
+                'tequal' => app::get('b2c')->_('等于'),
+                'head' => app::get('b2c')->_('开头等于'),
+                'foot' => app::get('b2c')->_('结尾等于'),
+            ),
+            'in_list' => true,
+            'default_in_list' => true,
+        ),
+    ),
+);
+
+```
+
+
+#### is_title定义
+例如, 商品表有cat_id(类目表ID)字段, 那么在finder上cat_id字段会显示类目表中设置为is_title的字段(cat_name)的值.
+
+> **注意:** 同时一张表只能有一个字段能设置为is_title属性.
+
+商品表
+```php
+return array (
+    'columns' => array (
+        'cat_id' => array (
+            'label' => app::get('base')->_('程序目录'),
+            'width => 150,
+            'in_list' => true,
+            'filterdefault' => true,
+        ),
+    ),
+);
+```
+
+类目表
+```php
+return array (
+    'columns' => array (
+        'cat_name => array (
+            'label' => app::get('base')->_('程序目录'),
+            'is_title' => true,
+            'width => 150,
+            'in_list' => true,
+            'filterdefault' => true,
+        ),
+    ),
+);
+```
+
+#### order定义
+order属性定义了在`desktop finder`上列的默认排列顺序.
+
+```php
+return array (
+    'columns' => array (
+        'cat_name => array (
+            'label' => app::get('base')->_('程序目录'),
+            'order' =>10,
+        ),
+    ),
+);
+```
+
+<a name="others-define"></a>
+
+## 其他定义
+#### unbackup
+当设置为`unbackup`时, 备份数据时将不会备份此表数据
+
+> **注意:** 备份数据功能只供备份初始化数据, 不再提供生成环境备份用途. 
+
+```php
+return array (
+    'columns' => array (
+        //...
+    ),
+    'unbackup' => true,
+);
+```
+
+#### comment
+表名注释
+```php
+return array (
+    'columns' => array (
+        //...
+    ),
+    'comment => '商品表',
+);
+```
