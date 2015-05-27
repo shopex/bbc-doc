@@ -1,9 +1,10 @@
-# 数据表定义
+# dbschema数据表定义
 
 - [简介](#introduction)
 - [DBAL类型](#dabl-types)
 - [内置预定义类型](#buildin-types)
-- [表结构定义](#table-define)
+- [表结构的字段定义](#table-column-define)
+- [表结构的索引定义](#table-index-define)
 - [finder定义](#finder-define)
 - [其他定义](#others-define)
 
@@ -361,16 +362,13 @@ return array (
 
 
 <a name="table-define"></a>
-## 表结构定义
-#### 字段定义
+## 表结构字段定义
 
 每个字段需要指定`type`(类型), 类型支持四种方式**DBAL类型**/**内置预定义类型**/**表关联类型**/**enum类型**
 
 **DBAL类型**/**内置预定义类型**可参照上文的两张对应表.
 
-###### `DBAL类型`需要根据具体类型, 定义对应的选项. 例如, `decimal`类型对应着precision和scale选项. 如果不填,默认分别为10和0.
------
-=====
+#### `DBAL类型`需要根据具体类型, 定义对应的选项. 例如, `decimal`类型对应着precision和scale选项. 如果不填,默认分别为10和0.
 以下是**DBAL类型**:decimal的例子 
 ```php
 return array(
@@ -413,7 +411,7 @@ return array(
 ```
 
 
-##### **内置预定义类型**, 是直接对应着**DBAL**类型. 但与**DBAL类型**的设置不同, 不需要填写额外的选项, 因为**内置预定义类型**已经预设了选项. 例如: `money`类型对应着**DBAL类型**的`decimal`, `precision`为20, `scale`为3, 如果对应着mysql的类型为`numeric(10,0)`
+#### **内置预定义类型**, 是直接对应着**DBAL**类型. 但与**DBAL类型**的设置不同, 不需要填写额外的选项, 因为**内置预定义类型**已经预设了选项. 例如: `money`类型对应着**DBAL类型**的`decimal`, `precision`为20, `scale`为3, 如果对应着mysql的类型为`numeric(10,0)`
 
 以下是**内置预定义类型**:money
 ```php
@@ -425,7 +423,7 @@ return array(
 ```
 
 
-###### **表关联类型**, 按照关联表对应字段的类型建立本字段. 例如, `商品表(sysitem_item)`存在`类目ID(cat_id)`, 那么在设置这个字段类型时最好的方式是指定跟`syscategory`表的`cat_id`一样就行了
+#### **表关联类型**, 按照关联表对应字段的类型建立本字段. 例如, `商品表(sysitem_item)`存在`类目ID(cat_id)`, 那么在设置这个字段类型时最好的方式是指定跟`syscategory`表的`cat_id`一样就行了
 
 以下是**表关联类型**的例子, `sysitem_item`的`cat_id`关联`syscategory_cat的`cat_id`
 ```php
@@ -460,7 +458,7 @@ return array(
     ),
 );    
 ```
-#### 索引定义
+## 表结构索引定义
 - 主键定义
 
 当只有一个主键的时候
