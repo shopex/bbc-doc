@@ -4,11 +4,12 @@
 
 <a name="setup-url"></a>
 ## 设置路径
-> 在运营商后台-->系统菜单-->prism基础配置项中配置
+> b2b2c/config/prism.php
 
 <a name="setup-params"></a>
 ## 设置参数
   - 是否启用prism
+  若开启，则api访问通过prism中转；若不开启，则在系统中直接调用
 
     开启、关闭
 
