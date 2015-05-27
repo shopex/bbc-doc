@@ -28,7 +28,7 @@
 - 索引
 
 | Key name | Column names | Unique | Comment |
-| ------------- |-------------|-------------|
+| ------------- |-------------|-------------|-------------|
 | PRIMARY | conent_id | Y | |
 | ind_content_type | content_type | N | |
 
