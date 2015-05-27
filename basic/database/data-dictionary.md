@@ -23,12 +23,13 @@
 | ColumnName | Comment | DBschema type | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 | content_id | 序号 | number |  decimal(20,0) | N | N | 
-- 索引
+- 主键 
 | columnName | 
 | ------------- |
 | content_id |
 
 - 索引
+
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|
 | PRIMARY | conent_id | Y | |
