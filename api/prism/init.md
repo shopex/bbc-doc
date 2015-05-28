@@ -34,22 +34,20 @@
 
     同上
 
-  - APP用户名(prismUserEmail)
+  - 用户E-mail(prismUserEmail)
 
     自定义值，api将由哪个用户创建
+    这个用户要求在prism上面不存在，将会由bbc创建，初始化完成后，可以用该用户在prism前台登录
 
   - APP用户密码(prismUserPassword)
 
     自定义值，以后登录prism前台可以用该密码
 
-  - APP用户密码确认(prismUserPassword)
+  - bbc在prism上面映射的名称（prismAppName）
 
-    和上一条完全一样，防止输入错误导致该用户无法登录
+    在prism上面，这个app就代表bbc
 
-  - APP前缀名称（prismAppName）
-
-    bbc的相关app名称都将带这个值
-
+  - 其它设置项在配置文件中有注释
 
 <a name="setup-steps"></a>
 ## prism初始化操作步骤
