@@ -1,4 +1,6 @@
-# BBC数据词典- [数据库tables列表](#tables)
+# BBC数据词典
+
+- [数据库tables列表](#tables)
 - [APP:base](#app-base-define)
     - [base_app_content](#table-base_app_content-define)
     - [base_apps](#table-base_apps-define)
