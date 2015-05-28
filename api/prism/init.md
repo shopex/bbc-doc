@@ -43,14 +43,11 @@
 
     自定义值，以后登录prism前台可以用该密码
 
-  - APP用户密码确认(prismUserPassword)
-
-    和上一条完全一样，防止输入错误导致该用户无法登录
-
   - bbc在prism上面映射的名称（prismAppName）
 
     在prism上面，这个app就代表bbc
 
+  - 其它设置项在配置文件中有注释
 
 <a name="setup-steps"></a>
 ## prism初始化操作步骤
