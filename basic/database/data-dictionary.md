@@ -3194,10 +3194,7 @@
 |  point_count | 会员总积分值 |  INT UNSIGNED | No | 0 | No |
 |  expired_point | 将要过期积分 |  INT UNSIGNED | No | 0 | No |
 |  modified_time | 记录时间 |  INT UNSIGNED | No |  | No |
-- 主键 
 
-| columnName |
-| ------------- |
 | user_id |
 - 索引
 
