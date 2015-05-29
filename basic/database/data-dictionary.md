@@ -137,6 +137,8 @@
 ## base_app_content
 - 表结构
 
+> **app资源信息表, 记录app的service信息**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  content_id | 序号 |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -157,6 +159,8 @@
 <a name="table-base_apps-define"></a>
 ## base_apps
 - 表结构
+
+> **系统应用表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -183,6 +187,8 @@
 ## base_crontab
 - 表结构
 
+> **定时任务表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id |  |  VARCHAR(100) | Yes |  | No |
@@ -201,6 +207,8 @@
 <a name="table-base_kvstore-define"></a>
 ## base_kvstore
 - 表结构
+
+> **kvstore存储表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -221,6 +229,8 @@
 ## base_network
 - 表结构
 
+> **网络互联表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  node_id | 序号 |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -238,6 +248,8 @@
 <a name="table-base_rpcpoll-define"></a>
 ## base_rpcpoll
 - 表结构
+
+> **ec-rpc连接池表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -263,6 +275,8 @@
 ## base_setting
 - 表结构
 
+> **setting存储表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  app | app名 |  VARCHAR(50) | Yes |  | No |
@@ -276,6 +290,8 @@
 <a name="table-base_syscache_resources-define"></a>
 ## base_syscache_resources
 - 表结构
+
+> **kvstore存储表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -300,6 +316,8 @@
 ## desktop_account
 - 表结构
 
+> **用户权限账户表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  account_id | 账户序号ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -317,6 +335,8 @@
 <a name="table-desktop_filter-define"></a>
 ## desktop_filter
 - 表结构
+
+> **后台搜索过滤器表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -338,6 +358,8 @@
 ## desktop_hasrole
 - 表结构
 
+> **后台权限, 角色和用户关联表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  user_id | 后台用户ID |  INT UNSIGNED | Yes |  | No |
@@ -350,6 +372,8 @@
 <a name="table-desktop_menus-define"></a>
 ## desktop_menus
 - 表结构
+
+> **后台菜单表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -379,6 +403,8 @@
 ## desktop_roles
 - 表结构
 
+> **管理员角色表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  role_id | 管理员角色ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -392,6 +418,8 @@
 <a name="table-desktop_tag-define"></a>
 ## desktop_tag
 - 表结构
+
+> **finder tag(标签)表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -417,6 +445,8 @@
 ## desktop_tag_rel
 - 表结构
 
+> **tag和对象关联表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  tag_id | tag ID |  INT UNSIGNED | Yes | 0 | No |
@@ -432,6 +462,8 @@
 <a name="table-desktop_users-define"></a>
 ## desktop_users
 - 表结构
+
+> **商店后台管理员表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -461,6 +493,8 @@
 ## ectools_analysis
 - 表结构
 
+> **ectools app统计表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id | ectools统计ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -475,6 +509,8 @@
 <a name="table-ectools_analysis_logs-define"></a>
 ## ectools_analysis_logs
 - 表结构
+
+> **ectools统计日志**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -497,6 +533,8 @@
 <a name="table-ectools_payments-define"></a>
 ## ectools_payments
 - 表结构
+
+> **支付记录**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -537,6 +575,8 @@
 ## ectools_refunds
 - 表结构
 
+> **退款单表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  refund_id |  |  VARCHAR(20) | Yes |  | No |
@@ -575,6 +615,8 @@
 ## image_image
 - 表结构
 
+> **图片表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  image_id |  |  CHAR(32) | Yes |  | No |
@@ -601,6 +643,8 @@
 ## image_image_attach
 - 表结构
 
+> **图片关联表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  attach_id | 图片关联表ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -621,6 +665,8 @@
 <a name="table-importexport_task-define"></a>
 ## importexport_task
 - 表结构
+
+> **导出、导入任务表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -647,6 +693,8 @@
 ## search_associate
 - 表结构
 
+> ****
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -663,6 +711,8 @@
 <a name="table-search_delta-define"></a>
 ## search_delta
 - 表结构
+
+> ****
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -682,6 +732,8 @@
 <a name="table-serveradm_xhprof-define"></a>
 ## serveradm_xhprof
 - 表结构
+
+> **xphrof**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -709,6 +761,8 @@
 ## site_explorers
 - 表结构
 
+> **site地图表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id | site地图表ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -723,6 +777,8 @@
 <a name="table-site_link-define"></a>
 ## site_link
 - 表结构
+
+> **前台链接表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -740,6 +796,8 @@
 <a name="table-site_menus-define"></a>
 ## site_menus
 - 表结构
+
+> **导航菜单表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -764,6 +822,8 @@
 ## site_seo
 - 表结构
 
+> **前台SEO配置表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id | ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -782,6 +842,8 @@
 <a name="table-site_themes-define"></a>
 ## site_themes
 - 表结构
+
+> **模板表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -804,6 +866,8 @@
 ## site_themes_file
 - 表结构
 
+> **模板文件表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id | 模板文件ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -824,6 +888,8 @@
 ## site_themes_tmpl
 - 表结构
 
+> **页面模板表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id | 页面模板ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -842,6 +908,8 @@
 ## site_widgets
 - 表结构
 
+> **挂件表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id | 挂件ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -857,6 +925,8 @@
 <a name="table-site_widgets_instance-define"></a>
 ## site_widgets_instance
 - 表结构
+
+> **挂件实例表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -889,6 +959,8 @@
 ## sysaftersales_aftersales
 - 表结构
 
+> **售后申请**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  aftersales_bn |  |  BIGINT UNSIGNED | Yes |  | No |
@@ -919,6 +991,8 @@
 ## sysaftersales_refunds
 - 表结构
 
+> **退款申请表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  refunds_id | 退款申请ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -946,6 +1020,8 @@
 ## syscategory_brand
 - 表结构
 
+> **品牌表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  brand_id | 品牌id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -967,6 +1043,8 @@
 <a name="table-syscategory_cat-define"></a>
 ## syscategory_cat
 - 表结构
+
+> **类别属性值有限表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -995,6 +1073,8 @@
 ## syscategory_cat_rel_brand
 - 表结构
 
+> **分类和品牌关联表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  cat_id | 商品分类ID |  INT UNSIGNED | Yes | 0 | No |
@@ -1009,6 +1089,8 @@
 ## syscategory_cat_rel_prop
 - 表结构
 
+> **商品属性表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  prop_id | 属性ID |  INT UNSIGNED | Yes | 0 | No |
@@ -1022,6 +1104,8 @@
 <a name="table-syscategory_prop_values-define"></a>
 ## syscategory_prop_values
 - 表结构
+
+> **属性值表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1038,6 +1122,8 @@
 <a name="table-syscategory_props-define"></a>
 ## syscategory_props
 - 表结构
+
+> **属性表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1066,6 +1152,8 @@
 ## sysclearing_settlement
 - 表结构
 
+> **商家账号信息**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  settlement_no |  |  BIGINT UNSIGNED | Yes |  | No |
@@ -1088,6 +1176,8 @@
 <a name="table-sysclearing_settlement_detail-define"></a>
 ## sysclearing_settlement_detail
 - 表结构
+
+> **结算明细表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1129,6 +1219,8 @@
 ## sysdecorate_widgets_instance
 - 表结构
 
+> **挂件实例表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  widgets_id | 挂件实例ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -1151,6 +1243,8 @@
 <a name="table-sysitem_item-define"></a>
 ## sysitem_item
 - 表结构
+
+> **商品表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1196,6 +1290,8 @@
 ## sysitem_item_count
 - 表结构
 
+> **商品次数表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_id | 商品id |  INT UNSIGNED | Yes |  | No |
@@ -1215,6 +1311,8 @@
 ## sysitem_item_desc
 - 表结构
 
+> **商品详情表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_id | 商品id |  INT UNSIGNED | Yes |  | No |
@@ -1229,6 +1327,8 @@
 <a name="table-sysitem_item_nature_props-define"></a>
 ## sysitem_item_nature_props
 - 表结构
+
+> **商品自然属性信息表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1248,6 +1348,8 @@
 ## sysitem_item_status
 - 表结构
 
+> **商品上下架状态表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_id | 商品 ID |  INT UNSIGNED | Yes |  | No |
@@ -1264,6 +1366,8 @@
 ## sysitem_item_store
 - 表结构
 
+> **商品总库存表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_id | 商品 ID |  INT UNSIGNED | Yes |  | No |
@@ -1278,6 +1382,8 @@
 ## sysitem_item_tag_promotion
 - 表结构
 
+> **商品关联的促销表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_id | 商品ID |  INT UNSIGNED | Yes |  | No |
@@ -1290,6 +1396,8 @@
 <a name="table-sysitem_sku-define"></a>
 ## sysitem_sku
 - 表结构
+
+> **货品表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1318,6 +1426,8 @@
 ## sysitem_sku_store
 - 表结构
 
+> **商品库存表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_id | 商品 ID |  INT UNSIGNED | Yes |  | No |
@@ -1332,6 +1442,8 @@
 <a name="table-sysitem_spec_index-define"></a>
 ## sysitem_spec_index
 - 表结构
+
+> **商品规格索引表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1354,6 +1466,8 @@
 ## syslogistics_coupon
 - 表结构
 
+> **优惠券表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  cpns_id | 优惠券方案id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -1366,6 +1480,8 @@
 <a name="table-syslogistics_delivery-define"></a>
 ## syslogistics_delivery
 - 表结构
+
+> **发货单表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1407,6 +1523,8 @@
 ## syslogistics_delivery_detail
 - 表结构
 
+> **发货/退货单明细表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  detail_id | 序号 |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -1425,6 +1543,8 @@
 <a name="table-syslogistics_dlycorp-define"></a>
 ## syslogistics_dlycorp
 - 表结构
+
+> **物流公司表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1445,6 +1565,8 @@
 <a name="table-syslogistics_dlytmpl-define"></a>
 ## syslogistics_dlytmpl
 - 表结构
+
+> **快递模板配置表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1475,6 +1597,8 @@
 <a name="table-syspromotion_coupon-define"></a>
 ## syspromotion_coupon
 - 表结构
+
+> **优惠券表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1508,6 +1632,8 @@
 ## syspromotion_coupon_item
 - 表结构
 
+> **商品与促销规则关联表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  coupon_id | 优惠券ID |  INT UNSIGNED | Yes |  | No |
@@ -1526,6 +1652,8 @@
 <a name="table-syspromotion_fullminus-define"></a>
 ## syspromotion_fullminus
 - 表结构
+
+> **满减促销规则表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1554,6 +1682,8 @@
 ## syspromotion_fullminus_item
 - 表结构
 
+> **商品与促销规则关联表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  fullminus_id | 满减ID |  INT UNSIGNED | Yes |  | No |
@@ -1575,6 +1705,8 @@
 <a name="table-syspromotion_promotions-define"></a>
 ## syspromotion_promotions
 - 表结构
+
+> **各种促销关联表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1603,6 +1735,8 @@
 ## sysrate_appeal
 - 表结构
 
+> **评论申诉表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  appeal_id | 申诉ID |  BIGINT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -1625,6 +1759,8 @@
 ## sysrate_dsr
 - 表结构
 
+> **店铺动态评分统计表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  shop_id | 店铺ID |  BIGINT UNSIGNED | Yes |  | No |
@@ -1641,6 +1777,8 @@
 <a name="table-sysrate_score-define"></a>
 ## sysrate_score
 - 表结构
+
+> **店铺评分表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1663,6 +1801,8 @@
 <a name="table-sysrate_traderate-define"></a>
 ## sysrate_traderate
 - 表结构
+
+> **商品评分表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1705,6 +1845,8 @@
 ## sysshop_account
 - 表结构
 
+> **商家会员表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  seller_id | 商家账户序号ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -1721,6 +1863,8 @@
 <a name="table-sysshop_enterapply-define"></a>
 ## sysshop_enterapply
 - 表结构
+
+> **入驻申请表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1749,6 +1893,8 @@
 ## sysshop_seller
 - 表结构
 
+> **商家账号信息**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  seller_id |  |  INT UNSIGNED | Yes |  | No |
@@ -1766,6 +1912,8 @@
 <a name="table-sysshop_shop-define"></a>
 ## sysshop_shop
 - 表结构
+
+> **店铺表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1798,6 +1946,8 @@
 ## sysshop_shop_cat
 - 表结构
 
+> **店铺分类表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  cat_id | 分类id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -1820,6 +1970,8 @@
 <a name="table-sysshop_shop_info-define"></a>
 ## sysshop_shop_info
 - 表结构
+
+> **企业信息表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1864,6 +2016,8 @@
 ## sysshop_shop_rel_brand
 - 表结构
 
+> ****
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  shop_id |  关联店铺id |  INT UNSIGNED | Yes |  | No |
@@ -1877,6 +2031,8 @@
 <a name="table-sysshop_shop_rel_lv1cat-define"></a>
 ## sysshop_shop_rel_lv1cat
 - 表结构
+
+> **店铺关联类目表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1894,6 +2050,8 @@
 ## sysshop_shop_rel_seller
 - 表结构
 
+> ****
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  shop_id | 关联店铺 |  INT UNSIGNED | Yes |  | No |
@@ -1909,6 +2067,8 @@
 <a name="table-sysshop_shop_type-define"></a>
 ## sysshop_shop_type
 - 表结构
+
+> **店铺类型表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -1934,6 +2094,8 @@
 ## sysstat_item_statics
 - 表结构
 
+> ****
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_stat_id | 商家商品数据统计id 自赠 |  BIGINT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -1953,6 +2115,8 @@
 ## sysstat_statmember
 - 表结构
 
+> ****
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  statm_id | 会员数据统计id 自赠 |  BIGINT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -1971,6 +2135,8 @@
 <a name="table-sysstat_trade_statics-define"></a>
 ## sysstat_trade_statics
 - 表结构
+
+> ****
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2004,6 +2170,8 @@
 ## system_matrixset
 - 表结构
 
+> ****
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  matrixset_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -2023,6 +2191,8 @@
 ## system_messenger_systmpl
 - 表结构
 
+> **邮件短信模板**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  tmpl_name | 模版名称 |  VARCHAR(100) | Yes |  | No |
@@ -2037,6 +2207,8 @@
 <a name="table-system_prism_initstep-define"></a>
 ## system_prism_initstep
 - 表结构
+
+> ****
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2056,6 +2228,8 @@
 <a name="table-system_queue_mysql-define"></a>
 ## system_queue_mysql
 - 表结构
+
+> **队列-mysql实现表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2079,6 +2253,8 @@
 <a name="table-systrade_cart-define"></a>
 ## systrade_cart
 - 表结构
+
+> **购物车**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2108,6 +2284,8 @@
 ## systrade_cart_coupon
 - 表结构
 
+> **购物车使用优惠券表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -2124,6 +2302,8 @@
 <a name="table-systrade_log-define"></a>
 ## systrade_log
 - 表结构
+
+> **订单日志表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2143,6 +2323,8 @@
 <a name="table-systrade_order-define"></a>
 ## systrade_order
 - 表结构
+
+> **订单子表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2197,6 +2379,8 @@
 ## systrade_promotion_detail
 - 表结构
 
+> **订单使用的促销信息表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  tid | 主订单id |  BIGINT UNSIGNED | Yes |  | No |
@@ -2212,6 +2396,8 @@
 <a name="table-systrade_trade-define"></a>
 ## systrade_trade
 - 表结构
+
+> **订单主表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2278,6 +2464,8 @@
 ## systrade_tradeabnormal
 - 表结构
 
+> **取消异常订单表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id | id |  BIGINT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -2300,6 +2488,8 @@
 ## sysuser_account
 - 表结构
 
+> **商城会员用户表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  user_id | 用户ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -2320,6 +2510,8 @@
 ## sysuser_shop_fav
 - 表结构
 
+> ****
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  snotify_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -2336,6 +2528,8 @@
 <a name="table-sysuser_trustinfo-define"></a>
 ## sysuser_trustinfo
 - 表结构
+
+> ****
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2358,6 +2552,8 @@
 <a name="table-sysuser_user-define"></a>
 ## sysuser_user
 - 表结构
+
+> **商店会员表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2394,6 +2590,8 @@
 ## sysuser_user_addrs
 - 表结构
 
+> **会员地址表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  addr_id | 会员地址ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -2414,6 +2612,8 @@
 ## sysuser_user_coupon
 - 表结构
 
+> **用户优惠券表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  coupon_code | 优惠券号码 |  VARCHAR(32) | Yes |  | No |
@@ -2433,6 +2633,8 @@
 ## sysuser_user_experience
 - 表结构
 
+> **会员经验值详细记录表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  experience_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -2451,6 +2653,8 @@
 <a name="table-sysuser_user_fav-define"></a>
 ## sysuser_user_fav
 - 表结构
+
+> **收藏/缺货登记**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2478,6 +2682,8 @@
 ## sysuser_user_grade
 - 表结构
 
+> **会员等级表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  grade_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -2495,6 +2701,8 @@
 <a name="table-sysuser_user_point-define"></a>
 ## sysuser_user_point
 - 表结构
+
+> **会员积分值详细记录表**
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
@@ -2515,6 +2723,8 @@
 ## sysuser_user_pointlog
 - 表结构
 
+> **会员积分值明细表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  pointlog_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
@@ -2534,6 +2744,8 @@
 ## sysuser_user_points
 - 表结构
 
+> **会员积分表**
+
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  user_id |  |  INT UNSIGNED | Yes |  | No |
@@ -2548,6 +2760,8 @@
 <a name="table-sysuser_user_trade_count-define"></a>
 ## sysuser_user_trade_count
 - 表结构
+
+> ****
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
