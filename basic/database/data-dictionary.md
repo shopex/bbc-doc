@@ -1,5 +1,7 @@
 # BBC数据词典
 
+总共有表: 107个
+
 - [APP:base](#app-base-define)
   - [base_app_content(app资源信息表, 记录app的service信息)](#table-base_app_content-define)
   - [base_apps(系统应用表)](#table-base_apps-define)
