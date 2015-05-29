@@ -136,7 +136,8 @@
 <a name="table-base_app_content-define"></a>
 ## base_app_content
 - 表结构
-
+> **会员表**
+> 会员表
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  content_id | 序号 |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
