@@ -542,8 +542,8 @@
 |  money | 需要支付的金额 |  NUMERIC(20, 3) | Yes | 0 | No |
 |  trade_own_money | 订单自有的金额 |  LONGTEXT | No |  | No |
 |  cur_money | 支付货币金额 |  NUMERIC(20, 3) | Yes | 0 | No |
-|  status | 支付状态|succ:支付成功;failed:支付失败;cancel:未支付;error:处理异常;invalid:非法参数;progress:已付款至担保方;timeout:超时;ready:准备中; |  VARCHAR(8) | Yes | ready | No |
-|  pay_type | 支付类型|online:在线支付; |  VARCHAR(6) | Yes | online | No |
+|  status | 支付状态\|succ:支付成功;failed:支付失败;cancel:未支付;error:处理异常;invalid:非法参数;progress:已付款至担保方;timeout:超时;ready:准备中; |  VARCHAR(8) | Yes | ready | No |
+|  pay_type | 支付类型\|online:在线支付; |  VARCHAR(6) | Yes | online | No |
 |  payment_bn | 支付单唯一编号 |  VARCHAR(32) | No |  | No |
 |  pay_app_id | 支付方式名称 |  VARCHAR(100) | No |  | No |
 |  user_id | 会员用户名 |  VARCHAR(100) | No |  | No |
@@ -848,7 +848,7 @@
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  theme | 主题唯一英文名称 |  VARCHAR(50) | Yes |  | No |
 |  name | 主题名称 |  VARCHAR(50) | No |  | No |
-|  platform | 模板终端|pc:电脑端;wap:无线端; |  VARCHAR(3) | Yes | pc | No |
+|  platform | 模板终端\|pc:电脑端;wap:无线端; |  VARCHAR(3) | Yes | pc | No |
 |  stime | 开始使用时间 |  INT UNSIGNED | No |  | No |
 |  author |  |  VARCHAR(50) | No |  | No |
 |  site |  |  VARCHAR(100) | No |  | No |
@@ -870,7 +870,7 @@
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id | 模板文件ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
-|  platform | 模板终端|pc:电脑端;wap:无线端; |  VARCHAR(3) | Yes | pc | No |
+|  platform | 模板终端\|pc:电脑端;wap:无线端; |  VARCHAR(3) | Yes | pc | No |
 |  filename | 文件名 |  VARCHAR(255) | No |  | No |
 |  filetype | 文件扩展名 |  VARCHAR(30) | No |  | No |
 |  fileuri | 文件路径标识,包括模板名. [theme name]:[filename] |  VARCHAR(255) | No |  | No |
@@ -892,7 +892,7 @@
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id | 页面模板ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
-|  platform | 模板终端|pc:电脑端;wap:无线端; |  VARCHAR(3) | Yes | pc | No |
+|  platform | 模板终端\|pc:电脑端;wap:无线端; |  VARCHAR(3) | Yes | pc | No |
 |  tmpl_type | 对应前台页面标示符 |  VARCHAR(20) | Yes |  | No |
 |  tmpl_name | 名称 |  VARCHAR(30) | Yes |  | No |
 |  tmpl_path | 页面路径 |  VARCHAR(100) | Yes |  | No |
@@ -1279,7 +1279,7 @@
 |  is_offline | 是否是线下商品 |  TINYINT(1) | No | 0 | No |
 |  barcode | 商品级别的条形码 |  VARCHAR(128) | No |  | No |
 |  disabled | disabled |  TINYINT(1) | Yes | 0 | No |
-|  use_platform | 使用平台|0:全部;1:pc端;2:wap端; |  VARCHAR(1) | No | 0 | No |
+|  use_platform | 使用平台\|0:全部;1:pc端;2:wap端; |  VARCHAR(1) | No | 0 | No |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1353,7 +1353,7 @@
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_id | 商品 ID |  INT UNSIGNED | Yes |  | No |
 |  shop_id | 店铺id |  INT UNSIGNED | Yes |  | No |
-|  approve_status | 商品状态|onsale:出售中;instock:库中; |  VARCHAR(7) | Yes | instock | No |
+|  approve_status | 商品状态\|onsale:出售中;instock:库中; |  VARCHAR(7) | Yes | instock | No |
 |  list_time | 上架时间 |  INT UNSIGNED | No |  | No |
 |  delist_time | 下架时间 |  INT UNSIGNED | No |  | No |
 - 索引
@@ -1414,7 +1414,7 @@
 |  properties | sku销售属性 |  LONGTEXT | No |  | No |
 |  spec_info | 物品描述 |  LONGTEXT | No |  | No |
 |  spec_desc |  |  LONGTEXT | No |  | No |
-|  status | sku状态|normal:正常;delete:删除; |  VARCHAR(6) | No | normal | No |
+|  status | sku状态\|normal:正常;delete:删除; |  VARCHAR(6) | No | normal | No |
 |  outer_id | 商家设置的外部id |  VARCHAR(32) | No |  | No |
 - 索引
 
@@ -1508,7 +1508,7 @@
 |  t_send | 单据结束时间 |  INT UNSIGNED | No |  | No |
 |  t_confirm | 单据确认时间 |  INT UNSIGNED | No |  | No |
 |  op_name | 操作者 |  VARCHAR(50) | No |  | No |
-|  status | 状态|succ:成功到达;failed:发货失败;cancel:已取消;lost:货物丢失;progress:运送中;timeout:超时;ready:准备发货; |  VARCHAR(8) | Yes | ready | No |
+|  status | 状态\|succ:成功到达;failed:发货失败;cancel:已取消;lost:货物丢失;progress:运送中;timeout:超时;ready:准备发货; |  VARCHAR(8) | Yes | ready | No |
 |  memo | 备注 |  LONGTEXT | No |  | No |
 |  disabled | 无效 |  TINYINT(1) | No | 0 | No |
 - 索引
@@ -1529,7 +1529,7 @@
 |  detail_id | 序号 |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  delivery_id | 发货单号 |  BIGINT UNSIGNED | Yes | 0 | No |
 |  oid | 发货明细子订单号 |  BIGINT UNSIGNED | No | 0 | No |
-|  item_type | 商品类型|item:商品;gift:赠品;pkg:捆绑商品;adjunct:配件商品; |  VARCHAR(7) | Yes | item | No |
+|  item_type | 商品类型\|item:商品;gift:赠品;pkg:捆绑商品;adjunct:配件商品; |  VARCHAR(7) | Yes | item | No |
 |  sku_id | SKU ID |  BIGINT UNSIGNED | Yes | 0 | No |
 |  sku_bn | sku编号 |  VARCHAR(30) | No |  | No |
 |  sku_title | sku名称 |  VARCHAR(200) | No |  | No |
@@ -1572,13 +1572,13 @@
 |  template_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  shop_id |  |  INT UNSIGNED | Yes |  | No |
 |  name |  |  VARCHAR(50) | No |  | No |
-|  valuation | 运费计算参数来源|0:按件数;1:按重量;2:按体积; |  VARCHAR(1) | No | 1 | No |
+|  valuation | 运费计算参数来源\|0:按件数;1:按重量;2:按体积; |  VARCHAR(1) | No | 1 | No |
 |  corp_id | 物流公司ID |  INT UNSIGNED | No |  | No |
 |  order_sort |  |  INT UNSIGNED | No | 0 | No |
 |  protect |  |  TINYINT(1) | Yes | 0 | No |
 |  protect_rate | 保价费率 |  NUMERIC(6, 3) | No |  | No |
 |  minprice | 保价费最低值 |  NUMERIC(10, 2) | Yes | 0.00 | No |
-|  status | 是否开启|off:关闭;on:启用; |  VARCHAR(3) | No | on | No |
+|  status | 是否开启\|off:关闭;on:启用; |  VARCHAR(3) | No | on | No |
 |  fee_conf | 运费模板中运费信息对象，包含默认运费和指定地区运费 |  LONGTEXT | No |  | No |
 |  create_time | 创建时间 |  INT UNSIGNED | No |  | No |
 |  modifie_time | 最后修改时间 |  INT UNSIGNED | No |  | No |
@@ -1605,14 +1605,14 @@
 |  shop_id | 所属商家的店铺id |  INT UNSIGNED | Yes |  | No |
 |  coupon_name | 优惠券名称 |  VARCHAR(255) | Yes |  | No |
 |  coupon_desc | 优惠券描述 |  VARCHAR(255) | Yes |  | No |
-|  used_platform | 使用平台|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
+|  used_platform | 使用平台\|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
 |  valid_grade |  |  VARCHAR(255) | Yes |  | No |
 |  limit_money | 满足条件金额 |  NUMERIC(20, 3) | No | 0 | No |
 |  deduct_money | 优惠金额 |  NUMERIC(20, 3) | No | 0 | No |
 |  max_gen_quantity | 最大优惠券号码数量 |  INT UNSIGNED | No | 0 | No |
 |  send_couponcode_quantity | 已生成的优惠券号码数量 |  INT UNSIGNED | No | 0 | No |
 |  userlimit_quantity | 用户总计可领取优惠券数量 |  INT UNSIGNED | No | 0 | No |
-|  use_bound | 使用范围|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 0 | No |
+|  use_bound | 使用范围\|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 0 | No |
 |  coupon_prefix | 优惠券前缀 |  VARCHAR(50) | Yes |  | No |
 |  coupon_key | 优惠券生成的key |  VARCHAR(20) | Yes |  | No |
 |  cansend_start_time | 发优惠券开始时间 |  INT UNSIGNED | No |  | No |
@@ -1621,7 +1621,7 @@
 |  canuse_end_time | 优惠券失效时间 |  INT UNSIGNED | No |  | No |
 |  created_time | 建券时间 |  INT UNSIGNED | No |  | No |
 |  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
-|  coupon_status | 促销状态|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
+|  coupon_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1660,8 +1660,8 @@
 |  shop_id | 所属商家的店铺id |  INT UNSIGNED | Yes |  | No |
 |  fullminus_name | 满减规则名称 |  VARCHAR(255) | Yes |  | No |
 |  fullminus_desc | 规则描述 |  LONGTEXT | No |  | No |
-|  used_platform | 使用平台|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
-|  use_bound | 使用范围|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 0 | No |
+|  used_platform | 使用平台\|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
+|  use_bound | 使用范围\|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 0 | No |
 |  valid_grade |  |  VARCHAR(255) | No |  | No |
 |  condition_value |  |  VARCHAR(255) | No |  | No |
 |  join_limit |  |  INT UNSIGNED | Yes | 1 | No |
@@ -1671,7 +1671,7 @@
 |  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
 |  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
 |  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
-|  fullminus_status | 促销状态|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
+|  fullminus_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1716,11 +1716,11 @@
 |  promotion_name | 促销名称 |  VARCHAR(255) | Yes |  | No |
 |  promotion_tag | 促销标签 |  VARCHAR(255) | Yes |  | No |
 |  promotion_desc | 促销描述 |  VARCHAR(255) | No |  | No |
-|  used_platform | 使用平台|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
+|  used_platform | 使用平台\|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
 |  start_time | 开始时间 |  INT UNSIGNED | No |  | No |
 |  end_time | 结束时间 |  INT UNSIGNED | Yes |  | No |
 |  created_time | 创建时间 |  INT UNSIGNED | Yes |  | No |
-|  check_status | 促销状态|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes |  | No |
+|  check_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes |  | No |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1868,10 +1868,10 @@
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  enterapply_id | 入驻申请id 自增 |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
-|  status | 申请状态|active:未审核;locked:审核中;successful:审核通过;failing:审核驳回;finish:开店完成; |  VARCHAR(10) | Yes |  | No |
+|  status | 申请状态\|active:未审核;locked:审核中;successful:审核通过;failing:审核驳回;finish:开店完成; |  VARCHAR(10) | Yes |  | No |
 |  seller_id | 提交申请的账号 |  INT UNSIGNED | Yes |  | No |
 |  shop_name | 店铺名称 |  VARCHAR(20) | Yes |  | No |
-|  shop_type | 店铺类型|flag:品牌旗舰店;brand:品牌专卖店;cat:类目专营店; |  VARCHAR(5) | Yes |  | No |
+|  shop_type | 店铺类型\|flag:品牌旗舰店;brand:品牌专卖店;cat:类目专营店; |  VARCHAR(5) | Yes |  | No |
 |  shop | 店铺相关信息 |  LONGTEXT | No |  | No |
 |  shop_info | 企业相关信息 |  LONGTEXT | No |  | No |
 |  new_brand | 商家新增品牌 |  VARCHAR(20) | No |  | No |
@@ -1919,9 +1919,9 @@
 |  shop_id | 店铺编号id 自增 |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  shop_name | 店铺名称 |  VARCHAR(50) | Yes |  | No |
 |  shop_descript | 店铺描述 |  LONGTEXT | No |  | No |
-|  shop_type | 店铺类型|flag:品牌旗舰店;brand:品牌专卖店;cat:类目专营店;self:运营商自营店铺; |  VARCHAR(5) | Yes |  | No |
+|  shop_type | 店铺类型\|flag:品牌旗舰店;brand:品牌专卖店;cat:类目专营店;self:运营商自营店铺; |  VARCHAR(5) | Yes |  | No |
 |  seller_id | 提交申请时的用户 |  INT UNSIGNED | Yes |  | No |
-|  status | 提交状态|active:活动店铺;dead:过期店铺; |  VARCHAR(6) | No | active | No |
+|  status | 提交状态\|active:活动店铺;dead:过期店铺; |  VARCHAR(6) | No | active | No |
 |  open_time | 开店时间 |  INT UNSIGNED | Yes |  | No |
 |  close_time | 关店时间 |  INT UNSIGNED | No |  | No |
 |  close_reason | 店铺关闭原因 |  VARCHAR(500) | No |  | No |
@@ -2055,8 +2055,8 @@
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  shop_id | 关联店铺 |  INT UNSIGNED | Yes |  | No |
 |  seller_id |  关联商家会员id |  INT UNSIGNED | Yes |  | No |
-|  roles | 商家会员角色|admin:超级管理员;member:普通管理员; |  VARCHAR(6) | Yes | admin | No |
-|  authority | 商家会员权限|all:所有权限;other:其他权限; |  VARCHAR(5) | Yes | all | No |
+|  roles | 商家会员角色\|admin:超级管理员;member:普通管理员; |  VARCHAR(6) | Yes | admin | No |
+|  authority | 商家会员权限\|all:所有权限;other:其他权限; |  VARCHAR(5) | Yes | all | No |
 |  shop_name | 商家所属店铺名称 |  VARCHAR(100) | No |  | No |
 - 索引
 
@@ -2072,7 +2072,7 @@
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  shoptype_id | 自增id |  SMALLINT AUTO_INCREMENT | Yes |  | Yes |
-|  shop_type | 店铺类型id|flag:品牌旗舰店;brand:品牌专卖店;cat:类目专营店;self:运营商自营店铺; |  VARCHAR(5) | Yes |  | No |
+|  shop_type | 店铺类型id\|flag:品牌旗舰店;brand:品牌专卖店;cat:类目专营店;self:运营商自营店铺; |  VARCHAR(5) | Yes |  | No |
 |  name | 店铺类型名称 |  VARCHAR(20) | Yes |  | No |
 |  status | 状态 |  TINYINT(1) | Yes |  | No |
 |  is_exclusive | 是否排他 |  TINYINT(1) | Yes | 0 | No |
@@ -2212,7 +2212,7 @@
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  step_id | 执行任务的步骤 |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
-|  state | 当前任务是否已经执行过|ready:准备执行中;complete:执行完毕; |  VARCHAR(8) | No | ready | No |
+|  state | 当前任务是否已经执行过\|ready:准备执行中;complete:执行完毕; |  VARCHAR(8) | No | ready | No |
 |  handlar | 执行任务的类和方法 |  VARCHAR(50) | No |  | No |
 |  params | 请求参数 |  LONGTEXT | No |  | No |
 |  result | 返回参数 |  LONGTEXT | No |  | No |
@@ -2310,8 +2310,8 @@
 |  rel_id | 单据对象ID,如订单号，退款单号等 |  BIGINT UNSIGNED | Yes | 0 | No |
 |  op_id | 操作员ID |  INT UNSIGNED | No |  | No |
 |  op_name |  |  VARCHAR(100) | No |  | No |
-|  op_role | 操作角色|buyer:购买者;seller:卖家;shopadmin:平台操作员;system:系统; |  VARCHAR(9) | Yes | system | No |
-|  behavior | 日志记录操作的行为|create:创建;update:修改;payed:支付;delivery:发货;confirm:收货;cancel:取消;refund:退款;reship:退货;exchange:换货;mark:修改备注;finish:完成; |  VARCHAR(8) | Yes | update | No |
+|  op_role | 操作角色\|buyer:购买者;seller:卖家;shopadmin:平台操作员;system:系统; |  VARCHAR(9) | Yes | system | No |
+|  behavior | 日志记录操作的行为\|create:创建;update:修改;payed:支付;delivery:发货;confirm:收货;cancel:取消;refund:退款;reship:退货;exchange:换货;mark:修改备注;finish:完成; |  VARCHAR(8) | Yes | update | No |
 |  log_text | 操作内容 |  LONGTEXT | No |  | No |
 |  log_time | 记录时间 |  INT UNSIGNED | No |  | No |
 - 索引
@@ -2356,8 +2356,8 @@
 |  discount_fee | 子订单级订单优惠金额 |  NUMERIC(20, 3) | No | 0 | No |
 |  adjust_fee | 手工调整金额 |  NUMERIC(20, 3) | No | 0 | No |
 |  modified_time | 最后更新时间 |  INT UNSIGNED | No |  | No |
-|  status | 子订单状态|WAIT_BUYER_PAY:等待买家付款;WAIT_SELLER_SEND_GOODS:等待卖家发货,即:买家已付款;WAIT_BUYER_CONFIRM_GOODS:等待买家确认收货,即:卖家已发货;TRADE_BUYER_SIGNED:买家已签收,货到付款专用;TRADE_FINISHED:交易成功;TRADE_CLOSED_AFTER_PAY:付款以后,用户退款成功，交易自动关闭;TRADE_CLOSED_BEFORE_PAY:付款以前,卖家或买家主动关闭交易; |  VARCHAR(24) | Yes | WAIT_BUYER_PAY | No |
-|  aftersales_status | 售后状态|WAIT_SELLER_AGREE:买家已经申请退款，等待卖家同意;WAIT_BUYER_RETURN_GOODS:卖家已经同意退款，等待买家退货;WAIT_SELLER_CONFIRM_GOODS:买家已经退货，等待卖家确认收货;SUCCESS:退款成功;CLOSED:退款关闭;REFUNDING:退款中;SELLER_REFUSE_BUYER:卖家拒绝退款;SELLER_SEND_GOODS:卖家已发货; |  VARCHAR(25) | No |  | No |
+|  status | 子订单状态\|WAIT_BUYER_PAY:等待买家付款;WAIT_SELLER_SEND_GOODS:等待卖家发货,即:买家已付款;WAIT_BUYER_CONFIRM_GOODS:等待买家确认收货,即:卖家已发货;TRADE_BUYER_SIGNED:买家已签收,货到付款专用;TRADE_FINISHED:交易成功;TRADE_CLOSED_AFTER_PAY:付款以后,用户退款成功，交易自动关闭;TRADE_CLOSED_BEFORE_PAY:付款以前,卖家或买家主动关闭交易; |  VARCHAR(24) | Yes | WAIT_BUYER_PAY | No |
+|  aftersales_status | 售后状态\|WAIT_SELLER_AGREE:买家已经申请退款，等待卖家同意;WAIT_BUYER_RETURN_GOODS:卖家已经同意退款，等待买家退货;WAIT_SELLER_CONFIRM_GOODS:买家已经退货，等待卖家确认收货;SUCCESS:退款成功;CLOSED:退款关闭;REFUNDING:退款中;SELLER_REFUSE_BUYER:卖家拒绝退款;SELLER_SEND_GOODS:卖家已发货; |  VARCHAR(25) | No |  | No |
 |  refund_fee | 退款金额 |  NUMERIC(20, 3) | No | 0 | No |
 |  buyer_rate | 买家是否已评价 |  TINYINT(1) | No | 0 | No |
 |  anony | 是否匿名 |  TINYINT(1) | No | 0 | No |
@@ -2404,9 +2404,9 @@
 |  shop_id | 订单所属的店铺id |  INT UNSIGNED | Yes |  | No |
 |  user_id | 会员id |  INT UNSIGNED | Yes |  | No |
 |  dlytmpl_id | 配送模板id |  INT UNSIGNED | Yes |  | No |
-|  status | 订单状态|WAIT_BUYER_PAY:已下单等待付款;WAIT_SELLER_SEND_GOODS:已付款等待发货;WAIT_BUYER_CONFIRM_GOODS:已发货等待确认收货;TRADE_FINISHED:已完成;TRADE_CLOSED:已关闭(退款关闭订单);TRADE_CLOSED_BY_SYSTEM:已关闭(卖家或买家主动关闭); |  VARCHAR(24) | Yes |  | No |
+|  status | 订单状态\|WAIT_BUYER_PAY:已下单等待付款;WAIT_SELLER_SEND_GOODS:已付款等待发货;WAIT_BUYER_CONFIRM_GOODS:已发货等待确认收货;TRADE_FINISHED:已完成;TRADE_CLOSED:已关闭(退款关闭订单);TRADE_CLOSED_BY_SYSTEM:已关闭(卖家或买家主动关闭); |  VARCHAR(24) | Yes |  | No |
 |  cancel_reason |  |  LONGTEXT | No |  | No |
-|  pay_type | 支付类型|online:线上付款;offline:线下付款; |  VARCHAR(7) | Yes | online | No |
+|  pay_type | 支付类型\|online:线上付款;offline:线下付款; |  VARCHAR(7) | Yes | online | No |
 |  payment | 实付金额,订单最终总额 |  NUMERIC(20, 3) | No | 0 | No |
 |  total_fee | 各子订单中商品price * num的和，不包括任何优惠信息 |  NUMERIC(20, 3) | No | 0 | No |
 |  post_fee | 邮费 |  NUMERIC(20, 3) | No |  | No |
@@ -2436,15 +2436,15 @@
 |  invoice_type | 发票类型 |  VARCHAR(20) | No |  | No |
 |  invoice_main | 发票内容 |  VARCHAR(20) | No |  | No |
 |  adjust_fee | 卖家手工调整金额,子订单调整金额之和 |  NUMERIC(20, 3) | No | 0 | No |
-|  trade_from | 订单来源|pc:标准平台;wap:手机触屏;weixin:微信商城; |  VARCHAR(6) | No | pc | No |
+|  trade_from | 订单来源\|pc:标准平台;wap:手机触屏;weixin:微信商城; |  VARCHAR(6) | No | pc | No |
 |  itemnum | 子订单商品购买数量总数 |  INT UNSIGNED | No | 0 | No |
 |  shop_flag | 卖家备注旗帜 |  VARCHAR(20) | No |  | No |
 |  shop_memo | 卖家备注 |  LONGTEXT | No |  | No |
 |  buyer_area | 买家下单的地区 |  VARCHAR(30) | No |  | No |
 |  area_id | 区域id，代表订单下单的区位码 |  INT UNSIGNED | No |  | No |
-|  step_trade_status | 分阶段付款的订单状态|0:定金和尾款都付;1:定金已付尾款未付;2:定金未付尾款未付; |  VARCHAR(1) | No |  | No |
+|  step_trade_status | 分阶段付款的订单状态\|0:定金和尾款都付;1:定金已付尾款未付;2:定金未付尾款未付; |  VARCHAR(1) | No |  | No |
 |  step_paid_fee | 分阶段付款的已付金额 |  NUMERIC(20, 3) | No |  | No |
-|  shipping_type | 创建交易时的物流方式|free:卖家包邮;post:平邮;express:快递;ems:EMS;virtual:虚拟发货; |  VARCHAR(7) | No |  | No |
+|  shipping_type | 创建交易时的物流方式\|free:卖家包邮;post:平邮;express:快递;ems:EMS;virtual:虚拟发货; |  VARCHAR(7) | No |  | No |
 |  obtain_point_fee | 买家获得积分,返点的积分 |  INT UNSIGNED | No |  | No |
 |  trade_memo | 交易备注 |  LONGTEXT | No |  | No |
 |  buyer_rate | 买家是否已评价 |  TINYINT(1) | No | 0 | No |
@@ -2639,7 +2639,7 @@
 |  experience_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  user_id |  |  INT UNSIGNED | No |  | No |
 |  modified_time | 记录时间 |  INT UNSIGNED | No |  | No |
-|  behavior_type | 行为类型|obtain:获得;consume:消费; |  VARCHAR(7) | No | obtain | No |
+|  behavior_type | 行为类型\|obtain:获得;consume:消费; |  VARCHAR(7) | No | obtain | No |
 |  behavior | 行为描述 |  VARCHAR(100) | No |  | No |
 |  experience | 成长值 |  INT UNSIGNED | No |  | No |
 |  remark | 备注(记录订单号) |  VARCHAR(500) | No |  | No |
@@ -2708,7 +2708,7 @@
 |  point_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  user_id |  |  INT UNSIGNED | Yes |  | No |
 |  modified_time | 记录时间 |  INT UNSIGNED | No |  | No |
-|  behavior_type | 行为类型|obtain:获得;consume:消费; |  VARCHAR(7) | No | obtain | No |
+|  behavior_type | 行为类型\|obtain:获得;consume:消费; |  VARCHAR(7) | No | obtain | No |
 |  behavior | 行为描述 |  VARCHAR(100) | Yes |  | No |
 |  point | 积分值 |  INT UNSIGNED | No | 0 | No |
 |  remark | 备注(记录订单号) |  VARCHAR(500) | No |  | No |
@@ -2729,7 +2729,7 @@
 |  pointlog_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  user_id |  |  INT UNSIGNED | Yes |  | No |
 |  modified_time | 记录时间 |  INT UNSIGNED | No |  | No |
-|  behavior_type | 行为类型|obtain:获得;consume:消费; |  VARCHAR(7) | No | obtain | No |
+|  behavior_type | 行为类型\|obtain:获得;consume:消费; |  VARCHAR(7) | No | obtain | No |
 |  behavior | 行为描述 |  VARCHAR(100) | Yes |  | No |
 |  point | 积分值 |  INT UNSIGNED | No | 0 | No |
 |  remark | 备注(记录订单号) |  VARCHAR(500) | No |  | No |
