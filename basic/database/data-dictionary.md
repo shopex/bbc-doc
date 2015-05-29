@@ -2,145 +2,146 @@
 
 - [数据库tables列表](#tables)
 - [APP:base](#app-base-define)
-  - [base_app_content](#table-base_app_content-define)
-  - [base_apps](#table-base_apps-define)
-  - [base_crontab](#table-base_crontab-define)
-  - [base_kvstore](#table-base_kvstore-define)
-  - [base_network](#table-base_network-define)
-  - [base_rpcpoll](#table-base_rpcpoll-define)
-  - [base_setting](#table-base_setting-define)
-  - [base_syscache_resources](#table-base_syscache_resources-define)
+  - [base_app_content(app资源信息表, 记录app的service信息)](#table-base_app_content-define)
+  - [base_apps(系统应用表)](#table-base_apps-define)
+  - [base_crontab(定时任务表)](#table-base_crontab-define)
+  - [base_kvstore(kvstore存储表)](#table-base_kvstore-define)
+  - [base_network(网络互联表)](#table-base_network-define)
+  - [base_rpcpoll(ec-rpc连接池表)](#table-base_rpcpoll-define)
+  - [base_setting(setting存储表)](#table-base_setting-define)
+  - [base_syscache_resources(kvstore存储表)](#table-base_syscache_resources-define)
 - [APP:dbeav](#app-dbeav-define)
 - [APP:desktop](#app-desktop-define)
-  - [desktop_account](#table-desktop_account-define)
-  - [desktop_filter](#table-desktop_filter-define)
-  - [desktop_hasrole](#table-desktop_hasrole-define)
-  - [desktop_menus](#table-desktop_menus-define)
-  - [desktop_roles](#table-desktop_roles-define)
-  - [desktop_tag](#table-desktop_tag-define)
-  - [desktop_tag_rel](#table-desktop_tag_rel-define)
-  - [desktop_users](#table-desktop_users-define)
+  - [desktop_account(用户权限账户表)](#table-desktop_account-define)
+  - [desktop_filter(后台搜索过滤器表)](#table-desktop_filter-define)
+  - [desktop_hasrole(后台权限, 角色和用户关联表)](#table-desktop_hasrole-define)
+  - [desktop_menus(后台菜单表)](#table-desktop_menus-define)
+  - [desktop_roles(管理员角色表)](#table-desktop_roles-define)
+  - [desktop_tag(finder tag(标签)表)](#table-desktop_tag-define)
+  - [desktop_tag_rel(tag和对象关联表)](#table-desktop_tag_rel-define)
+  - [desktop_users(商店后台管理员表)](#table-desktop_users-define)
 - [APP:dev](#app-dev-define)
 - [APP:ectools](#app-ectools-define)
-  - [ectools_analysis](#table-ectools_analysis-define)
-  - [ectools_analysis_logs](#table-ectools_analysis_logs-define)
-  - [ectools_payments](#table-ectools_payments-define)
-  - [ectools_refunds](#table-ectools_refunds-define)
+  - [ectools_analysis(ectools app统计表)](#table-ectools_analysis-define)
+  - [ectools_analysis_logs(ectools统计日志)](#table-ectools_analysis_logs-define)
+  - [ectools_payments(支付记录)](#table-ectools_payments-define)
+  - [ectools_refunds(退款单表)](#table-ectools_refunds-define)
 - [APP:entermembercenter](#app-entermembercenter-define)
 - [APP:image](#app-image-define)
-  - [image_image](#table-image_image-define)
-  - [image_image_attach](#table-image_image_attach-define)
+  - [image_image(图片表)](#table-image_image-define)
+  - [image_image_attach(图片关联表)](#table-image_image_attach-define)
 - [APP:importexport](#app-importexport-define)
-  - [importexport_task](#table-importexport_task-define)
+  - [importexport_task(导出、导入任务表)](#table-importexport_task-define)
 - [APP:pam](#app-pam-define)
 - [APP:search](#app-search-define)
-  - [search_associate](#table-search_associate-define)
-  - [search_delta](#table-search_delta-define)
+  - [search_associate()](#table-search_associate-define)
+  - [search_delta()](#table-search_delta-define)
 - [APP:serveradm](#app-serveradm-define)
-  - [serveradm_xhprof](#table-serveradm_xhprof-define)
+  - [serveradm_xhprof(xphrof)](#table-serveradm_xhprof-define)
 - [APP:setup](#app-setup-define)
 - [APP:site](#app-site-define)
-  - [site_explorers](#table-site_explorers-define)
-  - [site_link](#table-site_link-define)
-  - [site_menus](#table-site_menus-define)
-  - [site_seo](#table-site_seo-define)
-  - [site_themes](#table-site_themes-define)
-  - [site_themes_file](#table-site_themes_file-define)
-  - [site_themes_tmpl](#table-site_themes_tmpl-define)
-  - [site_widgets](#table-site_widgets-define)
-  - [site_widgets_instance](#table-site_widgets_instance-define)
+  - [site_explorers(site地图表)](#table-site_explorers-define)
+  - [site_link(前台链接表)](#table-site_link-define)
+  - [site_menus(导航菜单表)](#table-site_menus-define)
+  - [site_seo(前台SEO配置表)](#table-site_seo-define)
+  - [site_themes(模板表)](#table-site_themes-define)
+  - [site_themes_file(模板文件表)](#table-site_themes_file-define)
+  - [site_themes_tmpl(页面模板表)](#table-site_themes_tmpl-define)
+  - [site_widgets(挂件表)](#table-site_widgets-define)
+  - [site_widgets_instance(挂件实例表)](#table-site_widgets_instance-define)
 - [APP:sysaftersales](#app-sysaftersales-define)
-  - [sysaftersales_aftersales](#table-sysaftersales_aftersales-define)
-  - [sysaftersales_refunds](#table-sysaftersales_refunds-define)
+  - [sysaftersales_aftersales(售后申请)](#table-sysaftersales_aftersales-define)
+  - [sysaftersales_refunds(退款申请表)](#table-sysaftersales_refunds-define)
 - [APP:syscategory](#app-syscategory-define)
-  - [syscategory_brand](#table-syscategory_brand-define)
-  - [syscategory_cat](#table-syscategory_cat-define)
-  - [syscategory_cat_rel_brand](#table-syscategory_cat_rel_brand-define)
-  - [syscategory_cat_rel_prop](#table-syscategory_cat_rel_prop-define)
-  - [syscategory_prop_values](#table-syscategory_prop_values-define)
-  - [syscategory_props](#table-syscategory_props-define)
+  - [syscategory_brand(品牌表)](#table-syscategory_brand-define)
+  - [syscategory_cat(类别属性值有限表)](#table-syscategory_cat-define)
+  - [syscategory_cat_rel_brand(分类和品牌关联表)](#table-syscategory_cat_rel_brand-define)
+  - [syscategory_cat_rel_prop(商品属性表)](#table-syscategory_cat_rel_prop-define)
+  - [syscategory_prop_values(属性值表)](#table-syscategory_prop_values-define)
+  - [syscategory_props(属性表)](#table-syscategory_props-define)
 - [APP:sysclearing](#app-sysclearing-define)
-  - [sysclearing_settlement](#table-sysclearing_settlement-define)
-  - [sysclearing_settlement_detail](#table-sysclearing_settlement_detail-define)
+  - [sysclearing_settlement(商家账号信息)](#table-sysclearing_settlement-define)
+  - [sysclearing_settlement_detail(结算明细表)](#table-sysclearing_settlement_detail-define)
 - [APP:sysconf](#app-sysconf-define)
 - [APP:sysdecorate](#app-sysdecorate-define)
-  - [sysdecorate_widgets_instance](#table-sysdecorate_widgets_instance-define)
+  - [sysdecorate_widgets_instance(挂件实例表)](#table-sysdecorate_widgets_instance-define)
 - [APP:sysitem](#app-sysitem-define)
-  - [sysitem_item](#table-sysitem_item-define)
-  - [sysitem_item_count](#table-sysitem_item_count-define)
-  - [sysitem_item_desc](#table-sysitem_item_desc-define)
-  - [sysitem_item_nature_props](#table-sysitem_item_nature_props-define)
-  - [sysitem_item_status](#table-sysitem_item_status-define)
-  - [sysitem_item_store](#table-sysitem_item_store-define)
-  - [sysitem_item_tag_promotion](#table-sysitem_item_tag_promotion-define)
-  - [sysitem_sku](#table-sysitem_sku-define)
-  - [sysitem_sku_store](#table-sysitem_sku_store-define)
-  - [sysitem_spec_index](#table-sysitem_spec_index-define)
+  - [sysitem_item(商品表)](#table-sysitem_item-define)
+  - [sysitem_item_count(商品次数表)](#table-sysitem_item_count-define)
+  - [sysitem_item_desc(商品详情表)](#table-sysitem_item_desc-define)
+  - [sysitem_item_nature_props(商品自然属性信息表)](#table-sysitem_item_nature_props-define)
+  - [sysitem_item_status(商品上下架状态表)](#table-sysitem_item_status-define)
+  - [sysitem_item_store(商品总库存表)](#table-sysitem_item_store-define)
+  - [sysitem_item_tag_promotion(商品关联的促销表)](#table-sysitem_item_tag_promotion-define)
+  - [sysitem_sku(货品表)](#table-sysitem_sku-define)
+  - [sysitem_sku_store(商品库存表)](#table-sysitem_sku_store-define)
+  - [sysitem_spec_index(商品规格索引表)](#table-sysitem_spec_index-define)
 - [APP:syslogistics](#app-syslogistics-define)
-  - [syslogistics_coupon](#table-syslogistics_coupon-define)
-  - [syslogistics_delivery](#table-syslogistics_delivery-define)
-  - [syslogistics_delivery_detail](#table-syslogistics_delivery_detail-define)
-  - [syslogistics_dlycorp](#table-syslogistics_dlycorp-define)
-  - [syslogistics_dlytmpl](#table-syslogistics_dlytmpl-define)
+  - [syslogistics_coupon(优惠券表)](#table-syslogistics_coupon-define)
+  - [syslogistics_delivery(发货单表)](#table-syslogistics_delivery-define)
+  - [syslogistics_delivery_detail(发货/退货单明细表)](#table-syslogistics_delivery_detail-define)
+  - [syslogistics_dlycorp(物流公司表)](#table-syslogistics_dlycorp-define)
+  - [syslogistics_dlytmpl(快递模板配置表)](#table-syslogistics_dlytmpl-define)
 - [APP:syspromotion](#app-syspromotion-define)
-  - [syspromotion_coupon](#table-syspromotion_coupon-define)
-  - [syspromotion_coupon_item](#table-syspromotion_coupon_item-define)
-  - [syspromotion_fullminus](#table-syspromotion_fullminus-define)
-  - [syspromotion_fullminus_item](#table-syspromotion_fullminus_item-define)
-  - [syspromotion_promotions](#table-syspromotion_promotions-define)
+  - [syspromotion_coupon(优惠券表)](#table-syspromotion_coupon-define)
+  - [syspromotion_coupon_item(商品与促销规则关联表)](#table-syspromotion_coupon_item-define)
+  - [syspromotion_fullminus(满减促销规则表)](#table-syspromotion_fullminus-define)
+  - [syspromotion_fullminus_item(商品与促销规则关联表)](#table-syspromotion_fullminus_item-define)
+  - [syspromotion_promotions(各种促销关联表)](#table-syspromotion_promotions-define)
 - [APP:sysrate](#app-sysrate-define)
-  - [sysrate_appeal](#table-sysrate_appeal-define)
-  - [sysrate_dsr](#table-sysrate_dsr-define)
-  - [sysrate_score](#table-sysrate_score-define)
-  - [sysrate_traderate](#table-sysrate_traderate-define)
+  - [sysrate_appeal(评论申诉表)](#table-sysrate_appeal-define)
+  - [sysrate_dsr(店铺动态评分统计表)](#table-sysrate_dsr-define)
+  - [sysrate_score(店铺评分表)](#table-sysrate_score-define)
+  - [sysrate_traderate(商品评分表)](#table-sysrate_traderate-define)
 - [APP:sysshop](#app-sysshop-define)
-  - [sysshop_account](#table-sysshop_account-define)
-  - [sysshop_enterapply](#table-sysshop_enterapply-define)
-  - [sysshop_seller](#table-sysshop_seller-define)
-  - [sysshop_shop](#table-sysshop_shop-define)
-  - [sysshop_shop_cat](#table-sysshop_shop_cat-define)
-  - [sysshop_shop_info](#table-sysshop_shop_info-define)
-  - [sysshop_shop_rel_brand](#table-sysshop_shop_rel_brand-define)
-  - [sysshop_shop_rel_lv1cat](#table-sysshop_shop_rel_lv1cat-define)
-  - [sysshop_shop_rel_seller](#table-sysshop_shop_rel_seller-define)
-  - [sysshop_shop_type](#table-sysshop_shop_type-define)
+  - [sysshop_account(商家会员表)](#table-sysshop_account-define)
+  - [sysshop_enterapply(入驻申请表)](#table-sysshop_enterapply-define)
+  - [sysshop_seller(商家账号信息)](#table-sysshop_seller-define)
+  - [sysshop_shop(店铺表)](#table-sysshop_shop-define)
+  - [sysshop_shop_cat(店铺分类表)](#table-sysshop_shop_cat-define)
+  - [sysshop_shop_info(企业信息表)](#table-sysshop_shop_info-define)
+  - [sysshop_shop_rel_brand()](#table-sysshop_shop_rel_brand-define)
+  - [sysshop_shop_rel_lv1cat(店铺关联类目表)](#table-sysshop_shop_rel_lv1cat-define)
+  - [sysshop_shop_rel_seller()](#table-sysshop_shop_rel_seller-define)
+  - [sysshop_shop_type(店铺类型表)](#table-sysshop_shop_type-define)
 - [APP:sysstat](#app-sysstat-define)
-  - [sysstat_item_statics](#table-sysstat_item_statics-define)
-  - [sysstat_statmember](#table-sysstat_statmember-define)
-  - [sysstat_trade_statics](#table-sysstat_trade_statics-define)
+  - [sysstat_item_statics()](#table-sysstat_item_statics-define)
+  - [sysstat_statmember()](#table-sysstat_statmember-define)
+  - [sysstat_trade_statics()](#table-sysstat_trade_statics-define)
 - [APP:system](#app-system-define)
-  - [system_matrixset](#table-system_matrixset-define)
-  - [system_messenger_systmpl](#table-system_messenger_systmpl-define)
-  - [system_prism_initstep](#table-system_prism_initstep-define)
-  - [system_queue_mysql](#table-system_queue_mysql-define)
+  - [system_matrixset()](#table-system_matrixset-define)
+  - [system_messenger_systmpl(邮件短信模板)](#table-system_messenger_systmpl-define)
+  - [system_prism_initstep()](#table-system_prism_initstep-define)
+  - [system_queue_mysql(队列-mysql实现表)](#table-system_queue_mysql-define)
 - [APP:systrade](#app-systrade-define)
-  - [systrade_cart](#table-systrade_cart-define)
-  - [systrade_cart_coupon](#table-systrade_cart_coupon-define)
-  - [systrade_log](#table-systrade_log-define)
-  - [systrade_order](#table-systrade_order-define)
-  - [systrade_promotion_detail](#table-systrade_promotion_detail-define)
-  - [systrade_trade](#table-systrade_trade-define)
-  - [systrade_tradeabnormal](#table-systrade_tradeabnormal-define)
+  - [systrade_cart(购物车)](#table-systrade_cart-define)
+  - [systrade_cart_coupon(购物车使用优惠券表)](#table-systrade_cart_coupon-define)
+  - [systrade_log(订单日志表)](#table-systrade_log-define)
+  - [systrade_order(订单子表)](#table-systrade_order-define)
+  - [systrade_promotion_detail(订单使用的促销信息表)](#table-systrade_promotion_detail-define)
+  - [systrade_trade(订单主表)](#table-systrade_trade-define)
+  - [systrade_tradeabnormal(取消异常订单表)](#table-systrade_tradeabnormal-define)
 - [APP:sysuser](#app-sysuser-define)
-  - [sysuser_account](#table-sysuser_account-define)
-  - [sysuser_shop_fav](#table-sysuser_shop_fav-define)
-  - [sysuser_trustinfo](#table-sysuser_trustinfo-define)
-  - [sysuser_user](#table-sysuser_user-define)
-  - [sysuser_user_addrs](#table-sysuser_user_addrs-define)
-  - [sysuser_user_coupon](#table-sysuser_user_coupon-define)
-  - [sysuser_user_experience](#table-sysuser_user_experience-define)
-  - [sysuser_user_fav](#table-sysuser_user_fav-define)
-  - [sysuser_user_grade](#table-sysuser_user_grade-define)
-  - [sysuser_user_point](#table-sysuser_user_point-define)
-  - [sysuser_user_pointlog](#table-sysuser_user_pointlog-define)
-  - [sysuser_user_points](#table-sysuser_user_points-define)
-  - [sysuser_user_trade_count](#table-sysuser_user_trade_count-define)
+  - [sysuser_account(商城会员用户表)](#table-sysuser_account-define)
+  - [sysuser_shop_fav()](#table-sysuser_shop_fav-define)
+  - [sysuser_trustinfo()](#table-sysuser_trustinfo-define)
+  - [sysuser_user(商店会员表)](#table-sysuser_user-define)
+  - [sysuser_user_addrs(会员地址表)](#table-sysuser_user_addrs-define)
+  - [sysuser_user_coupon(用户优惠券表)](#table-sysuser_user_coupon-define)
+  - [sysuser_user_experience(会员经验值详细记录表)](#table-sysuser_user_experience-define)
+  - [sysuser_user_fav(收藏/缺货登记)](#table-sysuser_user_fav-define)
+  - [sysuser_user_grade(会员等级表)](#table-sysuser_user_grade-define)
+  - [sysuser_user_point(会员积分值详细记录表)](#table-sysuser_user_point-define)
+  - [sysuser_user_pointlog(会员积分值明细表)](#table-sysuser_user_pointlog-define)
+  - [sysuser_user_points(会员积分表)](#table-sysuser_user_points-define)
+  - [sysuser_user_trade_count()](#table-sysuser_user_trade_count-define)
 - [APP:tags](#app-tags-define)
 - [APP:theme](#app-theme-define)
 - [APP:topc](#app-topc-define)
 - [APP:topm](#app-topm-define)
 - [APP:topshop](#app-topshop-define)
 - [APP:toputil](#app-toputil-define)
+
 ## [数据库tables列表]
 
 | Table Name | Comment | 
@@ -271,11 +272,6 @@
 |  ordernum |  |  SMALLINT | No | 50 | No |
 |  input_time |  |  INT UNSIGNED | No |  | No |
 |  disabled | 是否有效 |  TINYINT(1) | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| content_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -302,11 +298,6 @@
 |  author_email | 作者邮件 |  VARCHAR(100) | No |  | No |
 |  dbver | 目前安装版本 |  VARCHAR(32) | No |  | No |
 |  remote_config | 远程配置信息 |  LONGTEXT | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| app_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -326,11 +317,6 @@
 |  app_id |  |  VARCHAR(32) | Yes |  | No |
 |  class |  |  VARCHAR(100) | Yes |  | No |
 |  type |  |  VARCHAR(6) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -348,11 +334,6 @@
 |  value | kvstore存储值 |  LONGTEXT | No |  | No |
 |  dateline | 存储修改时间 |  INT UNSIGNED | No |  | No |
 |  ttl | 过期时间,0代表不过期 |  INT UNSIGNED | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -373,11 +354,6 @@
 |  link_status |  |  VARCHAR(6) | Yes | wait | No |
 |  node_detail |  |  VARCHAR(255) | No |  | No |
 |  token |  |  VARCHAR(32) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| node_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -416,12 +392,6 @@
 |  app | app名 |  VARCHAR(50) | Yes |  | No |
 |  key | setting键值 |  VARCHAR(255) | Yes |  | No |
 |  value | setting存储值 |  LONGTEXT | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| app |
-| key |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -439,11 +409,6 @@
 |  value | kvstore存储值 |  LONGTEXT | No |  | No |
 |  dateline | 存储修改时间 |  INT UNSIGNED | No |  | No |
 |  ttl | 过期时间,0代表不过期 |  INT UNSIGNED | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -467,11 +432,6 @@
 |  login_password | 登录密码 |  VARCHAR(60) | Yes |  | No |
 |  disabled |  |  TINYINT(1) | No | 0 | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| account_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -493,11 +453,6 @@
 |  app | 过滤器对应的app(应用) |  VARCHAR(50) | Yes |  | No |
 |  act | 过滤器对应的act(方法) |  VARCHAR(50) | Yes |  | No |
 |  create_time | 过滤器创建时间 |  INT UNSIGNED | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| filter_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -511,12 +466,6 @@
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  user_id | 后台用户ID |  INT UNSIGNED | Yes |  | No |
 |  role_id | 角色ID |  INT UNSIGNED | Yes |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| user_id |
-| role_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -542,11 +491,6 @@
 |  target | 跳转 |  VARCHAR(10) | No |  | No |
 |  menu_order | 排序 |  INT UNSIGNED | No | 0 | No |
 |  parent | 父节点 |  VARCHAR(255) | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| menu_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -564,11 +508,6 @@
 |  role_id | 管理员角色ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  role_name |  |  VARCHAR(100) | Yes |  | No |
 |  workground |  |  LONGTEXT | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| role_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -591,11 +530,6 @@
 |  tag_filter |  |  VARCHAR(255) | Yes |  | No |
 |  rel_count | 关联的个数 |  INT UNSIGNED | Yes | 0 | No |
 |  params |  |  LONGTEXT | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| tag_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -614,12 +548,6 @@
 |  app_id | app(应用)ID |  VARCHAR(32) | Yes |  | No |
 |  tag_type | 标签对应的model(表) |  VARCHAR(20) | Yes |  | No |
 |  last_modify |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| tag_id |
-| rel_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -643,11 +571,6 @@
 |  disabled |  |  TINYINT(1) | Yes | 0 | No |
 |  op_no | 操作员no |  VARCHAR(50) | No |  | No |
 |  memo |  |  LONGTEXT | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| user_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -668,11 +591,6 @@
 |  service | 对应的service |  VARCHAR(80) | Yes |  | No |
 |  interval |  |  VARCHAR(7) | Yes |  | No |
 |  modify | 最后修改时间 |  INT UNSIGNED | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -691,11 +609,6 @@
 |  flag |  |  INT UNSIGNED | Yes | 0 | No |
 |  value |  |  DOUBLE PRECISION | Yes | 0 | No |
 |  time |  |  INT UNSIGNED | Yes |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -738,11 +651,6 @@
 |  disabled | 支付单状态 |  TINYINT(1) | No | 0 | No |
 |  trade_no | 支付单交易编号 |  VARCHAR(30) | No |  | No |
 |  thirdparty_account | 第三方支付账户 |  VARCHAR(50) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| payment_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -778,11 +686,6 @@
 |  memo | 备注 |  LONGTEXT | No |  | No |
 |  oid | 交易子订单号 |  VARCHAR(30) | No |  | No |
 |  tid | 交易主订单号 |  VARCHAR(30) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| refund_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -813,11 +716,6 @@
 |  height |  |  INT UNSIGNED | No |  | No |
 |  watermark |  |  TINYINT(1) | No | 0 | No |
 |  last_modified |  |  INT UNSIGNED | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| image_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -834,11 +732,6 @@
 |  target_type | 用户类型 |  VARCHAR(20) | Yes | 0 | No |
 |  image_id | 图片的主键-外键关联image表 |  CHAR(32) | Yes | 0 | No |
 |  last_modified |  |  INT UNSIGNED | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| attach_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -865,11 +758,6 @@
 |  status |  |  VARCHAR(1) | No | 0 | No |
 |  is_display |  |  VARCHAR(1) | No | 0 | No |
 |  key |  |  VARCHAR(255) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| task_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -890,11 +778,6 @@
 |  type_id |  |  INT UNSIGNED | No |  | No |
 |  from_type |  |  VARCHAR(50) | No |  | No |
 |  last_modify |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -910,12 +793,6 @@
 |  id |  |  INT UNSIGNED | Yes |  | No |
 |  index_name |  |  VARCHAR(50) | Yes |  | No |
 |  last_modify |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
-| index_name |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -943,11 +820,6 @@
 |  wt |  |  VARCHAR(80) | No |  | No |
 |  mu |  |  INT UNSIGNED | No |  | No |
 |  pmu |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| run_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -967,11 +839,6 @@
 |  app | 应用(app)名 |  VARCHAR(50) | Yes |  | No |
 |  title |  |  VARCHAR(100) | Yes |  | No |
 |  path | 路径 |  VARCHAR(100) | Yes |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -989,11 +856,6 @@
 |  image_url |  |  VARCHAR(255) | No |  | No |
 |  orderlist |  |  INT UNSIGNED | Yes | 0 | No |
 |  hidden |  |  TINYINT(1) | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| link_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1017,11 +879,6 @@
 |  params |  |  LONGTEXT | No |  | No |
 |  config |  |  LONGTEXT | No |  | No |
 |  update_modified | 更新时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1041,11 +898,6 @@
 |  config |  |  LONGTEXT | No |  | No |
 |  param |  |  LONGTEXT | No |  | No |
 |  update_modified | 更新时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1067,11 +919,6 @@
 |  info | 详细说明 |  VARCHAR(255) | No |  | No |
 |  config | 配置信息 |  LONGTEXT | No |  | No |
 |  is_used | 是否启用 |  TINYINT(1) | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| theme |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1092,11 +939,6 @@
 |  theme | 模板名标识 |  VARCHAR(50) | No |  | No |
 |  memo | 备注 |  VARCHAR(100) | No |  | No |
 |  content | 文件内容 |  LONGTEXT | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1115,11 +957,6 @@
 |  tmpl_path | 页面路径 |  VARCHAR(100) | Yes |  | No |
 |  theme | 对应模板 |  VARCHAR(20) | Yes |  | No |
 |  rel_file_id | 关联模板文件表:site_themes_file |  INT UNSIGNED | Yes |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1135,11 +972,6 @@
 |  app | 如果是系统挂件, 此字段为应用名. 如果是模板挂件此字段为空 |  VARCHAR(30) | Yes |  | No |
 |  theme | 如果是模板级挂件, 此字段为模板名. 如果是系统挂件此字段为空 |  VARCHAR(30) | Yes |  | No |
 |  name | 挂件名 |  VARCHAR(30) | Yes |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1166,11 +998,6 @@
 |  tpl | 模版的名称 |  VARCHAR(100) | No |  | No |
 |  params | 配置参数 |  LONGTEXT | No |  | No |
 |  modified | 修改时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| widgets_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1207,11 +1034,6 @@
 |  sendconfirm_data | 商家重新发货物流信息 |  LONGTEXT | No |  | No |
 |  created_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| aftersales_bn |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1235,11 +1057,6 @@
 |  shop_id | 店铺id |  INT UNSIGNED | No |  | No |
 |  tid | 该退款单的主订单号 |  LONGTEXT | No |  | No |
 |  oid | 该退款单的订单号 |  LONGTEXT | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| refunds_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1264,11 +1081,6 @@
 |  brand_logo | 品牌图片标识 |  VARCHAR(255) | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  disabled | 失效 |  TINYINT(1) | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| brand_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1298,11 +1110,6 @@
 |  order_sort |  |  INT UNSIGNED | No | 0 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  cat_template | 类目对应的模板 |  VARCHAR(50) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| cat_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1317,12 +1124,6 @@
 |  cat_id | 商品分类ID |  INT UNSIGNED | Yes | 0 | No |
 |  brand_id | 品牌ID |  INT UNSIGNED | Yes | 0 | No |
 |  order_sort | 排序 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| cat_id |
-| brand_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1337,12 +1138,6 @@
 |  prop_id | 属性ID |  INT UNSIGNED | Yes | 0 | No |
 |  cat_id | 分类ID |  INT UNSIGNED | Yes | 0 | No |
 |  order_sort |  |  INT UNSIGNED | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| prop_id |
-| cat_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1359,11 +1154,6 @@
 |  prop_value | 属性值 |  VARCHAR(100) | Yes |  | No |
 |  prop_image | 属性图片 |  CHAR(32) | No |  | No |
 |  order_sort | 排序 |  INT UNSIGNED | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| prop_value_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1387,11 +1177,6 @@
 |  order_sort |  |  INT UNSIGNED | Yes | 1 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  disabled |  |  TINYINT(1) | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| prop_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1419,11 +1204,6 @@
 |  account_start_time |  |  INT UNSIGNED | No |  | No |
 |  account_end_time |  |  INT UNSIGNED | No |  | No |
 |  settlement_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| settlement_no |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1460,11 +1240,6 @@
 |  settlement_type |  |  VARCHAR(1) | No | 1 | No |
 |  discount_fee | 子订单级订单优惠金额 |  NUMERIC(20, 3) | No |  | No |
 |  adjust_fee | 手工调整金额 |  NUMERIC(20, 3) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1487,11 +1262,6 @@
 |  title | 挂件自定义标题 |  VARCHAR(100) | No |  | No |
 |  params | 配置参数 |  LONGTEXT | No |  | No |
 |  modified_time | 修改时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| widgets_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1541,11 +1311,6 @@
 |  barcode | 商品级别的条形码 |  VARCHAR(128) | No |  | No |
 |  disabled | disabled |  TINYINT(1) | Yes | 0 | No |
 |  use_platform | 使用平台 |  VARCHAR(1) | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| item_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1565,11 +1330,6 @@
 |  rate_bad_count | 差评次数 |  INT UNSIGNED | Yes | 0 | No |
 |  view_count | 浏览次数 |  INT UNSIGNED | Yes | 0 | No |
 |  buy_count | 购买次数 |  INT UNSIGNED | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| item_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1585,11 +1345,6 @@
 |  pc_desc | 宝贝详情 |  LONGTEXT | No |  | No |
 |  wap_desc | Wap宝贝详情 |  LONGTEXT | No |  | No |
 |  wireless_desc | 无线端宝贝详情 |  LONGTEXT | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| item_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1608,12 +1363,6 @@
 |  pv_number |  |  INT UNSIGNED | No |  | No |
 |  pv_str |  |  VARCHAR(255) | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| item_id |
-| prop_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1630,11 +1379,6 @@
 |  approve_status | 商品状态 |  VARCHAR(7) | Yes | instock | No |
 |  list_time | 上架时间 |  INT UNSIGNED | No |  | No |
 |  delist_time | 下架时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| item_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1649,11 +1393,6 @@
 |  item_id | 商品 ID |  INT UNSIGNED | Yes |  | No |
 |  store | 总商品数量 |  INT UNSIGNED | Yes | 0 | No |
 |  freez | sku预占库存总和 |  INT UNSIGNED | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| item_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1667,11 +1406,6 @@
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_id | 商品ID |  INT UNSIGNED | Yes |  | No |
 |  promotion_ids | 促销id信息 |  LONGTEXT | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| item_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1699,11 +1433,6 @@
 |  spec_desc |  |  LONGTEXT | No |  | No |
 |  status | sku状态 |  VARCHAR(6) | No | normal | No |
 |  outer_id | 商家设置的外部id |  VARCHAR(32) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| sku_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1719,12 +1448,6 @@
 |  sku_id | sku ID |  INT UNSIGNED | Yes |  | No |
 |  store | 商品数量 |  INT UNSIGNED | Yes | 0 | No |
 |  freez | sku预占库存 |  INT UNSIGNED | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| item_id |
-| sku_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1742,12 +1465,6 @@
 |  prop_id | 销售属性ID |  INT UNSIGNED | Yes | 0 | No |
 |  item_id | 商品ID |  INT UNSIGNED | Yes | 0 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| prop_value_id |
-| sku_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1765,11 +1482,6 @@
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  cpns_id | 优惠券方案id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  cpns_name | 优惠券名称 |  VARCHAR(255) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| cpns_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1808,11 +1520,6 @@
 |  status | 状态 |  VARCHAR(8) | Yes | ready | No |
 |  memo | 备注 |  LONGTEXT | No |  | No |
 |  disabled | 无效 |  TINYINT(1) | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| delivery_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1834,11 +1541,6 @@
 |  sku_bn | sku编号 |  VARCHAR(30) | No |  | No |
 |  sku_title | sku名称 |  VARCHAR(200) | No |  | No |
 |  number | 发货数量 |  DOUBLE PRECISION | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| detail_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1858,11 +1560,6 @@
 |  request_url | 查询接口网址 |  VARCHAR(100) | No |  | No |
 |  order_sort | 排序 |  INT UNSIGNED | Yes | 0 | No |
 |  custom |  |  TINYINT(1) | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| corp_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1888,11 +1585,6 @@
 |  fee_conf | 运费模板中运费信息对象，包含默认运费和指定地区运费 |  LONGTEXT | No |  | No |
 |  create_time | 创建时间 |  INT UNSIGNED | No |  | No |
 |  modifie_time | 最后修改时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| template_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1931,11 +1623,6 @@
 |  created_time | 建券时间 |  INT UNSIGNED | No |  | No |
 |  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
 |  coupon_status | 促销状态 |  VARCHAR(7) | Yes | agree | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| coupon_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1955,12 +1642,6 @@
 |  price | 商品价格 |  NUMERIC(20, 3) | Yes |  | No |
 |  promotion_tag |  |  VARCHAR(10) | Yes | 0 | No |
 |  status | 促销状态 |  TINYINT(1) | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| coupon_id |
-| item_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1988,11 +1669,6 @@
 |  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
 |  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
 |  fullminus_status | 促销状态 |  VARCHAR(7) | Yes | agree | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| fullminus_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2015,12 +1691,6 @@
 |  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
 |  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
 |  status | 是否生效中 |  TINYINT(1) | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| fullminus_id |
-| item_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2044,11 +1714,6 @@
 |  end_time | 结束时间 |  INT UNSIGNED | Yes |  | No |
 |  created_time | 创建时间 |  INT UNSIGNED | Yes |  | No |
 |  check_status | 促销状态 |  VARCHAR(7) | Yes |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| promotion_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2075,11 +1740,6 @@
 |  appeal_log | 申诉日志 |  LONGTEXT | No |  | No |
 |  appeal_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| appeal_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2097,11 +1757,6 @@
 |  attitude_dsr |  |  LONGTEXT | No | 5 | No |
 |  delivery_speed_dsr |  |  LONGTEXT | No | 5 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| shop_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2124,11 +1779,6 @@
 |  created_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  disabled | 是否有效 |  TINYINT(1) | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| tid |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2166,11 +1816,6 @@
 |  created_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  disabled | 是否有效 |  TINYINT(1) | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| rate_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2192,11 +1837,6 @@
 |  disabled |  |  TINYINT(1) | No | 0 | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| seller_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2223,11 +1863,6 @@
 |  agree_time | 同意时间 |  INT UNSIGNED | No |  | No |
 |  enterlog | 操作日志 |  LONGTEXT | No |  | No |
 |  reason | 审核不通过原因 |  VARCHAR(500) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| enterapply_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2247,11 +1882,6 @@
 |  mobile |  |  VARCHAR(20) | Yes |  | No |
 |  email |  |  VARCHAR(100) | Yes |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| seller_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2281,11 +1911,6 @@
 |  shop_area | 店铺所在地区 |  VARCHAR(255) | Yes |  | No |
 |  shop_addr | 店铺所在地址 |  LONGTEXT | Yes |  | No |
 |  bulletin | 店铺公告 |  VARCHAR(50) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| shop_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2309,11 +1934,6 @@
 |  order_sort |  |  INT UNSIGNED | No | 0 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  disabled |  |  TINYINT(1) | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| cat_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2357,11 +1977,6 @@
 |  cnaps_code | 支行联行号 |  VARCHAR(50) | Yes |  | No |
 |  bankid | 银行账号 |  VARCHAR(50) | Yes |  | No |
 |  bank_area | 开户银行所在地 |  VARCHAR(50) | Yes |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| info_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2378,12 +1993,6 @@
 |  shop_id |  关联店铺id |  INT UNSIGNED | Yes |  | No |
 |  brand_id |  关联品牌id |  INT UNSIGNED | Yes |  | No |
 |  brand_warranty | 品牌授权书 |  VARCHAR(50) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| shop_id |
-| brand_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2399,11 +2008,6 @@
 |  cat_id |  关联类目id |  INT UNSIGNED | Yes |  | No |
 |  shop_id | 关联店铺id |  INT UNSIGNED | Yes |  | No |
 |  fee_confg |  |  LONGTEXT | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| rel_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2421,12 +2025,6 @@
 |  roles | 商家会员角色 |  VARCHAR(6) | Yes | admin | No |
 |  authority | 商家会员权限 |  VARCHAR(5) | Yes | all | No |
 |  shop_name | 商家所属店铺名称 |  VARCHAR(100) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| shop_id |
-| seller_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2446,11 +2044,6 @@
 |  brief | 类型描述 |  VARCHAR(500) | Yes |  | No |
 |  suffix | 店铺名称后缀 |  VARCHAR(20) | Yes |  | No |
 |  max_item | 店铺默认商品上限 |  INT UNSIGNED | Yes |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| shoptype_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2475,11 +2068,6 @@
 |  amountnum | 销售数量 |  INT UNSIGNED | No |  | No |
 |  amountprice | 销售总价 |  NUMERIC(20, 3) | No |  | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| item_stat_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2499,11 +2087,6 @@
 |  sellernum | 新增商家数 |  INT UNSIGNED | No | 0 | No |
 |  selleraccount | 商家数 |  INT UNSIGNED | No | 0 | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| statm_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2532,11 +2115,6 @@
 |  complete_trade | 已完成的订单数量 |  INT UNSIGNED | No | 0 | No |
 |  complete_fee | 已完成订单额 |  NUMERIC(20, 3) | No | 0 | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| stat_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2560,11 +2138,6 @@
 |  token |  |  VARCHAR(100) | No |  | No |
 |  node_type |  |  VARCHAR(20) | No |  | No |
 |  shopname |  |  VARCHAR(20) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| matrixset_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2580,11 +2153,6 @@
 |  content | 模板内容 |  LONGTEXT | No | 0 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  active | 是否激活 |  TINYINT(1) | No | 1 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| tmpl_name |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2604,11 +2172,6 @@
 |  create_time | 进入队列的时间 |  INT UNSIGNED | No | 0 | No |
 |  start_time | 任务开始执行时间 |  INT UNSIGNED | No | 0 | No |
 |  complate_time | 任务执行结束时间 |  INT UNSIGNED | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| step_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2627,11 +2190,6 @@
 |  create_time | 进入队列的时间 |  INT UNSIGNED | No | 0 | No |
 |  last_cosume_time | 任务开始执行时间 |  INT UNSIGNED | No | 0 | No |
 |  owner_thread_id | mysql进程ID |  INT | No | -1 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2662,12 +2220,6 @@
 |  selected_promotion | 购物车选中的促销ID |  VARCHAR(30) | Yes |  | No |
 |  created_time | 加入购物车时间 |  INT UNSIGNED | No |  | No |
 |  modified_time | 最后修改时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| cart_id |
-| user_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2687,11 +2239,6 @@
 |  shop_id | 店铺ID |  INT UNSIGNED | Yes |  | No |
 |  coupon_id | 优惠券id |  INT UNSIGNED | Yes |  | No |
 |  coupon_code | 优惠券号码 |  VARCHAR(15) | Yes |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2712,11 +2259,6 @@
 |  behavior | 日志记录操作的行为 |  VARCHAR(8) | Yes | update | No |
 |  log_text | 操作内容 |  LONGTEXT | No |  | No |
 |  log_time | 记录时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| log_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2770,11 +2312,6 @@
 |  outer_iid | 商家外部编码 |  VARCHAR(50) | No |  | No |
 |  outer_sku_id | 商家外部sku码 |  VARCHAR(50) | No |  | No |
 |  sub_stock | 是否支持下单减库存 |  TINYINT(1) | Yes | 1 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| oid |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2856,11 +2393,6 @@
 |  anony | 下单选择的是否匿名，子订单将匿名修改该字段不修改，只表示下单的选择 |  TINYINT(1) | No | 0 | No |
 |  is_clearing | 是否生成结算单 |  TINYINT(1) | No | 0 | No |
 |  disabled | 是否有效 |  TINYINT(1) | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| tid |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2879,11 +2411,6 @@
 |  reject_reason |  |  VARCHAR(100) | No |  | No |
 |  created_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2908,11 +2435,6 @@
 |  disabled |  |  TINYINT(1) | No | 0 | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| user_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2930,11 +2452,6 @@
 |  shop_name | 店铺名称 |  VARCHAR(50) | Yes |  | No |
 |  shop_logo | 提交logo |  VARCHAR(500) | No |  | No |
 |  create_time |  |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| snotify_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2957,11 +2474,6 @@
 |  address | 用户地址 |  VARCHAR(255) | No |  | No |
 |  province | 所在省级 |  VARCHAR(255) | No |  | No |
 |  city | 所在城市 |  VARCHAR(255) | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| trust_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2995,11 +2507,6 @@
 |  area |  |  VARCHAR(55) | No |  | No |
 |  addr |  |  VARCHAR(255) | No |  | No |
 |  email_verify |  |  TINYINT(1) | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| user_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3022,11 +2529,6 @@
 |  tel | 电话 |  VARCHAR(50) | No |  | No |
 |  mobile | 手机 |  VARCHAR(50) | No |  | No |
 |  def_addr | 默认地址 |  TINYINT(1) | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| addr_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3046,13 +2548,6 @@
 |  obtain_time | 优惠券获得时间 |  INT UNSIGNED | No |  | No |
 |  tid | 使用该优惠券的订单号 |  BIGINT UNSIGNED | No |  | No |
 |  is_valid | 会员优惠券是否当前可用 |  TINYINT(1) | Yes | 1 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| coupon_code |
-| user_id |
-| shop_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3072,11 +2567,6 @@
 |  experience | 成长值 |  INT UNSIGNED | No |  | No |
 |  remark | 备注(记录订单号) |  VARCHAR(500) | No |  | No |
 |  expiration_time | 经验值过期时间 |  INT UNSIGNED | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| experience_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3103,11 +2593,6 @@
 |  disabled |  |  TINYINT(1) | No | 0 | No |
 |  remark | 备注 |  LONGTEXT | No | 0 | No |
 |  object_type | 收藏的类型，goods |  VARCHAR(100) | No | goods | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| gnotify_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3125,11 +2610,6 @@
 |  experience |  |  INT UNSIGNED | Yes | 0 | No |
 |  default_grade | 是否默认等级 |  TINYINT(1) | Yes | 0 | No |
 |  validity | 等级有效期 |  INT UNSIGNED | Yes | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| grade_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3150,11 +2630,6 @@
 |  point | 积分值 |  INT UNSIGNED | No | 0 | No |
 |  remark | 备注(记录订单号) |  VARCHAR(500) | No |  | No |
 |  expiration_time | 积分过期时间 |  INT UNSIGNED | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| point_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3174,11 +2649,6 @@
 |  point | 积分值 |  INT UNSIGNED | No | 0 | No |
 |  remark | 备注(记录订单号) |  VARCHAR(500) | No |  | No |
 |  expiration_time | 积分过期时间 |  INT UNSIGNED | No | 0 | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| pointlog_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3194,11 +2664,6 @@
 |  point_count | 会员总积分值 |  INT UNSIGNED | No | 0 | No |
 |  expired_point | 将要过期积分 |  INT UNSIGNED | No | 0 | No |
 |  modified_time | 记录时间 |  INT UNSIGNED | No |  | No |
-- 主键 
-
-| columnName |
-| ------------- |
-| user_id |
 - 索引
 
 | Key name | Column names | Unique | Comment |
