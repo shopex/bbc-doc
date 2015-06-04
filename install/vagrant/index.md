@@ -34,11 +34,11 @@ BBC Vagrant 是基于VirtualBox创建的虚拟机，并通过Vagrant进行打包
 
 - 执行vagrant box add bbc/centos65 $name.box。
 
-      vagrant box add bbc/centos65 $name.box
+      vagrant box add bbc/centos65 /data/vm/commerce_b2b2c-lnmp-with-prism-0.0.2.box
 
 - 进入工作目录（workspace）(cd workspacedir)(比如:cd ~/code/)。
 
-      cd workspacedir
+      cd ~/code/
 
 - 执行vagrant init bbc/centos65。
 
