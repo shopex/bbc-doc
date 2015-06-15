@@ -6,7 +6,7 @@
 <a name="introduction"></a>
 ## 咋玩
 
-所有关于LuckyMall的配置文件都放在`app/base/examples/config`目录里, 在安装后会挪到`config`目录里. 所有文件里的配置选项都有说明文档, 因此你可以轻松的查看这些文件, 并熟悉写配置项.
+所有关于LuckyMall的配置文件都放在`app/config`目录里, 在安装后会挪到`config/production`目录里. 所有文件里的配置选项都有说明文档, 因此你可以轻松的查看这些文件, 并熟悉写配置项.
 
 > **兼容** 系统前身ecstore中的`config/config.php`被取消掉. 不再采用常量定义的方式. 有部分常量定义被挪到`compatible.php`中, 会陆续搬出.
 
@@ -45,26 +45,17 @@
 如果都没问题, 那么可以采用config方式
 
 #### 增加新的配置文件
-查看`app/base/examples/config`目录下是否存在相关配置文件, 如果不存在, 首先要建立新的配置文件
+查看`app/config`目录下是否存在相关配置文件, 如果不存在, 首先要建立新的配置文件
 
-在系统安装时会将文件copy到`config`目录下
+在系统安装时会将变更的文件copy到`config/production`目录下, 如果使用默认设置将不会做额外动作
 
-为了避免`config`目录被污染, 需要将添加的文件放入`config/.gitignore`.
+为了避免`config`目录被污染, 需要将添加的文件放入`config/production/.gitignore`.
 
 > **注意** config目录是用来放置本地的配置, 属于个性化数据, 因此不能提交到git中. 
 
 #### 增加新的配置项
-在`app/base/examples/config`找到对应的配置文件进行修改
+在`app/config/production`找到对应的配置文件进行修改
 
-<a name="compatible"></a>
-
-#### 清除安装时生成的配置文件
-
-> **todo** 需要增加命令行工具
-
-目前可使用以下方式:
-
-    cd config/
-    cat config/.gitignore | xargs -I % rm -rf ".%"
+如果目录下没有, 需要从`app/config`下找到对应文件copy过来
 
 

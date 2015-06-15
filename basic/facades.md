@@ -7,6 +7,10 @@
 - [模拟 Facades](#mocking-facades)
 - [Facade Class Reference](#facade-class-reference)
 
+<a name="practical-usage"></a>
+
+## 简介
+
 Facades 提供了一个“静态”接口到 工作类 。系统 含有很多 facades，你可能不知道你在某些地方已经使用过它们了。
 
 有时候， 你可能想为你的应用程序或包创建自己的 facades， 所以，让我们来讨论一下如何开发和使用这些类。

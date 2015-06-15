@@ -26,6 +26,7 @@
 - [数据库]
   - 基本用法
   - [数据类型](/basic/database/types.md)
+- [xhprof优化](/basic/xhprof.md)
 
 ## 系统功能配置说明
 - [搜索配置文档和使用方法](/basic/search.md)

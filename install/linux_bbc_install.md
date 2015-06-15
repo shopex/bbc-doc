@@ -1,5 +1,11 @@
 # linux单机部署
 
+- [软件来源](#source)
+- [安装](#install)
+- [使用](#use)
+
+
+
 ### 软件来源
 mysql5.6.12下载地址 http://192.168.51.67/mysql-5.6.12-l64.tar.gz
 
@@ -9,8 +15,9 @@ php5.4.33下载地址 http://php.net/get/php-5.4.36.tar.gz/from/a/mirror
 
 
 ####标准库安装————标准库是一些基本的底层库，有很多软件都是依附与这些底层库
-
+```
 yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel curl curl-devel e2fsprogs e2fsprogs-devel krb5 krb5-devel libidn libidn-devel openssl openssl-devel openldap openldap-devel nss_ldap openldap-clients openldap-servers pcre pcre-devel  zlip zlip-devel
+```
 
 #### php依赖库安装
    libxml2 ———— 包含库和实用工具用于解析XML文件
