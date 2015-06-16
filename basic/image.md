@@ -1,7 +1,7 @@
 # 图片分离
 
 - [简介](#introduction)
-- [安装](#install)
+- [配置](#install)
 - [使用](#use)
 
 <a name="introduction"></a>
@@ -15,11 +15,11 @@
     只要在进行图片存储时，将url作为key，将图片存储到Tokyo Tyrant
     Tokyo Tyrant是Tokyo Cabinet的网络接口，可以使用memcached一样的协议。同memcache相比，Tokyo Cabinet可以将资源存放在硬盘中
 
-<a name="use"></a>
+<a name="install"></a>
 
 ## 安装
 
-### 图片服务安装nginx，并且在加入memc-nginx-module模块
+### 图片服务配置，安装nginx，并且在加入memc-nginx-module模块
 
 1. memc-nginx-module模块下载
    ```
@@ -39,3 +39,91 @@
 
    make && make install
    ```
+
+3. nginx安装成功后,nginx.conf 配置中加入以下部分配置
+   ```
+    upstream tt_server1{  #配置一个tt服务器组
+      server localhost:1978; #ttserver的地址和启动端口
+    }
+
+    server {
+      listen       80;
+      server_name  localhost;
+
+      location / {
+        set $memcached_key $uri;
+        memcached_pass tt_server1;
+      }
+    }
+   ```
+
+### web服务器配置
+
+1. php安装memcached扩展
+  >phpinfo检查php是否安装了memcache扩展，如果没有安装这安装扩展,则进行安装
+  一下命令仅供参考
+
+  ```
+  /usr/local/php/bin/pecl install memcache
+
+  vim /usr/local/php/php.ini
+
+  extension=memcache.so
+  ```
+2. 修改B2B2C中的conifig/storager.php配置
+```php
+      <?php
+      /**
+       * ShopEx licence
+       *
+       * @copyright  Copyright (c) 2005-2012 ShopEx Technologies Inc. (http://www.shopex.cn)
+       * @license  http://ecos.shopex.cn/ ShopEx License
+       */
+
+     return array(
+        /*
+        |--------------------------------------------------------------------------
+        | 默认storage处理类
+        |--------------------------------------------------------------------------
+        |
+        | 默认storage处理方式
+        | 目前支持 ttprosystem | base_storage_filesystem
+        | 对应原系统:  KVSTORE_STORAGE
+        |
+        */
+        'default' => 'ttprosystem',
+        //'default' => 'filesystem',
+
+        /*
+        |--------------------------------------------------------------------------
+        | mongodb配置
+        |--------------------------------------------------------------------------
+        |
+        | hosts 支持多实例. 目前只支持 192.168.0.230:11211 风格的写法
+        | "mongodb:///tmp/mongo-27017.sock" 两种风格
+        | options MongoClient::__construct 第二个参数 An array of options for the
+        | connection
+        */
+        'ttprosystem' => array(
+            'hosts' => array(
+              '192.168.51.96:1978',
+            //'192.168.0.231:11211',
+            ),
+        ),
+
+        /*
+        |--------------------------------------------------------------------------
+        | 图片映象站地址
+        |--------------------------------------------------------------------------
+        |
+        | 图片资源映像站地址，可以配置多个图片服务器，上传图片的时候随机分配
+        |
+        */
+        'host_mirrors_img' => array(
+            'http://img2.example.com',//图片调用服务器的域名
+            //'http://img1.example.com',//图片调用服务器的域名
+         )
+     );
+  ```
+
+
