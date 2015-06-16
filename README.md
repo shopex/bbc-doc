@@ -53,5 +53,3 @@
 - [alias机制:B](/tasks/alias_mechanism.md)
 - [routing:B](/tasks/configuration.md)
 
-## 接口列表
-- [商品接口](/api/index.md)
