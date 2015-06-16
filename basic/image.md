@@ -19,6 +19,37 @@
 
 ## 配置
 
+### 配置图片存储服务器 Tokyo Tyrant安装配置
+
+1. 安装Tokyo Tyrant 地址
+    wget http://fallabs.com/tokyocabinet/tokyocabinet-1.4.47.tar.gz
+    wget http://fallabs.com/tokyotyrant/tokyotyrant-1.1.41.tar.gz
+    1. 1.安装Tokyo Cabinet
+    ```shell
+    tar zxvf tokyocabinet-1.4.47.tar.gz
+    cd tokyocabinet-1.4.47
+    sudo ./configure
+    sudo make
+    sudo make install
+    ```
+    2. 安装Tokyo Tyrant
+    ```shell
+    tar zxvf tokyotyrant-1.1.41.tar.gz
+    cd tokyotyrant-1.1.41
+    sudo ./configure
+    sudo make
+    sudo make install
+    ```
+  参考文档：http://www.ttlsa.com/ttserver/install-ttserver-on-linux/
+  >**注意**
+  因为tt可以无密码进行操作，并且在tt中存储了挂件的php文件，因此需要在防火墙配置，保证tt服务器的安全性
+
+2. 启动ttservctl
+```
+安装完成之后启动文件 默认在 /usr/local/sbin/ttservctl
+ttservctl start
+```
+
 ### 图片服务配置，安装nginx，并且在加入memc-nginx-module模块
 
 1. memc-nginx-module模块下载
@@ -128,7 +159,7 @@
   ```
 
 <a name="move"></a>
-## 数据迁移
+## 数据迁移 将本地的图片存储到Tokyo Tyrait中
 
 1. 修改b2b2c/script/storage/ttserver.sh中的图片存储服务地址
    ```shell
