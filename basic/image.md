@@ -2,7 +2,7 @@
 
 - [简介](#introduction)
 - [配置](#install)
-- [使用](#use)
+- [数据迁移](#move)
 
 <a name="introduction"></a>
 
@@ -17,7 +17,7 @@
 
 <a name="install"></a>
 
-## 安装
+## 配置
 
 ### 图片服务配置，安装nginx，并且在加入memc-nginx-module模块
 
@@ -61,9 +61,10 @@
 
 1. php安装memcached扩展
   >phpinfo检查php是否安装了memcache扩展，如果没有安装这安装扩展,则进行安装
-  一下命令仅供参考
 
   ```
+  命令仅供参考:
+
   /usr/local/php/bin/pecl install memcache
 
   vim /usr/local/php/php.ini
@@ -126,4 +127,29 @@
      );
   ```
 
+<a name="move"></a>
+## 数据迁移
 
+1. 修改b2b2c/script/storage/ttserver.sh中的图片存储服务地址
+   ```
+    #storage存储服务器地址，修改为Tokyo Tyrant 部署的地址和端口
+    host=127.0.0.1
+    #ttserver端口
+    port=1978
+   ```
+
+2. 执行b2b2c/script/storage/init.sh
+   ```
+   #!/bin/bash
+
+    source $(cd `dirname $0`; pwd)/ttserver.sh
+
+    #默认将public/images/下的图片都存储到Tokyo Tyrant 中,也可以根据需求自定义目录存储
+    if [ x$1 = x ]
+    then
+        src=$root/public/images
+    else
+        src=$1
+    fi
+
+   ```
