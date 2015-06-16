@@ -19,7 +19,7 @@
 
 ## 配置
 
-### 配置图片存储服务器 Tokyo Tyrant安装配置
+### 图片存储服务器, Tokyo Tyrant的安装配置
 
 1. 安装Tokyo Tyrant
    ```shell
@@ -57,7 +57,7 @@
 ttservctl start
 ```
 
-### 图片服务配置，安装nginx，并且在加入memc-nginx-module模块
+### 图片调用服务配置，安装nginx，并且在加入memc-nginx-module模块
 
 1. memc-nginx-module模块下载
    ```
