@@ -22,8 +22,10 @@
 ### 图片服务安装nginx，并且在加入memc-nginx-module模块
 
 1. memc-nginx-module模块下载
+   ```
    下载地址：https://github.com/agentzh/memc-nginx-module
    已安装git可以执行：git clone https://github.com/agentzh/memc-nginx-module.git
+   ```
 
 2. nginx编译加载memc-nginx-module
    因为Nginx并不支持模块动态加载，所以要安装新的模块，必须重新编译Nginx
