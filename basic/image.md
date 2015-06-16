@@ -30,7 +30,7 @@
 2. nginx编译加载memc-nginx-module
    因为Nginx并不支持模块动态加载，所以要安装新的模块，必须重新编译Nginx
 
-   ```
+   ```shell
    wget http://nginx.org/download/nginx-1.4.7.tar.gz
    tar zxvf nginx-1.4.7.tar.gz
    cd nginx-1.4.7
@@ -121,8 +121,8 @@
         |
         */
         'host_mirrors_img' => array(
-            'http://img2.example.com',//图片调用服务器的域名
-            //'http://img1.example.com',//图片调用服务器的域名
+            'http://img2.example.com',//图片调用服务器的域名或者IP
+            //'http://img1.example.com',//图片调用服务器的域名或者IP
          )
      );
   ```
@@ -131,7 +131,7 @@
 ## 数据迁移
 
 1. 修改b2b2c/script/storage/ttserver.sh中的图片存储服务地址
-   ```
+   ```shell
     #storage存储服务器地址，修改为Tokyo Tyrant 部署的地址和端口
     host=127.0.0.1
     #ttserver端口
@@ -139,7 +139,7 @@
    ```
 
 2. 执行b2b2c/script/storage/init.sh
-   ```
+   ```shell
    #!/bin/bash
 
     source $(cd `dirname $0`; pwd)/ttserver.sh
