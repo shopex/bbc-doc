@@ -21,11 +21,12 @@
 
 ### 配置图片存储服务器 Tokyo Tyrant安装配置
 
-1. 安装Tokyo Tyrant 地址
-
+1. 安装Tokyo Tyrant
+   ```shell
+    #资源地址
     wget http://fallabs.com/tokyocabinet/tokyocabinet-1.4.47.tar.gz
-
     wget http://fallabs.com/tokyotyrant/tokyotyrant-1.1.41.tar.gz
+   ```
 
     ##### 安装Tokyo Cabinet
     ```shell
