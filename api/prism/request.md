@@ -5,11 +5,14 @@
 通过请求prism的api接口即可
 请求方式请参照prism-sdk使用方式
 
-## soa请求方式
-直接调用接口即可
+## soa请求
+
+当启用prism的适合，需要通过app的去访问，不启用时也可以通过该方法使用
+将不再支持直接访问rpc的api请求方式
 ```
-$res = rpc::call($method, $params);
+$res = app::get('topc')->rpcCall($method, $params);
 ```
+
 $res即为返回参数，格式为array。
 
 ## 系统参数
