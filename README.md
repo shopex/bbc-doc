@@ -28,7 +28,6 @@
   - [数据类型](/basic/database/types.md)
 - [xhprof优化](/basic/xhprof.md)
 - [图片]
-  - [图片用法](/basic/image/image.md)
   - [图片分离](/basic/image/storager.md)
 
 ## 系统功能配置说明
