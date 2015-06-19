@@ -53,6 +53,9 @@ if ($validator->fails())
 ```
 $messages = $validator->messages();
 ```
+```
+$messages = $validator->messagesInfo(); (返回详错误信息，格式为数组如：array('email'=>array(0=>'邮箱格式不对')))
+```
 #使用错误信息
 
 当您调用一个 validator 实例的 messages 方法后，您会得到一个命名为 messageBag的变量，该变量里有许多方便的方法能让您取得相关的错误信息。
