@@ -662,57 +662,59 @@ return array (
 <table width="100%">
     <tr>
         <th>类型</th>
-        <th>作用</td>
+        <th>描述</td>
     </tr>
     <tr>
         <td>than</td>
-        <td>></td>
+        <td>大于</td>
     </tr>
     <tr>
-        <td>lthan</td>
+        <td>小于</td>
         <td><</td>
     </tr>
     <tr>
         <td>nequal</td>
-        <td>=</td>
+        <td>等于</td>
     </tr>
     <tr>
         <td>tequal</td>
-        <td>=</td>
+        <td>等于</td>
     </tr>
     <tr>
         <td>sthan</td>
-        <td><=</td>
+        <td>小于等于</td>
     </tr>
     <tr>
         <td>bthan</td>
-        <td>>=</td>
+        <td>大于等于</td>
     </tr>
     <tr>
         <td>has</td>
-        <td>like %{$var}%</td>
+        <td>包含</td>
     </tr>
     <tr>
         <td>head</td>
-        <td>like {$var}%</td>
+        <td>头部</td>
     </tr>
     <tr>
         <td>foot</td>
-        <td>like %{$var}</td>
+        <td>尾部</td>
     </tr>
     <tr>
         <td>nohas</td>
-        <td>not like %{$var}%</td>
+        <td>不包含</td>
     </tr>
     <tr>
         <td>between</td>
-        <td>>>{$var[0]} and <{$var[1]}</td>
+        <td>介于之间</td>
     </tr>
     <tr>
         <td>in</td>
-        <td>in ((array)$var)</td>
+        <td>在之中</td>
     </tr>
 </table>
+
+> **注意:** 请尽量不要用foot类型, 因为会用到左like, 会影响性能.
 
 #### is_title定义
 例如, 商品表有cat_id(类目表ID)字段, 那么在finder上cat_id字段会显示类目表中设置为is_title的字段(cat_name)的值.
