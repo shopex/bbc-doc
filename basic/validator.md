@@ -50,7 +50,10 @@ if ($validator->fails())
 ```
 假如验证失败，您可以从验证器中接收错误信息。（1）
 ```
-$messages = $validator->messagesInfo(); (返回详错误信息，格式为数组如：array('email'=>array(0=>'邮箱格式不对')))
+$messages = $validator->messagesInfo(); 
+
+(返回详错误信息，格式为数组如：array('email'=>array(0=>'邮箱格式不对')))
+
 ```
 
 假如验证失败，您可以从验证器中接收错误信息。（2）
