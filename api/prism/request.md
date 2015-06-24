@@ -7,13 +7,26 @@
 
 ## soa请求
 
-当启用prism的适合，需要通过app的去访问，不启用时也可以通过该方法使用
-将不再支持直接访问rpc的api请求方式
+统一的api请求方法，所有的内部请求api都经过这里执行
 ```
-$res = app::get('topc')->rpcCall($method, $params);
+/***
+ *
+ * 请求API的统一入口
+ * @param string method 方法名,api的key
+ * @param array parameters 请求api的参数，每个api请参考api的业务需求
+ * @param array identity 用户信息
+ *
+ * @return array 返回api的信息
+ *
+ */
+public function rpcCall($method, $parameters = array(),$identity)
+
+//调用方法
+$res = app::get('topc')->rpcCall($method, $params, $identity);
 ```
 
 $res即为返回参数，格式为array。
+
 
 ## 系统参数
 系统预留6个参数，这6个参数，在每个api请求中必须带有
