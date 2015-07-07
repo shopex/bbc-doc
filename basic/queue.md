@@ -2,6 +2,7 @@
 
 - [swoole安装] (# install)
 - [bbc swoole 执行 queue 的使用] (# install)
+- [设置] (# 设置)
 
 ## swoole安装
 [参照swoole官方文档](http://wiki.swoole.com/wiki/page/6.html)
@@ -89,7 +90,8 @@
         ),
 
 ## 推送
- 以后采用新的推送方式：
+
+以后采用新的推送方式：
 
     queue::push($worker, $params);
 
