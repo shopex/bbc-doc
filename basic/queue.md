@@ -2,21 +2,29 @@
 
 - [swoole安装] (# install)
 - [bbc swoole 执行 queue 的使用] (# install)
-- [设置] (# 设置)
+- [基本原则] (#base_rule)
+- [配置参数] (#setup_params)
+- [设置] (#setup_queue)
+- [推送] (#push_queue)
+- [消费队列] (#consume_queue)
 
 ## swoole安装
 [参照swoole官方文档](http://wiki.swoole.com/wiki/page/6.html)
 
+
+<a name='base_rule'></a>
 ## 基本原则
 * 推送消息$params要做到尽量减小体积，在使用某些mq时，不容易发生硬盘数据交换
 * adapter中，逻辑要做到“谁干活谁推送”，即数据推送(生产者)和消费者为同一app
 * 一个队列中，只能放同一个app的worker，当数据量较大时，应该一个队列中只放一个类型的worker，且这个worker应该与queu属于同一个app
 
+<a name='setup_queue'></a>
 ## 设置
 配置文件位于：
 
     config/queue.php
 
+<a name='setup_params'></a>
 ## 配置参数
 
 ### default
@@ -89,6 +97,7 @@
         'winning' => array('sendSMS', 'sendEmail');
         ),
 
+<a name='push_queue'></a>
 ## 推送
 
 以后采用新的推送方式：
@@ -113,7 +122,8 @@
     //example
     queue::action('winning', array('tel'=>'18888888888', 'email'=>'888888@qq.com', 'content'=>'幸运用户您好，你中奖了！'));
 
-## 使用
+<a name='consume_queue'></a>
+## 消费队列
 
 在服务器上执行一下命令
 
