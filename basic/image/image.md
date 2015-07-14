@@ -14,8 +14,8 @@
 - 升级执行脚本
 
 	>v0.1升级到v0.2数据迁移说明
-	1. 首先需要讲数据库中老的图片管理表迁移到新的表图片管理表中
-	2. 需要将以前图片存储的image_id替换为URL地址
+    - 首先需要讲数据库中老的图片管理表迁移到新的表图片管理表中
+	- 需要将以前图片存储的image_id替换为URL地址
 
 	```
 	 打开config/storager.php文件,设置host_mirrors_img参数
@@ -48,6 +48,7 @@ cmd命令: image:resize do
 	</a>
 	```
 - 多图上传
+
 	```html
 	<!--已经上传的图片显示-->
 	<div class="multiple-item">
