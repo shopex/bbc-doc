@@ -8,13 +8,14 @@
 <a name="system"></a>
 
 ### 系统依赖说明
->七牛的php-sdk包需要 php的 php_curl扩张进行支持，因此需要保证php有php_curl扩展
+>七牛的php-sdk包需要 php的 php_curl扩展进行支持，因此需要保证php有php_curl扩展
 
 <a name="qiniu-init"></a>
 ### 七牛网站配置
 七牛网站地址：http://www.qiniu.com
 - 注册后新建一个空间
-- 进入数据处理TAB
+- 进入数据处理
+
 	```
 	1. 设置分隔符为下划线
  2. 新建图片样式(新建三种图片样式，分别为 L M S 三个规格的小写字母加上jpg的样式名称)

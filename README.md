@@ -32,7 +32,7 @@
   - [图片分离方案]
     - [nfs方案]
     - [ttserver方案](/basic/image/ttserver.md)
-    - [qiniu方案](/basic/image/qiniu.md)
+    - [七牛方案](/basic/image/qiniu.md)
 
 
 ## 系统功能配置说明
