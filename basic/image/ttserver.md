@@ -1,4 +1,4 @@
-# 图片分离
+# ttserver图片分离方案
 
 - [简介](#introduction)
 - [配置](#install)
@@ -14,6 +14,8 @@
     使用内存做存储有两个缺点，一是有容量限制，二是不能永久存储。因此我们使用 Tokyo Tyrant 做存储方案。
     只要在进行图片存储时，将url作为key，将图片存储到Tokyo Tyrant
     Tokyo Tyrant是Tokyo Cabinet的网络接口，可以使用memcached一样的协议。同memcache相比，Tokyo Cabinet可以将资源存放在硬盘中
+
+>**注意**：ttserver方案的缺点为，Tokyo Tyrant在存储超过20G的时候会出现不稳定现象，因此不推荐
 
 <a name="install"></a>
 
@@ -51,11 +53,12 @@
   因此需要在防火墙配置，保证tt服务器的安全性
 
 2. 启动ttservctl
-```shell
-#安装完成之后启动文件 默认在 /usr/local/sbin/ttservctl
 
-ttservctl start
-```
+	```shell
+	#安装完成之后启动文件 默认在 /usr/local/sbin/ttservctl
+
+	ttservctl start
+	```
 
 ### 图片调用服务配置，安装nginx，并且在加入memc-nginx-module模块
 

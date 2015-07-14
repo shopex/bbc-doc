@@ -28,7 +28,12 @@
   - [数据类型](/basic/database/types.md)
 - [xhprof优化](/basic/xhprof.md)
 - [图片]
-  - [图片分离](/basic/image/storager.md)
+  - [图片升级及其域名替换](/basic/image/image.md)
+  - [图片分离方案]
+    - [nfs方案]
+    - [ttserver方案](/basic/image/ttserver.md)
+    - [qiniu方案](/basic/image/qiniu.md)
+
 
 ## 系统功能配置说明
 - [搜索配置文档和使用方法](/basic/search.md)
@@ -54,4 +59,3 @@
 ## TODO
 - [alias机制:B](/tasks/alias_mechanism.md)
 - [routing:B](/tasks/configuration.md)
-
