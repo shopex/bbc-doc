@@ -15,23 +15,35 @@
 
 
 例1:
-'''
+
 表名: syscontent_article
+
 数据库表名前缀: (无)
+
 文件名: syscontent_article.php
+
 存放目录名: app/syscontent/dbschema
+
 完整文件名: app/syscontent/dbschema/syscontent_article.php
+
 对应的model类名: syscontent_mdl_article
+
 所属app: syscontent
-'''
+
 
 例2:
-'''
+
 表名: syscontent_article_nodes
+
 数据库表名前缀: (无)
+
 文件名: article_nodes.php
+
 存放目录名: app/syscontent/dbschema
+
 完整文件名: app/syscontent/dbschema/article_nodes.php
+
 对应的model类名: syscontent_mdl_article_nodes
+
 所属app: syscontent
-'''
+

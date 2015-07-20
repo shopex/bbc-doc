@@ -46,10 +46,10 @@ $md5 = utils::array_md5($arr);
 看起来很晕吧, 来几个例子解脱一下
 
 例1:
-'''
+
 - 业务逻辑库类名: base_application_dbtable
 - 业务逻辑库存放目录: app/base/lib/application
 - 业务逻辑库文件名: dbtable.php
 - 业务逻辑库完整文件名: app/base/lib/application/dbtable.php
 - 控制器所在app: base
-'''
+
