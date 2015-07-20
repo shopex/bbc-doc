@@ -14,20 +14,20 @@
 
 例1:
 '''
-控制器类名: b2c_ctl_site_brand
-控制器存放目录: app/b2c/controller/site
+控制器类名: topc_ctl_member_trade
+控制器存放目录: app/topc/controller/member
 控制器文件名: brand.php
-完整的控制器文件名: app/b2c/controller/site/brand.php
-控制器所在app: b2c
+完整的控制器文件名: app/topc/controller/brand.php
+控制器所在app: topc
 '''
 
 例2:
 '''
-控制器类名: b2c_ctl_admin_goods_cat
-控制器存放目录: app/b2c/controller/admin/goods
-控制器文件名: brand.php
-完整的控制器文件名: app/b2c/controller/admin/goods/cat.php
-控制器所在app: b2c
+控制器类名: syscontent_ctl_admin_article
+控制器存放目录: app/syscontent/controller/admin
+控制器文件名: article.php
+完整的控制器文件名: app/syscontent/controller/admin/article.php
+控制器所在app: syscontent
 '''
 
 例3:
