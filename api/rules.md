@@ -3,7 +3,7 @@
 ## 文件位置
 - 文件统一放在如下位置：
 ```
-  app/{$app_name}/app/
+  app/{$app_name}/api/
 ```
 
 ## API注册
@@ -19,6 +19,19 @@
 ```
     'item.search' => ['uses' => 'sysitem_api_item_search@getList', 'version'=>['v1']],
 ```
+
+- API请求权限注册
+API请求权限是注册给app的，比如topc应用可以请求systrade应用提供的api，需要注册如下信息：
+```
+//表示topc可以调用systrade的api，并且每60秒可以调用1000次
+    'depends'=>array (
+         'topc' => array (
+             'systrade' => array ( 'appName' => 'systrade', 'path' => '*', 'limit_count' => 1000, 'limit_seconds' => 60,),
+         ),
+    ),
+```
+dev应用提供了一个命令：cmd dev:rpc depends_info命令可以获取当前代码的调用情况。直接将显示出来的数组复制到config/apis.php的depends项即可
+
 
 ## API开发
 - CLASS格式

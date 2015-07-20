@@ -9,6 +9,18 @@ BBC的app目录说明
 - top***开头的app下默认不存放dbschema
 - 其他不是按sys***,top***开头的app都是ecos基础框架app
 
+- app类型在app.xml中声明
+```
+<app>
+    <type>core</type>
+</app>
+```
+| *APP类型*  | *说明*         |
+| ------------- |:-------------:|
+| core | 这类app为ec-os基础app，提供基础的架构 |
+| service | 这类app为其它app提供服务，可以调用api，也可以提供api |
+| site | 这类app是站点app，外部直接访问到这类app上，可以访问别的app的api |
+
 | *APP名*  | *说明*         |
 | ------------- |:-------------:|
 | base | 框架基础app,基本的MVC框架。带有队列，key-value存储接口。类smarty的模版系统 |

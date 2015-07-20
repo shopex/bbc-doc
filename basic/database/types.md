@@ -580,7 +580,7 @@ return array (
         'app_id' => array (
             'label' => app::get('base')->_('程序目录'),
             'width => 150,
-            'in_list' => true,
+            'default_in_list' => true,
         ),
     ),
 );
@@ -596,15 +596,13 @@ return array (
     'columns' => array (
         'app_id' => array (
             'label' => app::get('base')->_('程序目录'),
-            'width => 150,
+            'width' => 150,
             'in_list' => true,
             'filterdefault' => true,
         ),
     ),
 );
 ```
-
-'filtertype' => 'normal' // normal按type的来生成过滤  custom 按dbschema中设定的filtercustom 设置过滤
 
 #### filtertype, filtercustom定义
 ```php
@@ -615,7 +613,7 @@ return array (
             'required' => true,
             'label' => app::get('b2c')->_('商品名称'),
             'is_title' => true,
-            'filtertype' => 'custom',
+            'filtertype' => 'custom',  // normal按type类型生成过滤 , custom按dbschema中设定的filtercustom 设置过滤
             'filterdefault' => true,
             'filtercustom' =>
             array (
@@ -631,7 +629,92 @@ return array (
 );
 
 ```
+> **注意:** `filtertype`属性, normal按type类型生成过滤 , custom按dbschema中设定的filtercustom 设置过滤
 
+#### searchtype
+finder列表页中简单搜索的处理方式,如果dbschema中存在searchtype则会在desktop列表上显示相关的简单搜索
+
+默认值为`nequal`
+
+```php
+return array (
+    'columns' => array (
+        'title' => array(
+            'type' => 'string',
+            'length' => 90,
+            'required' => true,
+            'default' => '',
+            'label' => app::get('sysitem')->_('商品标题'),
+            'comment' => app::get('sysitem')->_('商品标题'),
+            'is_title' => true,
+            'searchtype' => 'has',
+            'filtertype' => 'custom',
+            'filterdefault' => true,
+            'order' => 12,
+        ),
+    ),
+);    
+
+```
+
+目前支持类型
+
+<table width="100%">
+    <tr>
+        <th>类型</th>
+        <th>描述</td>
+    </tr>
+    <tr>
+        <td>than</td>
+        <td>大于</td>
+    </tr>
+    <tr>
+        <td>小于</td>
+        <td><</td>
+    </tr>
+    <tr>
+        <td>nequal</td>
+        <td>等于</td>
+    </tr>
+    <tr>
+        <td>tequal</td>
+        <td>等于</td>
+    </tr>
+    <tr>
+        <td>sthan</td>
+        <td>小于等于</td>
+    </tr>
+    <tr>
+        <td>bthan</td>
+        <td>大于等于</td>
+    </tr>
+    <tr>
+        <td>has</td>
+        <td>包含</td>
+    </tr>
+    <tr>
+        <td>head</td>
+        <td>头部</td>
+    </tr>
+    <tr>
+        <td>foot</td>
+        <td>尾部</td>
+    </tr>
+    <tr>
+        <td>nohas</td>
+        <td>不包含</td>
+    </tr>
+    <tr>
+        <td>between</td>
+        <td>介于之间</td>
+    </tr>
+    <tr>
+        <td>in</td>
+        <td>在之中</td>
+    </tr>
+</table>
+
+> **注意:** 请尽量不要用foot类型, 因为会用到左like, 会影响性能.
 
 #### is_title定义
 例如, 商品表有cat_id(类目表ID)字段, 那么在finder上cat_id字段会显示类目表中设置为is_title的字段(cat_name)的值.
@@ -643,7 +726,7 @@ return array (
 return array (
     'columns' => array (
         'cat_id' => array (
-            'label' => app::get('base')->_('程序目录'),
+            'label' => app::get('base')->_('商品类目ID),
             'width => 150,
             'in_list' => true,
             'filterdefault' => true,
@@ -657,7 +740,7 @@ return array (
 return array (
     'columns' => array (
         'cat_name => array (
-            'label' => app::get('base')->_('程序目录'),
+            'label' => app::get('base')->_('分类名称'),
             'is_title' => true,
             'width => 150,
             'in_list' => true,

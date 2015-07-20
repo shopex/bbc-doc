@@ -48,11 +48,19 @@ if ($validator->fails())
     // The given data did not pass validation
 }
 ```
+假如验证失败，您可以从验证器中接收错误信息。（1）
+```
+$messages = $validator->messagesInfo(); 
 
-假如验证失败，您可以从验证器中接收错误信息。
+(返回详错误信息，格式为数组如：array('email'=>array(0=>'邮箱格式不对')))
+
+```
+
+假如验证失败，您可以从验证器中接收错误信息。（2）
 ```
 $messages = $validator->messages();
 ```
+
 #使用错误信息
 
 当您调用一个 validator 实例的 messages 方法后，您会得到一个命名为 messageBag的变量，该变量里有许多方便的方法能让您取得相关的错误信息。
