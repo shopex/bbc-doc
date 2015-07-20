@@ -11,7 +11,13 @@
 ## ECOS3.0基本原则
 - [简要说明](/principles/summarize.md)
 - [目录结构](/principles/folder-structure.md)
-- [BBC的app说明](/principles/app-desc.md)
+- [app说明](/principles/app-desc.md)
+- [命名规则]
+  - [api](/principles/api-conventions.md)
+  - [业务逻辑库(library)](/principles/library-conventions.md)
+  - [数据库表,数据库表定义文件及模型命名规则](/principles/model-conventions.md)
+  - [控制器类及文件命名规则](/principles/controller-conventions.md)
+  - [视图文件命名规则](/principles/view-conventions.md)
 
 ## 基础
 - [配置](/basic/configuration.md)
