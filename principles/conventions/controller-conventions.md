@@ -13,7 +13,7 @@
 看起来很晕吧, 来几个例子解脱一下
 
 例1:
-'''
+
 控制器类名: topc_ctl_member_trade
 
 控制器存放目录: app/topc/controller/member
@@ -23,10 +23,10 @@
 完整的控制器文件名: app/topc/controller/brand.php
 
 控制器所在app: topc
-'''
+
 
 例2:
-'''
+
 控制器类名: syscontent_ctl_admin_article
 
 控制器存放目录: app/syscontent/controller/admin
@@ -36,10 +36,10 @@
 完整的控制器文件名: app/syscontent/controller/admin/article.php
 
 控制器所在app: syscontent
-'''
+
 
 例3:
-'''
+
 控制器类名: desktop_ctl_adminpanel
 
 控制器存放目录: app/desktop/controller
@@ -49,4 +49,4 @@
 完整的控制器文件名: app/desktop/controller/adminpanel.php
 
 控制器所在app: desktop
-'''
+
