@@ -13,11 +13,11 @@
 - [目录结构](/principles/folder-structure.md)
 - [app说明](/principles/app-desc.md)
 - [命名规则]
-  - [api](/principles/api-conventions.md)
-  - [业务逻辑库(library)](/principles/library-conventions.md)
-  - [数据库表,数据库表定义文件及模型命名规则](/principles/model-conventions.md)
-  - [控制器类及文件命名规则](/principles/controller-conventions.md)
-  - [视图文件命名规则](/principles/view-conventions.md)
+  - [api](/principles/conventions/api-conventions.md)
+  - [业务逻辑库(library)](/principles/conventions/library-conventions.md)
+  - [数据库表,数据库表定义文件及模型命名规则](/principles/conventions/model-conventions.md)
+  - [控制器类及文件命名规则](/principles/conventions/controller-conventions.md)
+  - [视图文件命名规则](/principles/conventions/view-conventions.md)
 
 ## 基础
 - [配置](/basic/configuration.md)
