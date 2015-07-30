@@ -1,6 +1,6 @@
 # BBC数据词典
 
-总共有表: 107个
+数据库表数量: 121个
 
 - [APP:base](#app-base-define)
   - [base_app_content(app资源信息表, 记录app的service信息)](#table-base_app_content-define)
@@ -28,6 +28,7 @@
 - [APP:image](#app-image-define)
   - [image_image(图片表)](#table-image_image-define)
   - [image_image_attach(图片关联表)](#table-image_image_attach-define)
+  - [image_images(图片表)](#table-image_images-define)
 - [APP:importexport](#app-importexport-define)
   - [importexport_task(导出、导入任务表)](#table-importexport_task-define)
 - [APP:search](#app-search-define)
@@ -58,6 +59,9 @@
 - [APP:sysclearing](#app-sysclearing-define)
   - [sysclearing_settlement(商家账号信息)](#table-sysclearing_settlement-define)
   - [sysclearing_settlement_detail(结算明细表)](#table-sysclearing_settlement_detail-define)
+- [APP:syscontent](#app-syscontent-define)
+  - [syscontent_article(文章主表)](#table-syscontent_article-define)
+  - [syscontent_article_nodes(文章节点表)](#table-syscontent_article_nodes-define)
 - [APP:sysdecorate](#app-sysdecorate-define)
   - [sysdecorate_widgets_instance(挂件实例表)](#table-sysdecorate_widgets_instance-define)
 - [APP:sysitem](#app-sysitem-define)
@@ -65,6 +69,7 @@
   - [sysitem_item_count(商品次数表)](#table-sysitem_item_count-define)
   - [sysitem_item_desc(商品详情表)](#table-sysitem_item_desc-define)
   - [sysitem_item_nature_props(商品自然属性信息表)](#table-sysitem_item_nature_props-define)
+  - [sysitem_item_promotion(商品关联的促销表(新))](#table-sysitem_item_promotion-define)
   - [sysitem_item_status(商品上下架状态表)](#table-sysitem_item_status-define)
   - [sysitem_item_store(商品总库存表)](#table-sysitem_item_store-define)
   - [sysitem_item_tag_promotion(商品关联的促销表)](#table-sysitem_item_tag_promotion-define)
@@ -80,12 +85,19 @@
 - [APP:syspromotion](#app-syspromotion-define)
   - [syspromotion_coupon(优惠券表)](#table-syspromotion_coupon-define)
   - [syspromotion_coupon_item(商品与促销规则关联表)](#table-syspromotion_coupon_item-define)
+  - [syspromotion_freepostage(免邮表)](#table-syspromotion_freepostage-define)
+  - [syspromotion_freepostage_item(商品与促销规则关联表)](#table-syspromotion_freepostage_item-define)
+  - [syspromotion_fulldiscount(满折促销规则表)](#table-syspromotion_fulldiscount-define)
+  - [syspromotion_fulldiscount_item(商品与促销规则关联表)](#table-syspromotion_fulldiscount_item-define)
   - [syspromotion_fullminus(满减促销规则表)](#table-syspromotion_fullminus-define)
   - [syspromotion_fullminus_item(商品与促销规则关联表)](#table-syspromotion_fullminus_item-define)
   - [syspromotion_promotions(各种促销关联表)](#table-syspromotion_promotions-define)
+  - [syspromotion_xydiscount(X件Y折促销规则表)](#table-syspromotion_xydiscount-define)
+  - [syspromotion_xydiscount_item(商品与促销规则关联表)](#table-syspromotion_xydiscount_item-define)
 - [APP:sysrate](#app-sysrate-define)
   - [sysrate_appeal(评论申诉表)](#table-sysrate_appeal-define)
   - [sysrate_dsr(店铺动态评分统计表)](#table-sysrate_dsr-define)
+  - [sysrate_feedback(意见反馈表)](#table-sysrate_feedback-define)
   - [sysrate_score(店铺评分表)](#table-sysrate_score-define)
   - [sysrate_traderate(商品评分表)](#table-sysrate_traderate-define)
 - [APP:sysshop](#app-sysshop-define)
@@ -104,15 +116,18 @@
   - [sysstat_statmember()](#table-sysstat_statmember-define)
   - [sysstat_trade_statics()](#table-sysstat_trade_statics-define)
 - [APP:system](#app-system-define)
+  - [system_adminlog(平台人员操作日志表)](#table-system_adminlog-define)
   - [system_matrixset()](#table-system_matrixset-define)
   - [system_messenger_systmpl(邮件短信模板)](#table-system_messenger_systmpl-define)
   - [system_prism_initstep()](#table-system_prism_initstep-define)
   - [system_queue_mysql(队列-mysql实现表)](#table-system_queue_mysql-define)
+  - [system_seller_log(店铺人员操作日志表)](#table-system_seller_log-define)
 - [APP:systrade](#app-systrade-define)
   - [systrade_cart(购物车)](#table-systrade_cart-define)
   - [systrade_cart_coupon(购物车使用优惠券表)](#table-systrade_cart_coupon-define)
   - [systrade_log(订单日志表)](#table-systrade_log-define)
   - [systrade_order(订单子表)](#table-systrade_order-define)
+  - [systrade_order_complaints(订单投诉表)](#table-systrade_order_complaints-define)
   - [systrade_promotion_detail(订单使用的促销信息表)](#table-systrade_promotion_detail-define)
   - [systrade_trade(订单主表)](#table-systrade_trade-define)
   - [systrade_tradeabnormal(取消异常订单表)](#table-systrade_tradeabnormal-define)
@@ -659,6 +674,35 @@
 | ------------- |-------------|-------------|-------------|
 | primary | attach_id | Yes |  |
 | index_1 | target_id, target_type | No |  |
+<a name="table-image_images-define"></a>
+## image_images
+> **图片表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  id | ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  storage |  |  VARCHAR(50) | Yes | filesystem | No |
+|  image_name |  |  VARCHAR(200) | No |  | No |
+|  target_id | 关联ID |  BIGINT UNSIGNED | Yes | 0 | No |
+|  target_type | 用户类型 |  VARCHAR(20) | Yes |  | No |
+|  img_type | 图片类型，根据图片类型生成不同大小的图片 |  VARCHAR(255) | Yes |  | No |
+|  url |  |  VARCHAR(255) | Yes |  | No |
+|  ident | 唯一标识 |  VARCHAR(200) | No |  | No |
+|  width |  |  INT UNSIGNED | No |  | No |
+|  height |  |  INT UNSIGNED | No |  | No |
+|  size |  |  INT UNSIGNED | No |  | No |
+|  last_modified |  |  INT UNSIGNED | Yes | 0 | No |
+|  disabled | disabled |  TINYINT(1) | Yes | 0 | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | id | Yes |  |
+| ind_target | target_id, target_type | No |  |
+| ind_url | url | Yes |  |
+| ind_unique | url, target_id, target_type | Yes |  |
   
 <a name="app-importexport-define"></a>
 ## app:importexport tables
@@ -976,7 +1020,7 @@
 |  num |  |  INT UNSIGNED | No |  | No |
 |  reason |  |  VARCHAR(255) | No |  | No |
 |  description | 申请描述 |  VARCHAR(255) | No |  | No |
-|  evidence_pic | 图片凭证信息 |  VARCHAR(255) | No |  | No |
+|  evidence_pic | 图片凭证信息 |  VARCHAR(5120) | No |  | No |
 |  shop_explanation | 商家处理申请说明 |  VARCHAR(255) | No |  | No |
 |  admin_explanation | 平台处理申请说明 |  VARCHAR(255) | No |  | No |
 |  sendback_data | 消费者提交退货物流信息 |  LONGTEXT | No |  | No |
@@ -1113,7 +1157,7 @@
 |  prop_value_id | 属性值ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  prop_id | 属性ID |  INT UNSIGNED | Yes | 0 | No |
 |  prop_value | 属性值 |  VARCHAR(100) | Yes |  | No |
-|  prop_image | 属性图片 |  CHAR(32) | No |  | No |
+|  prop_image | 属性图片 |  VARCHAR(255) | No |  | No |
 |  order_sort | 排序 |  INT UNSIGNED | Yes | 0 | No |
 - 索引
 
@@ -1213,6 +1257,53 @@
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
   
+<a name="app-syscontent-define"></a>
+## app:syscontent tables
+
+<a name="table-syscontent_article-define"></a>
+## syscontent_article
+> **文章主表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  article_id | 文章ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  title |  |  VARCHAR(255) | Yes |  | No |
+|  platform | pc:电脑端;wap:移动端; |  VARCHAR(3) | Yes |  | No |
+|  node_id |  |  INT UNSIGNED | Yes |  | No |
+|  pubtime | 发布时间（无需精确到秒） |  INT UNSIGNED | No |  | No |
+|  modified | 更新时间（精确到秒） |  INT UNSIGNED | No |  | No |
+|  ifpub | 发布 |  TINYINT(1) | No | 0 | No |
+|  content | 文章内容 |  LONGTEXT | No |  | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | article_id | Yes |  |
+<a name="table-syscontent_article_nodes-define"></a>
+## syscontent_article_nodes
+> **文章节点表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  node_id | 节点id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  parent_id | 父节点 |  INT UNSIGNED | Yes | 0 | No |
+|  node_depth | 节点深度 |  SMALLINT | Yes | 0 | No |
+|  node_name | 节点名称 |  VARCHAR(255) | Yes |  | No |
+|  node_path | 节点路径 |  VARCHAR(255) | No |  | No |
+|  has_children | 是否存在子节点 |  TINYINT(1) | Yes | 0 | No |
+|  ifpub | 发布 |  TINYINT(1) | Yes | 0 | No |
+|  order_sort | 排序 |  INT UNSIGNED | Yes | 0 | No |
+|  modified | 修改时间 |  INT UNSIGNED | No |  | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | node_id | Yes |  |
+  
 <a name="app-sysdecorate-define"></a>
 ## app:sysdecorate tables
 
@@ -1254,14 +1345,14 @@
 |  cat_id | 商品类目ID |  INT UNSIGNED | Yes |  | No |
 |  brand_id | 品牌 |  INT UNSIGNED | Yes |  | No |
 |  shop_cat_id | 商家自定义分类id |  VARCHAR(255) | Yes |  | No |
-|  title | 商品标题 |  VARCHAR(60) | Yes |  | No |
+|  title | 商品标题 |  VARCHAR(90) | Yes |  | No |
 |  sub_title | 商品子标题 |  VARCHAR(200) | No |  | No |
 |  bn | bn |  VARCHAR(45) | Yes |  | No |
 |  price | 商品价格 |  NUMERIC(20, 3) | Yes |  | No |
 |  cost_price | 商品成本价格 |  NUMERIC(20, 3) | No |  | No |
 |  mkt_price | 商品市场价格 |  NUMERIC(20, 3) | No |  | No |
 |  weight | 商品重量 |  NUMERIC(20, 3) | Yes | 0 | No |
-|  image_default_id | 商品默认图 |  VARCHAR(32) | No |  | No |
+|  image_default_id | 商品默认图 |  VARCHAR(255) | No |  | No |
 |  list_image | 商品图片 |  LONGTEXT | No |  | No |
 |  store | 商品数量 |  INT UNSIGNED | Yes | 0 | No |
 |  freez | 预扣库存 |  INT UNSIGNED | No |  | No |
@@ -1345,6 +1436,21 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_id, prop_id | Yes |  |
+<a name="table-sysitem_item_promotion-define"></a>
+## sysitem_item_promotion
+> **商品关联的促销表(新)**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  item_id | 商品ID |  INT UNSIGNED | Yes |  | No |
+|  promotion_id | 促销id |  INT UNSIGNED | Yes |  | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | item_id, promotion_id | Yes |  |
 <a name="table-sysitem_item_status-define"></a>
 ## sysitem_item_status
 > **商品上下架状态表**
@@ -1614,7 +1720,7 @@
 |  max_gen_quantity | 最大优惠券号码数量 |  INT UNSIGNED | No | 0 | No |
 |  send_couponcode_quantity | 已生成的优惠券号码数量 |  INT UNSIGNED | No | 0 | No |
 |  userlimit_quantity | 用户总计可领取优惠券数量 |  INT UNSIGNED | No | 0 | No |
-|  use_bound | 使用范围\|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 0 | No |
+|  use_bound | 使用范围\|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 1 | No |
 |  coupon_prefix | 优惠券前缀 |  VARCHAR(50) | Yes |  | No |
 |  coupon_key | 优惠券生成的key |  VARCHAR(20) | Yes |  | No |
 |  cansend_start_time | 发优惠券开始时间 |  INT UNSIGNED | No |  | No |
@@ -1641,15 +1747,122 @@
 |  item_id | 商品ID |  INT UNSIGNED | Yes |  | No |
 |  leaf_cat_id | 商品关联的平台叶子节点分类ID |  INT UNSIGNED | Yes |  | No |
 |  title | 商品名称 |  VARCHAR(60) | Yes |  | No |
-|  image_default_id | 商品图片 |  VARCHAR(32) | Yes |  | No |
+|  image_default_id | 商品图片 |  VARCHAR(255) | No |  | No |
 |  price | 商品价格 |  NUMERIC(20, 3) | Yes |  | No |
 |  promotion_tag |  |  VARCHAR(10) | Yes | 0 | No |
+|  canuse_start_time | 起始可使用时间 |  INT UNSIGNED | No | 0 | No |
+|  canuse_end_time | 截止可使用时间 |  INT UNSIGNED | No | 0 | No |
 |  status | 促销状态 |  TINYINT(1) | Yes | 0 | No |
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | coupon_id, item_id | Yes |  |
+<a name="table-syspromotion_freepostage-define"></a>
+## syspromotion_freepostage
+> **免邮表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  freepostage_id | 免邮方案id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  shop_id | 所属商家的店铺id |  INT UNSIGNED | Yes |  | No |
+|  freepostage_name | 免邮名称 |  VARCHAR(255) | Yes |  | No |
+|  freepostage_desc | 免邮描述 |  VARCHAR(255) | Yes |  | No |
+|  used_platform | 使用平台\|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
+|  valid_grade |  |  VARCHAR(255) | Yes |  | No |
+|  gentype | 生成类型\|0:独立添加;1:绑定促销; |  VARCHAR(1) | No | 1 | No |
+|  condition_type | 免邮条件标准\|money:按金额;quantity:按数量; |  VARCHAR(8) | No | money | No |
+|  limit_money | 满足条件金额 |  NUMERIC(20, 3) | No | 0 | No |
+|  limit_quantity | 满足条件数量 |  INT UNSIGNED | No |  | No |
+|  use_bound | 使用范围\|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 0 | No |
+|  start_time | 免邮生效时间 |  INT UNSIGNED | No |  | No |
+|  end_time | 免邮失效时间 |  INT UNSIGNED | No |  | No |
+|  created_time | 创建时间 |  INT UNSIGNED | No |  | No |
+|  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
+|  freepostage_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | freepostage_id | Yes |  |
+<a name="table-syspromotion_freepostage_item-define"></a>
+## syspromotion_freepostage_item
+> **商品与促销规则关联表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  freepostage_id | 满减ID |  INT UNSIGNED | Yes |  | No |
+|  item_id | 商品ID |  INT UNSIGNED | Yes |  | No |
+|  shop_id | 所属商家的店铺id |  INT UNSIGNED | Yes |  | No |
+|  leaf_cat_id | 商品关联的平台叶子节点分类ID |  INT UNSIGNED | Yes |  | No |
+|  title | 商品名称 |  VARCHAR(60) | Yes |  | No |
+|  image_default_id | 商品图片 |  VARCHAR(255) | No |  | No |
+|  price | 商品价格 |  NUMERIC(20, 3) | Yes |  | No |
+|  promotion_tag |  |  VARCHAR(10) | Yes | 0 | No |
+|  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
+|  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
+|  status | 是否生效中 |  TINYINT(1) | Yes | 0 | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | freepostage_id, item_id | Yes |  |
+<a name="table-syspromotion_fulldiscount-define"></a>
+## syspromotion_fulldiscount
+> **满折促销规则表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  fulldiscount_id | 满折规则id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  shop_id | 所属商家的店铺id |  INT UNSIGNED | Yes |  | No |
+|  fulldiscount_name | 满折规则名称 |  VARCHAR(255) | Yes |  | No |
+|  fulldiscount_desc | 规则描述 |  LONGTEXT | No |  | No |
+|  used_platform | 使用平台\|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
+|  use_bound | 使用范围\|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 1 | No |
+|  valid_grade |  |  VARCHAR(255) | No |  | No |
+|  condition_value |  |  VARCHAR(255) | No |  | No |
+|  join_limit |  |  INT UNSIGNED | Yes | 1 | No |
+|  free_postage |  |  TINYINT(1) | No | 0 | No |
+|  created_time | 创建时间 |  INT UNSIGNED | No |  | No |
+|  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
+|  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
+|  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
+|  fulldiscount_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | fulldiscount_id | Yes |  |
+<a name="table-syspromotion_fulldiscount_item-define"></a>
+## syspromotion_fulldiscount_item
+> **商品与促销规则关联表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  fulldiscount_id | 满折ID |  INT UNSIGNED | Yes |  | No |
+|  item_id | 商品ID |  INT UNSIGNED | Yes |  | No |
+|  shop_id | 所属商家的店铺id |  INT UNSIGNED | Yes |  | No |
+|  leaf_cat_id | 商品关联的平台叶子节点分类ID |  INT UNSIGNED | Yes |  | No |
+|  title | 商品名称 |  VARCHAR(60) | Yes |  | No |
+|  image_default_id | 商品图片 |  VARCHAR(250) | No |  | No |
+|  price | 商品价格 |  NUMERIC(20, 3) | Yes |  | No |
+|  promotion_tag |  |  VARCHAR(10) | Yes | 0 | No |
+|  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
+|  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
+|  status | 是否生效中 |  TINYINT(1) | Yes | 0 | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | fulldiscount_id, item_id | Yes |  |
 <a name="table-syspromotion_fullminus-define"></a>
 ## syspromotion_fullminus
 > **满减促销规则表**
@@ -1663,7 +1876,7 @@
 |  fullminus_name | 满减规则名称 |  VARCHAR(255) | Yes |  | No |
 |  fullminus_desc | 规则描述 |  LONGTEXT | No |  | No |
 |  used_platform | 使用平台\|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
-|  use_bound | 使用范围\|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 0 | No |
+|  use_bound | 使用范围\|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 1 | No |
 |  valid_grade |  |  VARCHAR(255) | No |  | No |
 |  condition_value |  |  VARCHAR(255) | No |  | No |
 |  join_limit |  |  INT UNSIGNED | Yes | 1 | No |
@@ -1692,7 +1905,7 @@
 |  shop_id | 所属商家的店铺id |  INT UNSIGNED | Yes |  | No |
 |  leaf_cat_id | 商品关联的平台叶子节点分类ID |  INT UNSIGNED | Yes |  | No |
 |  title | 商品名称 |  VARCHAR(60) | Yes |  | No |
-|  image_default_id | 商品图片 |  VARCHAR(32) | No |  | No |
+|  image_default_id | 商品图片 |  VARCHAR(255) | No |  | No |
 |  price | 商品价格 |  NUMERIC(20, 3) | Yes |  | No |
 |  promotion_tag |  |  VARCHAR(10) | Yes | 0 | No |
 |  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
@@ -1728,6 +1941,58 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | promotion_id | Yes |  |
+<a name="table-syspromotion_xydiscount-define"></a>
+## syspromotion_xydiscount
+> **X件Y折促销规则表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  xydiscount_id | X件Y折规则id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  shop_id | 所属商家的店铺id |  INT UNSIGNED | Yes |  | No |
+|  xydiscount_name | X件Y折规则名称 |  VARCHAR(255) | Yes |  | No |
+|  xydiscount_desc | 规则描述 |  LONGTEXT | No |  | No |
+|  used_platform | 使用平台\|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
+|  use_bound | 使用范围\|0:商家全场可用;1:指定商品可用; |  VARCHAR(1) | No | 1 | No |
+|  valid_grade |  |  VARCHAR(255) | No |  | No |
+|  join_limit |  |  INT UNSIGNED | Yes | 1 | No |
+|  limit_number | 满足条件件数 |  INT UNSIGNED | No |  | No |
+|  discount | 折扣 |  INT UNSIGNED | No | 0 | No |
+|  created_time | 创建时间 |  INT UNSIGNED | No |  | No |
+|  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
+|  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
+|  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
+|  xydiscount_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | xydiscount_id | Yes |  |
+<a name="table-syspromotion_xydiscount_item-define"></a>
+## syspromotion_xydiscount_item
+> **商品与促销规则关联表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  xydiscount_id | X件Y折ID |  INT UNSIGNED | Yes |  | No |
+|  item_id | 商品ID |  INT UNSIGNED | Yes |  | No |
+|  shop_id | 所属商家的店铺id |  INT UNSIGNED | Yes |  | No |
+|  leaf_cat_id | 商品关联的平台叶子节点分类ID |  INT UNSIGNED | Yes |  | No |
+|  title | 商品名称 |  VARCHAR(60) | Yes |  | No |
+|  image_default_id | 商品图片 |  VARCHAR(255) | No |  | No |
+|  price | 商品价格 |  NUMERIC(20, 3) | Yes |  | No |
+|  promotion_tag |  |  VARCHAR(10) | Yes | 0 | No |
+|  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
+|  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
+|  status | 是否生效中 |  TINYINT(1) | Yes | 0 | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | xydiscount_id, item_id | Yes |  |
   
 <a name="app-sysrate-define"></a>
 ## app:sysrate tables
@@ -1745,7 +2010,7 @@
 |  status | WAIT:等待批准;REJECT:申诉驳回;SUCCESS:申诉成功;CLOSE:申诉关闭; |  VARCHAR(7) | No | WAIT | No |
 |  appeal_type | APPLY_DELETE:申请删除评论;APPLY_UPDATE:申请修改评论; |  VARCHAR(12) | No | APPLY_UPDATE | No |
 |  appeal_again | 再次申诉 |  TINYINT(1) | No | 0 | No |
-|  content |  |  LONGTEXT | No |  | No |
+|  content |  |  VARCHAR(1023) | No |  | No |
 |  evidence_pic | 申诉图片凭证 |  VARCHAR(255) | No |  | No |
 |  reject_reason |  |  VARCHAR(255) | No |  | No |
 |  appeal_log | 申诉日志 |  LONGTEXT | No |  | No |
@@ -1775,6 +2040,29 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | shop_id | Yes |  |
+<a name="table-sysrate_feedback-define"></a>
+## sysrate_feedback
+> **意见反馈表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  id | ID |  BIGINT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  seller_id | 用户ID |  BIGINT UNSIGNED | Yes | 0 | No |
+|  shop_id | 店铺ID |  BIGINT | Yes | 0 | No |
+|  status | active:未处理;closed:已关闭; |  VARCHAR(6) | Yes | active | No |
+|  name |  |  VARCHAR(32) | Yes |  | No |
+|  email |  |  VARCHAR(100) | No | 0 | No |
+|  tel |  |  VARCHAR(100) | No |  | No |
+|  question |  |  VARCHAR(255) | No |  | No |
+|  memo |  |  VARCHAR(255) | No |  | No |
+|  modified_time |  |  INT UNSIGNED | No |  | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | id | Yes |  |
 <a name="table-sysrate_score-define"></a>
 ## sysrate_score
 > **店铺评分表**
@@ -1818,10 +2106,10 @@
 |  item_pic | 商品图片绝对路径 |  VARCHAR(255) | No |  | No |
 |  spec_nature_info | sku描述 |  LONGTEXT | No |  | No |
 |  result | good:好评;neutral:中评;bad:差评; |  VARCHAR(7) | No | good | No |
-|  content |  |  LONGTEXT | No |  | No |
+|  content |  |  VARCHAR(1023) | No |  | No |
 |  rate_pic | 晒单图片 |  VARCHAR(255) | No |  | No |
 |  is_reply |  |  TINYINT(1) | No | 0 | No |
-|  reply_content |  |  LONGTEXT | No |  | No |
+|  reply_content |  |  VARCHAR(1023) | No |  | No |
 |  reply_time |  |  INT UNSIGNED | No |  | No |
 |  anony | 是否匿名 |  TINYINT(1) | Yes | 0 | No |
 |  role | seller:卖家;buyer:买家; |  VARCHAR(6) | Yes | buyer | No |
@@ -1927,12 +2215,14 @@
 |  open_time | 开店时间 |  INT UNSIGNED | Yes |  | No |
 |  close_time | 关店时间 |  INT UNSIGNED | No |  | No |
 |  close_reason | 店铺关闭原因 |  VARCHAR(500) | No |  | No |
-|  shop_logo | 提交logo |  VARCHAR(500) | No |  | No |
+|  shop_logo | 提交logo |  VARCHAR(255) | No |  | No |
 |  shopuser_name | 店主姓名 |  VARCHAR(20) | Yes |  | No |
+|  qq | 即时通讯qq账号配置 |  VARCHAR(255) | No |  | No |
+|  wangwang | 即时通讯wangwang账号配置 |  VARCHAR(255) | No |  | No |
 |  email | 邮箱 |  VARCHAR(200) | Yes |  | No |
 |  mobile | 手机号 |  VARCHAR(50) | Yes |  | No |
 |  shopuser_identity | 店主身份证号 |  CHAR(18) | Yes |  | No |
-|  shopuser_identity_img | 店主身份证电子版 |  VARCHAR(32) | No |  | No |
+|  shopuser_identity_img | 店主身份证电子版 |  VARCHAR(255) | No |  | No |
 |  shop_area | 店铺所在地区 |  VARCHAR(255) | Yes |  | No |
 |  shop_addr | 店铺所在地址 |  LONGTEXT | Yes |  | No |
 |  bulletin | 店铺公告 |  VARCHAR(50) | No |  | No |
@@ -1981,10 +2271,10 @@
 |  shop_id | 商家店铺id |  INT UNSIGNED | Yes |  | No |
 |  company_name | 公司名称 |  VARCHAR(50) | Yes |  | No |
 |  license_num | 营业执照注册号 |  VARCHAR(50) | Yes |  | No |
-|  license_img | 营业执照副本-电子版 |  VARCHAR(32) | No |  | No |
+|  license_img | 营业执照副本-电子版 |  VARCHAR(255) | No |  | No |
 |  representative | 法定代表人姓名  |  VARCHAR(20) | Yes |  | No |
 |  corporate_identity | 法人身份证号 |  CHAR(18) | Yes |  | No |
-|  corporate_identity_img | 法人身份证号电子版 |  VARCHAR(32) | No |  | No |
+|  corporate_identity_img | 法人身份证号电子版 |  VARCHAR(255) | No |  | No |
 |  license_area | 营业执照所在地 |  VARCHAR(255) | Yes |  | No |
 |  license_addr | 营业执照详细地址  |  LONGTEXT | Yes |  | No |
 |  establish_date | 成立日期 |  INT UNSIGNED | Yes |  | No |
@@ -1998,9 +2288,9 @@
 |  company_contacts | 公司联系人 |  VARCHAR(20) | Yes |  | No |
 |  company_cmobile | 公司联系人手机号 |  VARCHAR(50) | Yes |  | No |
 |  tissue_code | 组织机构代码 |  VARCHAR(50) | Yes |  | No |
-|  tissue_code_img | 组织机构代码副本-电子版 |  VARCHAR(32) | No |  | No |
+|  tissue_code_img | 组织机构代码副本-电子版 |  VARCHAR(255) | No |  | No |
 |  tax_code | 税务登记号 |  VARCHAR(20) | Yes |  | No |
-|  tax_code_img | 税务登记号副本-电子版 |  VARCHAR(32) | No |  | No |
+|  tax_code_img | 税务登记号副本-电子版 |  VARCHAR(255) | No |  | No |
 |  bank_user_name | 银行开户公司名 |  VARCHAR(50) | Yes |  | No |
 |  bank_name | 开户银行 |  VARCHAR(50) | Yes |  | No |
 |  cnaps_code | 支行联行号 |  VARCHAR(50) | Yes |  | No |
@@ -2023,7 +2313,7 @@
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  shop_id |  关联店铺id |  INT UNSIGNED | Yes |  | No |
 |  brand_id |  关联品牌id |  INT UNSIGNED | Yes |  | No |
-|  brand_warranty | 品牌授权书 |  VARCHAR(50) | No |  | No |
+|  brand_warranty | 品牌授权书 |  VARCHAR(255) | No |  | No |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2167,6 +2457,28 @@
 <a name="app-system-define"></a>
 ## app:system tables
 
+<a name="table-system_adminlog-define"></a>
+## system_adminlog
+> **平台人员操作日志表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  log_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  admin_userid | 管理员id |  INT UNSIGNED | Yes |  | No |
+|  admin_username | 管理员用户名 |  VARCHAR(50) | Yes |  | No |
+|  created_time | 操作时间 |  INT UNSIGNED | Yes |  | No |
+|  memo | 操作内容 |  LONGTEXT | No |  | No |
+|  router | 操作路由 |  VARCHAR(200) | No |  | No |
+|  ip | IP |  VARCHAR(20) | No |  | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | log_id | Yes |  |
+| ind_createdtime | created_time | No |  |
+| ind_adminusername | admin_username | No |  |
 <a name="table-system_matrixset-define"></a>
 ## system_matrixset
 > ****
@@ -2220,7 +2532,7 @@
 |  result | 返回参数 |  LONGTEXT | No |  | No |
 |  create_time | 进入队列的时间 |  INT UNSIGNED | No | 0 | No |
 |  start_time | 任务开始执行时间 |  INT UNSIGNED | No | 0 | No |
-|  complate_time | 任务执行结束时间 |  INT UNSIGNED | No | 0 | No |
+|  complete_time | 任务执行结束时间 |  INT UNSIGNED | No | 0 | No |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2247,6 +2559,29 @@
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
 | ind_get | queue_name, owner_thread_id | No |  |
+<a name="table-system_seller_log-define"></a>
+## system_seller_log
+> **店铺人员操作日志表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  log_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  seller_userid | 店员id |  INT UNSIGNED | Yes |  | No |
+|  seller_username | 店员用户名 |  VARCHAR(50) | Yes |  | No |
+|  shop_id | 店铺id |  INT UNSIGNED | Yes |  | No |
+|  created_time | 操作时间 |  INT UNSIGNED | Yes |  | No |
+|  memo | 操作内容 |  LONGTEXT | No |  | No |
+|  router | 操作路由 |  VARCHAR(50) | No |  | No |
+|  ip | IP |  VARCHAR(15) | No |  | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | log_id | Yes |  |
+| ind_createdtime | created_time | No |  |
+| ind_adminusername | seller_username | No |  |
   
 <a name="app-systrade-define"></a>
 ## app:systrade tables
@@ -2267,7 +2602,7 @@
 |  item_id | 商品id |  INT UNSIGNED | Yes |  | No |
 |  sku_id | sku的id |  INT UNSIGNED | Yes |  | No |
 |  title | 商品标题 |  VARCHAR(60) | Yes |  | No |
-|  image_default_id | 商品默认图 |  VARCHAR(32) | No |  | No |
+|  image_default_id | 商品默认图 |  VARCHAR(255) | No |  | No |
 |  quantity | 数量 |  DOUBLE PRECISION | Yes |  | No |
 |  is_checked | 是否购物车选中 |  TINYINT(1) | Yes | 0 | No |
 |  selected_promotion | 购物车选中的促销ID |  VARCHAR(30) | Yes |  | No |
@@ -2360,6 +2695,7 @@
 |  modified_time | 最后更新时间 |  INT UNSIGNED | No |  | No |
 |  status | 子订单状态\|WAIT_BUYER_PAY:等待买家付款;WAIT_SELLER_SEND_GOODS:等待卖家发货,即:买家已付款;WAIT_BUYER_CONFIRM_GOODS:等待买家确认收货,即:卖家已发货;TRADE_BUYER_SIGNED:买家已签收,货到付款专用;TRADE_FINISHED:交易成功;TRADE_CLOSED_AFTER_PAY:付款以后,用户退款成功，交易自动关闭;TRADE_CLOSED_BEFORE_PAY:付款以前,卖家或买家主动关闭交易; |  VARCHAR(24) | Yes | WAIT_BUYER_PAY | No |
 |  aftersales_status | 售后状态\|WAIT_SELLER_AGREE:买家已经申请退款，等待卖家同意;WAIT_BUYER_RETURN_GOODS:卖家已经同意退款，等待买家退货;WAIT_SELLER_CONFIRM_GOODS:买家已经退货，等待卖家确认收货;SUCCESS:退款成功;CLOSED:退款关闭;REFUNDING:退款中;SELLER_REFUSE_BUYER:卖家拒绝退款;SELLER_SEND_GOODS:卖家已发货; |  VARCHAR(25) | No |  | No |
+|  complaints_status | 订单投诉状态\|NOT_COMPLAINTS:买家未进行投诉;WAIT_SYS_AGREE:买家投诉，等待平台处理;FINISHED:处理完成;BUYER_CLOSED:买家撤销投诉;CLOSED:平台关闭投诉，不需要处理直接关闭; |  VARCHAR(14) | No | NOT_COMPLAINTS | No |
 |  refund_fee | 退款金额 |  NUMERIC(20, 3) | No | 0 | No |
 |  buyer_rate | 买家是否已评价 |  TINYINT(1) | No | 0 | No |
 |  anony | 是否匿名 |  TINYINT(1) | No | 0 | No |
@@ -2376,6 +2712,34 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | oid | Yes |  |
+<a name="table-systrade_order_complaints-define"></a>
+## systrade_order_complaints
+> **订单投诉表**
+    
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  complaints_id |  订单投诉ID |  BIGINT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  shop_id | 被投诉店铺ID |  BIGINT | Yes | 0 | No |
+|  user_id | 发起投诉用户ID |  BIGINT UNSIGNED | Yes | 0 | No |
+|  tid | 投诉订单号 |  BIGINT | Yes |  | No |
+|  oid | 投诉子订单号 |  BIGINT | Yes |  | No |
+|  status | WAIT_SYS_AGREE:等待处理;FINISHED:已完成;BUYER_CLOSED:买家撤销投诉;CLOSED:平台关闭投诉; |  VARCHAR(14) | Yes | WAIT_SYS_AGREE | No |
+|  tel |  |  VARCHAR(100) | Yes | 0 | No |
+|  image_url |  |  VARCHAR(1500) | No |  | No |
+|  complaints_type |  |  VARCHAR(255) | No |  | No |
+|  content |  |  LONGTEXT | No |  | No |
+|  memo |  |  VARCHAR(255) | No |  | No |
+|  buyer_close_reasons |  |  VARCHAR(255) | No |  | No |
+|  created_time |  |  INT UNSIGNED | No |  | No |
+|  modified_time |  |  INT UNSIGNED | No |  | No |
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | complaints_id | Yes |  |
+| ind_oid | oid | Yes |  |
 <a name="table-systrade_promotion_detail-define"></a>
 ## systrade_promotion_detail
 > **订单使用的促销信息表**
@@ -2390,8 +2754,8 @@
 |  promotion_id | 促销规则id |  INT UNSIGNED | Yes |  | No |
 |  item_id | 商品的ID |  INT UNSIGNED | No |  | No |
 |  sku_id | sku的ID |  INT UNSIGNED | No |  | No |
-|  promotion_type | 优惠规则类型 |  VARCHAR(10) | Yes |  | No |
-|  promotion_tag | 促销标签 |  VARCHAR(10) | No |  | No |
+|  promotion_type | 优惠规则类型 |  VARCHAR(30) | Yes |  | No |
+|  promotion_tag | 促销标签 |  VARCHAR(30) | No |  | No |
 |  promotion_name | 促销名称 |  VARCHAR(255) | No |  | No |
 |  promotion_desc | 促销描述 |  LONGTEXT | No |  | No |
 <a name="table-systrade_trade-define"></a>
@@ -2559,7 +2923,7 @@
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  user_id |  |  INT UNSIGNED | Yes |  | No |
-|  grade_id |  |  INT UNSIGNED | Yes | 0 | No |
+|  grade_id |  |  INT UNSIGNED | Yes | 1 | No |
 |  name |  |  VARCHAR(50) | No |  | No |
 |  username |  |  VARCHAR(50) | No |  | No |
 |  point |  |  INT UNSIGNED | Yes | 0 | No |
@@ -2624,7 +2988,8 @@
 |  obtain_desc | 领取方式 |  VARCHAR(255) | Yes |  | No |
 |  obtain_time | 优惠券获得时间 |  INT UNSIGNED | No |  | No |
 |  tid | 使用该优惠券的订单号 |  BIGINT UNSIGNED | No |  | No |
-|  is_valid | 会员优惠券是否当前可用 |  TINYINT(1) | Yes | 1 | No |
+|  is_valid | 会员优惠券是否当前可用\|0:已使用;1:有效;2:过期; |  VARCHAR(1) | Yes | 1 | No |
+|  used_platform | 使用平台\|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2666,7 +3031,7 @@
 |  cat_id | 商品类目ID |  INT UNSIGNED | Yes |  | No |
 |  goods_name |  |  VARCHAR(200) | No |  | No |
 |  goods_price |  |  NUMERIC(20, 3) | No | 0 | No |
-|  image_default_id |  |  VARCHAR(32) | No |  | No |
+|  image_default_id |  |  VARCHAR(255) | No |  | No |
 |  email | 邮箱 |  VARCHAR(100) | No |  | No |
 |  cellphone |  |  VARCHAR(20) | No |  | No |
 |  send_time |  |  INT UNSIGNED | No |  | No |
