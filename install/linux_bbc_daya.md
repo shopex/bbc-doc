@@ -53,7 +53,7 @@ $delCartResult = app::get('systrade')->rpcCall('trade.cart.delete', array('cart_
 
 ### 打压结果
 <img src='dyimages/single/Main Statistics.png'>
-<img src='dyimages/single/Transactions Statistics.png'>
+<img src='dyimages/single/Transactions.png'>
 <img src='dyimages/single/Network Throughput.png'>
 <img src='dyimages/single/Counters Statistics.png'>
 <img src='dyimages/single/Server monitoring.png'>
