@@ -51,3 +51,33 @@ $delCartResult = app::get('systrade')->rpcCall('trade.cart.delete', array('cart_
 9：找到基准点为 600s  50/s  进行基准压力测试  完成.
 ```
 
+### 打压结果
+<img src='dyimages/single/Main Statistics.png'>
+<img src='dyimages/single/Transactions Statistics.png'>
+<img src='dyimages/single/Network Throughput.png'>
+<img src='dyimages/single/Counters Statistics.png'>
+<img src='dyimages/single/Server monitoring.png'>
+<img src='dyimages/single/HTTP return code .png'>
+
+Transactions and Pages
+<img src='dyimages/single/graphes-Transactions-mean_tn.png'>
+Requests and connection establishment
+<img src='dyimages/single/graphes-Perfs-mean_tn.png'>
+Transactions
+<img src='dyimages/single/graphes-Transactions-rate_tn.png'>
+Requests
+<img src='dyimages/single/graphes-Perfs-rate_tn.png'>
+Network traffic
+<img src='dyimages/single/graphes-Size-rate_tn.png'>
+New Users
+<img src='dyimages/single/graphes-Users_Arrival-rate_tn.png'>
+Simultaneous Users
+<img src='dyimages/single/graphes-Users-simultaneous_tn.png'>
+CPU%
+<img src='dyimages/single/graphes-cpu-mean_tn.png'>
+Free Memory
+<img src='dyimages/single/graphes-freemem-mean_tn.png'>
+CPU Load
+<img src='dyimages/single/graphes-load-mean_tn.png'>
+
+
