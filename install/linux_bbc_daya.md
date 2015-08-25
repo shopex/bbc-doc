@@ -58,12 +58,18 @@ $delCartResult = app::get('systrade')->rpcCall('trade.cart.delete', array('cart_
 <img src='dyimages/single/Counters Statistics.png'>
 <img src='dyimages/single/Server monitoring.png'>
 <img src='dyimages/single/HTTP return code .png'>
+ 
+- Transactions and Pages
 
-```Transactions and Pages```
 <img src='dyimages/single/graphes-Transactions-mean_tn.png'>
-Requests and connection establishment
+
+
+- Requests and connection establishment
+
 <img src='dyimages/single/graphes-Perfs-mean_tn.png'>
-Transactions
+
+- Transactions
+
 <img src='dyimages/single/graphes-Transactions-rate_tn.png'>
 Requests
 <img src='dyimages/single/graphes-Perfs-rate_tn.png'>
