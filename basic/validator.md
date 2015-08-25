@@ -41,6 +41,24 @@ $validator = validator::make(
     )
 );
 ```
+##密码验证实例
+```
+$validator = validator::make(
+    ['password' => '12354744' ,'password_confirmation'=>'12354744'],
+    ['password' => 'min:6|max:10|confirmed'],
+    ['password' => '密码长度不能小于6位!|密码长度不能大于20位|密码必须一致！']
+);
+
+if ($validator->fails())
+{
+    $messages = $validator->messagesInfo();
+    foreach( $messages as $error )
+    {
+        throw new LogicException( $error[0] );
+    }
+}
+
+```
 
 当一个 Validator 实例被建立，fails（或 passes） 这两个方法就可以在验证时使用，如下：
 ```
