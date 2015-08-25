@@ -71,19 +71,33 @@ $delCartResult = app::get('systrade')->rpcCall('trade.cart.delete', array('cart_
 - Transactions
 
 <img src='dyimages/single/graphes-Transactions-rate_tn.png'>
-Requests
+
+- Requests
+
 <img src='dyimages/single/graphes-Perfs-rate_tn.png'>
-Network traffic
+
+- Network traffic
+
 <img src='dyimages/single/graphes-Size-rate_tn.png'>
-New Users
+
+- New Users
+
 <img src='dyimages/single/graphes-Users_Arrival-rate_tn.png'>
-Simultaneous Users
+
+- Simultaneous Users
+
 <img src='dyimages/single/graphes-Users-simultaneous_tn.png'>
-CPU%
+
+- CPU%
+
 <img src='dyimages/single/graphes-cpu-mean_tn.png'>
-Free Memory
+
+- Free Memory
+
 <img src='dyimages/single/graphes-freemem-mean_tn.png'>
-CPU Load
+
+- CPU Load
+
 <img src='dyimages/single/graphes-load-mean_tn.png'>
 
 

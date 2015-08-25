@@ -89,23 +89,43 @@ $delCartResult = app::get('systrade')->rpcCall('trade.cart.delete', array('cart_
 <img src='dyimages/jiqun/Server monitoring.png'>
 <img src='dyimages/jiqun/HTTP return code .png'>
 
-Transactions and Pages
+- Transactions and Pages
+
 <img src='dyimages/jiqun/graphes-Transactions-mean_tn.png'>
-Requests and connection establishment
+
+- Requests and connection establishment
+
 <img src='dyimages/jiqun/graphes-Perfs-mean_tn.png'>
-Transactions
+
+- Transactions
+
 <img src='dyimages/jiqun/graphes-Transactions-rate_tn.png'>
-Requests
+
+- Requests
+
 <img src='dyimages/jiqun/graphes-Perfs-rate_tn.png'>
-Network traffic
+
+- Network traffic
+
 <img src='dyimages/jiqun/graphes-Size-rate_tn.png'>
-New Users
+
+- New Users
+
 <img src='dyimages/jiqun/graphes-Users_Arrival-rate_tn.png'>
-Simultaneous Users
+
+- Simultaneous Users
+
 <img src='dyimages/jiqun/graphes-Users-simultaneous_tn.png'>
-CPU%
+
+- CPU%
+
 <img src='dyimages/jiqun/graphes-cpu-mean_tn.png'>
-Free Memory
+
+- Free Memory
+
 <img src='dyimages/jiqun/graphes-freemem-mean_tn.png'>
-CPU Load
+
+- CPU Load
+
 <img src='dyimages/jiqun/graphes-load-mean_tn.png'>
+
