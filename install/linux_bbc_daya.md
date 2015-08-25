@@ -10,7 +10,7 @@ PHP Version 5.4.40 ,mysql 5.6 ,nginx 1.7.7.1 ,apc 3.1.13 ,memcache 2.2.7
 goods 10000 member 4000 order 28800 
 
 ### 打机时间
-60s
+600s
 
 ### 模拟负载
 order 1% ,index 59% ,item 20% ,shopeindex 10% ,search 10% 

@@ -4,7 +4,7 @@
 goods 10000 member 4000 order 120000 
 
 ### 打机时间
-60s
+600s
 
 ### 模拟负载
 order 1% ,index 59% ,item 20% ,shopeindex 10% ,search 10% 
