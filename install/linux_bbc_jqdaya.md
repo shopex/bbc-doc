@@ -82,12 +82,12 @@ $delCartResult = app::get('systrade')->rpcCall('trade.cart.delete', array('cart_
 ```
 
 ### 打压结果
-<img src='dyimages/jiqun/Main Statistics.png'>
-<img src='dyimages/jiqun/Transactions.png'>
-<img src='dyimages/jiqun/Network Throughput.png'>
-<img src='dyimages/jiqun/Counters Statistics.png'>
-<img src='dyimages/jiqun/Server monitoring.png'>
-<img src='dyimages/jiqun/HTTP return code .png'>
+<img src='dyimages/single/Main Statistics.png'>
+<img src='dyimages/single/Transactions.png'>
+<img src='dyimages/single/Network Throughput.png'>
+<img src='dyimages/single/Counters Statistics.png'>
+<img src='dyimages/single/Server monitoring.png'>
+<img src='dyimages/single/HTTP return code .png'>
 
 - Transactions and Pages
 
