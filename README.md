@@ -54,7 +54,7 @@
 - [vagrant部署](/install/vagrant/index.md)
 - [ONex B2b2c安装流程](/install/setup/setup.md)
 - [ONex B2b2c激活流程](/install/setup/active.md)
-- [ONex B2b2c打机打压部署](/install/linux_bbc_daya.md)
+- [ONex B2b2c单机打压部署](/install/linux_bbc_daya.md)
 - [ONex B2b2c多机打压部署](/install/linux_bbc_jqdaya.md)
 
 ## misc
