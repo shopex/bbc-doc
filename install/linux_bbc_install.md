@@ -558,3 +558,11 @@ yum -y install wget make vim install gcc gcc-c++ ncurses ncurses-devel autoconf 
             zend_loader.license_path=
             
       (3) : 重启nginx 和 php-fpm，打开phpinfo查看是否有ZendGuardLoader
+
+
+### 常见问题以及解决方案
+1 前台图片验证码报错
+
+    (1) crontab 用户配置,用同一个用户，尽量避免用root用户。
+    (2) 系统尽量用同一个用户.
+    (3) 检查根目录下面data/kvstore/vcode 文件的权限，看是否有读写执行权限,没有的将其加上
