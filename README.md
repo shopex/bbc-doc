@@ -72,3 +72,4 @@
 
 ## 二次开发实践
 - [新建自定义页面](/custom/newView.md)
+- [API文档](/api/doc/index.md)
