@@ -3498,3 +3498,4 @@
 |  undelivery | 未发货订单数量 |  INT UNSIGNED | No |  | No |
 |  unreceived | 未确认收货订单数量 |  INT UNSIGNED | No |  | No |
 |  unrate | 未评论订单 |  INT UNSIGNED | No |  | No |
+
