@@ -1,8 +1,8 @@
 基本原则
 ================================================
 
-1. [Ecos目录结构](1.folder-structure.md)
-1. [BBC的app目录说明](2.app-desc.md)
+1. [目录结构](1.folder-structure.md)
+1. [app目录结构及说明 ](2.app-desc.md)
 1. [命名规范](3.conventions/README.md)
     1. [API类及文件命名规则](3.conventions/1.api-conventions.md)
     1. [业务逻辑库(library)](3.conventions/2.library-conventions.md)

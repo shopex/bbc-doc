@@ -1,0 +1,20 @@
+框架
+================================================
+
+1. [配置](1.configuration.md)
+1. [bbc队列消耗配置和使用](10.queue.md)
+1. [搜索配置文档和使用方法](11.search.md)
+1. [xhprof优化](13.xhprof.md)
+1. [通过composer引用第三方库](2.composer.md)
+1. [请求](3.requests.md)
+1. [路由](4.routing.md)
+1. [视图(view)与响应(response)](5.responses.md)
+1. [Facades](6.facades.md)
+1. [prism rpc](7.prism.md)
+1. [#基本用法](8.validator.md)
+1. [数据库](database/README.md)
+    1. [数据库使用基础](database/basic.md)
+    1. [BBC数据词典](database/data-dictionary.md)
+    1. [数据库](database/readme.md)
+    1. [dasf](database/test1.md)
+    1. [dbschema数据表定义](database/types.md)
