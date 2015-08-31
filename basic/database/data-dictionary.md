@@ -161,6 +161,7 @@
 <a name="app-base-define"></a>
 ## app:base tables
 
+  
 <a name="table-base_app_content-define"></a>
 ## base_app_content
 > **app资源信息表, 记录app的service信息**
@@ -185,6 +186,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | content_id | Yes |  |
 | ind_content_type | content_type | No |  |
+  
 <a name="table-base_apps-define"></a>
 ## base_apps
 > **系统应用表**
@@ -213,6 +215,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | app_id | Yes |  |
+  
 <a name="table-base_crontab-define"></a>
 ## base_crontab
 > **定时任务表**
@@ -235,6 +238,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+  
 <a name="table-base_kvstore-define"></a>
 ## base_kvstore
 > **kvstore存储表**
@@ -257,6 +261,7 @@
 | primary | id | Yes |  |
 | ind_prefix | prefix | No |  |
 | ind_key | key | No |  |
+  
 <a name="table-base_network-define"></a>
 ## base_network
 > **网络互联表**
@@ -278,6 +283,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | node_id | Yes |  |
+  
 <a name="table-base_rpcpoll-define"></a>
 ## base_rpcpoll
 > **ec-rpc连接池表**
@@ -305,6 +311,7 @@
 | ------------- |-------------|-------------|-------------|
 | ind_rpc_task_id | id, type, process_id | Yes |  |
 | ind_rpc_response_id | process_id | No |  |
+  
 <a name="table-base_setting-define"></a>
 ## base_setting
 > **setting存储表**
@@ -322,6 +329,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | app, key | Yes |  |
+  
 <a name="table-base_syscache_resources-define"></a>
 ## base_syscache_resources
 > **kvstore存储表**
@@ -344,9 +352,12 @@
 | primary | id | Yes |  |
 | ind_prefix | type | No |  |
 | ind_key | key | No |  |
+
+
 <a name="app-desktop-define"></a>
 ## app:desktop tables
 
+  
 <a name="table-desktop_account-define"></a>
 ## desktop_account
 > **用户权限账户表**
@@ -368,6 +379,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | account_id | Yes |  |
 | ind_account | login_name, disabled | Yes |  |
+  
 <a name="table-desktop_filter-define"></a>
 ## desktop_filter
 > **后台搜索过滤器表**
@@ -391,6 +403,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | filter_id | Yes |  |
+  
 <a name="table-desktop_hasrole-define"></a>
 ## desktop_hasrole
 > **后台权限, 角色和用户关联表**
@@ -407,6 +420,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | user_id, role_id | Yes |  |
+  
 <a name="table-desktop_menus-define"></a>
 ## desktop_menus
 > **后台菜单表**
@@ -438,6 +452,7 @@
 | ind_menu_type | menu_type | No |  |
 | ind_menu_path | menu_path | No |  |
 | ind_menu_order | menu_order | No |  |
+  
 <a name="table-desktop_roles-define"></a>
 ## desktop_roles
 > **管理员角色表**
@@ -455,6 +470,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | role_id | Yes |  |
+  
 <a name="table-desktop_tag-define"></a>
 ## desktop_tag
 > **finder tag(标签)表**
@@ -482,6 +498,7 @@
 | primary | tag_id | Yes |  |
 | ind_type | tag_type | No |  |
 | ind_name | tag_name | No |  |
+  
 <a name="table-desktop_tag_rel-define"></a>
 ## desktop_tag_rel
 > **tag和对象关联表**
@@ -501,6 +518,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | tag_id, rel_id | Yes |  |
+  
 <a name="table-desktop_users-define"></a>
 ## desktop_users
 > **商店后台管理员表**
@@ -528,9 +546,12 @@
 | ------------- |-------------|-------------|-------------|
 | primary | user_id | Yes |  |
 | ind_disabled | disabled | No |  |
+
+
 <a name="app-ectools-define"></a>
 ## app:ectools tables
 
+  
 <a name="table-ectools_analysis-define"></a>
 ## ectools_analysis
 > **ectools app统计表**
@@ -549,6 +570,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+  
 <a name="table-ectools_analysis_logs-define"></a>
 ## ectools_analysis_logs
 > **ectools统计日志**
@@ -574,6 +596,7 @@
 | ind_type | type | No |  |
 | ind_target | target | No |  |
 | ind_time | time | No |  |
+  
 <a name="table-ectools_payments-define"></a>
 ## ectools_payments
 > **支付记录**
@@ -615,6 +638,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | payment_id | Yes |  |
 | ind_disabled | disabled | No |  |
+  
 <a name="table-ectools_refunds-define"></a>
 ## ectools_refunds
 > **退款单表**
@@ -652,6 +676,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | refund_id | Yes |  |
+  
 <a name="table-ectools_trade_paybill-define"></a>
 ## ectools_trade_paybill
 > **订单支付单据记录**
@@ -675,9 +700,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | paybill_id | Yes |  |
+
+
 <a name="app-image-define"></a>
 ## app:image tables
 
+  
 <a name="table-image_image-define"></a>
 ## image_image
 > **图片表**
@@ -707,6 +735,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | image_id | Yes |  |
+  
 <a name="table-image_image_attach-define"></a>
 ## image_image_attach
 > **图片关联表**
@@ -727,6 +756,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | attach_id | Yes |  |
 | index_1 | target_id, target_type | No |  |
+  
 <a name="table-image_images-define"></a>
 ## image_images
 > **图片表**
@@ -757,9 +787,12 @@
 | ind_target | target_id, target_type | No |  |
 | ind_url | url | Yes |  |
 | ind_unique | url, target_id, target_type | Yes |  |
+
+
 <a name="app-importexport-define"></a>
 ## app:importexport tables
 
+  
 <a name="table-importexport_task-define"></a>
 ## importexport_task
 > **导出、导入任务表**
@@ -784,9 +817,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | task_id | Yes |  |
+
+
 <a name="app-search-define"></a>
 ## app:search tables
 
+  
 <a name="table-search_associate-define"></a>
 ## search_associate
 > ****
@@ -807,6 +843,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
 | ind_last_modify | last_modify | No |  |
+  
 <a name="table-search_delta-define"></a>
 ## search_delta
 > ****
@@ -825,9 +862,12 @@
 | ------------- |-------------|-------------|-------------|
 | primary | id, index_name | Yes |  |
 | ind_last_modify | last_modify | No |  |
+
+
 <a name="app-serveradm-define"></a>
 ## app:serveradm tables
 
+  
 <a name="table-serveradm_xhprof-define"></a>
 ## serveradm_xhprof
 > **xphrof**
@@ -853,9 +893,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | run_id | Yes |  |
+
+
 <a name="app-site-define"></a>
 ## app:site tables
 
+  
 <a name="table-site_explorers-define"></a>
 ## site_explorers
 > **site地图表**
@@ -874,6 +917,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+  
 <a name="table-site_link-define"></a>
 ## site_link
 > **前台链接表**
@@ -894,6 +938,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | link_id | Yes |  |
+  
 <a name="table-site_menus-define"></a>
 ## site_menus
 > **导航菜单表**
@@ -920,6 +965,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+  
 <a name="table-site_seo-define"></a>
 ## site_seo
 > **前台SEO配置表**
@@ -941,6 +987,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+  
 <a name="table-site_themes-define"></a>
 ## site_themes
 > **模板表**
@@ -965,6 +1012,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | theme | Yes |  |
+  
 <a name="table-site_themes_file-define"></a>
 ## site_themes_file
 > **模板文件表**
@@ -988,6 +1036,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+  
 <a name="table-site_themes_tmpl-define"></a>
 ## site_themes_tmpl
 > **页面模板表**
@@ -1009,6 +1058,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+  
 <a name="table-site_widgets-define"></a>
 ## site_widgets
 > **挂件表**
@@ -1028,6 +1078,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
 | ind_uniq | app, theme, name | No |  |
+  
 <a name="table-site_widgets_instance-define"></a>
 ## site_widgets_instance
 > **挂件实例表**
@@ -1058,9 +1109,12 @@
 | primary | widgets_id | Yes |  |
 | ind_wgbase | core_file, core_id, widgets_order | No |  |
 | ind_wginfo | core_file, core_slot, widgets_order | No |  |
+
+
 <a name="app-sysaftersales-define"></a>
 ## app:sysaftersales tables
 
+  
 <a name="table-sysaftersales_aftersales-define"></a>
 ## sysaftersales_aftersales
 > **售后申请**
@@ -1094,6 +1148,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | aftersales_bn | Yes |  |
+  
 <a name="table-sysaftersales_refunds-define"></a>
 ## sysaftersales_refunds
 > **退款申请表**
@@ -1120,9 +1175,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | refunds_id | Yes |  |
+
+
 <a name="app-syscategory-define"></a>
 ## app:syscategory tables
 
+  
 <a name="table-syscategory_brand-define"></a>
 ## syscategory_brand
 > **品牌表**
@@ -1148,6 +1206,7 @@
 | primary | brand_id | Yes |  |
 | ind_disabled | disabled | No |  |
 | ind_ordernum | order_sort | No |  |
+  
 <a name="table-syscategory_cat-define"></a>
 ## syscategory_cat
 > **类别属性值有限表**
@@ -1179,6 +1238,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | cat_id | Yes |  |
+  
 <a name="table-syscategory_cat_rel_brand-define"></a>
 ## syscategory_cat_rel_brand
 > **分类和品牌关联表**
@@ -1196,6 +1256,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | cat_id, brand_id | Yes |  |
+  
 <a name="table-syscategory_cat_rel_prop-define"></a>
 ## syscategory_cat_rel_prop
 > **商品属性表**
@@ -1213,6 +1274,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | prop_id, cat_id | Yes |  |
+  
 <a name="table-syscategory_prop_values-define"></a>
 ## syscategory_prop_values
 > **属性值表**
@@ -1232,6 +1294,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | prop_value_id | Yes |  |
+  
 <a name="table-syscategory_props-define"></a>
 ## syscategory_props
 > **属性表**
@@ -1258,9 +1321,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | prop_id | Yes |  |
+
+
 <a name="app-sysclearing-define"></a>
 ## app:sysclearing tables
 
+  
 <a name="table-sysclearing_settlement-define"></a>
 ## sysclearing_settlement
 > **商家账号信息**
@@ -1287,6 +1353,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | settlement_no | Yes |  |
+  
 <a name="table-sysclearing_settlement_detail-define"></a>
 ## sysclearing_settlement_detail
 > **结算明细表**
@@ -1326,9 +1393,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+
+
 <a name="app-syscontent-define"></a>
 ## app:syscontent tables
 
+  
 <a name="table-syscontent_article-define"></a>
 ## syscontent_article
 > **文章主表**
@@ -1352,6 +1422,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | article_id | Yes |  |
+  
 <a name="table-syscontent_article_nodes-define"></a>
 ## syscontent_article_nodes
 > **文章节点表**
@@ -1375,9 +1446,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | node_id | Yes |  |
+
+
 <a name="app-sysdecorate-define"></a>
 ## app:sysdecorate tables
 
+  
 <a name="table-sysdecorate_widgets_instance-define"></a>
 ## sysdecorate_widgets_instance
 > **挂件实例表**
@@ -1400,9 +1474,12 @@
 | ------------- |-------------|-------------|-------------|
 | primary | widgets_id | Yes |  |
 | ind_wgbase | shop_id, widgets_type | No |  |
+
+
 <a name="app-sysitem-define"></a>
 ## app:sysitem tables
 
+  
 <a name="table-sysitem_item-define"></a>
 ## sysitem_item
 > **商品表**
@@ -1450,6 +1527,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_id | Yes |  |
+  
 <a name="table-sysitem_item_count-define"></a>
 ## sysitem_item_count
 > **商品次数表**
@@ -1472,6 +1550,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_id | Yes |  |
+  
 <a name="table-sysitem_item_desc-define"></a>
 ## sysitem_item_desc
 > **商品详情表**
@@ -1490,6 +1569,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_id | Yes |  |
+  
 <a name="table-sysitem_item_nature_props-define"></a>
 ## sysitem_item_nature_props
 > **商品自然属性信息表**
@@ -1511,6 +1591,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_id, prop_id | Yes |  |
+  
 <a name="table-sysitem_item_promotion-define"></a>
 ## sysitem_item_promotion
 > **商品关联的促销表(新)**
@@ -1527,6 +1608,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_id, promotion_id | Yes |  |
+  
 <a name="table-sysitem_item_status-define"></a>
 ## sysitem_item_status
 > **商品上下架状态表**
@@ -1546,6 +1628,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_id | Yes |  |
+  
 <a name="table-sysitem_item_store-define"></a>
 ## sysitem_item_store
 > **商品总库存表**
@@ -1563,6 +1646,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_id | Yes |  |
+  
 <a name="table-sysitem_item_tag_promotion-define"></a>
 ## sysitem_item_tag_promotion
 > **商品关联的促销表**
@@ -1579,6 +1663,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_id | Yes |  |
+  
 <a name="table-sysitem_sku-define"></a>
 ## sysitem_sku
 > **货品表**
@@ -1609,6 +1694,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | sku_id | Yes |  |
+  
 <a name="table-sysitem_sku_store-define"></a>
 ## sysitem_sku_store
 > **商品库存表**
@@ -1627,6 +1713,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_id, sku_id | Yes |  |
+  
 <a name="table-sysitem_spec_index-define"></a>
 ## sysitem_spec_index
 > **商品规格索引表**
@@ -1647,9 +1734,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | prop_value_id, sku_id | Yes |  |
+
+
 <a name="app-syslogistics-define"></a>
 ## app:syslogistics tables
 
+  
 <a name="table-syslogistics_coupon-define"></a>
 ## syslogistics_coupon
 > **优惠券表**
@@ -1666,6 +1756,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | cpns_id | Yes |  |
+  
 <a name="table-syslogistics_delivery-define"></a>
 ## syslogistics_delivery
 > **发货单表**
@@ -1709,6 +1800,7 @@
 | primary | delivery_id | Yes |  |
 | ind_disabled | disabled | No |  |
 | ind_logi_no | logi_no | No |  |
+  
 <a name="table-syslogistics_delivery_detail-define"></a>
 ## syslogistics_delivery_detail
 > **发货/退货单明细表**
@@ -1731,6 +1823,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | detail_id | Yes |  |
+  
 <a name="table-syslogistics_dlycorp-define"></a>
 ## syslogistics_dlycorp
 > **物流公司表**
@@ -1754,6 +1847,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | corp_id | Yes |  |
 | ind_corp_code | corp_code | No |  |
+  
 <a name="table-syslogistics_dlytmpl-define"></a>
 ## syslogistics_dlytmpl
 > **快递模板配置表**
@@ -1783,9 +1877,12 @@
 | primary | template_id | Yes |  |
 | ind_shop_temp_id | shop_id, template_id | No |  |
 | ind_shop_id | shop_id | No |  |
+
+
 <a name="app-sysopen-define"></a>
 ## app:sysopen tables
 
+  
 <a name="table-sysopen_keys-define"></a>
 ## sysopen_keys
 > **店铺请求开放api的key和secret**
@@ -1805,6 +1902,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | shop_id | Yes |  |
+  
 <a name="table-sysopen_shopconf-define"></a>
 ## sysopen_shopconf
 > **店铺请求开放api的key和secret**
@@ -1821,9 +1919,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | shop_id | Yes |  |
+
+
 <a name="app-syspromotion-define"></a>
 ## app:syspromotion tables
 
+  
 <a name="table-syspromotion_activity_goods-define"></a>
 ## syspromotion_activity_goods
 > ****
@@ -1854,6 +1955,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+  
 <a name="table-syspromotion_activity_remid-define"></a>
 ## syspromotion_activity_remid
 > ****
@@ -1877,6 +1979,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | remind_id | Yes |  |
+  
 <a name="table-syspromotion_activity_rule-define"></a>
 ## syspromotion_activity_rule
 > ****
@@ -1906,6 +2009,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | activity_id | Yes |  |
+  
 <a name="table-syspromotion_activity_tags-define"></a>
 ## syspromotion_activity_tags
 > ****
@@ -1923,6 +2027,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | type_id | Yes |  |
+  
 <a name="table-syspromotion_coupon-define"></a>
 ## syspromotion_coupon
 > **优惠券表**
@@ -1958,6 +2063,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | coupon_id | Yes |  |
+  
 <a name="table-syspromotion_coupon_item-define"></a>
 ## syspromotion_coupon_item
 > **商品与促销规则关联表**
@@ -1982,6 +2088,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | coupon_id, item_id | Yes |  |
+  
 <a name="table-syspromotion_freepostage-define"></a>
 ## syspromotion_freepostage
 > **免邮表**
@@ -2012,6 +2119,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | freepostage_id | Yes |  |
+  
 <a name="table-syspromotion_freepostage_item-define"></a>
 ## syspromotion_freepostage_item
 > **商品与促销规则关联表**
@@ -2037,6 +2145,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | freepostage_id, item_id | Yes |  |
+  
 <a name="table-syspromotion_fulldiscount-define"></a>
 ## syspromotion_fulldiscount
 > **满折促销规则表**
@@ -2066,6 +2175,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | fulldiscount_id | Yes |  |
+  
 <a name="table-syspromotion_fulldiscount_item-define"></a>
 ## syspromotion_fulldiscount_item
 > **商品与促销规则关联表**
@@ -2091,6 +2201,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | fulldiscount_id, item_id | Yes |  |
+  
 <a name="table-syspromotion_fullminus-define"></a>
 ## syspromotion_fullminus
 > **满减促销规则表**
@@ -2121,6 +2232,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | fullminus_id | Yes |  |
+  
 <a name="table-syspromotion_fullminus_item-define"></a>
 ## syspromotion_fullminus_item
 > **商品与促销规则关联表**
@@ -2146,6 +2258,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | fullminus_id, item_id | Yes |  |
+  
 <a name="table-syspromotion_promotions-define"></a>
 ## syspromotion_promotions
 > **各种促销关联表**
@@ -2172,6 +2285,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | promotion_id | Yes |  |
+  
 <a name="table-syspromotion_xydiscount-define"></a>
 ## syspromotion_xydiscount
 > **X件Y折促销规则表**
@@ -2202,6 +2316,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | xydiscount_id | Yes |  |
+  
 <a name="table-syspromotion_xydiscount_item-define"></a>
 ## syspromotion_xydiscount_item
 > **商品与促销规则关联表**
@@ -2227,9 +2342,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | xydiscount_id, item_id | Yes |  |
+
+
 <a name="app-sysrate-define"></a>
 ## app:sysrate tables
 
+  
 <a name="table-sysrate_appeal-define"></a>
 ## sysrate_appeal
 > **评论申诉表**
@@ -2255,6 +2373,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | appeal_id | Yes |  |
+  
 <a name="table-sysrate_consultation-define"></a>
 ## sysrate_consultation
 > **商品咨询表**
@@ -2289,6 +2408,7 @@
 | primary | consultation_id | Yes |  |
 | ind_item_id | item_id | No |  |
 | ind_shop_id | shop_id | No |  |
+  
 <a name="table-sysrate_dsr-define"></a>
 ## sysrate_dsr
 > **店铺动态评分统计表**
@@ -2309,6 +2429,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | shop_id | Yes |  |
+  
 <a name="table-sysrate_feedback-define"></a>
 ## sysrate_feedback
 > **意见反馈表**
@@ -2333,6 +2454,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+  
 <a name="table-sysrate_score-define"></a>
 ## sysrate_score
 > **店铺评分表**
@@ -2358,6 +2480,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | tid | Yes |  |
+  
 <a name="table-sysrate_traderate-define"></a>
 ## sysrate_traderate
 > **商品评分表**
@@ -2398,9 +2521,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | rate_id | Yes |  |
+
+
 <a name="app-sysshop-define"></a>
 ## app:sysshop tables
 
+  
 <a name="table-sysshop_account-define"></a>
 ## sysshop_account
 > **商家会员表**
@@ -2421,6 +2547,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | seller_id | Yes |  |
+  
 <a name="table-sysshop_enterapply-define"></a>
 ## sysshop_enterapply
 > **入驻申请表**
@@ -2451,6 +2578,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | enterapply_id | Yes |  |
 | ind_seller_id | seller_id | No |  |
+  
 <a name="table-sysshop_roles-define"></a>
 ## sysshop_roles
 > **角色表**
@@ -2469,6 +2597,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | role_id | Yes |  |
+  
 <a name="table-sysshop_seller-define"></a>
 ## sysshop_seller
 > **商家账号信息**
@@ -2491,6 +2620,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | seller_id | Yes |  |
+  
 <a name="table-sysshop_shop-define"></a>
 ## sysshop_shop
 > **店铺表**
@@ -2527,6 +2657,7 @@
 | primary | shop_id | Yes |  |
 | ind_seller_id | seller_id | No |  |
 | ind_shop_type | shop_type | No |  |
+  
 <a name="table-sysshop_shop_cat-define"></a>
 ## sysshop_shop_cat
 > **店铺分类表**
@@ -2553,6 +2684,7 @@
 | primary | cat_id | Yes |  |
 | ind_parent_id | parent_id | No |  |
 | ind_cat_shop_id | shop_id, cat_id | No |  |
+  
 <a name="table-sysshop_shop_info-define"></a>
 ## sysshop_shop_info
 > **企业信息表**
@@ -2599,6 +2731,7 @@
 | primary | info_id | Yes |  |
 | ind_seller_id | seller_id | No |  |
 | ind_shop_id | shop_id | No |  |
+  
 <a name="table-sysshop_shop_notice-define"></a>
 ## sysshop_shop_notice
 > **商家通知表**
@@ -2621,6 +2754,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | notice_id | Yes |  |
+  
 <a name="table-sysshop_shop_rel_brand-define"></a>
 ## sysshop_shop_rel_brand
 > ****
@@ -2638,6 +2772,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | shop_id, brand_id | Yes |  |
+  
 <a name="table-sysshop_shop_rel_lv1cat-define"></a>
 ## sysshop_shop_rel_lv1cat
 > **店铺关联类目表**
@@ -2657,6 +2792,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | rel_id | Yes |  |
 | ind_unique | cat_id, shop_id | Yes |  |
+  
 <a name="table-sysshop_shop_rel_seller-define"></a>
 ## sysshop_shop_rel_seller
 > ****
@@ -2676,6 +2812,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | shop_id, seller_id | Yes |  |
+  
 <a name="table-sysshop_shop_type-define"></a>
 ## sysshop_shop_type
 > **店铺类型表**
@@ -2699,9 +2836,12 @@
 | ------------- |-------------|-------------|-------------|
 | primary | shoptype_id | Yes |  |
 | ind_shop_type | shop_type | No |  |
+
+
 <a name="app-sysstat-define"></a>
 ## app:sysstat tables
 
+  
 <a name="table-sysstat_item_statics-define"></a>
 ## sysstat_item_statics
 > ****
@@ -2724,6 +2864,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | item_stat_id | Yes |  |
+  
 <a name="table-sysstat_statmember-define"></a>
 ## sysstat_statmember
 > ****
@@ -2746,6 +2887,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | statm_id | Yes |  |
+  
 <a name="table-sysstat_trade_statics-define"></a>
 ## sysstat_trade_statics
 > ****
@@ -2777,9 +2919,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | stat_id | Yes |  |
+
+
 <a name="app-system-define"></a>
 ## app:system tables
 
+  
 <a name="table-system_adminlog-define"></a>
 ## system_adminlog
 > **平台人员操作日志表**
@@ -2804,6 +2949,7 @@
 | primary | log_id | Yes |  |
 | ind_createdtime | created_time | No |  |
 | ind_adminusername | admin_username | No |  |
+  
 <a name="table-system_matrixset-define"></a>
 ## system_matrixset
 > ****
@@ -2826,6 +2972,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | matrixset_id | Yes |  |
+  
 <a name="table-system_messenger_systmpl-define"></a>
 ## system_messenger_systmpl
 > **邮件短信模板**
@@ -2844,6 +2991,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | tmpl_name | Yes |  |
+  
 <a name="table-system_prism_initstep-define"></a>
 ## system_prism_initstep
 > ****
@@ -2866,6 +3014,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | step_id | Yes |  |
+  
 <a name="table-system_queue_mysql-define"></a>
 ## system_queue_mysql
 > **队列-mysql实现表**
@@ -2888,6 +3037,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
 | ind_get | queue_name, owner_thread_id | No |  |
+  
 <a name="table-system_seller_log-define"></a>
 ## system_seller_log
 > **店铺人员操作日志表**
@@ -2912,9 +3062,12 @@
 | primary | log_id | Yes |  |
 | ind_createdtime | created_time | No |  |
 | ind_adminusername | seller_username | No |  |
+
+
 <a name="app-systrade-define"></a>
 ## app:systrade tables
 
+  
 <a name="table-systrade_cart-define"></a>
 ## systrade_cart
 > **购物车**
@@ -2946,6 +3099,7 @@
 | ind_sku_id | sku_id, user_ident | No |  |
 | ind_shop_id | shop_id | No |  |
 | ind_user_id | user_id | No |  |
+  
 <a name="table-systrade_cart_coupon-define"></a>
 ## systrade_cart_coupon
 > **购物车使用优惠券表**
@@ -2966,6 +3120,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
 | ind_shopusers_id | shop_id, user_id | Yes |  |
+  
 <a name="table-systrade_log-define"></a>
 ## systrade_log
 > **订单日志表**
@@ -2988,6 +3143,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | log_id | Yes |  |
+  
 <a name="table-systrade_order-define"></a>
 ## systrade_order
 > **订单子表**
@@ -3045,6 +3201,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | oid | Yes |  |
+  
 <a name="table-systrade_order_complaints-define"></a>
 ## systrade_order_complaints
 > **订单投诉表**
@@ -3074,6 +3231,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | complaints_id | Yes |  |
 | ind_oid | oid | Yes |  |
+  
 <a name="table-systrade_promotion_detail-define"></a>
 ## systrade_promotion_detail
 > **订单使用的促销信息表**
@@ -3092,6 +3250,7 @@
 |  promotion_tag | 促销标签 |  VARCHAR(30) | No |  | No |
 |  promotion_name | 促销名称 |  VARCHAR(255) | No |  | No |
 |  promotion_desc | 促销描述 |  LONGTEXT | No |  | No |
+  
 <a name="table-systrade_trade-define"></a>
 ## systrade_trade
 > **订单主表**
@@ -3160,6 +3319,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | tid | Yes |  |
+  
 <a name="table-systrade_tradeabnormal-define"></a>
 ## systrade_tradeabnormal
 > **取消异常订单表**
@@ -3181,9 +3341,12 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
+
+
 <a name="app-sysuser-define"></a>
 ## app:sysuser tables
 
+  
 <a name="table-sysuser_account-define"></a>
 ## sysuser_account
 > **商城会员用户表**
@@ -3207,6 +3370,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | user_id | Yes |  |
+  
 <a name="table-sysuser_shop_fav-define"></a>
 ## sysuser_shop_fav
 > ****
@@ -3227,6 +3391,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | snotify_id | Yes |  |
+  
 <a name="table-sysuser_trustinfo-define"></a>
 ## sysuser_trustinfo
 > ****
@@ -3245,6 +3410,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | trust_id | Yes |  |
 | ind_bind_uniq | user_id, user_flag | Yes |  |
+  
 <a name="table-sysuser_user-define"></a>
 ## sysuser_user
 > **商店会员表**
@@ -3283,6 +3449,7 @@
 | primary | user_id | Yes |  |
 | ind_regtime | regtime | No |  |
 | ind_disabled | disabled | No |  |
+  
 <a name="table-sysuser_user_addrs-define"></a>
 ## sysuser_user_addrs
 > **会员地址表**
@@ -3306,6 +3473,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | addr_id | Yes |  |
+  
 <a name="table-sysuser_user_coupon-define"></a>
 ## sysuser_user_coupon
 > **用户优惠券表**
@@ -3329,6 +3497,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | coupon_code, user_id, shop_id | Yes |  |
+  
 <a name="table-sysuser_user_experience-define"></a>
 ## sysuser_user_experience
 > **会员经验值详细记录表**
@@ -3351,6 +3520,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | experience_id | Yes |  |
+  
 <a name="table-sysuser_user_fav-define"></a>
 ## sysuser_user_fav
 > **收藏/缺货登记**
@@ -3380,6 +3550,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | gnotify_id | Yes |  |
+  
 <a name="table-sysuser_user_grade-define"></a>
 ## sysuser_user_grade
 > **会员等级表**
@@ -3401,6 +3572,7 @@
 | ------------- |-------------|-------------|-------------|
 | primary | grade_id | Yes |  |
 | ind_experience | experience | No |  |
+  
 <a name="table-sysuser_user_item_notify-define"></a>
 ## sysuser_user_item_notify
 > **缺货表**
@@ -3423,6 +3595,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | gnotify_id | Yes |  |
+  
 <a name="table-sysuser_user_point-define"></a>
 ## sysuser_user_point
 > **会员积分值详细记录表**
@@ -3445,6 +3618,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | point_id | Yes |  |
+  
 <a name="table-sysuser_user_pointlog-define"></a>
 ## sysuser_user_pointlog
 > **会员积分值明细表**
@@ -3467,6 +3641,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | pointlog_id | Yes |  |
+  
 <a name="table-sysuser_user_points-define"></a>
 ## sysuser_user_points
 > **会员积分表**
@@ -3485,6 +3660,7 @@
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | user_id | Yes |  |
+  
 <a name="table-sysuser_user_trade_count-define"></a>
 ## sysuser_user_trade_count
 > ****
@@ -3498,4 +3674,3 @@
 |  undelivery | 未发货订单数量 |  INT UNSIGNED | No |  | No |
 |  unreceived | 未确认收货订单数量 |  INT UNSIGNED | No |  | No |
 |  unrate | 未评论订单 |  INT UNSIGNED | No |  | No |
-
