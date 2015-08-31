@@ -1,6 +1,6 @@
 # BBC数据词典
 
-数据库表数量: 121个
+数据库表数量: 132个
 
 - [APP:base](#app-base-define)
   - [base_app_content(app资源信息表, 记录app的service信息)](#table-base_app_content-define)
@@ -25,6 +25,7 @@
   - [ectools_analysis_logs(ectools统计日志)](#table-ectools_analysis_logs-define)
   - [ectools_payments(支付记录)](#table-ectools_payments-define)
   - [ectools_refunds(退款单表)](#table-ectools_refunds-define)
+  - [ectools_trade_paybill(订单支付单据记录)](#table-ectools_trade_paybill-define)
 - [APP:image](#app-image-define)
   - [image_image(图片表)](#table-image_image-define)
   - [image_image_attach(图片关联表)](#table-image_image_attach-define)
@@ -82,7 +83,14 @@
   - [syslogistics_delivery_detail(发货/退货单明细表)](#table-syslogistics_delivery_detail-define)
   - [syslogistics_dlycorp(物流公司表)](#table-syslogistics_dlycorp-define)
   - [syslogistics_dlytmpl(快递模板配置表)](#table-syslogistics_dlytmpl-define)
+- [APP:sysopen](#app-sysopen-define)
+  - [sysopen_keys(店铺请求开放api的key和secret)](#table-sysopen_keys-define)
+  - [sysopen_shopconf(店铺请求开放api的key和secret)](#table-sysopen_shopconf-define)
 - [APP:syspromotion](#app-syspromotion-define)
+  - [syspromotion_activity_goods()](#table-syspromotion_activity_goods-define)
+  - [syspromotion_activity_remid()](#table-syspromotion_activity_remid-define)
+  - [syspromotion_activity_rule()](#table-syspromotion_activity_rule-define)
+  - [syspromotion_activity_tags()](#table-syspromotion_activity_tags-define)
   - [syspromotion_coupon(优惠券表)](#table-syspromotion_coupon-define)
   - [syspromotion_coupon_item(商品与促销规则关联表)](#table-syspromotion_coupon_item-define)
   - [syspromotion_freepostage(免邮表)](#table-syspromotion_freepostage-define)
@@ -96,6 +104,7 @@
   - [syspromotion_xydiscount_item(商品与促销规则关联表)](#table-syspromotion_xydiscount_item-define)
 - [APP:sysrate](#app-sysrate-define)
   - [sysrate_appeal(评论申诉表)](#table-sysrate_appeal-define)
+  - [sysrate_consultation(商品咨询表)](#table-sysrate_consultation-define)
   - [sysrate_dsr(店铺动态评分统计表)](#table-sysrate_dsr-define)
   - [sysrate_feedback(意见反馈表)](#table-sysrate_feedback-define)
   - [sysrate_score(店铺评分表)](#table-sysrate_score-define)
@@ -103,10 +112,12 @@
 - [APP:sysshop](#app-sysshop-define)
   - [sysshop_account(商家会员表)](#table-sysshop_account-define)
   - [sysshop_enterapply(入驻申请表)](#table-sysshop_enterapply-define)
+  - [sysshop_roles(角色表)](#table-sysshop_roles-define)
   - [sysshop_seller(商家账号信息)](#table-sysshop_seller-define)
   - [sysshop_shop(店铺表)](#table-sysshop_shop-define)
   - [sysshop_shop_cat(店铺分类表)](#table-sysshop_shop_cat-define)
   - [sysshop_shop_info(企业信息表)](#table-sysshop_shop_info-define)
+  - [sysshop_shop_notice(商家通知表)](#table-sysshop_shop_notice-define)
   - [sysshop_shop_rel_brand()](#table-sysshop_shop_rel_brand-define)
   - [sysshop_shop_rel_lv1cat(店铺关联类目表)](#table-sysshop_shop_rel_lv1cat-define)
   - [sysshop_shop_rel_seller()](#table-sysshop_shop_rel_seller-define)
@@ -141,6 +152,7 @@
   - [sysuser_user_experience(会员经验值详细记录表)](#table-sysuser_user_experience-define)
   - [sysuser_user_fav(收藏/缺货登记)](#table-sysuser_user_fav-define)
   - [sysuser_user_grade(会员等级表)](#table-sysuser_user_grade-define)
+  - [sysuser_user_item_notify(缺货表)](#table-sysuser_user_item_notify-define)
   - [sysuser_user_point(会员积分值详细记录表)](#table-sysuser_user_point-define)
   - [sysuser_user_pointlog(会员积分值明细表)](#table-sysuser_user_pointlog-define)
   - [sysuser_user_points(会员积分表)](#table-sysuser_user_points-define)
@@ -152,7 +164,7 @@
 <a name="table-base_app_content-define"></a>
 ## base_app_content
 > **app资源信息表, 记录app的service信息**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -166,6 +178,7 @@
 |  ordernum |  |  SMALLINT | No | 50 | No |
 |  input_time |  |  INT UNSIGNED | No |  | No |
 |  disabled | 是否有效 |  TINYINT(1) | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -175,7 +188,7 @@
 <a name="table-base_apps-define"></a>
 ## base_apps
 > **系统应用表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -194,6 +207,7 @@
 |  author_email | 作者邮件 |  VARCHAR(100) | No |  | No |
 |  dbver | 目前安装版本 |  VARCHAR(32) | No |  | No |
 |  remote_config | 远程配置信息 |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -202,7 +216,7 @@
 <a name="table-base_crontab-define"></a>
 ## base_crontab
 > **定时任务表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -215,6 +229,7 @@
 |  app_id |  |  VARCHAR(32) | Yes |  | No |
 |  class |  |  VARCHAR(100) | Yes |  | No |
 |  type | custom:客户自定义;system:系统内置; |  VARCHAR(6) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -223,7 +238,7 @@
 <a name="table-base_kvstore-define"></a>
 ## base_kvstore
 > **kvstore存储表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -234,6 +249,7 @@
 |  value | kvstore存储值 |  LONGTEXT | No |  | No |
 |  dateline | 存储修改时间 |  INT UNSIGNED | No |  | No |
 |  ttl | 过期时间,0代表不过期 |  INT UNSIGNED | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -244,7 +260,7 @@
 <a name="table-base_network-define"></a>
 ## base_network
 > **网络互联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -256,6 +272,7 @@
 |  link_status | active:正常;group:维护;wait:等待对方确认...; |  VARCHAR(6) | Yes | wait | No |
 |  node_detail |  |  VARCHAR(255) | No |  | No |
 |  token |  |  VARCHAR(32) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -264,7 +281,7 @@
 <a name="table-base_rpcpoll-define"></a>
 ## base_rpcpoll
 > **ec-rpc连接池表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -281,6 +298,7 @@
 |  result |  |  LONGTEXT | No |  | No |
 |  fail_times |  |  VARCHAR(10) | Yes | 1 | No |
 |  status | succ:成功;failed:失败; |  VARCHAR(6) | Yes | failed | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -290,7 +308,7 @@
 <a name="table-base_setting-define"></a>
 ## base_setting
 > **setting存储表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -298,6 +316,7 @@
 |  app | app名 |  VARCHAR(50) | Yes |  | No |
 |  key | setting键值 |  VARCHAR(255) | Yes |  | No |
 |  value | setting存储值 |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -306,7 +325,7 @@
 <a name="table-base_syscache_resources-define"></a>
 ## base_syscache_resources
 > **kvstore存储表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -317,6 +336,7 @@
 |  value | kvstore存储值 |  LONGTEXT | No |  | No |
 |  dateline | 存储修改时间 |  INT UNSIGNED | No |  | No |
 |  ttl | 过期时间,0代表不过期 |  INT UNSIGNED | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -324,14 +344,13 @@
 | primary | id | Yes |  |
 | ind_prefix | type | No |  |
 | ind_key | key | No |  |
-  
 <a name="app-desktop-define"></a>
 ## app:desktop tables
 
 <a name="table-desktop_account-define"></a>
 ## desktop_account
 > **用户权限账户表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -342,6 +361,7 @@
 |  login_password | 登录密码 |  VARCHAR(60) | Yes |  | No |
 |  disabled |  |  TINYINT(1) | No | 0 | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -351,7 +371,7 @@
 <a name="table-desktop_filter-define"></a>
 ## desktop_filter
 > **后台搜索过滤器表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -365,6 +385,7 @@
 |  app | 过滤器对应的app(应用) |  VARCHAR(50) | Yes |  | No |
 |  act | 过滤器对应的act(方法) |  VARCHAR(50) | Yes |  | No |
 |  create_time | 过滤器创建时间 |  INT UNSIGNED | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -373,13 +394,14 @@
 <a name="table-desktop_hasrole-define"></a>
 ## desktop_hasrole
 > **后台权限, 角色和用户关联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  user_id | 后台用户ID |  INT UNSIGNED | Yes |  | No |
 |  role_id | 角色ID |  INT UNSIGNED | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -388,7 +410,7 @@
 <a name="table-desktop_menus-define"></a>
 ## desktop_menus
 > **后台菜单表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -407,6 +429,7 @@
 |  target | 跳转 |  VARCHAR(10) | No |  | No |
 |  menu_order | 排序 |  INT UNSIGNED | No | 0 | No |
 |  parent | 父节点 |  VARCHAR(255) | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -418,7 +441,7 @@
 <a name="table-desktop_roles-define"></a>
 ## desktop_roles
 > **管理员角色表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -426,6 +449,7 @@
 |  role_id | 管理员角色ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  role_name |  |  VARCHAR(100) | Yes |  | No |
 |  workground |  |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -434,7 +458,7 @@
 <a name="table-desktop_tag-define"></a>
 ## desktop_tag
 > **finder tag(标签)表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -450,6 +474,7 @@
 |  tag_filter |  |  VARCHAR(255) | Yes |  | No |
 |  rel_count | 关联的个数 |  INT UNSIGNED | Yes | 0 | No |
 |  params |  |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -460,7 +485,7 @@
 <a name="table-desktop_tag_rel-define"></a>
 ## desktop_tag_rel
 > **tag和对象关联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -470,6 +495,7 @@
 |  app_id | app(应用)ID |  VARCHAR(32) | Yes |  | No |
 |  tag_type | 标签对应的model(表) |  VARCHAR(20) | Yes |  | No |
 |  last_modify |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -478,7 +504,7 @@
 <a name="table-desktop_users-define"></a>
 ## desktop_users
 > **商店后台管理员表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -495,20 +521,20 @@
 |  disabled |  |  TINYINT(1) | Yes | 0 | No |
 |  op_no | 操作员no |  VARCHAR(50) | No |  | No |
 |  memo |  |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | user_id | Yes |  |
 | ind_disabled | disabled | No |  |
-  
 <a name="app-ectools-define"></a>
 ## app:ectools tables
 
 <a name="table-ectools_analysis-define"></a>
 ## ectools_analysis
 > **ectools app统计表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -517,6 +543,7 @@
 |  service | 对应的service |  VARCHAR(80) | Yes |  | No |
 |  interval | hour:hour;day:day;comment:执行监控间隔时间; |  VARCHAR(7) | Yes |  | No |
 |  modify | 最后修改时间 |  INT UNSIGNED | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -525,7 +552,7 @@
 <a name="table-ectools_analysis_logs-define"></a>
 ## ectools_analysis_logs
 > **ectools统计日志**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -537,6 +564,7 @@
 |  flag |  |  INT UNSIGNED | Yes | 0 | No |
 |  value |  |  DOUBLE PRECISION | Yes | 0 | No |
 |  time |  |  INT UNSIGNED | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -549,21 +577,18 @@
 <a name="table-ectools_payments-define"></a>
 ## ectools_payments
 > **支付记录**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  payment_id | 支付单号 |  VARCHAR(20) | Yes |  | No |
-|  tids | 订单id集 |  LONGTEXT | Yes |  | No |
 |  money | 需要支付的金额 |  NUMERIC(20, 3) | Yes | 0 | No |
-|  trade_own_money | 订单自有的金额 |  LONGTEXT | No |  | No |
 |  cur_money | 支付货币金额 |  NUMERIC(20, 3) | Yes | 0 | No |
 |  status | 支付状态\|succ:支付成功;failed:支付失败;cancel:未支付;error:处理异常;invalid:非法参数;progress:已付款至担保方;timeout:超时;ready:准备中; |  VARCHAR(8) | Yes | ready | No |
-|  pay_type | 支付类型\|online:在线支付; |  VARCHAR(6) | Yes | online | No |
-|  payment_bn | 支付单唯一编号 |  VARCHAR(32) | No |  | No |
-|  pay_app_id | 支付方式名称 |  VARCHAR(100) | No |  | No |
 |  user_id | 会员用户名 |  VARCHAR(100) | No |  | No |
+|  pay_type | 支付类型\|online:在线支付; |  VARCHAR(6) | Yes | online | No |
+|  pay_app_id | 支付方式名称 |  VARCHAR(100) | No |  | No |
 |  pay_name | 支付方式名 |  VARCHAR(100) | No |  | No |
 |  payed_time | 支付完成时间 |  INT UNSIGNED | No |  | No |
 |  op_id | 操作员 |  INT UNSIGNED | No |  | No |
@@ -581,6 +606,9 @@
 |  disabled | 支付单状态 |  TINYINT(1) | No | 0 | No |
 |  trade_no | 支付单交易编号 |  VARCHAR(30) | No |  | No |
 |  thirdparty_account | 第三方支付账户 |  VARCHAR(50) | No |  | No |
+|  tids | 订单id集, 已废弃 |  LONGTEXT | No |  | No |
+|  trade_own_money | 订单自有的金额,已废弃 |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -590,7 +618,7 @@
 <a name="table-ectools_refunds-define"></a>
 ## ectools_refunds
 > **退款单表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -618,19 +646,42 @@
 |  memo | 备注 |  LONGTEXT | No |  | No |
 |  oid | 交易子订单号 |  VARCHAR(30) | No |  | No |
 |  tid | 交易主订单号 |  VARCHAR(30) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | refund_id | Yes |  |
-  
+<a name="table-ectools_trade_paybill-define"></a>
+## ectools_trade_paybill
+> **订单支付单据记录**
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  paybill_id | 子支付单编号 |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  payment_id | 主支付单编号 |  VARCHAR(20) | Yes |  | No |
+|  tid | 被支付订单编号 |  VARCHAR(20) | Yes |  | No |
+|  status | 该订单支付的状态 |  VARCHAR(20) | Yes |  | No |
+|  payment | 该订单支付的金额 |  VARCHAR(20) | Yes |  | No |
+|  user_id | 会员id |  VARCHAR(100) | No |  | No |
+|  payed_time | 支付完成时间 |  INT UNSIGNED | No |  | No |
+|  created_time | 支付单创建时间 |  INT UNSIGNED | No |  | No |
+|  modified_time | 最后更新时间 |  INT UNSIGNED | No |  | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | paybill_id | Yes |  |
 <a name="app-image-define"></a>
 ## app:image tables
 
 <a name="table-image_image-define"></a>
 ## image_image
 > **图片表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -650,6 +701,7 @@
 |  height |  |  INT UNSIGNED | No |  | No |
 |  watermark |  |  TINYINT(1) | No | 0 | No |
 |  last_modified |  |  INT UNSIGNED | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -658,7 +710,7 @@
 <a name="table-image_image_attach-define"></a>
 ## image_image_attach
 > **图片关联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -668,6 +720,7 @@
 |  target_type | 用户类型 |  VARCHAR(20) | Yes | 0 | No |
 |  image_id | 图片的主键-外键关联image表 |  CHAR(32) | Yes | 0 | No |
 |  last_modified |  |  INT UNSIGNED | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -677,7 +730,7 @@
 <a name="table-image_images-define"></a>
 ## image_images
 > **图片表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -695,6 +748,7 @@
 |  size |  |  INT UNSIGNED | No |  | No |
 |  last_modified |  |  INT UNSIGNED | Yes | 0 | No |
 |  disabled | disabled |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -703,14 +757,13 @@
 | ind_target | target_id, target_type | No |  |
 | ind_url | url | Yes |  |
 | ind_unique | url, target_id, target_type | Yes |  |
-  
 <a name="app-importexport-define"></a>
 ## app:importexport tables
 
 <a name="table-importexport_task-define"></a>
 ## importexport_task
 > **导出、导入任务表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -725,19 +778,19 @@
 |  status | 0:等待执行;1:正在导出;2:导出成功;3:导出失败;4:正在导入;5:导入成功;6:导入失败;7:中断;8:部分导入; |  VARCHAR(1) | No | 0 | No |
 |  is_display | 0:隐藏;1:显示; |  VARCHAR(1) | No | 0 | No |
 |  key |  |  VARCHAR(255) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | task_id | Yes |  |
-  
 <a name="app-search-define"></a>
 ## app:search tables
 
 <a name="table-search_associate-define"></a>
 ## search_associate
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -747,6 +800,7 @@
 |  type_id |  |  INT UNSIGNED | No |  | No |
 |  from_type |  |  VARCHAR(50) | No |  | No |
 |  last_modify |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -756,7 +810,7 @@
 <a name="table-search_delta-define"></a>
 ## search_delta
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -764,20 +818,20 @@
 |  id |  |  INT UNSIGNED | Yes |  | No |
 |  index_name |  |  VARCHAR(50) | Yes |  | No |
 |  last_modify |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id, index_name | Yes |  |
 | ind_last_modify | last_modify | No |  |
-  
 <a name="app-serveradm-define"></a>
 ## app:serveradm tables
 
 <a name="table-serveradm_xhprof-define"></a>
 ## serveradm_xhprof
 > **xphrof**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -793,19 +847,19 @@
 |  wt |  |  VARCHAR(80) | No |  | No |
 |  mu |  |  INT UNSIGNED | No |  | No |
 |  pmu |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | run_id | Yes |  |
-  
 <a name="app-site-define"></a>
 ## app:site tables
 
 <a name="table-site_explorers-define"></a>
 ## site_explorers
 > **site地图表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -814,6 +868,7 @@
 |  app | 应用(app)名 |  VARCHAR(50) | Yes |  | No |
 |  title |  |  VARCHAR(100) | Yes |  | No |
 |  path | 路径 |  VARCHAR(100) | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -822,7 +877,7 @@
 <a name="table-site_link-define"></a>
 ## site_link
 > **前台链接表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -833,6 +888,7 @@
 |  image_url |  |  VARCHAR(255) | No |  | No |
 |  orderlist |  |  INT UNSIGNED | Yes | 0 | No |
 |  hidden |  |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -841,7 +897,7 @@
 <a name="table-site_menus-define"></a>
 ## site_menus
 > **导航菜单表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -858,6 +914,7 @@
 |  params |  |  LONGTEXT | No |  | No |
 |  config |  |  LONGTEXT | No |  | No |
 |  update_modified | 更新时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -866,19 +923,19 @@
 <a name="table-site_seo-define"></a>
 ## site_seo
 > **前台SEO配置表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  id | ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  app | 应用(app) |  VARCHAR(50) | Yes |  | No |
-|  ctl |  |  VARCHAR(50) | Yes |  | No |
-|  act |  |  VARCHAR(50) | Yes |  | No |
+|  route | 路由别名，唯一标示 |  VARCHAR(50) | Yes |  | No |
 |  title |  |  VARCHAR(50) | Yes |  | No |
 |  config |  |  LONGTEXT | No |  | No |
 |  param |  |  LONGTEXT | No |  | No |
 |  update_modified | 更新时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -887,7 +944,7 @@
 <a name="table-site_themes-define"></a>
 ## site_themes
 > **模板表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -902,6 +959,7 @@
 |  info | 详细说明 |  VARCHAR(255) | No |  | No |
 |  config | 配置信息 |  LONGTEXT | No |  | No |
 |  is_used | 是否启用 |  TINYINT(1) | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -910,7 +968,7 @@
 <a name="table-site_themes_file-define"></a>
 ## site_themes_file
 > **模板文件表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -924,6 +982,7 @@
 |  theme | 模板名标识 |  VARCHAR(50) | No |  | No |
 |  memo | 备注 |  VARCHAR(100) | No |  | No |
 |  content | 文件内容 |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -932,7 +991,7 @@
 <a name="table-site_themes_tmpl-define"></a>
 ## site_themes_tmpl
 > **页面模板表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -944,6 +1003,7 @@
 |  tmpl_path | 页面路径 |  VARCHAR(100) | Yes |  | No |
 |  theme | 对应模板 |  VARCHAR(20) | Yes |  | No |
 |  rel_file_id | 关联模板文件表:site_themes_file |  INT UNSIGNED | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -952,7 +1012,7 @@
 <a name="table-site_widgets-define"></a>
 ## site_widgets
 > **挂件表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -961,6 +1021,7 @@
 |  app | 如果是系统挂件, 此字段为应用名. 如果是模板挂件此字段为空 |  VARCHAR(30) | Yes |  | No |
 |  theme | 如果是模板级挂件, 此字段为模板名. 如果是系统挂件此字段为空 |  VARCHAR(30) | Yes |  | No |
 |  name | 挂件名 |  VARCHAR(30) | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -970,7 +1031,7 @@
 <a name="table-site_widgets_instance-define"></a>
 ## site_widgets_instance
 > **挂件实例表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -989,6 +1050,7 @@
 |  tpl | 模版的名称 |  VARCHAR(100) | No |  | No |
 |  params | 配置参数 |  LONGTEXT | No |  | No |
 |  modified | 修改时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -996,14 +1058,13 @@
 | primary | widgets_id | Yes |  |
 | ind_wgbase | core_file, core_id, widgets_order | No |  |
 | ind_wginfo | core_file, core_slot, widgets_order | No |  |
-  
 <a name="app-sysaftersales-define"></a>
 ## app:sysaftersales tables
 
 <a name="table-sysaftersales_aftersales-define"></a>
 ## sysaftersales_aftersales
 > **售后申请**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1027,6 +1088,7 @@
 |  sendconfirm_data | 商家重新发货物流信息 |  LONGTEXT | No |  | No |
 |  created_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1035,7 +1097,7 @@
 <a name="table-sysaftersales_refunds-define"></a>
 ## sysaftersales_refunds
 > **退款申请表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1052,19 +1114,19 @@
 |  shop_id | 店铺id |  INT UNSIGNED | No |  | No |
 |  tid | 该退款单的主订单号 |  LONGTEXT | No |  | No |
 |  oid | 该退款单的订单号 |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | refunds_id | Yes |  |
-  
 <a name="app-syscategory-define"></a>
 ## app:syscategory tables
 
 <a name="table-syscategory_brand-define"></a>
 ## syscategory_brand
 > **品牌表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1078,6 +1140,7 @@
 |  brand_logo | 品牌图片标识 |  VARCHAR(255) | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  disabled | 失效 |  TINYINT(1) | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1088,7 +1151,7 @@
 <a name="table-syscategory_cat-define"></a>
 ## syscategory_cat
 > **类别属性值有限表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1096,6 +1159,7 @@
 |  cat_id | 分类ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  parent_id | 分类父级ID |  INT UNSIGNED | No |  | No |
 |  cat_name |  |  VARCHAR(100) | Yes |  | No |
+|  cat_logo | 一级分类logo |  VARCHAR(255) | No |  | No |
 |  cat_path | 分类路径(从根至本结点的路径,逗号分隔,首部有逗号) |  VARCHAR(100) | No | , | No |
 |  level | 1:一级分类;2:二级分类;3:三级分类; |  VARCHAR(1) | No | 1 | No |
 |  is_leaf | 是否叶子结点（true：是；false：否） |  TINYINT(1) | Yes | 0 | No |
@@ -1109,6 +1173,7 @@
 |  order_sort |  |  INT UNSIGNED | No | 0 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  cat_template | 类目对应的模板 |  VARCHAR(50) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1117,7 +1182,7 @@
 <a name="table-syscategory_cat_rel_brand-define"></a>
 ## syscategory_cat_rel_brand
 > **分类和品牌关联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1125,6 +1190,7 @@
 |  cat_id | 商品分类ID |  INT UNSIGNED | Yes | 0 | No |
 |  brand_id | 品牌ID |  INT UNSIGNED | Yes | 0 | No |
 |  order_sort | 排序 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1133,7 +1199,7 @@
 <a name="table-syscategory_cat_rel_prop-define"></a>
 ## syscategory_cat_rel_prop
 > **商品属性表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1141,6 +1207,7 @@
 |  prop_id | 属性ID |  INT UNSIGNED | Yes | 0 | No |
 |  cat_id | 分类ID |  INT UNSIGNED | Yes | 0 | No |
 |  order_sort |  |  INT UNSIGNED | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1149,7 +1216,7 @@
 <a name="table-syscategory_prop_values-define"></a>
 ## syscategory_prop_values
 > **属性值表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1159,6 +1226,7 @@
 |  prop_value | 属性值 |  VARCHAR(100) | Yes |  | No |
 |  prop_image | 属性图片 |  VARCHAR(255) | No |  | No |
 |  order_sort | 排序 |  INT UNSIGNED | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1167,7 +1235,7 @@
 <a name="table-syscategory_props-define"></a>
 ## syscategory_props
 > **属性表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1184,19 +1252,19 @@
 |  order_sort |  |  INT UNSIGNED | Yes | 1 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  disabled |  |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | prop_id | Yes |  |
-  
 <a name="app-sysclearing-define"></a>
 ## app:sysclearing tables
 
 <a name="table-sysclearing_settlement-define"></a>
 ## sysclearing_settlement
 > **商家账号信息**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1213,6 +1281,7 @@
 |  account_start_time |  |  INT UNSIGNED | No |  | No |
 |  account_end_time |  |  INT UNSIGNED | No |  | No |
 |  settlement_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1221,7 +1290,7 @@
 <a name="table-sysclearing_settlement_detail-define"></a>
 ## sysclearing_settlement_detail
 > **结算明细表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1251,31 +1320,33 @@
 |  settlement_type | 1:普通结算;2:运费结算;3:退款结算; |  VARCHAR(1) | No | 1 | No |
 |  discount_fee | 子订单级订单优惠金额 |  NUMERIC(20, 3) | No |  | No |
 |  adjust_fee | 手工调整金额 |  NUMERIC(20, 3) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
-  
 <a name="app-syscontent-define"></a>
 ## app:syscontent tables
 
 <a name="table-syscontent_article-define"></a>
 ## syscontent_article
 > **文章主表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  article_id | 文章ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  title |  |  VARCHAR(255) | Yes |  | No |
+|  article_logo | 文章默认logo |  VARCHAR(255) | No |  | No |
 |  platform | pc:电脑端;wap:移动端; |  VARCHAR(3) | Yes |  | No |
 |  node_id |  |  INT UNSIGNED | Yes |  | No |
 |  pubtime | 发布时间（无需精确到秒） |  INT UNSIGNED | No |  | No |
 |  modified | 更新时间（精确到秒） |  INT UNSIGNED | No |  | No |
 |  ifpub | 发布 |  TINYINT(1) | No | 0 | No |
 |  content | 文章内容 |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1284,7 +1355,7 @@
 <a name="table-syscontent_article_nodes-define"></a>
 ## syscontent_article_nodes
 > **文章节点表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1298,19 +1369,19 @@
 |  ifpub | 发布 |  TINYINT(1) | Yes | 0 | No |
 |  order_sort | 排序 |  INT UNSIGNED | Yes | 0 | No |
 |  modified | 修改时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | node_id | Yes |  |
-  
 <a name="app-sysdecorate-define"></a>
 ## app:sysdecorate tables
 
 <a name="table-sysdecorate_widgets_instance-define"></a>
 ## sysdecorate_widgets_instance
 > **挂件实例表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1322,20 +1393,20 @@
 |  title | 挂件自定义标题 |  VARCHAR(100) | No |  | No |
 |  params | 配置参数 |  LONGTEXT | No |  | No |
 |  modified_time | 修改时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | widgets_id | Yes |  |
 | ind_wgbase | shop_id, widgets_type | No |  |
-  
 <a name="app-sysitem-define"></a>
 ## app:sysitem tables
 
 <a name="table-sysitem_item-define"></a>
 ## sysitem_item
 > **商品表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1373,6 +1444,7 @@
 |  barcode | 商品级别的条形码 |  VARCHAR(128) | No |  | No |
 |  disabled | disabled |  TINYINT(1) | Yes | 0 | No |
 |  use_platform | 使用平台\|0:全部;1:pc端;2:wap端; |  VARCHAR(1) | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1381,7 +1453,7 @@
 <a name="table-sysitem_item_count-define"></a>
 ## sysitem_item_count
 > **商品次数表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1394,6 +1466,7 @@
 |  rate_bad_count | 差评次数 |  INT UNSIGNED | Yes | 0 | No |
 |  view_count | 浏览次数 |  INT UNSIGNED | Yes | 0 | No |
 |  buy_count | 购买次数 |  INT UNSIGNED | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1402,7 +1475,7 @@
 <a name="table-sysitem_item_desc-define"></a>
 ## sysitem_item_desc
 > **商品详情表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1411,6 +1484,7 @@
 |  pc_desc | 宝贝详情 |  LONGTEXT | No |  | No |
 |  wap_desc | Wap宝贝详情 |  LONGTEXT | No |  | No |
 |  wireless_desc | 无线端宝贝详情 |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1419,7 +1493,7 @@
 <a name="table-sysitem_item_nature_props-define"></a>
 ## sysitem_item_nature_props
 > **商品自然属性信息表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1431,6 +1505,7 @@
 |  pv_number |  |  INT UNSIGNED | No |  | No |
 |  pv_str |  |  VARCHAR(255) | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1439,13 +1514,14 @@
 <a name="table-sysitem_item_promotion-define"></a>
 ## sysitem_item_promotion
 > **商品关联的促销表(新)**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_id | 商品ID |  INT UNSIGNED | Yes |  | No |
 |  promotion_id | 促销id |  INT UNSIGNED | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1454,7 +1530,7 @@
 <a name="table-sysitem_item_status-define"></a>
 ## sysitem_item_status
 > **商品上下架状态表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1464,6 +1540,7 @@
 |  approve_status | 商品状态\|onsale:出售中;instock:库中; |  VARCHAR(7) | Yes | instock | No |
 |  list_time | 上架时间 |  INT UNSIGNED | No |  | No |
 |  delist_time | 下架时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1472,7 +1549,7 @@
 <a name="table-sysitem_item_store-define"></a>
 ## sysitem_item_store
 > **商品总库存表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1480,6 +1557,7 @@
 |  item_id | 商品 ID |  INT UNSIGNED | Yes |  | No |
 |  store | 总商品数量 |  INT UNSIGNED | Yes | 0 | No |
 |  freez | sku预占库存总和 |  INT UNSIGNED | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1488,13 +1566,14 @@
 <a name="table-sysitem_item_tag_promotion-define"></a>
 ## sysitem_item_tag_promotion
 > **商品关联的促销表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  item_id | 商品ID |  INT UNSIGNED | Yes |  | No |
 |  promotion_ids | 促销id信息 |  LONGTEXT | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1503,7 +1582,7 @@
 <a name="table-sysitem_sku-define"></a>
 ## sysitem_sku
 > **货品表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1524,6 +1603,7 @@
 |  spec_desc |  |  LONGTEXT | No |  | No |
 |  status | sku状态\|normal:正常;delete:删除; |  VARCHAR(6) | No | normal | No |
 |  outer_id | 商家设置的外部id |  VARCHAR(32) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1532,7 +1612,7 @@
 <a name="table-sysitem_sku_store-define"></a>
 ## sysitem_sku_store
 > **商品库存表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1541,6 +1621,7 @@
 |  sku_id | sku ID |  INT UNSIGNED | Yes |  | No |
 |  store | 商品数量 |  INT UNSIGNED | Yes | 0 | No |
 |  freez | sku预占库存 |  INT UNSIGNED | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1549,7 +1630,7 @@
 <a name="table-sysitem_spec_index-define"></a>
 ## sysitem_spec_index
 > **商品规格索引表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1560,25 +1641,26 @@
 |  prop_id | 销售属性ID |  INT UNSIGNED | Yes | 0 | No |
 |  item_id | 商品ID |  INT UNSIGNED | Yes | 0 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | prop_value_id, sku_id | Yes |  |
-  
 <a name="app-syslogistics-define"></a>
 ## app:syslogistics tables
 
 <a name="table-syslogistics_coupon-define"></a>
 ## syslogistics_coupon
 > **优惠券表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  cpns_id | 优惠券方案id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  cpns_name | 优惠券名称 |  VARCHAR(255) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1587,7 +1669,7 @@
 <a name="table-syslogistics_delivery-define"></a>
 ## syslogistics_delivery
 > **发货单表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1602,7 +1684,7 @@
 |  dlytmpl_id | 配送方式(货到付款、EMS...) |  INT UNSIGNED | No |  | No |
 |  logi_id | 物流公司ID |  VARCHAR(50) | No |  | No |
 |  logi_name | 物流公司名称 |  VARCHAR(100) | No |  | No |
-|  corp_code | 物流公司代码 |  VARCHAR(200) | Yes |  | No |
+|  corp_code | 物流公司代码 |  VARCHAR(200) | No |  | No |
 |  logi_no | 物流单号 |  VARCHAR(50) | No |  | No |
 |  receiver_name | 收货人姓名 |  VARCHAR(50) | No |  | No |
 |  receiver_state | 收货人所在省 |  VARCHAR(20) | No |  | No |
@@ -1619,6 +1701,7 @@
 |  status | 状态\|succ:成功到达;failed:发货失败;cancel:已取消;lost:货物丢失;progress:运送中;timeout:超时;ready:准备发货; |  VARCHAR(8) | Yes | ready | No |
 |  memo | 备注 |  LONGTEXT | No |  | No |
 |  disabled | 无效 |  TINYINT(1) | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1629,7 +1712,7 @@
 <a name="table-syslogistics_delivery_detail-define"></a>
 ## syslogistics_delivery_detail
 > **发货/退货单明细表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1642,6 +1725,7 @@
 |  sku_bn | sku编号 |  VARCHAR(30) | No |  | No |
 |  sku_title | sku名称 |  VARCHAR(200) | No |  | No |
 |  number | 发货数量 |  DOUBLE PRECISION | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1650,7 +1734,7 @@
 <a name="table-syslogistics_dlycorp-define"></a>
 ## syslogistics_dlycorp
 > **物流公司表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1663,6 +1747,7 @@
 |  request_url | 查询接口网址 |  VARCHAR(100) | No |  | No |
 |  order_sort | 排序 |  INT UNSIGNED | Yes | 0 | No |
 |  custom |  |  TINYINT(1) | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1672,7 +1757,7 @@
 <a name="table-syslogistics_dlytmpl-define"></a>
 ## syslogistics_dlytmpl
 > **快递模板配置表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1690,6 +1775,7 @@
 |  fee_conf | 运费模板中运费信息对象，包含默认运费和指定地区运费 |  LONGTEXT | No |  | No |
 |  create_time | 创建时间 |  INT UNSIGNED | No |  | No |
 |  modifie_time | 最后修改时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1697,14 +1783,150 @@
 | primary | template_id | Yes |  |
 | ind_shop_temp_id | shop_id, template_id | No |  |
 | ind_shop_id | shop_id | No |  |
-  
+<a name="app-sysopen-define"></a>
+## app:sysopen tables
+
+<a name="table-sysopen_keys-define"></a>
+## sysopen_keys
+> **店铺请求开放api的key和secret**
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  shop_id | 对应的商户id |  VARCHAR(255) | Yes |  | No |
+|  key | 访问api时用的key |  VARCHAR(255) | No |  | No |
+|  secret | 访问api时用的secret |  VARCHAR(255) | No |  | No |
+|  contact_type | 商户状态\|notallowopen:禁止接入;applyforopen:申请接入;openstandard:标准接入; |  VARCHAR(12) | Yes |  | No |
+|  mark | 备注 |  VARCHAR(255) | No |  | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | shop_id | Yes |  |
+<a name="table-sysopen_shopconf-define"></a>
+## sysopen_shopconf
+> **店铺请求开放api的key和secret**
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  shop_id | 对应的商户id |  VARCHAR(255) | Yes |  | No |
+|  develop_mode | 开发者模式配置\|DEVELOP:开发者模式;PRODUCT:运营商模式; |  VARCHAR(7) | Yes |  | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | shop_id | Yes |  |
 <a name="app-syspromotion-define"></a>
 ## app:syspromotion tables
 
+<a name="table-syspromotion_activity_goods-define"></a>
+## syspromotion_activity_goods
+> ****
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  special_id | 规则id |  INT UNSIGNED | No |  | No |
+|  item_id | 货品id |  INT UNSIGNED | No |  | No |
+|  type_id | 促销类型id |  INT UNSIGNED | No |  | No |
+|  promotion_price | 促销价格 |  NUMERIC(20, 3) | No |  | No |
+|  release_time | 发布时间 |  INT UNSIGNED | No | 0 | No |
+|  begin_time | 开始时间 |  INT UNSIGNED | No | 0 | No |
+|  end_time | 结束时间 |  INT UNSIGNED | No | 0 | No |
+|  limit | 限购数量 |  INT UNSIGNED | No |  | No |
+|  remind_way | 提醒方式 |  LONGTEXT | No |  | No |
+|  remind_time | 提前提醒时间 |  INT UNSIGNED | No |  | No |
+|  timeout | 超时时间 |  INT UNSIGNED | No |  | No |
+|  cdown | 是显示否倒计时 |  TINYINT(1) | No |  | No |
+|  initial_num | 初始销售量 |  INT UNSIGNED | No |  | No |
+|  status | 状态 |  TINYINT(1) | No | 0 | No |
+|  description | 规则描述 |  LONGTEXT | No |  | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | id | Yes |  |
+<a name="table-syspromotion_activity_remid-define"></a>
+## syspromotion_activity_remid
+> ****
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  remind_id |  |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  member_id |  |  INT UNSIGNED | No |  | No |
+|  product_id |  |  INT UNSIGNED | No |  | No |
+|  goodsname |  |  VARCHAR(50) | No |  | No |
+|  remind_way |  |  VARCHAR(50) | No |  | No |
+|  goal |  |  VARCHAR(50) | No |  | No |
+|  savetime |  |  INT UNSIGNED | No |  | No |
+|  remind_time |  |  INT UNSIGNED | No |  | No |
+|  begin_time |  |  INT UNSIGNED | No |  | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | remind_id | Yes |  |
+<a name="table-syspromotion_activity_rule-define"></a>
+## syspromotion_activity_rule
+> ****
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  activity_id | 规则id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  name | 规则名称 |  VARCHAR(100) | Yes |  | No |
+|  description | 规则描述 |  LONGTEXT | No |  | No |
+|  release_time | 发布时间 |  INT UNSIGNED | No | 0 | No |
+|  begin_time | 开始时间 |  INT UNSIGNED | No | 0 | No |
+|  end_time | 结束时间 |  INT UNSIGNED | No | 0 | No |
+|  status | 状态 |  TINYINT(1) | No | 0 | No |
+|  remind_way | 提醒方式 |  LONGTEXT | No |  | No |
+|  remind_time | 提前提醒时间 |  INT UNSIGNED | No | 0 | No |
+|  limit | 限购数量 |  INT UNSIGNED | No | 0 | No |
+|  cdown | 是显示否倒计时 |  TINYINT(1) | No | 1 | No |
+|  timeout | 超时时间 |  INT UNSIGNED | No | 0 | No |
+|  initial_num | 初始销售量 |  INT UNSIGNED | No | 0 | No |
+|  type_id | 促销类型 |  INT UNSIGNED | No |  | No |
+|  promotion_pro | 促销商品组合  |  LONGTEXT | No |  | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | activity_id | Yes |  |
+<a name="table-syspromotion_activity_tags-define"></a>
+## syspromotion_activity_tags
+> ****
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  type_id | 类型id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  name | 类型名称 |  VARCHAR(50) | Yes |  | No |
+|  bydefault | 是否系统默认 |  TINYINT(1) | No | 0 | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | type_id | Yes |  |
 <a name="table-syspromotion_coupon-define"></a>
 ## syspromotion_coupon
 > **优惠券表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1730,6 +1952,7 @@
 |  created_time | 建券时间 |  INT UNSIGNED | No |  | No |
 |  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
 |  coupon_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1738,7 +1961,7 @@
 <a name="table-syspromotion_coupon_item-define"></a>
 ## syspromotion_coupon_item
 > **商品与促销规则关联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1753,6 +1976,7 @@
 |  canuse_start_time | 起始可使用时间 |  INT UNSIGNED | No | 0 | No |
 |  canuse_end_time | 截止可使用时间 |  INT UNSIGNED | No | 0 | No |
 |  status | 促销状态 |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1761,7 +1985,7 @@
 <a name="table-syspromotion_freepostage-define"></a>
 ## syspromotion_freepostage
 > **免邮表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1772,7 +1996,7 @@
 |  freepostage_desc | 免邮描述 |  VARCHAR(255) | Yes |  | No |
 |  used_platform | 使用平台\|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
 |  valid_grade |  |  VARCHAR(255) | Yes |  | No |
-|  gentype | 生成类型\|0:独立添加;1:绑定促销; |  VARCHAR(1) | No | 1 | No |
+|  gentype | 生成类型\|0:独立添加;1:绑定促销; |  VARCHAR(1) | No | 0 | No |
 |  condition_type | 免邮条件标准\|money:按金额;quantity:按数量; |  VARCHAR(8) | No | money | No |
 |  limit_money | 满足条件金额 |  NUMERIC(20, 3) | No | 0 | No |
 |  limit_quantity | 满足条件数量 |  INT UNSIGNED | No |  | No |
@@ -1782,6 +2006,7 @@
 |  created_time | 创建时间 |  INT UNSIGNED | No |  | No |
 |  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
 |  freepostage_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1790,7 +2015,7 @@
 <a name="table-syspromotion_freepostage_item-define"></a>
 ## syspromotion_freepostage_item
 > **商品与促销规则关联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1806,6 +2031,7 @@
 |  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
 |  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
 |  status | 是否生效中 |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1814,7 +2040,7 @@
 <a name="table-syspromotion_fulldiscount-define"></a>
 ## syspromotion_fulldiscount
 > **满折促销规则表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1834,6 +2060,7 @@
 |  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
 |  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
 |  fulldiscount_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1842,7 +2069,7 @@
 <a name="table-syspromotion_fulldiscount_item-define"></a>
 ## syspromotion_fulldiscount_item
 > **商品与促销规则关联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1858,6 +2085,7 @@
 |  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
 |  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
 |  status | 是否生效中 |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1866,7 +2094,7 @@
 <a name="table-syspromotion_fullminus-define"></a>
 ## syspromotion_fullminus
 > **满减促销规则表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1887,6 +2115,7 @@
 |  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
 |  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
 |  fullminus_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1895,7 +2124,7 @@
 <a name="table-syspromotion_fullminus_item-define"></a>
 ## syspromotion_fullminus_item
 > **商品与促销规则关联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1911,6 +2140,7 @@
 |  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
 |  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
 |  status | 是否生效中 |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1919,7 +2149,7 @@
 <a name="table-syspromotion_promotions-define"></a>
 ## syspromotion_promotions
 > **各种促销关联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1936,6 +2166,7 @@
 |  end_time | 结束时间 |  INT UNSIGNED | Yes |  | No |
 |  created_time | 创建时间 |  INT UNSIGNED | Yes |  | No |
 |  check_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1944,7 +2175,7 @@
 <a name="table-syspromotion_xydiscount-define"></a>
 ## syspromotion_xydiscount
 > **X件Y折促销规则表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1959,11 +2190,13 @@
 |  join_limit |  |  INT UNSIGNED | Yes | 1 | No |
 |  limit_number | 满足条件件数 |  INT UNSIGNED | No |  | No |
 |  discount | 折扣 |  INT UNSIGNED | No | 0 | No |
+|  condition_value |  |  VARCHAR(255) | No |  | No |
 |  created_time | 创建时间 |  INT UNSIGNED | No |  | No |
 |  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
 |  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
 |  promotion_tag | 促销标签 |  VARCHAR(15) | Yes |  | No |
 |  xydiscount_status | 促销状态\|pending:待审核;agree:审核通过;refuse:审核拒绝;cancel:已取消; |  VARCHAR(7) | Yes | agree | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -1972,7 +2205,7 @@
 <a name="table-syspromotion_xydiscount_item-define"></a>
 ## syspromotion_xydiscount_item
 > **商品与促销规则关联表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -1988,19 +2221,19 @@
 |  start_time | 起始时间 |  INT UNSIGNED | No | 0 | No |
 |  end_time | 截止时间 |  INT UNSIGNED | No | 0 | No |
 |  status | 是否生效中 |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | xydiscount_id, item_id | Yes |  |
-  
 <a name="app-sysrate-define"></a>
 ## app:sysrate tables
 
 <a name="table-sysrate_appeal-define"></a>
 ## sysrate_appeal
 > **评论申诉表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2016,15 +2249,50 @@
 |  appeal_log | 申诉日志 |  LONGTEXT | No |  | No |
 |  appeal_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | appeal_id | Yes |  |
+<a name="table-sysrate_consultation-define"></a>
+## sysrate_consultation
+> **商品咨询表**
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  consultation_id | 咨询自增编号 |  BIGINT AUTO_INCREMENT | Yes |  | Yes |
+|  be_reply_id | 被回复的咨询id |  BIGINT | No | 0 | No |
+|  item_title | 被咨询的商品标题 |  VARCHAR(1023) | Yes |  | No |
+|  shop_name | 所属店铺 |  VARCHAR(70) | Yes |  | No |
+|  author | 操作人 |  VARCHAR(60) | No |  | No |
+|  consultation_type | 咨询类型\|item:商品咨询;store_delivery:库存/配送咨询;payment: 支付方式咨询;invoice:发票保修咨询; |  VARCHAR(14) | No | item | No |
+|  contack | 联系方式 |  VARCHAR(200) | No |  | No |
+|  content | 商品咨询的内容 |  VARCHAR(1023) | No |  | No |
+|  is_reply | 商品咨询是否被回复 |  TINYINT(1) | No | 0 | No |
+|  created_time | 创建时间 |  INT UNSIGNED | No |  | No |
+|  ip | 消费者发起咨询时的ip |  VARCHAR(255) | No |  | No |
+|  is_display | 是否显示至商祥页\|true:显示;false:不显示; |  VARCHAR(5) | No | false | No |
+|  shop_id | 店铺ID |  INT UNSIGNED | Yes |  | No |
+|  item_id | 被咨询的商品id |  BIGINT | Yes |  | No |
+|  author_id | 操作人id |  BIGINT | No |  | No |
+|  is_anonymity | 是否匿名 |  TINYINT(1) | No | 0 | No |
+|  modified_time |  |  INT UNSIGNED | No |  | No |
+|  image_default_id | 商品默认图 |  VARCHAR(255) | No |  | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | consultation_id | Yes |  |
+| ind_item_id | item_id | No |  |
+| ind_shop_id | shop_id | No |  |
 <a name="table-sysrate_dsr-define"></a>
 ## sysrate_dsr
 > **店铺动态评分统计表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2035,6 +2303,7 @@
 |  attitude_dsr |  |  LONGTEXT | No | 5 | No |
 |  delivery_speed_dsr |  |  LONGTEXT | No | 5 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2043,7 +2312,7 @@
 <a name="table-sysrate_feedback-define"></a>
 ## sysrate_feedback
 > **意见反馈表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2058,6 +2327,7 @@
 |  question |  |  VARCHAR(255) | No |  | No |
 |  memo |  |  VARCHAR(255) | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2066,7 +2336,7 @@
 <a name="table-sysrate_score-define"></a>
 ## sysrate_score
 > **店铺评分表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2082,6 +2352,7 @@
 |  created_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  disabled | 是否有效 |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2090,7 +2361,7 @@
 <a name="table-sysrate_traderate-define"></a>
 ## sysrate_traderate
 > **商品评分表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2121,19 +2392,19 @@
 |  created_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  disabled | 是否有效 |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | rate_id | Yes |  |
-  
 <a name="app-sysshop-define"></a>
 ## app:sysshop tables
 
 <a name="table-sysshop_account-define"></a>
 ## sysshop_account
 > **商家会员表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2144,6 +2415,7 @@
 |  disabled |  |  TINYINT(1) | No | 0 | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2152,7 +2424,7 @@
 <a name="table-sysshop_enterapply-define"></a>
 ## sysshop_enterapply
 > **入驻申请表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2172,16 +2444,35 @@
 |  agree_time | 同意时间 |  INT UNSIGNED | No |  | No |
 |  enterlog | 操作日志 |  LONGTEXT | No |  | No |
 |  reason | 审核不通过原因 |  VARCHAR(500) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | enterapply_id | Yes |  |
 | ind_seller_id | seller_id | No |  |
+<a name="table-sysshop_roles-define"></a>
+## sysshop_roles
+> **角色表**
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  role_id | 角色ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  shop_id | 店铺ID |  INT UNSIGNED | Yes |  | No |
+|  role_name |  |  VARCHAR(100) | Yes |  | No |
+|  workground |  |  LONGTEXT | No |  | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | role_id | Yes |  |
 <a name="table-sysshop_seller-define"></a>
 ## sysshop_seller
 > **商家账号信息**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2189,10 +2480,12 @@
 |  seller_id |  |  INT UNSIGNED | Yes |  | No |
 |  shop_id | 店铺id |  INT UNSIGNED | No |  | No |
 |  seller_type | 0:店主;1:店员; |  VARCHAR(1) | Yes | 0 | No |
+|  role_id | 角色ID |  INT UNSIGNED | Yes | 0 | No |
 |  name |  |  VARCHAR(50) | Yes |  | No |
 |  mobile |  |  VARCHAR(20) | Yes |  | No |
 |  email |  |  VARCHAR(100) | Yes |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2201,7 +2494,7 @@
 <a name="table-sysshop_shop-define"></a>
 ## sysshop_shop
 > **店铺表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2226,6 +2519,7 @@
 |  shop_area | 店铺所在地区 |  VARCHAR(255) | Yes |  | No |
 |  shop_addr | 店铺所在地址 |  LONGTEXT | Yes |  | No |
 |  bulletin | 店铺公告 |  VARCHAR(50) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2236,7 +2530,7 @@
 <a name="table-sysshop_shop_cat-define"></a>
 ## sysshop_shop_cat
 > **店铺分类表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2251,6 +2545,7 @@
 |  order_sort |  |  INT UNSIGNED | No | 0 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  disabled |  |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2261,7 +2556,7 @@
 <a name="table-sysshop_shop_info-define"></a>
 ## sysshop_shop_info
 > **企业信息表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2296,6 +2591,7 @@
 |  cnaps_code | 支行联行号 |  VARCHAR(50) | Yes |  | No |
 |  bankid | 银行账号 |  VARCHAR(50) | Yes |  | No |
 |  bank_area | 开户银行所在地 |  VARCHAR(50) | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2303,10 +2599,32 @@
 | primary | info_id | Yes |  |
 | ind_seller_id | seller_id | No |  |
 | ind_shop_id | shop_id | No |  |
+<a name="table-sysshop_shop_notice-define"></a>
+## sysshop_shop_notice
+> **商家通知表**
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  notice_id | 商家通知ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  notice_title | 商家通知标题 |  VARCHAR(255) | Yes |  | No |
+|  notice_content | 商家通知内容 |  LONGTEXT | Yes |  | No |
+|  notice_type | 商家通知类型 |  VARCHAR(255) | Yes |  | No |
+|  shop_id |  |  INT UNSIGNED | Yes |  | No |
+|  admin_id |  |  INT UNSIGNED | No |  | No |
+|  createtime | 商家通知创建时间 |  INT UNSIGNED | No |  | No |
+|  modified_time | 商家通知最后修改时间 |  INT UNSIGNED | No |  | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | notice_id | Yes |  |
 <a name="table-sysshop_shop_rel_brand-define"></a>
 ## sysshop_shop_rel_brand
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2314,6 +2632,7 @@
 |  shop_id |  关联店铺id |  INT UNSIGNED | Yes |  | No |
 |  brand_id |  关联品牌id |  INT UNSIGNED | Yes |  | No |
 |  brand_warranty | 品牌授权书 |  VARCHAR(255) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2322,7 +2641,7 @@
 <a name="table-sysshop_shop_rel_lv1cat-define"></a>
 ## sysshop_shop_rel_lv1cat
 > **店铺关联类目表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2331,6 +2650,7 @@
 |  cat_id |  关联类目id |  INT UNSIGNED | Yes |  | No |
 |  shop_id | 关联店铺id |  INT UNSIGNED | Yes |  | No |
 |  fee_confg |  |  LONGTEXT | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2340,7 +2660,7 @@
 <a name="table-sysshop_shop_rel_seller-define"></a>
 ## sysshop_shop_rel_seller
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2350,6 +2670,7 @@
 |  roles | 商家会员角色\|admin:超级管理员;member:普通管理员; |  VARCHAR(6) | Yes | admin | No |
 |  authority | 商家会员权限\|all:所有权限;other:其他权限; |  VARCHAR(5) | Yes | all | No |
 |  shop_name | 商家所属店铺名称 |  VARCHAR(100) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2358,7 +2679,7 @@
 <a name="table-sysshop_shop_type-define"></a>
 ## sysshop_shop_type
 > **店铺类型表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2371,20 +2692,20 @@
 |  brief | 类型描述 |  VARCHAR(500) | Yes |  | No |
 |  suffix | 店铺名称后缀 |  VARCHAR(20) | Yes |  | No |
 |  max_item | 店铺默认商品上限 |  INT UNSIGNED | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | shoptype_id | Yes |  |
 | ind_shop_type | shop_type | No |  |
-  
 <a name="app-sysstat-define"></a>
 ## app:sysstat tables
 
 <a name="table-sysstat_item_statics-define"></a>
 ## sysstat_item_statics
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2397,6 +2718,7 @@
 |  amountnum | 销售数量 |  INT UNSIGNED | No |  | No |
 |  amountprice | 销售总价 |  NUMERIC(20, 3) | No |  | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2405,7 +2727,7 @@
 <a name="table-sysstat_statmember-define"></a>
 ## sysstat_statmember
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2418,6 +2740,7 @@
 |  sellernum | 新增商家数 |  INT UNSIGNED | No | 0 | No |
 |  selleraccount | 商家数 |  INT UNSIGNED | No | 0 | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2426,7 +2749,7 @@
 <a name="table-sysstat_trade_statics-define"></a>
 ## sysstat_trade_statics
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2448,19 +2771,19 @@
 |  complete_trade | 已完成的订单数量 |  INT UNSIGNED | No | 0 | No |
 |  complete_fee | 已完成订单额 |  NUMERIC(20, 3) | No | 0 | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | stat_id | Yes |  |
-  
 <a name="app-system-define"></a>
 ## app:system tables
 
 <a name="table-system_adminlog-define"></a>
 ## system_adminlog
 > **平台人员操作日志表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2470,8 +2793,10 @@
 |  admin_username | 管理员用户名 |  VARCHAR(50) | Yes |  | No |
 |  created_time | 操作时间 |  INT UNSIGNED | Yes |  | No |
 |  memo | 操作内容 |  LONGTEXT | No |  | No |
+|  status | 操作结果 |  TINYINT(1) | No | 0 | No |
 |  router | 操作路由 |  VARCHAR(200) | No |  | No |
 |  ip | IP |  VARCHAR(20) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2482,7 +2807,7 @@
 <a name="table-system_matrixset-define"></a>
 ## system_matrixset
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2495,6 +2820,7 @@
 |  token |  |  VARCHAR(100) | No |  | No |
 |  node_type |  |  VARCHAR(20) | No |  | No |
 |  shopname |  |  VARCHAR(20) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2503,7 +2829,7 @@
 <a name="table-system_messenger_systmpl-define"></a>
 ## system_messenger_systmpl
 > **邮件短信模板**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2512,6 +2838,7 @@
 |  content | 模板内容 |  LONGTEXT | No | 0 | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
 |  active | 是否激活 |  TINYINT(1) | No | 1 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2520,7 +2847,7 @@
 <a name="table-system_prism_initstep-define"></a>
 ## system_prism_initstep
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2533,6 +2860,7 @@
 |  create_time | 进入队列的时间 |  INT UNSIGNED | No | 0 | No |
 |  start_time | 任务开始执行时间 |  INT UNSIGNED | No | 0 | No |
 |  complete_time | 任务执行结束时间 |  INT UNSIGNED | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2541,7 +2869,7 @@
 <a name="table-system_queue_mysql-define"></a>
 ## system_queue_mysql
 > **队列-mysql实现表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2553,6 +2881,7 @@
 |  create_time | 进入队列的时间 |  INT UNSIGNED | No | 0 | No |
 |  last_cosume_time | 任务开始执行时间 |  INT UNSIGNED | No | 0 | No |
 |  owner_thread_id | mysql进程ID |  INT | No | -1 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2562,7 +2891,7 @@
 <a name="table-system_seller_log-define"></a>
 ## system_seller_log
 > **店铺人员操作日志表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2575,6 +2904,7 @@
 |  memo | 操作内容 |  LONGTEXT | No |  | No |
 |  router | 操作路由 |  VARCHAR(50) | No |  | No |
 |  ip | IP |  VARCHAR(15) | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2582,14 +2912,13 @@
 | primary | log_id | Yes |  |
 | ind_createdtime | created_time | No |  |
 | ind_adminusername | seller_username | No |  |
-  
 <a name="app-systrade-define"></a>
 ## app:systrade tables
 
 <a name="table-systrade_cart-define"></a>
 ## systrade_cart
 > **购物车**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2608,6 +2937,7 @@
 |  selected_promotion | 购物车选中的促销ID |  VARCHAR(30) | Yes |  | No |
 |  created_time | 加入购物车时间 |  INT UNSIGNED | No |  | No |
 |  modified_time | 最后修改时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2619,7 +2949,7 @@
 <a name="table-systrade_cart_coupon-define"></a>
 ## systrade_cart_coupon
 > **购物车使用优惠券表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2629,6 +2959,7 @@
 |  shop_id | 店铺ID |  INT UNSIGNED | Yes |  | No |
 |  coupon_id | 优惠券id |  INT UNSIGNED | Yes |  | No |
 |  coupon_code | 优惠券号码 |  VARCHAR(15) | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2638,7 +2969,7 @@
 <a name="table-systrade_log-define"></a>
 ## systrade_log
 > **订单日志表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2651,6 +2982,7 @@
 |  behavior | 日志记录操作的行为\|create:创建;update:修改;payed:支付;delivery:发货;confirm:收货;cancel:取消;refund:退款;reship:退货;exchange:换货;mark:修改备注;finish:完成; |  VARCHAR(8) | Yes | update | No |
 |  log_text | 操作内容 |  LONGTEXT | No |  | No |
 |  log_time | 记录时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2659,7 +2991,7 @@
 <a name="table-systrade_order-define"></a>
 ## systrade_order
 > **订单子表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2707,6 +3039,7 @@
 |  outer_iid | 商家外部编码 |  VARCHAR(50) | No |  | No |
 |  outer_sku_id | 商家外部sku码 |  VARCHAR(50) | No |  | No |
 |  sub_stock | 是否支持下单减库存 |  TINYINT(1) | Yes | 1 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2715,7 +3048,7 @@
 <a name="table-systrade_order_complaints-define"></a>
 ## systrade_order_complaints
 > **订单投诉表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2734,6 +3067,7 @@
 |  buyer_close_reasons |  |  VARCHAR(255) | No |  | No |
 |  created_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2743,7 +3077,7 @@
 <a name="table-systrade_promotion_detail-define"></a>
 ## systrade_promotion_detail
 > **订单使用的促销信息表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2761,7 +3095,7 @@
 <a name="table-systrade_trade-define"></a>
 ## systrade_trade
 > **订单主表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2794,7 +3128,7 @@
 |  receiver_mobile | 收货人手机号 |  VARCHAR(20) | No |  | No |
 |  receiver_phone | 收货人电话 |  VARCHAR(20) | No |  | No |
 |  title | 交易标题 |  VARCHAR(50) | No |  | No |
-|  discount_fee | 系统优惠金额 |  NUMERIC(20, 3) | No | 0 | No |
+|  discount_fee | 促销优惠金额 |  NUMERIC(20, 3) | No | 0 | No |
 |  consume_point_fee | 买家使用积分 |  INT UNSIGNED | No | 0 | No |
 |  buyer_message | 买家留言 |  VARCHAR(255) | No |  | No |
 |  need_invoice | 是否需要开票 |  TINYINT(1) | No | 0 | No |
@@ -2820,6 +3154,7 @@
 |  anony | 下单选择的是否匿名，子订单将匿名修改该字段不修改，只表示下单的选择 |  TINYINT(1) | No | 0 | No |
 |  is_clearing | 是否生成结算单 |  TINYINT(1) | No | 0 | No |
 |  disabled | 是否有效 |  TINYINT(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2828,7 +3163,7 @@
 <a name="table-systrade_tradeabnormal-define"></a>
 ## systrade_tradeabnormal
 > **取消异常订单表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2840,19 +3175,19 @@
 |  reject_reason |  |  VARCHAR(100) | No |  | No |
 |  created_time |  |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | id | Yes |  |
-  
 <a name="app-sysuser-define"></a>
 ## app:sysuser tables
 
 <a name="table-sysuser_account-define"></a>
 ## sysuser_account
 > **商城会员用户表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2866,6 +3201,7 @@
 |  disabled |  |  TINYINT(1) | No | 0 | No |
 |  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
 |  modified_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2874,7 +3210,7 @@
 <a name="table-sysuser_shop_fav-define"></a>
 ## sysuser_shop_fav
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2885,6 +3221,7 @@
 |  shop_name | 店铺名称 |  VARCHAR(50) | Yes |  | No |
 |  shop_logo | 提交logo |  VARCHAR(500) | No |  | No |
 |  create_time |  |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2893,31 +3230,25 @@
 <a name="table-sysuser_trustinfo-define"></a>
 ## sysuser_trustinfo
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
 | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
 |  trust_id | 信任id |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
 |  user_id | 会员id |  INT UNSIGNED | No |  | No |
-|  openid | 用户openid |  VARCHAR(255) | Yes |  | No |
-|  realname | 用户真实名称 |  VARCHAR(255) | No |  | No |
-|  nickname | 用户昵称 |  VARCHAR(255) | No |  | No |
-|  avatar | 头像 |  VARCHAR(255) | No |  | No |
-|  url | 链接 |  VARCHAR(255) | No |  | No |
-|  gender | 性别 |  VARCHAR(255) | No |  | No |
-|  address | 用户地址 |  VARCHAR(255) | No |  | No |
-|  province | 所在省级 |  VARCHAR(255) | No |  | No |
-|  city | 所在城市 |  VARCHAR(255) | No |  | No |
+|  user_flag | 对应信任登陆方的唯一标识 |  VARCHAR(255) | Yes |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | trust_id | Yes |  |
+| ind_bind_uniq | user_id, user_flag | Yes |  |
 <a name="table-sysuser_user-define"></a>
 ## sysuser_user
 > **商店会员表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2944,6 +3275,7 @@
 |  area |  |  VARCHAR(55) | No |  | No |
 |  addr |  |  VARCHAR(255) | No |  | No |
 |  email_verify |  |  TINYINT(1) | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2954,7 +3286,7 @@
 <a name="table-sysuser_user_addrs-define"></a>
 ## sysuser_user_addrs
 > **会员地址表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2968,6 +3300,7 @@
 |  tel | 电话 |  VARCHAR(50) | No |  | No |
 |  mobile | 手机 |  VARCHAR(50) | No |  | No |
 |  def_addr | 默认地址 |  TINYINT(1) | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2976,7 +3309,7 @@
 <a name="table-sysuser_user_coupon-define"></a>
 ## sysuser_user_coupon
 > **用户优惠券表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -2990,6 +3323,7 @@
 |  tid | 使用该优惠券的订单号 |  BIGINT UNSIGNED | No |  | No |
 |  is_valid | 会员优惠券是否当前可用\|0:已使用;1:有效;2:过期; |  VARCHAR(1) | Yes | 1 | No |
 |  used_platform | 使用平台\|0:商家全场可用;1:只能用于pc;2:只能用于wap; |  VARCHAR(1) | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -2998,7 +3332,7 @@
 <a name="table-sysuser_user_experience-define"></a>
 ## sysuser_user_experience
 > **会员经验值详细记录表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -3011,6 +3345,7 @@
 |  experience | 成长值 |  INT UNSIGNED | No |  | No |
 |  remark | 备注(记录订单号) |  VARCHAR(500) | No |  | No |
 |  expiration_time | 经验值过期时间 |  INT UNSIGNED | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3019,7 +3354,7 @@
 <a name="table-sysuser_user_fav-define"></a>
 ## sysuser_user_fav
 > **收藏/缺货登记**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -3039,6 +3374,7 @@
 |  disabled |  |  TINYINT(1) | No | 0 | No |
 |  remark | 备注 |  LONGTEXT | No | 0 | No |
 |  object_type | 收藏的类型，goods |  VARCHAR(100) | No | goods | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3047,7 +3383,7 @@
 <a name="table-sysuser_user_grade-define"></a>
 ## sysuser_user_grade
 > **会员等级表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -3058,16 +3394,39 @@
 |  experience |  |  INT UNSIGNED | Yes | 0 | No |
 |  default_grade | 是否默认等级 |  TINYINT(1) | Yes | 0 | No |
 |  validity | 等级有效期 |  INT UNSIGNED | Yes | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | grade_id | Yes |  |
 | ind_experience | experience | No |  |
+<a name="table-sysuser_user_item_notify-define"></a>
+## sysuser_user_item_notify
+> **缺货表**
+
+- 表结构
+
+| ColumnName | Comment | Type | Not null | Default | Autoincrement |
+| ------------- |-------------|-------------|-------------|-------------|-------------|-------------|
+|  gnotify_id | 缺货ID |  INT UNSIGNED AUTO_INCREMENT | Yes |  | Yes |
+|  shop_id | 店铺id |  INT UNSIGNED | Yes |  | No |
+|  item_id | 商品id |  INT UNSIGNED | Yes |  | No |
+|  sku_id | 货品id |  INT UNSIGNED | Yes |  | No |
+|  email | 邮箱 |  VARCHAR(32) | No |  | No |
+|  createtime | 创建时间 |  INT UNSIGNED | No |  | No |
+|  send_time |  |  INT UNSIGNED | No |  | No |
+|  sendstatus | 状态\|ready:准备发送;send:以发送; |  VARCHAR(5) | No | ready | No |
+
+- 索引
+
+| Key name | Column names | Unique | Comment |
+| ------------- |-------------|-------------|-------------|
+| primary | gnotify_id | Yes |  |
 <a name="table-sysuser_user_point-define"></a>
 ## sysuser_user_point
 > **会员积分值详细记录表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -3080,6 +3439,7 @@
 |  point | 积分值 |  INT UNSIGNED | No | 0 | No |
 |  remark | 备注(记录订单号) |  VARCHAR(500) | No |  | No |
 |  expiration_time | 积分过期时间 |  INT UNSIGNED | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3088,7 +3448,7 @@
 <a name="table-sysuser_user_pointlog-define"></a>
 ## sysuser_user_pointlog
 > **会员积分值明细表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -3101,6 +3461,7 @@
 |  point | 积分值 |  INT UNSIGNED | No | 0 | No |
 |  remark | 备注(记录订单号) |  VARCHAR(500) | No |  | No |
 |  expiration_time | 积分过期时间 |  INT UNSIGNED | No | 0 | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3109,7 +3470,7 @@
 <a name="table-sysuser_user_points-define"></a>
 ## sysuser_user_points
 > **会员积分表**
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
@@ -3118,6 +3479,7 @@
 |  point_count | 会员总积分值 |  INT UNSIGNED | No | 0 | No |
 |  expired_point | 将要过期积分 |  INT UNSIGNED | No | 0 | No |
 |  modified_time | 记录时间 |  INT UNSIGNED | No |  | No |
+
 - 索引
 
 | Key name | Column names | Unique | Comment |
@@ -3126,7 +3488,7 @@
 <a name="table-sysuser_user_trade_count-define"></a>
 ## sysuser_user_trade_count
 > ****
-    
+
 - 表结构
 
 | ColumnName | Comment | Type | Not null | Default | Autoincrement |
