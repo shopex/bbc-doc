@@ -1,4 +1,4 @@
-# LuckyMall开发文档
+# B2B2C开发文档
 ## 序言
 - [简介](/preface/introduction.md)
 
