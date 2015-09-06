@@ -9,6 +9,7 @@
 | zebra stripes | are neat      |    $1 |
 
 
+
 | Key name | Column names | Unique | Comment |
 | ------------- |-------------|-------------|-------------|
 | primary | app_id | Yes |  |
