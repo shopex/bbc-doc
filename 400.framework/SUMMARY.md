@@ -3,8 +3,6 @@
 
 1. [bbc队列消耗配置和使用](10.queue.md)
 1. [配置](100.configuration.md)
-1. [搜索配置文档和使用方法](1300.search.md)
-1. [xhprof优化](1400.xhprof.md)
 1. [通过composer引用第三方库](200.composer.md)
 1. [请求](300.requests.md)
 1. [路由](400.routing.md)
@@ -13,3 +11,5 @@
 1. [prism rpc](700.prism.md)
 1. [表单验证](800.validator.md)
 1. [dbschema数据表定义](900.schema.md)
+1. [搜索配置文档和使用方法](1300.search.md)
+1. [xhprof优化](1400.xhprof.md)
