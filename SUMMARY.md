@@ -3,9 +3,6 @@ B2B2C开发文档
 
 1. [序言](100.preface/README.md)
     1. [简介](100.preface/100.introduction.md)
-    1. [B2B2C ChangeLog](100.preface/200.changelog/README.md)
-        1. [Version 3.0.7](100.preface/200.changelog/3.0.7.md)
-        1. [Version 3.0.8](100.preface/200.changelog/3.0.8.md)
     1. [B2B2C ChangeLog](100.preface/200.changelog.md)
 1. [约定](200.agreement/README.md)
     1. [PHP编码规范](200.agreement/1.php-convention.md)
