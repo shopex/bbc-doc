@@ -2,15 +2,16 @@
 
 补丁包分为两种类型: 源码补丁包, 加密补丁包
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+> **加密补丁包**
+> 此补丁包为全量补丁包, 例如2.0的补丁包
+
+> **源码补丁包**
+> 此补丁包为增量补丁包, 
 
 
 
-| Key name | Column names | Unique | Comment |
-| ------------- |-------------|-------------|-------------|
-| primary | app_id | Yes |  |
+| 产品名称 | 版本标识 | 补丁包类型 | 
+| ------------- |-------------|-------------|
+| 商派ONex互联网商业平台多用户商城标准版授权套件 | b2b2c-common-cluster-source | 源码 |
+| 商派ONex互联网商业平台多用户商城专业版开发授权套件 | b2b2c-common-cluster-encrypted | 加密 |
 
