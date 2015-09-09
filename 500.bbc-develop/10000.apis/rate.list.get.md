@@ -1,0 +1,49 @@
+# 获取评论列表(rate.list.get)
+
+## 评价相关API
+
+### 
+
+* 系统参数
+
+| *字段* | *标题* | *数据类型* | *验证条件* | *示例值* | *默认值* | *详细说明* |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| method | API的方法名 | string | required | trade.get | null | 标识请求的是哪个API |
+| timestamp | 请求时间 | unix时间戳 | required , numeric , > time()-300 | 1440596821 | null | 标识API请求的发起时间，如果超时300秒则拒绝请求 |
+| format | 返回数据格式 | string | required | json | json | 返回数据是json格式的，目前只支持json |
+| v | 版本号 | string | required | v1 | null | 标识该接口的版本 |
+| sign_type | 签名方式 | string | required | MD5 | null | 标识签名算法 |
+| sign | 签名 | string | required | AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | null | 数据签名，32位长度16进制数字 |
+
+
+* 业务参数
+
+| *字段* | *标题* | *数据类型* | *验证条件* | *示例值* | *默认值* | *详细说明* |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| role |  | string |  |  |  | 调用角色 |
+| item_id |  | bool |  |  |  | 评价的商品ID |
+| item_title |  | string |  |  |  | 评价的商品名称 |
+| rate_start_time |  | time |  |  |  | 申诉开始时间 |
+| rate_end_time |  | time |  |  |  | 申诉结束时间 |
+| is_content |  | bool |  |  |  | 是否有内容，true内容 false 全部 |
+| is_pic |  | bool |  |  |  | 是否有晒单 true 有晒图 false全部 |
+| is_reply |  | bool |  |  |  | 是否回复 |
+| result |  | string |  |  |  | 评价结果 |
+| appeal_again |  | bool |  |  |  | 再次申诉 |
+| appeal_start_time |  | time |  |  |  | 申诉开始时间 |
+| appeal_end_time |  | time |  |  |  | 申诉结束时间 |
+| appeal_status |  | string |  |  |  | 申诉结果 |
+| page_no |  | int |  |  |  | 分页当前页数,默认为1 |
+| page_size |  | int |  |  |  | 每页数据条数,默认10条 |
+| orderBy |  | string |  |  |  | 排序，默认modified_time desc |
+| fields |  | field_list | required |  |  | 需要返回的字段 |
+
+
+*返回内容示例
+
+```
+
+
+
+```
+
