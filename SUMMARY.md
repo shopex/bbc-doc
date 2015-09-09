@@ -2,7 +2,6 @@ B2B2C开发文档
 ================================================
 
 1. [序言](100.preface/README.md)
-    1. [简介](100.preface/100.introduction.md)
     1. [B2B2C ChangeLogo](100.preface/200.changelog.md)
 1. [约定](200.agreement/README.md)
     1. [PHP编码规范](200.agreement/1.php-convention.md)
@@ -39,8 +38,8 @@ B2B2C开发文档
         1. [B2B2C 前台样式及SCSS文件用例说明](500.bbc-develop/300.ued/100.styles-example.md)
         1. [B2B2C JavaScript 接口调用说明](500.bbc-develop/300.ued/200.scripts-calling.md)
     1. [二次开发](500.bbc-develop/5000.customize.md)
-    1. [数据词典](500.bbc-develop/9000.data-dictionary.md/README.md)
-        1. [3.0.6](500.bbc-develop/9000.data-dictionary.md/3.0.6.md)
+    1. [数据词典](500.bbc-develop/9000.data-dictionary/README.md)
+        1. [3.0.6](500.bbc-develop/9000.data-dictionary/3.0.6.md)
     1. [APIS](500.bbc-develop/10000.apis/README.md)
         1. [用于OAuth登陆商家的接口(account.shop.oauth.login)](500.bbc-develop/10000.apis/account.shop.oauth.login.md)
         1. [创建商家角色(account.shop.roles.add)](500.bbc-develop/10000.apis/account.shop.roles.add.md)
