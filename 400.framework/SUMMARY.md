@@ -14,3 +14,4 @@
 1. [搜索配置文档和使用方法](1300.search.md)
 1. [xhprof优化](1400.xhprof.md)
 1. [缓存配置文档和使用方法(以memcached为例)](1500.cache.md)
+1. [API开发](1600.prism.md)

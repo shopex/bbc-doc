@@ -32,6 +32,7 @@ B2B2C开发文档
     1. [搜索配置文档和使用方法](400.framework/1300.search.md)
     1. [xhprof优化](400.framework/1400.xhprof.md)
     1. [缓存配置文档和使用方法(以memcached为例)](400.framework/1500.cache.md)
+    1. [API开发](400.framework/1600.prism.md)
 1. [B2B2C开发手册](500.bbc-develop/README.md)
     1. [UED](500.bbc-develop/300.ued/README.md)
         1. [B2B2C 前台样式及SCSS文件用例说明](500.bbc-develop/300.ued/100.styles-example.md)
@@ -48,3 +49,5 @@ B2B2C开发文档
         1. [bbc单机打压部署](700.operator/200.stress-test-report/100.single.md)
         1. [bbc多机打压部署](700.operator/200.stress-test-report/200.cluster.md)
     1. [常见安装FAQ](700.operator/300.faq.md)
+1. [未归类](1000.misc/README.md)
+    1. [prism方式连通](1000.misc/prism.md)
