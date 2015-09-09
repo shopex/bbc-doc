@@ -13,3 +13,4 @@
 1. [dbschema数据表定义](900.schema.md)
 1. [搜索配置文档和使用方法](1300.search.md)
 1. [xhprof优化](1400.xhprof.md)
+1. [缓存配置文档和使用方法(以memcached为例)](1500.cache.md)
