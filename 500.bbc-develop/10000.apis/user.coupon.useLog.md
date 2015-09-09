@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 修改优惠券使用信息(user.coupon.useLog)
 
 ## 用户相关API
 
-### 修改优惠券使用信息(user.coupon.useLog)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 取消优惠券(trade.cart.cartCouponCancel)
 
 ## 交易相关API
 
-### 取消优惠券(trade.cart.cartCouponCancel)
+### 
 
 * 系统参数
 

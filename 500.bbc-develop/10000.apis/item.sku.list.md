@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取指定商品的货品列表(item.sku.list)
 
 ## 商品相关API
 
-### 获取指定商品的货品列表(item.sku.list)
+### 
 
 * 系统参数
 

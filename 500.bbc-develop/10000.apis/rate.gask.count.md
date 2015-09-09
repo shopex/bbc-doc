@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商品咨询统计(rate.gask.count)
 
 ## 评价相关API
 
-### 商品咨询统计(rate.gask.count)
+### 
 
 * 系统参数
 

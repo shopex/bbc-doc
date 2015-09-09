@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取会员当前等级基本信息(user.grade.basicinfo)
 
 ## 用户相关API
 
-### 获取会员当前等级基本信息(user.grade.basicinfo)
+### 
 
 * 系统参数
 

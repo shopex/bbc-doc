@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取指定订单的金额及总和(trade.money.get)
 
 ## 交易相关API
 
-### 获取指定订单的金额及总和(trade.money.get)
+### 
 
 * 系统参数
 

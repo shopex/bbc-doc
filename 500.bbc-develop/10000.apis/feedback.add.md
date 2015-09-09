@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商家对平台进行意见反馈(feedback.add)
 
 ## 评价相关API
 
-### 商家对平台进行意见反馈(feedback.add)
+### 
 
 * 系统参数
 

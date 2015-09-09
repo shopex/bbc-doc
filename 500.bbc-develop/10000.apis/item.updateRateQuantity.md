@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 修改评论数量(item.updateRateQuantity)
 
 ## 商品相关API
 
-### 修改评论数量(item.updateRateQuantity)
+### 
 
 * 系统参数
 

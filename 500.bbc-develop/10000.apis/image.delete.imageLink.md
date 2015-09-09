@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 数据库中删除图片链接，但是不删除真实图片文件(image.delete.imageLink)
 
 ## 图片相关API
 
-### 数据库中删除图片链接，但是不删除真实图片文件(image.delete.imageLink)
+### 
 
 * 系统参数
 

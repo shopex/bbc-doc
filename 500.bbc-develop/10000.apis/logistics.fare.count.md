@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 计算运费(logistics.fare.count)
 
 ## 物流相关API
 
-### 计算运费(logistics.fare.count)
+### 
 
 * 系统参数
 

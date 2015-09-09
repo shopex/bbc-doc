@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 平台对退款申请进行驳回处理(aftersales.refunds.reject)
 
 ## 售后相关API
 
-### 平台对退款申请进行驳回处理(aftersales.refunds.reject)
+### 
 
 * 系统参数
 

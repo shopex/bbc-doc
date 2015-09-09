@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取单个售后详情(根据子订单号)(aftersales.get.bn)
 
 ## 售后相关API
 
-### 获取单个售后详情(根据子订单号)(aftersales.get.bn)
+### 
 
 * 系统参数
 

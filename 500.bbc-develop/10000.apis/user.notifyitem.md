@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 会员到货通知(user.notifyitem)
 
 ## 用户相关API
 
-### 会员到货通知(user.notifyitem)
+### 
 
 * 系统参数
 

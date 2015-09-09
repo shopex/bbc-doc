@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 用户密码找回和修改(user.pwd.update)
 
 ## 用户相关API
 
-### 用户密码找回和修改(user.pwd.update)
+### 
 
 * 系统参数
 

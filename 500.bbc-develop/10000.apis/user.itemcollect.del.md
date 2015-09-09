@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 删除商品收藏(user.itemcollect.del)
 
 ## 用户相关API
 
-### 删除商品收藏(user.itemcollect.del)
+### 
 
 * 系统参数
 

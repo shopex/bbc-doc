@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 发货单更新(delivery.update)
 
 ## 物流相关API
 
-### 发货单更新(delivery.update)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取用户的详细信息(user.get.info)
 
 ## 用户相关API
 
-### 获取用户的详细信息(user.get.info)
+### 
 
 * 系统参数
 

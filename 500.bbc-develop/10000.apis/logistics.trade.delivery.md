@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 订单发货（ erp）(logistics.trade.delivery)
 
 ## 物流相关API
 
-### 订单发货（ erp）(logistics.trade.delivery)
+### 
 
 * 系统参数
 

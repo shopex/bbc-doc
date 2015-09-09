@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商品删除(item.delete)
 
 ## 商品相关API
 
-### 商品删除(item.delete)
+### 
 
 * 系统参数
 

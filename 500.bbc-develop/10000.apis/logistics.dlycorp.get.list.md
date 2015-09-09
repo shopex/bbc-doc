@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取物流公司列表(logistics.dlycorp.get.list)
 
 ## 物流相关API
 
-### 获取物流公司列表(logistics.dlycorp.get.list)
+### 
 
 * 系统参数
 

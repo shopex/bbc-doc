@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 订单发货状态变更(联通erp)(trade.shop.update.delivery.status)
 
 ## 交易相关API
 
-### 订单发货状态变更(联通erp)(trade.shop.update.delivery.status)
+### 
 
 * 系统参数
 

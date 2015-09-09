@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取指定商品的自然属性(item.get.nature.prop)
 
 ## 商品相关API
 
-### 获取指定商品的自然属性(item.get.nature.prop)
+### 
 
 * 系统参数
 

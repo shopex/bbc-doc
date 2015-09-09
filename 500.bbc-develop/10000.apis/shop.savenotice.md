@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 保存店铺通知(shop.savenotice)
 
 ## 店铺相关API
 
-### 保存店铺通知(shop.savenotice)
+### 
 
 * 系统参数
 

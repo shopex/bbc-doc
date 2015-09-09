@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 满折促销规则应用(promotion.fulldiscount.apply)
 
 ## 促销相关API
 
-### 满折促销规则应用(promotion.fulldiscount.apply)
+### 
 
 * 系统参数
 

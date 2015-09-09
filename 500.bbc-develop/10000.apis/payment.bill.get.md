@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取支付单信息(payment.bill.get)
 
 ## 电商工具相关API
 
-### 获取支付单信息(payment.bill.get)
+### 
 
 * 系统参数
 

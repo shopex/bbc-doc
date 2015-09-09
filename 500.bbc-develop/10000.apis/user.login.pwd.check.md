@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 检测用户登录密码(user.login.pwd.check)
 
 ## 用户相关API
 
-### 检测用户登录密码(user.login.pwd.check)
+### 
 
 * 系统参数
 

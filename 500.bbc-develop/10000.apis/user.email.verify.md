@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 验证邮箱(user.email.verify)
 
 ## 用户相关API
 
-### 验证邮箱(user.email.verify)
+### 
 
 * 系统参数
 

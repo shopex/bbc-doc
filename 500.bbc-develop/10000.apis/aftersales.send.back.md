@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 消费者回寄退货物流信息(aftersales.send.back)
 
 ## 售后相关API
 
-### 消费者回寄退货物流信息(aftersales.send.back)
+### 
 
 * 系统参数
 

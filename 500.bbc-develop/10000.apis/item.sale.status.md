@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商品上下架修改(item.sale.status)
 
 ## 商品相关API
 
-### 商品上下架修改(item.sale.status)
+### 
 
 * 系统参数
 

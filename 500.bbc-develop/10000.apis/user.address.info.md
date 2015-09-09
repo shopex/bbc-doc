@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取会员地址详情(user.address.info)
 
 ## 用户相关API
 
-### 获取会员地址详情(user.address.info)
+### 
 
 * 系统参数
 

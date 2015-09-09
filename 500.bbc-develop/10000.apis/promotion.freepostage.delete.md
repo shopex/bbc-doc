@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 删除单条免邮信息(promotion.freepostage.delete)
 
 ## 促销相关API
 
-### 删除单条免邮信息(promotion.freepostage.delete)
+### 
 
 * 系统参数
 

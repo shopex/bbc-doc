@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 修改商品品牌(category.brand.update)
 
 ## 品牌类目相关API
 
-### 修改商品品牌(category.brand.update)
+### 
 
 * 系统参数
 

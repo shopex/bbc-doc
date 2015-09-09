@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取会员目前地址数量和地址最大限制数量(user.address.count)
 
 ## 用户相关API
 
-### 获取会员目前地址数量和地址最大限制数量(user.address.count)
+### 
 
 * 系统参数
 

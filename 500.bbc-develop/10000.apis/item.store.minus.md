@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 扣减库存(item.store.minus)
 
 ## 商品相关API
 
-### 扣减库存(item.store.minus)
+### 
 
 * 系统参数
 

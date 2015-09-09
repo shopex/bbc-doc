@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取华强宝物流跟踪(logistics.tracking.get.hqepay)
 
 ## 物流相关API
 
-### 获取华强宝物流跟踪(logistics.tracking.get.hqepay)
+### 
 
 * 系统参数
 

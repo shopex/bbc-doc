@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 申请商户开放平台(open.shop.develop.apply)
 
 ## 开放相关API
 
-### 申请商户开放平台(open.shop.develop.apply)
+### 
 
 * 系统参数
 

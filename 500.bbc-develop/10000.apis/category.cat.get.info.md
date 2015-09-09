@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取指定类目信息(category.cat.get.info)
 
 ## 品牌类目相关API
 
-### 获取指定类目信息(category.cat.get.info)
+### 
 
 * 系统参数
 
@@ -21,7 +21,8 @@
 | *字段* | *标题* | *数据类型* | *验证条件* | *示例值* | *默认值* | *详细说明* |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | parent_id |  | int |  | 33 |  | 父类id |
-| cat_id |  | int |  | 33 |  | 类目id,和cat_name二选一 |
+| cat_id |  | string |  | 33 |  | 类目id,和cat_name二选一 |
+| cat_path |  | string |  | 33 |  | 类目id |
 | cat_name |  | string |  | 大家电 |  | 类目名称和cat_id二选一 |
 | level |  | int |  | 1 |  | 类目等级1、2、3,当cat_name不为空时，此参数必填 |
 | fields |  | field_list |  | cat_name,cat_id | cat_name,level,cat_id | 获取类目的指定字段 |

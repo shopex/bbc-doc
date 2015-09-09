@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取店铺签约的类目(shop.authorize.cat)
 
 ## 店铺相关API
 
-### 获取店铺签约的类目(shop.authorize.cat)
+### 
 
 * 系统参数
 

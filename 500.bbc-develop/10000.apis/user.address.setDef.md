@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 会员地址默认设置(user.address.setDef)
 
 ## 用户相关API
 
-### 会员地址默认设置(user.address.setDef)
+### 
 
 * 系统参数
 

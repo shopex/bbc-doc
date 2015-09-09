@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 统计订单未评价数量(trade.notrate.count)
 
 ## 交易相关API
 
-### 统计订单未评价数量(trade.notrate.count)
+### 
 
 * 系统参数
 

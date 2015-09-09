@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+#  获取运费模板列表(logistics.dlytmpl.get.list)
 
 ## 物流相关API
 
-###  获取运费模板列表(logistics.dlytmpl.get.list)
+### 
 
 * 系统参数
 
@@ -20,7 +20,7 @@
 
 | *字段* | *标题* | *数据类型* | *验证条件* | *示例值* | *默认值* | *详细说明* |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| shop_id |  | string | required | 1 |  | 店铺id |
+| shop_id |  | string |  | 1 |  | 店铺id |
 | status |  | string |  | on | on | 模板状态 |
 | page_no |  | int |  |  | 1 | 分页当前页码,1<=no<=499 |
 | page_size |  | int |  |  | 500 | 分页每页条数(1<=size<=1000) |

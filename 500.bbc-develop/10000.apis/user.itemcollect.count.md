@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取会员商品收藏总数(user.itemcollect.count)
 
 ## 用户相关API
 
-### 获取会员商品收藏总数(user.itemcollect.count)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取指定的子帐号信息(account.shop.user.get)
 
 ## 店铺相关API
 
-### 获取指定的子帐号信息(account.shop.user.get)
+### 
 
 * 系统参数
 

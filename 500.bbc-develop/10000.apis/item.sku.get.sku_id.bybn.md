@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据sku_bn反查sku_id(item.sku.get.sku_id.bybn)
 
 ## 商品相关API
 
-### 根据sku_bn反查sku_id(item.sku.get.sku_id.bybn)
+### 
 
 * 系统参数
 

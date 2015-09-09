@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据优惠券ID,获取优惠券列表(promotion.coupon.list.byid)
 
 ## 促销相关API
 
-### 根据优惠券ID,获取优惠券列表(promotion.coupon.list.byid)
+### 
 
 * 系统参数
 

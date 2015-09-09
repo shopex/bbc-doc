@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 选择的优惠券放入购物车优惠券表(trade.cart.cartCouponAdd)
 
 ## 交易相关API
 
-### 选择的优惠券放入购物车优惠券表(trade.cart.cartCouponAdd)
+### 
 
 * 系统参数
 
@@ -21,7 +21,8 @@
 | *字段* | *标题* | *数据类型* | *验证条件* | *示例值* | *默认值* | *详细说明* |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | coupon_code |  | string | required |  |  | 优惠券编码 |
-| shop_id |  | int | required |  |  | 店铺id |
+| shop_id |  | int | required,integer |  |  | 店铺id |
+| user_id |  | int | required,integer |  |  | 用户id |
 
 
 *返回内容示例

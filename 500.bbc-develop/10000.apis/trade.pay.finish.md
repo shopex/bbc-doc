@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 订单支付状态改变(trade.pay.finish)
 
 ## 交易相关API
 
-### 订单支付状态改变(trade.pay.finish)
+### 
 
 * 系统参数
 

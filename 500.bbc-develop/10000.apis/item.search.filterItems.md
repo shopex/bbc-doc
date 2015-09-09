@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据搜索条件，列出渐进式的筛选项(item.search.filterItems)
 
 ## 商品相关API
 
-### 根据搜索条件，列出渐进式的筛选项(item.search.filterItems)
+### 
 
 * 系统参数
 

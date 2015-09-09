@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取单条评论详情(rate.dsr.get)
 
 ## 评价相关API
 
-### 获取单条评论详情(rate.dsr.get)
+### 
 
 * 系统参数
 

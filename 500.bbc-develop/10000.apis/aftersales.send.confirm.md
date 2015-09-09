@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 消费者申请换货，商家确认收到回寄商品，进行重新进行发货(aftersales.send.confirm)
 
 ## 售后相关API
 
-### 消费者申请换货，商家确认收到回寄商品，进行重新进行发货(aftersales.send.confirm)
+### 
 
 * 系统参数
 

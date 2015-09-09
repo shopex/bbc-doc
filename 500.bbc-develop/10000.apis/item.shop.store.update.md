@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 回写库存(item.shop.store.update)
 
 ## 商品相关API
 
-### 回写库存(item.shop.store.update)
+### 
 
 * 系统参数
 

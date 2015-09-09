@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取该品牌签约的店铺(shop.check.brand.sign)
 
 ## 店铺相关API
 
-### 获取该品牌签约的店铺(shop.check.brand.sign)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取文章详情(syscontent.content.get.info)
 
 ## 文章相关API
 
-### 获取文章详情(syscontent.content.get.info)
+### 
 
 * 系统参数
 

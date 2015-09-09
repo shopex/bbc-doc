@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商家审核售后服务(aftersales.check)
 
 ## 售后相关API
 
-### 商家审核售后服务(aftersales.check)
+### 
 
 * 系统参数
 

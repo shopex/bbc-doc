@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 删除购物车数据(trade.cart.delete)
 
 ## 交易相关API
 
-### 删除购物车数据(trade.cart.delete)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 更新商品的关联促销信息(item.promotion.addTag)
 
 ## 商品相关API
 
-### 更新商品的关联促销信息(item.promotion.addTag)
+### 
 
 * 系统参数
 

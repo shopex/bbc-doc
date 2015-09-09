@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 设置商家开放平台的配置参数(open.shop.develop.setConf)
 
 ## 开放相关API
 
-### 设置商家开放平台的配置参数(open.shop.develop.setConf)
+### 
 
 * 系统参数
 

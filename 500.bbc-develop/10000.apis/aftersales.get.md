@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取单个售后详情(根据售后单、店铺id、会员id)(aftersales.get)
 
 ## 售后相关API
 
-### 获取单个售后详情(根据售后单、店铺id、会员id)(aftersales.get)
+### 
 
 * 系统参数
 

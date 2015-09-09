@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取用户优惠券信息(user.coupon.get)
 
 ## 用户相关API
 
-### 获取用户优惠券信息(user.coupon.get)
+### 
 
 * 系统参数
 

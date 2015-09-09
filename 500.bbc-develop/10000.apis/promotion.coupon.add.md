@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 添加优惠券数据(promotion.coupon.add)
 
 ## 促销相关API
 
-### 添加优惠券数据(promotion.coupon.add)
+### 
 
 * 系统参数
 

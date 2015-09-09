@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取多条X件Y折促销列表(promotion.xydiscount.list)
 
 ## 促销相关API
 
-### 获取多条X件Y折促销列表(promotion.xydiscount.list)
+### 
 
 * 系统参数
 

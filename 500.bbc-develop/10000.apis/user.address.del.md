@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 删除会员地址(user.address.del)
 
 ## 用户相关API
 
-### 删除会员地址(user.address.del)
+### 
 
 * 系统参数
 

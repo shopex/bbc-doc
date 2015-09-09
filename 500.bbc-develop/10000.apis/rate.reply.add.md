@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商家解释，回复评论(rate.reply.add)
 
 ## 评价相关API
 
-### 商家解释，回复评论(rate.reply.add)
+### 
 
 * 系统参数
 

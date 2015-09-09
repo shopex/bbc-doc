@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取店铺自有类目(shop.cat.get)
 
 ## 店铺相关API
 
-### 获取店铺自有类目(shop.cat.get)
+### 
 
 * 系统参数
 

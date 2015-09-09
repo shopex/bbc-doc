@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 修改商品销量(item.updateSoldQuantity)
 
 ## 商品相关API
 
-### 修改商品销量(item.updateSoldQuantity)
+### 
 
 * 系统参数
 

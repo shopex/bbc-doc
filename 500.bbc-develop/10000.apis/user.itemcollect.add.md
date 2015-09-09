@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 添加商品收藏(user.itemcollect.add)
 
 ## 用户相关API
 
-### 添加商品收藏(user.itemcollect.add)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 更新店铺基本信息[暂时只修改店铺logo和店铺描述](shop.update)
 
 ## 店铺相关API
 
-### 更新店铺基本信息[暂时只修改店铺logo和店铺描述](shop.update)
+### 
 
 * 系统参数
 

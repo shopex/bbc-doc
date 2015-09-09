@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 加入购物车(trade.cart.add)
 
 ## 交易相关API
 
-### 加入购物车(trade.cart.add)
+### 
 
 * 系统参数
 

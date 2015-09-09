@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据图片URL,修改图片名称(image.shop.upImageName)
 
 ## 图片相关API
 
-### 根据图片URL,修改图片名称(image.shop.upImageName)
+### 
 
 * 系统参数
 

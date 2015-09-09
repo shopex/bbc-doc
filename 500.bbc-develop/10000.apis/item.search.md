@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据条件获取商品列表(item.search)
 
 ## 商品相关API
 
-### 根据条件获取商品列表(item.search)
+### 
 
 * 系统参数
 

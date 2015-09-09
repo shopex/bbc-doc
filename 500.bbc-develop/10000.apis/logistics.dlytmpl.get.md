@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+#  获取运费模板列表(logistics.dlytmpl.get)
 
 ## 物流相关API
 
-###  获取运费模板列表(logistics.dlytmpl.get)
+### 
 
 * 系统参数
 

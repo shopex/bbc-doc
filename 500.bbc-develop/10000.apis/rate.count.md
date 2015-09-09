@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# (rate.count)
 
 ## 评价相关API
 
-### (rate.count)
+### 
 
 * 系统参数
 

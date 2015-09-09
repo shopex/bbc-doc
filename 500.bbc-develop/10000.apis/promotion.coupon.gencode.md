@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 生成优惠券号码(promotion.coupon.gencode)
 
 ## 促销相关API
 
-### 生成优惠券号码(promotion.coupon.gencode)
+### 
 
 * 系统参数
 

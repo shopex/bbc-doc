@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 删除会员单条优惠券(user.coupon.remove)
 
 ## 用户相关API
 
-### 删除会员单条优惠券(user.coupon.remove)
+### 
 
 * 系统参数
 

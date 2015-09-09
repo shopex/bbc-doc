@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 更改用户登录信息(user.account.update)
 
 ## 用户相关API
 
-### 更改用户登录信息(user.account.update)
+### 
 
 * 系统参数
 

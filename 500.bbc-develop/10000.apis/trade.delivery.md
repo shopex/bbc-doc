@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 交易发货(trade.delivery)
 
 ## 交易相关API
 
-### 交易发货(trade.delivery)
+### 
 
 * 系统参数
 

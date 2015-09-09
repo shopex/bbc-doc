@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 计算订单包含运费后的金额(trade.price.total)
 
 ## 交易相关API
 
-### 计算订单包含运费后的金额(trade.price.total)
+### 
 
 * 系统参数
 

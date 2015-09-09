@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据自订单号获取单个订单投诉详情(trade.order.complaints.info)
 
 ## 交易相关API
 
-### 根据自订单号获取单个订单投诉详情(trade.order.complaints.info)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 用户基本信息更新(user.basics.update)
 
 ## 用户相关API
 
-### 用户基本信息更新(user.basics.update)
+### 
 
 * 系统参数
 

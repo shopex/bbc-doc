@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 用户删除评价(rate.delete)
 
 ## 评价相关API
 
-### 用户删除评价(rate.delete)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取类目树形结构(category.cat.get.list)
 
 ## 品牌类目相关API
 
-### 获取类目树形结构(category.cat.get.list)
+### 
 
 * 系统参数
 

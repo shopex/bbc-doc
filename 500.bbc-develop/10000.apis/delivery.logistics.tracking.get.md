@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取订单发货物流信息(delivery.logistics.tracking.get)
 
 ## 物流相关API
 
-### 获取订单发货物流信息(delivery.logistics.tracking.get)
+### 
 
 * 系统参数
 

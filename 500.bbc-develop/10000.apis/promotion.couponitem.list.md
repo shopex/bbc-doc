@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取指定优惠券促销商品列表(promotion.couponitem.list)
 
 ## 促销相关API
 
-### 获取指定优惠券促销商品列表(promotion.couponitem.list)
+### 
 
 * 系统参数
 

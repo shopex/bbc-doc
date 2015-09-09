@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 免邮促销规则应用(promotion.freepostage.apply)
 
 ## 促销相关API
 
-### 免邮促销规则应用(promotion.freepostage.apply)
+### 
 
 * 系统参数
 

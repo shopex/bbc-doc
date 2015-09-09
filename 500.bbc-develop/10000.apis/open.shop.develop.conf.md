@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取商家开放平台的配置参数(open.shop.develop.conf)
 
 ## 开放相关API
 
-### 获取商家开放平台的配置参数(open.shop.develop.conf)
+### 
 
 * 系统参数
 

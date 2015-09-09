@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取商家签约的类目和品牌信息(id集)和店铺类型(shop.authorize.catbrandids.get)
 
 ## 店铺相关API
 
-### 获取商家签约的类目和品牌信息(id集)和店铺类型(shop.authorize.catbrandids.get)
+### 
 
 * 系统参数
 

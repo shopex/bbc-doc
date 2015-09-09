@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 交易完成(trade.confirm)
 
 ## 交易相关API
 
-### 交易完成(trade.confirm)
+### 
 
 * 系统参数
 

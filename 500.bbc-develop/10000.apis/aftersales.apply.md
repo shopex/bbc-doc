@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 创建售后服务(aftersales.apply)
 
 ## 售后相关API
 
-### 创建售后服务(aftersales.apply)
+### 
 
 * 系统参数
 

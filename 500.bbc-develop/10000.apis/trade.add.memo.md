@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 订单备注添加(trade.add.memo)
 
 ## 交易相关API
 
-### 订单备注添加(trade.add.memo)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 恢复库存(item.store.recover)
 
 ## 商品相关API
 
-### 恢复库存(item.store.recover)
+### 
 
 * 系统参数
 

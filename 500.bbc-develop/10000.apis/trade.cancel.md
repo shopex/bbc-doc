@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 交易取消(trade.cancel)
 
 ## 交易相关API
 
-### 交易取消(trade.cancel)
+### 
 
 * 系统参数
 

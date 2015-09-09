@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取单条异常订单的详情(trade.abnormal.get)
 
 ## 交易相关API
 
-### 获取单条异常订单的详情(trade.abnormal.get)
+### 
 
 * 系统参数
 

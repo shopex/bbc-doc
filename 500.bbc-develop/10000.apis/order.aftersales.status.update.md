@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 订单售后状态处理(未完成订单退款成功时更新订单状态为关闭)(order.aftersales.status.update)
 
 ## 交易相关API
 
-### 订单售后状态处理(未完成订单退款成功时更新订单状态为关闭)(order.aftersales.status.update)
+### 
 
 * 系统参数
 

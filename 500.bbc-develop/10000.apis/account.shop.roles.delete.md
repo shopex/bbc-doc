@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 删除指定的商家角色(account.shop.roles.delete)
 
 ## 店铺相关API
 
-### 删除指定的商家角色(account.shop.roles.delete)
+### 
 
 * 系统参数
 

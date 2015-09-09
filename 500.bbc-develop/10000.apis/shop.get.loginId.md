@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取指定用户的店铺id(shop.get.loginId)
 
 ## 店铺相关API
 
-### 获取指定用户的店铺id(shop.get.loginId)
+### 
 
 * 系统参数
 

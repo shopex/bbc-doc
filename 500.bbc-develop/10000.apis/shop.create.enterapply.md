@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商家入驻申请(shop.create.enterapply)
 
 ## 店铺相关API
 
-### 商家入驻申请(shop.create.enterapply)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取指定的商家子帐号列表(account.shop.user.list)
 
 ## 店铺相关API
 
-### 获取指定的商家子帐号列表(account.shop.user.list)
+### 
 
 * 系统参数
 

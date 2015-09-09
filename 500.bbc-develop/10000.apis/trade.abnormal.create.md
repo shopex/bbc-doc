@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商家在用户已付款未发货的情况下，申请取消异常订单(trade.abnormal.create)
 
 ## 交易相关API
 
-### 商家在用户已付款未发货的情况下，申请取消异常订单(trade.abnormal.create)
+### 
 
 * 系统参数
 

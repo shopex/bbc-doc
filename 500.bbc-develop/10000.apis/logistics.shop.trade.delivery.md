@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商户线下发货接口(oauth for erp, 一次性全部商品发货)(logistics.shop.trade.delivery)
 
 ## 物流相关API
 
-### 订单发货(oauth for erp)(logistics.shop.trade.delivery)
+### 
 
 * 系统参数
 
@@ -22,12 +22,9 @@
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | delivery_id |  | string |  | 1 |  | 发货单流水编号 |
 | tid |  | string | required | 1 |  | 订单号 |
-| user_id |  | int | required | 1 |  | 买家id |
-| post_fee |  | string | required | 1 |  | 运费 |
-| template_name |  | string | required | 1 |  | 运费模板名称 |
-| logi_no |  | string | required | 1 |  | 运单号 |
 | corp_code |  | string | required | 1 |  | 物流公司编码 |
-| items |  | json | required | 1 |  | 发货单明细,json格式(oid,sku_id,num,title,bn) |
+| corp_no |  | string | required | 1 |  | 运单号 |
+| items |  | json | required | 1 |  | 发货单明细,json格式(num,bn) |
 | memo |  | string |  | 1 |  | 备注 |
 
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据用户ID，查询用户最近购买记录(trade.user.buyerList)
 
 ## 交易相关API
 
-### 根据用户ID，查询用户最近购买记录(trade.user.buyerList)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 添加满减促销数据(promotion.fullminus.add)
 
 ## 促销相关API
 
-### 添加满减促销数据(promotion.fullminus.add)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取商品统计数据(item.get.count)
 
 ## 商品相关API
 
-### 获取商品统计数据(item.get.count)
+### 
 
 * 系统参数
 

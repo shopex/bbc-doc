@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 使用优惠券促销(promotion.coupon.use)
 
 ## 促销相关API
 
-### 使用优惠券促销(promotion.coupon.use)
+### 
 
 * 系统参数
 

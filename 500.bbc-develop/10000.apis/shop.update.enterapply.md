@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商家入驻申请更改(shop.update.enterapply)
 
 ## 店铺相关API
 
-### 商家入驻申请更改(shop.update.enterapply)
+### 
 
 * 系统参数
 

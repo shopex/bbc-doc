@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取基本购物车信息(trade.cart.getBasicCartInfo)
 
 ## 交易相关API
 
-### 获取基本购物车信息(trade.cart.getBasicCartInfo)
+### 
 
 * 系统参数
 

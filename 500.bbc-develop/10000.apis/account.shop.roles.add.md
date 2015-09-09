@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 创建商家角色(account.shop.roles.add)
 
 ## 店铺相关API
 
-### 创建商家角色(account.shop.roles.add)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取指定一级类目的信息以及2、3级类目信息(category.cat.get)
 
 ## 品牌类目相关API
 
-### 获取指定一级类目的信息以及2、3级类目信息(category.cat.get)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取子订单交易列表信息(trade.order.list.get)
 
 ## 交易相关API
 
-### 获取子订单交易列表信息(trade.order.list.get)
+### 
 
 * 系统参数
 

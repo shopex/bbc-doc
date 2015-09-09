@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取购物车信息(trade.cart.getCartInfo)
 
 ## 交易相关API
 
-### 获取购物车信息(trade.cart.getCartInfo)
+### 
 
 * 系统参数
 
@@ -23,6 +23,7 @@
 | mode |  | string |  | fastbuy | cart | 购物车类型(立即购买，购物车) |
 | needInvalid |  | boolean |  | true | true | 是否需要显示失效商品 |
 | platform |  | string |  | true | pc | 平台 |
+| user_id |  | int | required,integer | true |  | 用户id |
 
 
 *返回内容示例

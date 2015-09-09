@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取多条满减促销商品列表(promotion.fullminusitem.list)
 
 ## 促销相关API
 
-### 获取多条满减促销商品列表(promotion.fullminusitem.list)
+### 
 
 * 系统参数
 

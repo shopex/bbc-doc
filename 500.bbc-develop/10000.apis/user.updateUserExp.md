@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 更新会员的成长总值(user.updateUserExp)
 
 ## 用户相关API
 
-### 更新会员的成长总值(user.updateUserExp)
+### 
 
 * 系统参数
 

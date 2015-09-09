@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 更新购物车数据(trade.cart.update)
 
 ## 交易相关API
 
-### 更新购物车数据(trade.cart.update)
+### 
 
 * 系统参数
 

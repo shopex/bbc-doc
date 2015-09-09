@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 删除商品的某个促销信息(item.promotion.deleteTag)
 
 ## 商品相关API
 
-### 删除商品的某个促销信息(item.promotion.deleteTag)
+### 
 
 * 系统参数
 

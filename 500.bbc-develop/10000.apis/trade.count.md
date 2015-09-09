@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据条件统计订单数量(trade.count)
 
 ## 交易相关API
 
-### 根据条件统计订单数量(trade.count)
+### 
 
 * 系统参数
 

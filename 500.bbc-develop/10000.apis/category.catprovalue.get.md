@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据类目id获取类目关联的属性值(category.catprovalue.get)
 
 ## 品牌类目相关API
 
-### 根据类目id获取类目关联的属性值(category.catprovalue.get)
+### 
 
 * 系统参数
 

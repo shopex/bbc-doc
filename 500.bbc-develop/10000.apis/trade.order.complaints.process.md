@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 平台对订单投诉同步处理结果(trade.order.complaints.process)
 
 ## 交易相关API
 
-### 平台对订单投诉同步处理结果(trade.order.complaints.process)
+### 
 
 * 系统参数
 

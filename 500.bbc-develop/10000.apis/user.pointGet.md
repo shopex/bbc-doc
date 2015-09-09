@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取积分记录列表(user.pointGet)
 
 ## 用户相关API
 
-### 获取积分记录列表(user.pointGet)
+### 
 
 * 系统参数
 

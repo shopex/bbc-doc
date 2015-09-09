@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 删除单条满减促销信息(promotion.fullminus.delete)
 
 ## 促销相关API
 
-### 删除单条满减促销信息(promotion.fullminus.delete)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# (user.trust.authorize)
 
 ## 用户相关API
 
-### (user.trust.authorize)
+### 
 
 * 系统参数
 

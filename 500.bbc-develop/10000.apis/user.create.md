@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 创建会员信息(user.create)
 
 ## 用户相关API
 
-### 创建会员信息(user.create)
+### 
 
 * 系统参数
 

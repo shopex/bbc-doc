@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 商家对评论进行申诉(rate.appeal.add)
 
 ## 评价相关API
 
-### 商家对评论进行申诉(rate.appeal.add)
+### 
 
 * 系统参数
 

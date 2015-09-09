@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 用于OAuth登陆商家的接口(account.shop.oauth.login)
 
 ## 店铺相关API
 
-### 用于OAuth登陆商家的接口(account.shop.oauth.login)
+### 
 
 * 系统参数
 

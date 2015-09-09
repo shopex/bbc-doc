@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取店铺关联的类目费率(shop.get.cat.fee)
 
 ## 店铺相关API
 
-### 获取店铺关联的类目费率(shop.get.cat.fee)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 更新支付单金额(payment.money.update)
 
 ## 电商工具相关API
 
-### 更新支付单金额(payment.money.update)
+### 
 
 * 系统参数
 

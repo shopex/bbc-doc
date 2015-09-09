@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 买家撤销订单投诉(trade.order.complaints.buyer.close)
 
 ## 交易相关API
 
-### 买家撤销订单投诉(trade.order.complaints.buyer.close)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 订单创建(trade.create)
 
 ## 交易相关API
 
-### 订单创建(trade.create)
+### 
 
 * 系统参数
 

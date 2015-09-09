@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取地区数据(logistics.area)
 
 ## 物流相关API
 
-### 获取地区数据(logistics.area)
+### 
 
 * 系统参数
 

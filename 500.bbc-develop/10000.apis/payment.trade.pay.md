@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 订单支付请求支付网关(payment.trade.pay)
 
 ## 电商工具相关API
 
-### 订单支付请求支付网关(payment.trade.pay)
+### 
 
 * 系统参数
 

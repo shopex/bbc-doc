@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取指定的商家角色信息(account.shop.roles.get)
 
 ## 店铺相关API
 
-### 获取指定的商家角色信息(account.shop.roles.get)
+### 
 
 * 系统参数
 

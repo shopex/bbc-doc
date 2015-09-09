@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 修改商家角色(account.shop.roles.update)
 
 ## 店铺相关API
 
-### 修改商家角色(account.shop.roles.update)
+### 
 
 * 系统参数
 

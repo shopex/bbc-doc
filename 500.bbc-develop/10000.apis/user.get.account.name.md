@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据会员ID获取对应的用户名(user.get.account.name)
 
 ## 用户相关API
 
-### 根据会员ID获取对应的用户名(user.get.account.name)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 下订单计算积分(user.pointcount)
 
 ## 用户相关API
 
-### 下订单计算积分(user.pointcount)
+### 
 
 * 系统参数
 

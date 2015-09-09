@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据店铺id获取店铺名称(带后缀)(shop.get.shopname)
 
 ## 店铺相关API
 
-### 根据店铺id获取店铺名称(带后缀)(shop.get.shopname)
+### 
 
 * 系统参数
 

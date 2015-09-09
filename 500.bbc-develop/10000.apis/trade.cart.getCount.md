@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 统计购物车商品数量(trade.cart.getCount)
 
 ## 交易相关API
 
-### 统计购物车商品数量(trade.cart.getCount)
+### 
 
 * 系统参数
 

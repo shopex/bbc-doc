@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据时间获取商家订单统计信息(stat.trade.data.count.get)
 
 ## 统计相关API
 
-### 根据时间获取商家订单统计信息(stat.trade.data.count.get)
+### 
 
 * 系统参数
 

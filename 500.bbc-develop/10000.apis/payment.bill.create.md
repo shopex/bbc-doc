@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 支付单创建(payment.bill.create)
 
 ## 电商工具相关API
 
-### 支付单创建(payment.bill.create)
+### 
 
 * 系统参数
 

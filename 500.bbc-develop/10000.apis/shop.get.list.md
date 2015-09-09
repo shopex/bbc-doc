@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 根据店铺ID获取店铺列表数据(shop.get.list)
 
 ## 店铺相关API
 
-### 根据店铺ID获取店铺列表数据(shop.get.list)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 平台对退款申请进行退款处理(aftersales.refunds.restore)
 
 ## 售后相关API
 
-### 平台对退款申请进行退款处理(aftersales.refunds.restore)
+### 
 
 * 系统参数
 

@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 删除指定子帐号(account.shop.user.delete)
 
 ## 店铺相关API
 
-### 删除指定子帐号(account.shop.user.delete)
+### 
 
 * 系统参数
 

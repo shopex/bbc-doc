@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取可用支付方式的配置信息(payment.get.conf)
 
 ## 电商工具相关API
 
-### 获取可用支付方式的配置信息(payment.get.conf)
+### 
 
 * 系统参数
 

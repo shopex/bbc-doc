@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 获取店铺单条通知(shop.get.shopnoticeinfo)
 
 ## 店铺相关API
 
-### 获取店铺单条通知(shop.get.shopnoticeinfo)
+### 
 
 * 系统参数
 

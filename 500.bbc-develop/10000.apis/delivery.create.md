@@ -1,8 +1,8 @@
-# ONEX B2B2C 商城API文档
+# 创建发货单(delivery.create)
 
 ## 物流相关API
 
-### 创建发货单(delivery.create)
+### 
 
 * 系统参数
 
