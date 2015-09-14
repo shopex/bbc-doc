@@ -8,6 +8,8 @@
     1. [bbc-vagrant方式开发环境部署](100.deploy/400.vagrant-install.md)
     1. [安装 ONex B2b2c](100.deploy/500.setup.md)
     1. [安装 ONex B2b2c](100.deploy/600.active.md)
+    1. [bbc mysql数据库主从简单配置](100.deploy/700.mysql-master-slave.md)
+    1. [bbc 服务器crontab配置](100.deploy/800.crontab-conf.md)
 1. [维护](200.maintance/README.md)
     1. [商家统计说明](200.maintance/100.sysstat.md)
 1. [常见安装FAQ](300.faq.md)

@@ -1,4 +1,4 @@
 序言
 ================================================
 
-1. [B2B2C ChangeLogo](200.changelog.md)
+1. [B2B2C ChangeLog](200.changelog.md)
